@@ -21,11 +21,12 @@ const Sejarah = () => {
       <section className="py-12 lg:py-16">
         <div className="container-custom max-w-4xl">
           {data ? (
-            <div className="prose prose-lg max-w-none whitespace-pre-line text-gray-700">
-              {data.konten}
-            </div>
+            <div
+              className="prose prose-lg max-w-none text-gray-700 leading-relaxed"
+              dangerouslySetInnerHTML={{ __html: data.konten }}
+            />
           ) : (
-            <div className="skeleton h-96 w-full" />
+            <div className="skeleton h-96 w-full rounded-2xl" />
           )}
         </div>
       </section>
