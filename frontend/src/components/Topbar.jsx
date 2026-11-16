@@ -30,12 +30,12 @@ const Topbar = ({ onToggleMobile }) => {
       {/* Kanal Pengaduan info */}
       <div className="flex items-center gap-1.5 text-[11px] text-slate-200">
         <Mail className="w-3.5 h-3.5 text-amber-300 shrink-0" />
-        <span className="hidden md:inline text-slate-300">Kanal Pengaduan:</span>
+        <span className="hidden md:inline text-slate-300">Email Resmi:</span>
         <a
-          href="mailto:aimai@sulteng.go.id"
+          href="mailto:dispar@sultengprov.go.id"
           className="font-medium hover:text-amber-300 text-blue-100 transition-colors"
         >
-          aimai@sulteng.go.id
+          dispar@sultengprov.go.id
         </a>
       </div>
     </header>
