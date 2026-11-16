@@ -25,6 +25,13 @@ const DaftarInformasiPublik = () => {
     }
   };
 
+  const getDocHref = (item) => {
+    const target = item.link || item.file;
+    if (!target) return '#';
+    if (target.startsWith('http://') || target.startsWith('https://')) return target;
+    return `/uploads/${target}`;
+  };
+
   return (
     <>
       <Helmet><title>Daftar Informasi Publik - PPID</title></Helmet>
@@ -61,7 +68,7 @@ const DaftarInformasiPublik = () => {
                         {(items[kat.id] || []).map((item) => (
                           <a
                             key={item.id}
-                            href={item.link || (item.file ? `/uploads/${item.file}` : '#')}
+                            href={getDocHref(item)}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center justify-between p-3 rounded-lg bg-white hover:bg-primary-50 transition-colors group"

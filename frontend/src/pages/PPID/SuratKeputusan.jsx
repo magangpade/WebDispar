@@ -65,7 +65,7 @@ const SuratKeputusan = () => {
                       <td key={iIdx} className="px-4 py-4 text-center">
                         {item.file ? (
                           <a
-                            href={`/uploads/${item.file}`}
+                            href={item.file.startsWith('http') ? item.file : `/uploads/${item.file}`}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-1 text-xs font-semibold text-primary-600 hover:text-primary-800 hover:underline"

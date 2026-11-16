@@ -76,8 +76,9 @@ const Regulasi = () => {
             <FileText size={20} className="text-primary-600 flex-shrink-0" />
             <p className="flex-1 text-sm text-navy-800 group-hover:text-primary-700">{item.judul}</p>
             <a
-              href={item.file ? `/uploads/${item.file}` : `#`}
-              download={!!item.file}
+              href={item.file ? (item.file.startsWith('http') ? item.file : `/uploads/${item.file}`) : 'https://peraturan.bpk.go.id/'}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex-shrink-0 inline-flex items-center gap-1 text-xs font-semibold text-primary-600 hover:text-primary-800"
             >
               <Download size={14} /> Ambil File

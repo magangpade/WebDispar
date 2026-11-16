@@ -51,8 +51,9 @@ const LaporanTahunan = () => {
                   <p className="text-xs text-gray-500">Dokumen Resmi PPID</p>
                 </div>
                 <a
-                  href={item.file || '#'}
-                  download
+                  href={item.link || item.file || '#'}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex-shrink-0 inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white text-sm font-semibold px-4 py-2.5 rounded-lg transition-colors"
                 >
                   <Download size={16} /> Unduh
