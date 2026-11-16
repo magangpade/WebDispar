@@ -44,11 +44,19 @@ const BeritaDetail = () => {
       <article className="py-12 lg:py-16">
         <div className="container-custom max-w-4xl">
           {berita.gambar && (
-            <img src={`/uploads/${berita.gambar}`} alt={berita.judul} className="w-full rounded-xl mb-8 shadow-lg" />
+            <img
+              src={berita.gambar.startsWith('http') ? berita.gambar : `/uploads/${berita.gambar}`}
+              alt={berita.judul}
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+              }}
+              className="w-full max-h-[500px] object-cover rounded-xl mb-8 shadow-lg"
+            />
           )}
-          <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed whitespace-pre-line">
-            {berita.konten}
-          </div>
+          <div
+            className="prose prose-lg max-w-none text-gray-700 leading-relaxed"
+            dangerouslySetInnerHTML={{ __html: berita.konten }}
+          />
           <div className="mt-8 pt-8 border-t border-gray-200 flex items-center gap-4">
             <span className="text-sm font-semibold text-gray-600 flex items-center gap-2"><Share2 size={16} /> Bagikan:</span>
             <a href={`https://facebook.com/sharer/sharer.php?u=${window.location.href}`} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline text-sm">Facebook</a>
