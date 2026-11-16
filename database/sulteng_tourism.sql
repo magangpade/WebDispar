@@ -16,7 +16,7 @@ CREATE TABLE berita (
   id INT AUTO_INCREMENT PRIMARY KEY,
   judul VARCHAR(255) NOT NULL,
   slug VARCHAR(255) NOT NULL UNIQUE,
-  konten TEXT NOT NULL,
+  konten LONGTEXT NOT NULL,
   gambar VARCHAR(255),
   penulis VARCHAR(100) DEFAULT 'Admin',
   tanggal DATE NOT NULL,
@@ -30,7 +30,7 @@ CREATE TABLE profil (
   id INT AUTO_INCREMENT PRIMARY KEY,
   kategori VARCHAR(50) NOT NULL, -- 'sejarah', 'visi_misi', 'tupoksi', 'profil_pimpinan', 'majalah', 'logo', 'hubungi_kami'
   judul VARCHAR(255),
-  konten TEXT,
+  konten LONGTEXT,
   gambar VARCHAR(255),
   file_pdf VARCHAR(255),
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -90,7 +90,7 @@ CREATE TABLE dtw (
   id INT AUTO_INCREMENT PRIMARY KEY,
   kabupaten VARCHAR(100) NOT NULL,
   judul VARCHAR(255) NOT NULL,
-  deskripsi TEXT,
+  deskripsi LONGTEXT,
   gambar VARCHAR(255),
   dilihat INT DEFAULT 0,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
@@ -101,7 +101,7 @@ CREATE TABLE desa_wisata (
   id INT AUTO_INCREMENT PRIMARY KEY,
   kabupaten VARCHAR(100) NOT NULL,
   nama VARCHAR(255) NOT NULL,
-  deskripsi TEXT,
+  deskripsi LONGTEXT,
   gambar VARCHAR(255),
   dilihat INT DEFAULT 0,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
