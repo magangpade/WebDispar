@@ -60,23 +60,23 @@ const Footer = () => {
           <div className="flex flex-col gap-3">
             <h3 className="font-bold text-[#FBBF24] text-sm flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[#FBBF24]" />
-              Alamat &amp; Kontak
+              Alamat &amp; Kontak Resmi
             </h3>
             <div className="flex flex-col gap-2.5 text-xs text-slate-300">
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-[#FBBF24] shrink-0 mt-0.5" />
-                <span className="leading-relaxed">Dinas Pariwisata Provinsi Sulawesi Tengah, Kota Palu</span>
+                <span className="leading-relaxed">Jalan Dewi Sartika Nomor 45 Palu, Kode Pos 94121, Palu Selatan, Sulawesi Tengah</span>
               </div>
               <div className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-[#FBBF24] shrink-0" />
-                <a href="mailto:aimai@sulteng.go.id" className="hover:text-amber-300 transition-colors">
-                  aimai@sulteng.go.id
+                <a href="mailto:dispar@sultengprov.go.id" className="hover:text-amber-300 transition-colors">
+                  dispar@sultengprov.go.id
                 </a>
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-[#FBBF24] shrink-0" />
-                <a href="tel:08193203150" className="hover:text-amber-300 transition-colors">
-                  0819 - 320 - 3150
+                <a href="tel:0451483942" className="hover:text-amber-300 transition-colors">
+                  (0451) 483942
                 </a>
               </div>
             </div>
@@ -86,17 +86,16 @@ const Footer = () => {
           <div className="flex flex-col gap-3">
             <h3 className="font-bold text-[#FBBF24] text-sm flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[#FBBF24]" />
-              Social Media
+              Media Sosial Resmi
             </h3>
             <p className="text-slate-300 text-xs leading-relaxed">
-              Ikuti kami di media sosial untuk mendapatkan info promosi dan festival wisata terbaru di Sulteng.
+              Ikuti akun resmi Dinas Pariwisata Provinsi Sulawesi Tengah untuk informasi festival dan pariwisata terkini.
             </p>
             <div className="flex gap-2.5 pt-1">
               {[
-                { Icon: FaFacebookF, href: 'https://facebook.com', label: 'Facebook' },
-                { Icon: FaTwitter, href: 'https://twitter.com', label: 'Twitter' },
-                { Icon: FaInstagram, href: 'https://instagram.com', label: 'Instagram' },
-                { Icon: FaYoutube, href: 'https://youtube.com', label: 'YouTube' },
+                { Icon: FaFacebookF, href: 'https://www.facebook.com/dinaspariwisatasulteng/', label: 'Facebook' },
+                { Icon: FaInstagram, href: 'https://www.instagram.com/dinaspariwisatasulteng/', label: 'Instagram' },
+                { Icon: FaYoutube, href: 'https://www.youtube.com/c/dinaspariwisatasulteng', label: 'YouTube' },
               ].map(({ Icon, href, label }, idx) => (
                 <a
                   key={idx}
@@ -115,7 +114,7 @@ const Footer = () => {
 
         {/* Baris Hak Cipta & Link Bawah */}
         <div className="flex flex-wrap items-center justify-between gap-4 text-xs text-slate-300/80">
-          <p>© 2024 Dinas Pariwisata Provinsi Sulawesi Tengah. All Rights Reserved.</p>
+          <p>© 2026 Dinas Pariwisata Provinsi Sulawesi Tengah. All Rights Reserved.</p>
           <div className="flex gap-5">
             <a href="#" className="hover:text-white transition-colors">Kebijakan Privasi</a>
             <a href="#" className="hover:text-white transition-colors">Syarat &amp; Ketentuan</a>
