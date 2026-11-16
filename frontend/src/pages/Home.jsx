@@ -46,13 +46,20 @@ const LatestNewsSection = ({ berita, loading }) => {
     },
   ];
 
+  const getNewsImage = (b, idx) => {
+    const img = b.gambar || b.foto;
+    if (!img) return fallbackNews[idx % 3].image;
+    if (img.startsWith('http://') || img.startsWith('https://')) return img;
+    return `${import.meta.env.VITE_API_URL?.replace('/api', '') || 'http://localhost:5000'}/uploads/${img}`;
+  };
+
   const newsItems = berita.length > 0
     ? berita.slice(0, 3).map((b, idx) => ({
-        image: b.foto ? `${import.meta.env.VITE_API_URL?.replace('/api', '') || 'http://localhost:5000'}/uploads/${b.foto}` : fallbackNews[idx % 3].image,
+        image: getNewsImage(b, idx),
         tag: b.kategori || fallbackNews[idx % 3].tag,
         tagColor: idx === 0 ? 'bg-[#0F172A]' : idx === 1 ? 'bg-[#DC2626]' : 'bg-[#2563EB]',
         title: b.judul,
-        date: new Date(b.created_at || Date.now()).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' }),
+        date: new Date(b.tanggal || b.created_at || Date.now()).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' }),
         slug: b.slug,
       }))
     : fallbackNews;
