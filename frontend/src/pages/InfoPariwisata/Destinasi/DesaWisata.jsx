@@ -74,17 +74,23 @@ const DesaWisata = () => {
                 >
                   <div className="relative overflow-hidden h-52">
                     <img
-                      src={item.gambar ? `/uploads/${item.gambar}` : '/placeholder.jpg'}
+                      src={item.gambar ? (item.gambar.startsWith('http') ? item.gambar : `/uploads/${item.gambar}`) : '/slider/Slider.jpg'}
                       alt={item.nama}
+                      onError={(e) => {
+                        e.currentTarget.src = '/slider/Slider.jpg';
+                      }}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
-                    <div className="absolute top-4 left-4 bg-gold-400 text-navy-900 text-xs font-bold px-3 py-1 rounded-full">
+                    <div className="absolute top-4 left-4 bg-amber-400 text-slate-900 text-xs font-bold px-3 py-1 rounded-full shadow">
                       {item.kabupaten}
                     </div>
                   </div>
                   <div className="p-5">
                     <h3 className="font-bold text-navy-900 text-lg mb-2 line-clamp-2">{item.nama}</h3>
-                    <p className="text-sm text-gray-500 line-clamp-3 mb-4">{item.deskripsi}</p>
+                    <div
+                      className="text-sm text-gray-600 line-clamp-3 mb-4 prose prose-sm max-w-none"
+                      dangerouslySetInnerHTML={{ __html: item.deskripsi }}
+                    />
                     <span className="inline-flex items-center gap-1 text-xs text-gray-400">
                       <Eye size={14} /> {item.dilihat || 0} dilihat
                     </span>
