@@ -10,6 +10,12 @@ const BeritaCard = ({ berita, index = 0 }) => {
       year: 'numeric',
     });
 
+  const getImageSrc = (img) => {
+    if (!img) return '/slider/Slider.jpg';
+    if (img.startsWith('http://') || img.startsWith('https://')) return img;
+    return `/uploads/${img}`;
+  };
+
   return (
     <motion.article
       initial={{ opacity: 0, y: 20 }}
@@ -21,8 +27,11 @@ const BeritaCard = ({ berita, index = 0 }) => {
       <Link to={`/berita/${berita.slug}`} className="block">
         <div className="relative overflow-hidden rounded-2xl aspect-[4/3] bg-slate-100">
           <img
-            src={berita.gambar ? `/uploads/${berita.gambar}` : '/placeholder-news.jpg'}
+            src={getImageSrc(berita.gambar)}
             alt={berita.judul}
+            onError={(e) => {
+              e.currentTarget.src = '/slider/Slider.jpg';
+            }}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
           />
         </div>
