@@ -1,0 +1,927 @@
+[
+  {
+    "nama_menu": "Home",
+    "tipe_halaman": "(Alias: helium)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=105"
+  },
+  {
+    "nama_menu": "Berita",
+    "tipe_halaman": "(Alias: berita)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=125"
+  },
+  {
+    "nama_menu": "Profil",
+    "tipe_halaman": "(Alias: profil1)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=108"
+  },
+  {
+    "nama_menu": "Sejarah",
+    "tipe_halaman": "(Alias: sejarah)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=210"
+  },
+  {
+    "nama_menu": "Visi dan Misi",
+    "tipe_halaman": "(Alias: visi-dan-misi)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=109"
+  },
+  {
+    "nama_menu": "Profil Pimpinan",
+    "tipe_halaman": "(Alias: profil-pimpinan)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=211"
+  },
+  {
+    "nama_menu": "Tugas Pokok dan Fungsi",
+    "tipe_halaman": "(Alias: tupoksi)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=212"
+  },
+  {
+    "nama_menu": "Majalah",
+    "tipe_halaman": "(Alias: majalah)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=114"
+  },
+  {
+    "nama_menu": "Logo",
+    "tipe_halaman": "(Alias: logo)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=185"
+  },
+  {
+    "nama_menu": "Hubungi Kami",
+    "tipe_halaman": "(Alias: contacts)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=200"
+  },
+  {
+    "nama_menu": "Program Prioritas",
+    "tipe_halaman": "(Alias: program-prioritas)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=111"
+  },
+  {
+    "nama_menu": "Informasi Publik",
+    "tipe_halaman": "(Alias: informasi-publik)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=168"
+  },
+  {
+    "nama_menu": "PPID",
+    "tipe_halaman": "(Alias: ppid)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=165"
+  },
+  {
+    "nama_menu": "Profil",
+    "tipe_halaman": "(Alias: profil)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=208"
+  },
+  {
+    "nama_menu": "Struktur Organisasi PPID",
+    "tipe_halaman": "(Alias: struktur-organisasi-ppid)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=169"
+  },
+  {
+    "nama_menu": "Visi dan Misi",
+    "tipe_halaman": "(Alias: visi-dan-misi)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=279"
+  },
+  {
+    "nama_menu": "Maklumat Pelayanan Informasi Publik",
+    "tipe_halaman": "(Alias: maklumat-pelayanan-informasi-publik)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=209"
+  },
+  {
+    "nama_menu": "Tugas PPID dan PPID Pelaksana",
+    "tipe_halaman": "(Alias: tugas-ppid-dan-ppid-pelaksana)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=287"
+  },
+  {
+    "nama_menu": "Dokumen Publik",
+    "tipe_halaman": "",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=166"
+  },
+  {
+    "nama_menu": "Arsip",
+    "tipe_halaman": "(Alias: arsip)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=167"
+  },
+  {
+    "nama_menu": "Laporan Tahunan PPID",
+    "tipe_halaman": "(Alias: laporan-tahunan-ppid)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=206"
+  },
+  {
+    "nama_menu": "Layanan Publik",
+    "tipe_halaman": "(Alias: layanan-publik)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=213"
+  },
+  {
+    "nama_menu": "Form Permohonan Informasi",
+    "tipe_halaman": "(Alias: form-permohonan-informasi)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=214"
+  },
+  {
+    "nama_menu": "Form Pengajuan Keberatan",
+    "tipe_halaman": "(Alias: form-permohonan-keberatan)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=215"
+  },
+  {
+    "nama_menu": "Prosedur Pengaduan",
+    "tipe_halaman": "(Alias: prosedur-pengaduan)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=216"
+  },
+  {
+    "nama_menu": "Survey Penilaian Layanan Informasi Publik",
+    "tipe_halaman": "(Alias: survey-penilaian-layanan-informasi-publik)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=217"
+  },
+  {
+    "nama_menu": "Regulasi Layanan Publik",
+    "tipe_halaman": "(Alias: regulasi-layanan-publik)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=218"
+  },
+  {
+    "nama_menu": "Surat Keputusan",
+    "tipe_halaman": "(Alias: surat-keputusan)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=223"
+  },
+  {
+    "nama_menu": "Standar Pelayanan Publik",
+    "tipe_halaman": "(Alias: standar-pelayanan)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=207"
+  },
+  {
+    "nama_menu": "Informasi Secara Berkala",
+    "tipe_halaman": "(Alias: informasi-secara-berkala)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=201"
+  },
+  {
+    "nama_menu": "Data Kepegawaian",
+    "tipe_halaman": "(Alias: data-kepegawaian)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=194"
+  },
+  {
+    "nama_menu": "Struktur Organisasi",
+    "tipe_halaman": "(Alias: struktur-organisasi)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=110"
+  },
+  {
+    "nama_menu": "Daftar Pejabat",
+    "tipe_halaman": "(Alias: daftar-pejabat)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=192"
+  },
+  {
+    "nama_menu": "DUK",
+    "tipe_halaman": "(Alias: duk)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=190"
+  },
+  {
+    "nama_menu": "LHKPN",
+    "tipe_halaman": "(Alias: lhkasn)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=191"
+  },
+  {
+    "nama_menu": "Daftar Riwayat Hidup ASN",
+    "tipe_halaman": "(Alias: daftar-riwayat-hidup-asn)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=193"
+  },
+  {
+    "nama_menu": "Indeks Kepuasan Masyarakat",
+    "tipe_halaman": "(Alias: indeks-kepuasan-masyarakat)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=226"
+  },
+  {
+    "nama_menu": "Standar Pelayanan",
+    "tipe_halaman": "(Alias: standar-pelayanan-publik)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=259"
+  },
+  {
+    "nama_menu": "Surat Keterangan Tanda Tangan Elektronik",
+    "tipe_halaman": "",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=268"
+  },
+  {
+    "nama_menu": "Evaluasi Jabatan",
+    "tipe_halaman": "(Alias: evaluasi-jabatan)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=277"
+  },
+  {
+    "nama_menu": "Standar Operasional Prosedur (SOP)",
+    "tipe_halaman": "(Alias: standar-operasional-prosedur-sop)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=307"
+  },
+  {
+    "nama_menu": "Peta Jabatan",
+    "tipe_halaman": "(Alias: peta-jabatan)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=276"
+  },
+  {
+    "nama_menu": "Laporan Hasil Forum Konsultasi Publik (FKP)",
+    "tipe_halaman": "(Alias: laporan-hasil-forum-konsultasi-publik-fkp)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=278"
+  },
+  {
+    "nama_menu": "Agenda Pimpinan",
+    "tipe_halaman": "(Alias: agenda-pimpinan)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=288"
+  },
+  {
+    "nama_menu": "Penghargaan Tingkat Nasional",
+    "tipe_halaman": "(Alias: penghargaan-tingkat-nasional)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=289"
+  },
+  {
+    "nama_menu": "Akreditas Layanan Publik",
+    "tipe_halaman": "(Alias: akreditas-layanan-publik)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=290"
+  },
+  {
+    "nama_menu": "Dokumen SAKIP",
+    "tipe_halaman": "(Alias: dokumen-sakip)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=199"
+  },
+  {
+    "nama_menu": "RENJA",
+    "tipe_halaman": "(Alias: renja)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=189"
+  },
+  {
+    "nama_menu": "RKPD",
+    "tipe_halaman": "(Alias: rkpd)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=224"
+  },
+  {
+    "nama_menu": "IKU",
+    "tipe_halaman": "(Alias: iku)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=188"
+  },
+  {
+    "nama_menu": "Definisi Operasional",
+    "tipe_halaman": "(Alias: definisi-operasional)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=303"
+  },
+  {
+    "nama_menu": "RKA",
+    "tipe_halaman": "(Alias: rka)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=205"
+  },
+  {
+    "nama_menu": "DPA",
+    "tipe_halaman": "(Alias: dokumen-pelaksanaan-anggaran-dpa)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=184"
+  },
+  {
+    "nama_menu": "RUP",
+    "tipe_halaman": "(Alias: rup)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=300"
+  },
+  {
+    "nama_menu": "Program dan Kegiatan",
+    "tipe_halaman": "(Alias: program-dan-kegiatan)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=285"
+  },
+  {
+    "nama_menu": "RENSTRA",
+    "tipe_halaman": "(Alias: renstra)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=112"
+  },
+  {
+    "nama_menu": "LAKIP",
+    "tipe_halaman": "(Alias: lakip)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=113"
+  },
+  {
+    "nama_menu": "Perjanjian Kinerja",
+    "tipe_halaman": "(Alias: perjanjian-kinerja)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=222"
+  },
+  {
+    "nama_menu": "Cascading Kinerja",
+    "tipe_halaman": "(Alias: cascading-kinerja)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=221"
+  },
+  {
+    "nama_menu": "Pohon Kinerja",
+    "tipe_halaman": "(Alias: pohon-kinerja)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=248"
+  },
+  {
+    "nama_menu": "Rencana Aksi",
+    "tipe_halaman": "(Alias: rencana-aksi)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=302"
+  },
+  {
+    "nama_menu": "Peta Proses Bisnis",
+    "tipe_halaman": "(Alias: peta-proses-bisnis)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=247"
+  },
+  {
+    "nama_menu": "Roadmap Reformasi Birokrasi",
+    "tipe_halaman": "(Alias: roadmap-reformasi-birokrasi)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=258"
+  },
+  {
+    "nama_menu": "LPPD",
+    "tipe_halaman": "(Alias: lppd)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=280"
+  },
+  {
+    "nama_menu": "Pengadaan Barang Dan Jasa OPD Yang Diumumkan Oleh LPSE",
+    "tipe_halaman": "(Alias: pengadaan-barang-dan-jasa-opd-yang-diumumkan-oleh-lpse)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=286"
+  },
+  {
+    "nama_menu": "KUA PPAS",
+    "tipe_halaman": "(Alias: kua-ppas)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=301"
+  },
+  {
+    "nama_menu": "Laporan Keuangan & Aset",
+    "tipe_halaman": "(Alias: laporan-keuangan-aset)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=197"
+  },
+  {
+    "nama_menu": "Laporan Realisasi Anggaran",
+    "tipe_halaman": "(Alias: realisasi-anggaran)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=196"
+  },
+  {
+    "nama_menu": "Dokumen Pengadaan",
+    "tipe_halaman": "(Alias: dokumen-pengadaan)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=219"
+  },
+  {
+    "nama_menu": "Catatan Atas Laporan Keuangan (CALK)",
+    "tipe_halaman": "(Alias: catatan-atas-laporan-keuangan-calk)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=281"
+  },
+  {
+    "nama_menu": "Anggaran Kas",
+    "tipe_halaman": "(Alias: anggaran-kas)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=282"
+  },
+  {
+    "nama_menu": "Daftar Aset",
+    "tipe_halaman": "(Alias: daftar-aset)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=283"
+  },
+  {
+    "nama_menu": "Kebijakan Umum Anggaran (KUA) Prioritas Pagu Anggaran Sementara (PPAS)",
+    "tipe_halaman": "(Alias: kebijakan-umum-anggaran-kua-prioritas-pagu-anggaran-sementara-ppas)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=284"
+  },
+  {
+    "nama_menu": "Dokumen Elektronik Keuangan",
+    "tipe_halaman": "(Alias: dokumen-elektronik-keuangan)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=291"
+  },
+  {
+    "nama_menu": "Laporan Kegiatan",
+    "tipe_halaman": "(Alias: laporan-kegiatan)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=198"
+  },
+  {
+    "nama_menu": "Informasi Setiap Saat",
+    "tipe_halaman": "(Alias: informasi-setiap-saat)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=202"
+  },
+  {
+    "nama_menu": "Informasi Serta Merta",
+    "tipe_halaman": "(Alias: informasi-serta-merta)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=203"
+  },
+  {
+    "nama_menu": "Informasi Dikecualikan",
+    "tipe_halaman": "(Alias: informasi-dikecualikan)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=204"
+  },
+  {
+    "nama_menu": "Layanan Aduan Masyarakat",
+    "tipe_halaman": "",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=244"
+  },
+  {
+    "nama_menu": "Regulasi",
+    "tipe_halaman": "(Alias: regulasi)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=120"
+  },
+  {
+    "nama_menu": "Profil PPID",
+    "tipe_halaman": "(Alias: struktur-organisasi-ppid-2)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=243"
+  },
+  {
+    "nama_menu": "Informasi Pengadaan Barang Dan Jasa",
+    "tipe_halaman": "(Alias: dokumen-pengadaan-2)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=245"
+  },
+  {
+    "nama_menu": "Info Pariwisata",
+    "tipe_halaman": "(Alias: data-pariwisata)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=187"
+  },
+  {
+    "nama_menu": "Data Wisata",
+    "tipe_halaman": "(Alias: data-wisata)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=116"
+  },
+  {
+    "nama_menu": "Data Statistik Sektoral Pariwisata",
+    "tipe_halaman": "(Alias: data-kunjungan-wisatawan-2)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=225"
+  },
+  {
+    "nama_menu": "Buku Direktori",
+    "tipe_halaman": "(Alias: buku-direktori)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=118"
+  },
+  {
+    "nama_menu": "Kajian dan Master Plan",
+    "tipe_halaman": "(Alias: kajian-dan-master-plan)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=119"
+  },
+  {
+    "nama_menu": "Tugas Pembantuan",
+    "tipe_halaman": "(Alias: tugas-pembantuan)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=249"
+  },
+  {
+    "nama_menu": "SISPARNAS",
+    "tipe_halaman": "",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=250"
+  },
+  {
+    "nama_menu": "Laporan Kegiatan",
+    "tipe_halaman": "(Alias: laporan-kegiatan)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=251"
+  },
+  {
+    "nama_menu": "Karisma Event Nusantara 2025",
+    "tipe_halaman": "(Alias: karisma-event-nusantara-2024)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=260"
+  },
+  {
+    "nama_menu": "GPR TV",
+    "tipe_halaman": "(Alias: gpr-tv)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=261"
+  },
+  {
+    "nama_menu": "2022",
+    "tipe_halaman": "(Alias: 2022)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=262"
+  },
+  {
+    "nama_menu": "#1",
+    "tipe_halaman": "",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=266"
+  },
+  {
+    "nama_menu": "#2",
+    "tipe_halaman": "",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=267"
+  },
+  {
+    "nama_menu": "2023",
+    "tipe_halaman": "(Alias: 2023)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=263"
+  },
+  {
+    "nama_menu": "#1",
+    "tipe_halaman": "",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=264"
+  },
+  {
+    "nama_menu": "#2",
+    "tipe_halaman": "(Alias: 2)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=265"
+  },
+  {
+    "nama_menu": "SI DEWI",
+    "tipe_halaman": "",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=252"
+  },
+  {
+    "nama_menu": "News Room",
+    "tipe_halaman": "(Alias: news-room)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=253"
+  },
+  {
+    "nama_menu": "#1",
+    "tipe_halaman": "",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=254"
+  },
+  {
+    "nama_menu": "#2",
+    "tipe_halaman": "",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=255"
+  },
+  {
+    "nama_menu": "#3",
+    "tipe_halaman": "",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=256"
+  },
+  {
+    "nama_menu": "#4",
+    "tipe_halaman": "",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=257"
+  },
+  {
+    "nama_menu": "Karisma Event Nusantara (KEN) 2025",
+    "tipe_halaman": "(Alias: karisma-event-nusantara-ken-2025)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=272"
+  },
+  {
+    "nama_menu": "Statistik Pariwisata",
+    "tipe_halaman": "(Alias: statistik-pariwisata)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=296"
+  },
+  {
+    "nama_menu": "Destinasi Pariwisata",
+    "tipe_halaman": "(Alias: destinasi-pariwisata)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=292"
+  },
+  {
+    "nama_menu": "Daya Tarik Wisata",
+    "tipe_halaman": "(Alias: daya-tarik-wisata)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=122"
+  },
+  {
+    "nama_menu": "KOTA PALU",
+    "tipe_halaman": "(Alias: dtw-kota-palu)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=149"
+  },
+  {
+    "nama_menu": "KABUPATEN DONGGALA",
+    "tipe_halaman": "(Alias: dtw-kabupaten-donggala)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=160"
+  },
+  {
+    "nama_menu": "KABUPATEN SIGI",
+    "tipe_halaman": "(Alias: dtw-kabupaten-sigi)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=161"
+  },
+  {
+    "nama_menu": "KABUPATEN PARIGI MOUTONG",
+    "tipe_halaman": "(Alias: dtw-kabupaten-parigi-moutong)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=150"
+  },
+  {
+    "nama_menu": "KABUPATEN POSO",
+    "tipe_halaman": "(Alias: dtw-kabupaten-poso)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=151"
+  },
+  {
+    "nama_menu": "KABUPATEN MOROWALI",
+    "tipe_halaman": "(Alias: dtw-kabupaten-morowali)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=152"
+  },
+  {
+    "nama_menu": "KABUPATEN MOROWALI UTARA",
+    "tipe_halaman": "(Alias: dtw-kabupaten-morowali-utara)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=153"
+  },
+  {
+    "nama_menu": "KABUPATEN TOJO UNA-UNA",
+    "tipe_halaman": "(Alias: dtw-kabupaten-tojo-una-una)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=154"
+  },
+  {
+    "nama_menu": "KABUPATEN BANGGAI",
+    "tipe_halaman": "(Alias: dtw-kabupaten-banggai)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=155"
+  },
+  {
+    "nama_menu": "KABUPATEN BANGGAI KEPULAUAN",
+    "tipe_halaman": "(Alias: dtw-kabupaten-banggai-kepulauan)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=156"
+  },
+  {
+    "nama_menu": "KABUPATEN BANGGAI LAUT",
+    "tipe_halaman": "(Alias: dtw-kabupaten-banggai-laut)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=157"
+  },
+  {
+    "nama_menu": "KABUPATEN TOLITOLI",
+    "tipe_halaman": "(Alias: dtw-kabupaten-tolitoli)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=158"
+  },
+  {
+    "nama_menu": "KABUPATEN BUOL",
+    "tipe_halaman": "(Alias: dtw-kabupaten-buol)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=159"
+  },
+  {
+    "nama_menu": "Desa Wisata",
+    "tipe_halaman": "(Alias: desa-wisata)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=123"
+  },
+  {
+    "nama_menu": "Kota Palu",
+    "tipe_halaman": "(Alias: desa-kota-palu)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=170"
+  },
+  {
+    "nama_menu": "Kabupaten Donggala",
+    "tipe_halaman": "(Alias: desa-donggala)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=181"
+  },
+  {
+    "nama_menu": "Kabupaten Sigi",
+    "tipe_halaman": "(Alias: desa-sigi)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=182"
+  },
+  {
+    "nama_menu": "Kabupaten Parigi Moutong",
+    "tipe_halaman": "(Alias: desa-parigi)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=171"
+  },
+  {
+    "nama_menu": "Kabupaten Poso",
+    "tipe_halaman": "(Alias: desa-poso)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=172"
+  },
+  {
+    "nama_menu": "Kabupaten Morowali",
+    "tipe_halaman": "(Alias: desa-morowali)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=173"
+  },
+  {
+    "nama_menu": "Kabupaten Morowali Utara",
+    "tipe_halaman": "(Alias: desa-morowali-utara)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=174"
+  },
+  {
+    "nama_menu": "Kabupaten Tojo Una-Una",
+    "tipe_halaman": "(Alias: desa-tojo-una-una)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=175"
+  },
+  {
+    "nama_menu": "Kabupaten Banggai",
+    "tipe_halaman": "(Alias: desa-banggai)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=176"
+  },
+  {
+    "nama_menu": "Kabupaten Banggai Kepulauan",
+    "tipe_halaman": "(Alias: desa-banggai-kepulauan)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=177"
+  },
+  {
+    "nama_menu": "Kabupaten Banggai Laut",
+    "tipe_halaman": "(Alias: desa-banggai-laut)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=178"
+  },
+  {
+    "nama_menu": "Kabupaten Tolitoli",
+    "tipe_halaman": "(Alias: desa-tolitoli)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=179"
+  },
+  {
+    "nama_menu": "Kabupaten Buol",
+    "tipe_halaman": "(Alias: desa-buol)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=180"
+  },
+  {
+    "nama_menu": "Pemasaran Pariwisata",
+    "tipe_halaman": "(Alias: pemasaran-pariwisata)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=293"
+  },
+  {
+    "nama_menu": "Paket Wisata",
+    "tipe_halaman": "(Alias: paket-wisata)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=220"
+  },
+  {
+    "nama_menu": "Kalender Event Pariwisata",
+    "tipe_halaman": "(Alias: calendar-of-event)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=115"
+  },
+  {
+    "nama_menu": "Sulawesi Tengah",
+    "tipe_halaman": "(Alias: sulawesi-tengah-ceo)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=132"
+  },
+  {
+    "nama_menu": "Kota Palu",
+    "tipe_halaman": "(Alias: palu-ceo)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=133"
+  },
+  {
+    "nama_menu": "Kabupaten Sigi",
+    "tipe_halaman": "(Alias: sigi-ceo)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=134"
+  },
+  {
+    "nama_menu": "Kabupaten Banggai",
+    "tipe_halaman": "(Alias: banggai-ceo)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=135"
+  },
+  {
+    "nama_menu": "Kabupaten Banggai Laut",
+    "tipe_halaman": "(Alias: banggai-laut-ceo)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=136"
+  },
+  {
+    "nama_menu": "Kabupaten Poso",
+    "tipe_halaman": "(Alias: poso-ceo)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=137"
+  },
+  {
+    "nama_menu": "Kabupaten Tojo Una-Una",
+    "tipe_halaman": "(Alias: tojo-una-una-ceo)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=138"
+  },
+  {
+    "nama_menu": "Kabupaten Buol",
+    "tipe_halaman": "(Alias: buol-ceo)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=139"
+  },
+  {
+    "nama_menu": "Kabupaten Donggala",
+    "tipe_halaman": "(Alias: donggala-ceo)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=140"
+  },
+  {
+    "nama_menu": "DISPERINDAG",
+    "tipe_halaman": "(Alias: disperindag-ceo)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=141"
+  },
+  {
+    "nama_menu": "Pesona Kuliner Sulawesi Tengah",
+    "tipe_halaman": "(Alias: pesona-kuliner-sulawesi-tengah)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=271"
+  },
+  {
+    "nama_menu": "Negeri Seribu Megalit",
+    "tipe_halaman": "(Alias: negeri-seribu-megalit)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=269"
+  },
+  {
+    "nama_menu": "Buku Pariwisata",
+    "tipe_halaman": "(Alias: buku-pariwisata)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=270"
+  },
+  {
+    "nama_menu": "Data Hunian Hotel",
+    "tipe_halaman": "(Alias: data-hunian-hotel)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=297"
+  },
+  {
+    "nama_menu": "Data Statistik Kunjungan Wisatawan",
+    "tipe_halaman": "(Alias: data-kunjungan-wisatawan)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=117"
+  },
+  {
+    "nama_menu": "Ekonomi Kreatif",
+    "tipe_halaman": "(Alias: ekonomi-kreatif)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=294"
+  },
+  {
+    "nama_menu": "Pelaku Ekonomi Kreatif",
+    "tipe_halaman": "(Alias: pelaku-ekonomi-kreatif)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=298"
+  },
+  {
+    "nama_menu": "Sumber Daya Pariwisata & Ekonomi Kreatif",
+    "tipe_halaman": "(Alias: sumber-daya-pariwisata-ekonomi-kreatif)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=295"
+  },
+  {
+    "nama_menu": "Rencana Terbit",
+    "tipe_halaman": "(Alias: rencana-terbit)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=299"
+  },
+  {
+    "nama_menu": "SOP",
+    "tipe_halaman": "(Alias: sop)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=308"
+  },
+  {
+    "nama_menu": "LAPOR!",
+    "tipe_halaman": "",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=121"
+  },
+  {
+    "nama_menu": "Search",
+    "tipe_halaman": "(Alias: search)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=183"
+  },
+  {
+    "nama_menu": "Verifikasi",
+    "tipe_halaman": "(Alias: verifikasi)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=124"
+  },
+  {
+    "nama_menu": "Dokumen Verifikasi",
+    "tipe_halaman": "(Alias: dokumen-verifikasi)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=146"
+  },
+  {
+    "nama_menu": "Draft Sertifikat",
+    "tipe_halaman": "(Alias: draft-sertifikat)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=147"
+  },
+  {
+    "nama_menu": "Data Hasil Verifikasi",
+    "tipe_halaman": "(Alias: data-hasil-verifikasi)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=148"
+  },
+  {
+    "nama_menu": "Covid-19",
+    "tipe_halaman": "(Alias: covid-19)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=186"
+  },
+  {
+    "nama_menu": "Covid-19 Sulteng",
+    "tipe_halaman": "",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=162"
+  },
+  {
+    "nama_menu": "Vaksinasi",
+    "tipe_halaman": "",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=163"
+  },
+  {
+    "nama_menu": "Sulteng Tanggap Covid-19",
+    "tipe_halaman": "",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=195"
+  },
+  {
+    "nama_menu": "FDP 2022",
+    "tipe_halaman": "(Alias: fdp-2022)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=227"
+  },
+  {
+    "nama_menu": "About",
+    "tipe_halaman": "(Alias: about)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=239"
+  },
+  {
+    "nama_menu": "Logo FDP 2022",
+    "tipe_halaman": "",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=238"
+  },
+  {
+    "nama_menu": "Profil FDP 2022",
+    "tipe_halaman": "",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=240"
+  },
+  {
+    "nama_menu": "Gerakan Posting FDP 2022",
+    "tipe_halaman": "",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=232"
+  },
+  {
+    "nama_menu": "Twibbon FDP 2022",
+    "tipe_halaman": "",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=235"
+  },
+  {
+    "nama_menu": "Official Theme Song",
+    "tipe_halaman": "",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=228"
+  },
+  {
+    "nama_menu": "Official Social Media",
+    "tipe_halaman": "(Alias: official-social-media)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=237"
+  },
+  {
+    "nama_menu": "Official Facebook Page",
+    "tipe_halaman": "",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=230"
+  },
+  {
+    "nama_menu": "Official Instagram Page",
+    "tipe_halaman": "",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=231"
+  },
+  {
+    "nama_menu": "Ofiicial Youtube Channel",
+    "tipe_halaman": "",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=229"
+  },
+  {
+    "nama_menu": "Twibbon",
+    "tipe_halaman": "(Alias: twibbon)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=234"
+  },
+  {
+    "nama_menu": "Twibbon #2",
+    "tipe_halaman": "",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=236"
+  },
+  {
+    "nama_menu": "Registration",
+    "tipe_halaman": "(Alias: registration)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=241"
+  },
+  {
+    "nama_menu": "Kontes Musik Kerambangan",
+    "tipe_halaman": "",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=233"
+  },
+  {
+    "nama_menu": "FDP 2022 Tenant Registration",
+    "tipe_halaman": "",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=242"
+  },
+  {
+    "nama_menu": "Laporan Harta Kekayaan Penyelenggara Negara (LHKPN) Tahun 2025",
+    "tipe_halaman": "(Alias: laporan-harta-kekayaan-penyelenggara-negara-lhkpn-tahun-2025)",
+    "link_admin": "/administrator/index.php?option=com_menus&task=item.edit&id=306"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "banner_ke": 1,
+    "judul": "Image 1",
+    "url_gambar": "https://pariwisata.sultengprov.go.id/images/slider2/62_sulteng-dispar_2026_edit_copy_2.jpg",
+    "link_tujuan": "https://pariwisata.sultengprov.go.id/#"
+  },
+  {
+    "banner_ke": 2,
+    "judul": "komitmen",
+    "url_gambar": "https://pariwisata.sultengprov.go.id/images/komitmen-ppid.jpg",
+    "link_tujuan": "http://pariwisata.sultengprov.go.id/informasi-publik.html"
+  },
+  {
+    "banner_ke": 3,
+    "judul": "ppid dispar",
+    "url_gambar": "http://pariwisata.sultengprov.go.id/images/SLIDER-PPID.jpg",
+    "link_tujuan": "https://pariwisata.sultengprov.go.id/informasi-publik/ppid.html"
+  },
+  {
+    "banner_ke": 4,
+    "judul": "dispar-IKU",
+    "url_gambar": "http://pariwisata.sultengprov.go.id/images/slider2/iku_dispar_26.jpg",
+    "link_tujuan": "https://pariwisata.sultengprov.go.id/#"
+  },
+  {
+    "banner_ke": 5,
+    "judul": "BERANI-SAMPOROA",
+    "url_gambar": "https://pariwisata.sultengprov.go.id/images/command_center_-_berani_samporoa_2025_edit.jpg",
+    "link_tujuan": "https://wa.me/08116662222"
+  },
+  {
+    "banner_ke": 6,
+    "judul": "SP4L",
+    "url_gambar": "https://pariwisata.sultengprov.go.id/images/2025/sp4l-2025.png",
+    "link_tujuan": "https://www.lapor.go.id/instansi/pemerintah-provinsi-sulawesi-tengah"
+  },
+  {
+    "banner_ke": 7,
+    "judul": "anti korupsi",
+    "url_gambar": "https://pariwisata.sultengprov.go.id/images/no_4_1.png",
+    "link_tujuan": "https://pariwisata.sultengprov.go.id/#"
+  },
+  {
+    "banner_ke": 8,
+    "judul": "cekidot",
+    "url_gambar": "https://pariwisata.sultengprov.go.id/images/cekidot.jpg",
+    "link_tujuan": "https://cekidot.dispar.my.id/kirim-surat"
+  }
+]
