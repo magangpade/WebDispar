@@ -93,7 +93,13 @@ const EkonomiKreatif = () => {
                     <p className="text-xs text-gray-500 line-clamp-2">{item.deskripsi}</p>
                   </div>
                   {item.file && (
-                    <a href={`/uploads/${item.file}`} download className="flex-shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-lg bg-primary-600 hover:bg-primary-700 text-white transition-colors">
+                    <a
+                      href={item.file.startsWith('http') ? item.file : `/uploads/${item.file}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-lg bg-primary-600 hover:bg-primary-700 text-white transition-colors"
+                      title="Unduh / Buka Direktori"
+                    >
                       <Download size={16} />
                     </a>
                   )}

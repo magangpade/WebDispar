@@ -35,7 +35,7 @@ const SumberDaya = () => {
               deskripsi: item.deskripsi || '',
               icon: idx === 0 ? Users : Award,
               color: idx === 0 ? 'from-blue-500 to-blue-700' : 'from-gold-500 to-orange-700',
-              file: item.file ? `/uploads/${item.file}` : null,
+              file: item.file ? (item.file.startsWith('http') ? item.file : `/uploads/${item.file}`) : null,
             }))
           );
         }
@@ -81,10 +81,11 @@ const SumberDaya = () => {
                   </div>
                   <a
                     href={item.file || '#'}
-                    download
-                    className="flex-shrink-0 btn-primary text-sm"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-shrink-0 btn-primary text-sm inline-flex items-center gap-2"
                   >
-                    <Download size={16} /> Unduh
+                    <Download size={16} /> Unduh / Lihat
                   </a>
                 </motion.div>
               ))}

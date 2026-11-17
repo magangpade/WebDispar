@@ -50,8 +50,9 @@ const PaketWisata = () => {
                 >
                   <div className="relative overflow-hidden h-52">
                     <img
-                      src={item.gambar ? `/uploads/${item.gambar}` : '/placeholder.jpg'}
+                      src={item.gambar ? (item.gambar.startsWith('http') ? item.gambar : `/uploads/${item.gambar}`) : '/slider/Slider.jpg'}
                       alt={item.judul}
+                      onError={(e) => { e.currentTarget.src = '/slider/Slider.jpg'; }}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
                   </div>
@@ -62,7 +63,7 @@ const PaketWisata = () => {
                       {item.file_pdf && (
                         <>
                           <a
-                            href={`/uploads/${item.file_pdf}`}
+                            href={item.file_pdf.startsWith('http') ? item.file_pdf : `/uploads/${item.file_pdf}`}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex-1 inline-flex items-center justify-center gap-1.5 bg-primary-600 hover:bg-primary-700 text-white text-xs font-semibold py-2 px-3 rounded-lg transition-colors"
@@ -70,8 +71,9 @@ const PaketWisata = () => {
                             <Eye size={14} /> Lihat
                           </a>
                           <a
-                            href={`/uploads/${item.file_pdf}`}
-                            download
+                            href={item.file_pdf.startsWith('http') ? item.file_pdf : `/uploads/${item.file_pdf}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="inline-flex items-center justify-center gap-1.5 border border-primary-600 text-primary-600 hover:bg-primary-50 text-xs font-semibold py-2 px-3 rounded-lg transition-colors"
                           >
                             <Download size={14} /> Unduh
