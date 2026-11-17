@@ -137,11 +137,41 @@ const StatistikKunjungan = () => {
             </div>
           )}
 
-          {/* Download */}
-          <div className="mt-8 text-center">
-            <a href="/dokumen/statistik-kunjungan.pdf" download className="btn-outline">
-              <Download size={18} /> Unduh Data Lengkap (PDF)
-            </a>
+          {/* Dokumen Laporan Kunjungan Resmi */}
+          <div className="mt-12">
+            <h3 className="font-bold text-navy-900 text-xl mb-4 flex items-center gap-2">
+              <Download className="text-primary-600" size={22} />
+              Arsip & Laporan Analisis Kunjungan Wisatawan (Resmi)
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[
+                { tahun: '2024', judul: 'Analisis Kunjungan Wisatawan Tahun 2024', url: 'https://pariwisata.sultengprov.go.id/images/Wisatawan/ANALISIS_KUNJUNGAN_WISATAWAN_2024.pdf' },
+                { tahun: '2023', judul: 'Analisis Kunjungan Wisatawan Tahun 2023', url: 'https://pariwisata.sultengprov.go.id/images/Wisatawan/ANALISIS_DATA_KUNJUNGAN_WISATAWAN_TAHUN_2023_1.pdf' },
+                { tahun: '2022', judul: 'Analisis Kunjungan Wisatawan Tahun 2022', url: 'https://pariwisata.sultengprov.go.id/images/Wisatawan/ANALISIS_KUNJUNGAN_WISATAWAN_TAHUN_2022.pdf' },
+                { tahun: '2020', judul: 'Data Kunjungan Wisatawan Tahun 2020', url: 'https://drive.google.com/file/d/1bU2LPZB17uuohtmI8xw6v6WJRcRS7IWl/view?usp=sharing' },
+                { tahun: '2019', judul: 'Data Kunjungan Wisatawan Tahun 2019', url: 'https://drive.google.com/file/d/1f7neMSL151KaUCGxvMmeNTLyFsT177y_/view?usp=sharing' },
+              ].map((doc, i) => (
+                <a
+                  key={i}
+                  href={doc.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="card p-4 flex items-center justify-between hover:border-primary-500 hover:shadow-md transition-all group"
+                >
+                  <div>
+                    <span className="text-xs font-bold text-primary-600 bg-primary-50 px-2.5 py-0.5 rounded-full inline-block mb-1">
+                      Tahun {doc.tahun}
+                    </span>
+                    <h4 className="text-sm font-semibold text-navy-900 group-hover:text-primary-600 transition-colors line-clamp-1">
+                      {doc.judul}
+                    </h4>
+                  </div>
+                  <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 group-hover:bg-primary-600 group-hover:text-white transition-all">
+                    <Download size={14} />
+                  </div>
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </section>

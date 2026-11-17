@@ -81,17 +81,24 @@ const ProfilPimpinan = () => {
                 className="card p-5 text-center group hover:shadow-xl transition-all"
               >
                 <div className="relative w-24 h-24 mx-auto mb-4">
-                  {p.foto ? (
+                  {p.foto && (
                     <img
-                      src={`/uploads/${p.foto}`}
+                      src={p.foto.startsWith('http') ? p.foto : `/uploads/${p.foto}`}
                       alt={p.nama}
-                      className="w-full h-full object-cover rounded-full border-4 border-gold-400 group-hover:scale-105 transition-transform"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                        const fallback = e.currentTarget.parentElement.querySelector('.initials-fallback');
+                        if (fallback) fallback.style.display = 'flex';
+                      }}
+                      className="w-full h-full object-cover rounded-full border-4 border-gold-400 group-hover:scale-105 transition-transform shadow-md"
                     />
-                  ) : (
-                    <div className="w-full h-full rounded-full bg-gradient-to-br from-primary-600 to-navy-800 border-4 border-gold-400 flex items-center justify-center text-white font-bold text-2xl group-hover:scale-105 transition-transform">
-                      {getInitials(p.nama)}
-                    </div>
                   )}
+                  <div
+                    className="initials-fallback w-full h-full rounded-full bg-gradient-to-br from-primary-600 to-navy-800 border-4 border-gold-400 flex items-center justify-center text-white font-bold text-2xl group-hover:scale-105 transition-transform shadow-md"
+                    style={{ display: p.foto ? 'none' : 'flex' }}
+                  >
+                    {getInitials(p.nama)}
+                  </div>
                 </div>
                 <h3 className="font-bold text-navy-900 text-sm mb-1">{p.nama}</h3>
                 <p className="text-xs text-gray-500 mb-2">NIP. {p.nip}</p>
