@@ -4,37 +4,54 @@ import { BookOpen, Download, Eye } from 'lucide-react';
 import { motion } from 'framer-motion';
 import api from '../../services/api';
 
-const DEFAULT_MAJALAH = [
-  { judul: 'Majalah Pesona Sulawesi Tengah Edisi I - 2019', file_pdf: '/majalah/pesona-edisi-1-2019.pdf' },
-  { judul: 'Majalah Pesona Sulawesi Tengah Edisi II - 2021', file_pdf: '/majalah/pesona-edisi-2-2021.pdf' },
-  { judul: 'Pesona Kuliner Sulawesi Tengah', file_pdf: '/majalah/pesona-kuliner.pdf' },
-  { judul: 'Negeri Seribu Megalit', file_pdf: '/majalah/negeri-seribu-megalit.pdf' },
+const OFFICIAL_MAJALAH = [
+  {
+    judul: 'Majalah Pesona Sulawesi Tengah Edisi I - 2019',
+    cover: 'https://pariwisata.sultengprov.go.id/images/MAJALAH_PESONA_Edisi_I_001.jpg',
+    file_pdf: 'https://drive.google.com/file/d/1BH5D9htVorzZskUNze_oOToALnh60Q--/view?usp=sharing',
+    baca_link: 'https://drive.google.com/file/d/1BH5D9htVorzZskUNze_oOToALnh60Q--/preview'
+  },
+  {
+    judul: 'Majalah Pesona Sulawesi Tengah Edisi II - 2021',
+    cover: 'https://pariwisata.sultengprov.go.id/images/MAJALAH_PESONA_Edisi_II_2021_001.jpg',
+    file_pdf: 'https://drive.google.com/file/d/1MrIDSlwSyPWU3gR-h3VM2HhJk4EBrj8L/view?usp=sharing',
+    baca_link: 'https://drive.google.com/file/d/1MrIDSlwSyPWU3gR-h3VM2HhJk4EBrj8L/preview'
+  },
+  {
+    judul: 'Booklet Pesona Kuliner Sulawesi Tengah',
+    cover: 'https://pariwisata.sultengprov.go.id/images/seribumegalit/Booklet_Pesona_Kuliner_-_page_1_001.jpg',
+    file_pdf: 'https://drive.google.com/file/d/1hgWI1J6RfyS0PljRM6pNQ1D4NO7QDZSN/view?usp=sharing',
+    baca_link: 'https://anyflip.com/hwsca/xoqq/'
+  },
+  {
+    judul: 'Booklet Negeri Seribu Megalit',
+    cover: 'https://pariwisata.sultengprov.go.id/images/seribumegalit/Booklet_megalit_2023_fix_001.jpg',
+    file_pdf: 'https://drive.google.com/file/d/1Qxi2nxgq18p52nIS3cqcRbHqDAwbK7V1/view?pli=1',
+    baca_link: 'https://drive.google.com/file/d/1Qxi2nxgq18p52nIS3cqcRbHqDAwbK7V1/preview'
+  },
 ];
 
 const Majalah = () => {
-  const [majalah, setMajalah] = useState(DEFAULT_MAJALAH);
+  const [majalah, setMajalah] = useState(OFFICIAL_MAJALAH);
 
   useEffect(() => {
     api.get('/profil/majalah')
-      .then((res) => { if (res.data?.length) setMajalah(res.data); })
+      .then((res) => {
+        if (res.data?.length && res.data[0].file_pdf) {
+          setMajalah(res.data);
+        }
+      })
       .catch(() => {});
   }, []);
 
-  const coverColors = [
-    'from-blue-600 to-navy-900',
-    'from-purple-600 to-pink-700',
-    'from-gold-500 to-orange-700',
-    'from-green-600 to-teal-800',
-  ];
-
   return (
     <>
-      <Helmet><title>Majalah - Dinas Pariwisata Sulteng</title></Helmet>
+      <Helmet><title>Majalah & Publikasi - Dinas Pariwisata Sulteng</title></Helmet>
 
       <div className="bg-gradient-to-r from-navy-900 to-primary-800 py-16 lg:py-20">
         <div className="container-custom">
-          <h1 className="text-3xl lg:text-5xl font-extrabold text-white">Majalah</h1>
-          <p className="text-white/70 mt-2">Publikasi resmi Dinas Pariwisata Provinsi Sulawesi Tengah</p>
+          <h1 className="text-3xl lg:text-5xl font-extrabold text-white">Majalah & Publikasi</h1>
+          <p className="text-white/70 mt-2">Koleksi majalah resmi dan booklet promosi pariwisata Sulawesi Tengah</p>
         </div>
       </div>
 
@@ -48,49 +65,55 @@ const Majalah = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="card group overflow-hidden"
+                className="card group overflow-hidden flex flex-col justify-between"
               >
-                {/* Cover */}
-                <div className={`aspect-[3/4] bg-gradient-to-br ${coverColors[idx % coverColors.length]} p-6 flex flex-col justify-between text-white relative overflow-hidden`}>
-                  <div className="absolute inset-0 opacity-20">
-                    <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-white/20" />
-                    <div className="absolute -bottom-10 -left-10 w-32 h-32 rounded-full bg-white/10" />
-                  </div>
-                  <BookOpen size={32} className="text-gold-300 relative" />
-                  <div className="relative">
-                    <p className="text-xs uppercase tracking-wider text-gold-300 mb-2">Majalah Pariwisata</p>
-                    <h3 className="font-bold text-lg leading-tight">{m.judul}</h3>
-                  </div>
+                {/* Cover Image */}
+                <div className="aspect-[3/4] bg-slate-100 relative overflow-hidden flex items-center justify-center">
+                  {m.cover ? (
+                    <img
+                      src={m.cover}
+                      alt={m.judul}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                      }}
+                    />
+                  ) : (
+                    <BookOpen size={48} className="text-slate-400" />
+                  )}
                 </div>
 
-                {/* Actions */}
-                <div className="p-4 flex items-center justify-between gap-2">
-                  <a
-                    href={m.file_pdf || m.file || '#'}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 inline-flex items-center justify-center gap-1.5 bg-primary-600 hover:bg-primary-700 text-white text-sm font-semibold py-2 px-3 rounded-lg transition-colors"
-                  >
-                    <Eye size={14} /> Baca
-                  </a>
-                  <a
-                    href={m.file_pdf || m.file || '#'}
-                    download
-                    className="inline-flex items-center justify-center gap-1.5 border border-primary-600 text-primary-600 hover:bg-primary-50 text-sm font-semibold py-2 px-3 rounded-lg transition-colors"
-                  >
-                    <Download size={14} />
-                  </a>
+                {/* Details */}
+                <div className="p-4 flex-1 flex flex-col justify-between">
+                  <div className="mb-4">
+                    <p className="text-xs uppercase tracking-wider text-amber-600 font-semibold mb-1">Edisi Resmi</p>
+                    <h3 className="font-bold text-slate-900 text-sm leading-snug line-clamp-2">{m.judul}</h3>
+                  </div>
+
+                  {/* Actions */}
+                  <div className="flex items-center gap-2 pt-2 border-t border-slate-100">
+                    <a
+                      href={m.baca_link || m.file_pdf || '#'}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 inline-flex items-center justify-center gap-1.5 bg-amber-500 hover:bg-amber-600 text-slate-950 text-xs font-bold py-2.5 px-3 rounded-lg transition-colors"
+                    >
+                      <Eye size={14} /> Baca
+                    </a>
+                    <a
+                      href={m.file_pdf || '#'}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-1.5 border border-slate-200 hover:bg-slate-100 text-slate-700 text-xs font-semibold py-2.5 px-3 rounded-lg transition-colors"
+                      title="Unduh PDF"
+                    >
+                      <Download size={14} /> Unduh
+                    </a>
+                  </div>
                 </div>
               </motion.div>
             ))}
           </div>
-
-          {majalah.length === 0 && (
-            <div className="text-center py-16 text-gray-400">
-              <BookOpen size={48} className="mx-auto mb-4 opacity-30" />
-              <p>Belum ada majalah tersedia</p>
-            </div>
-          )}
         </div>
       </section>
     </>
