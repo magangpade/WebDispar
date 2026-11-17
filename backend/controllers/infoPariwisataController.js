@@ -111,7 +111,7 @@ exports.getStatistikKunjungan = async (req, res) => {
       query += ' WHERE tahun = ?';
       params.push(tahun);
     }
-    query += ' ORDER BY tahun DESC, bulan ASC';
+    query += " ORDER BY tahun DESC, FIELD(bulan, 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember') ASC";
     const [rows] = await db.query(query, params);
     res.json(rows);
   } catch (err) {

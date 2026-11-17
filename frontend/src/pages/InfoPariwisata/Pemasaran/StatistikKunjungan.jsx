@@ -5,17 +5,28 @@ import { TrendingUp, Users, Download } from 'lucide-react';
 import { motion } from 'framer-motion';
 import api from '../../../services/api';
 
-const COLORS = ['#0ea5e9', '#facc15', '#10b981', '#f97316', '#8b5cf6', '#ec4899'];
+const COLORS = ['#0ea5e9', '#f59e0b'];
+
+const monthOrder = [
+  'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
+  'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'
+];
 
 const StatistikKunjungan = () => {
   const [data, setData] = useState([]);
   const [tahun, setTahun] = useState(new Date().getFullYear().toString());
   const [loading, setLoading] = useState(true);
+  const [viewMode, setViewMode] = useState('both'); // 'both' | 'domestik' | 'mancanegara'
 
   useEffect(() => {
     setLoading(true);
     api.get(`/info-pariwisata/statistik-kunjungan?tahun=${tahun}`)
-      .then((res) => setData(res.data || []))
+      .then((res) => {
+        const sorted = (res.data || []).sort(
+          (a, b) => monthOrder.indexOf(a.bulan) - monthOrder.indexOf(b.bulan)
+        );
+        setData(sorted);
+      })
       .catch(() => {})
       .finally(() => setLoading(false));
   }, [tahun]);
@@ -101,37 +112,157 @@ const StatistikKunjungan = () => {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               {/* Bar Chart */}
               <div className="lg:col-span-2 card p-6">
-                <h3 className="font-bold text-navy-900 mb-4">Jumlah Kunjungan per Bulan ({tahun})</h3>
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
+                  <div>
+                    <h3 className="font-bold text-navy-900 text-lg">Jumlah Kunjungan per Bulan ({tahun})</h3>
+                    <p className="text-xs text-gray-500 mt-0.5">Perbandingan kunjungan wisatawan Nusantara dan Mancanegara</p>
+                  </div>
+                  <div className="flex items-center gap-1.5 bg-slate-100 p-1 rounded-xl text-xs font-semibold">
+                    <button
+                      onClick={() => setViewMode('both')}
+                      className={`px-3 py-1.5 rounded-lg transition-all ${
+                        viewMode === 'both' ? 'bg-white text-navy-900 shadow-sm' : 'text-gray-600 hover:text-navy-900'
+                      }`}
+                    >
+                      Keduanya (Dual Skala)
+                    </button>
+                    <button
+                      onClick={() => setViewMode('domestik')}
+                      className={`px-3 py-1.5 rounded-lg transition-all ${
+                        viewMode === 'domestik' ? 'bg-sky-500 text-white shadow-sm' : 'text-gray-600 hover:text-navy-900'
+                      }`}
+                    >
+                      Domestik
+                    </button>
+                    <button
+                      onClick={() => setViewMode('mancanegara')}
+                      className={`px-3 py-1.5 rounded-lg transition-all ${
+                        viewMode === 'mancanegara' ? 'bg-amber-500 text-white shadow-sm' : 'text-gray-600 hover:text-navy-900'
+                      }`}
+                    >
+                      Mancanegara
+                    </button>
+                  </div>
+                </div>
+
                 <div className="h-80">
-                  <ResponsiveContainer>
-                    <BarChart data={data}>
-                      <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-                      <XAxis dataKey="bulan" tick={{ fontSize: 12 }} />
-                      <YAxis tick={{ fontSize: 12 }} />
-                      <Tooltip contentStyle={{ borderRadius: 8 }} />
-                      <Legend />
-                      <Bar dataKey="domestik" name="Domestik" fill="#0ea5e9" radius={[4, 4, 0, 0]} />
-                      <Bar dataKey="mancanegara" name="Mancanegara" fill="#facc15" radius={[4, 4, 0, 0]} />
+                  <ResponsiveContainer width="100%" height="100%">
+                    <BarChart data={data} margin={{ top: 10, right: viewMode === 'both' ? 20 : 10, left: 10, bottom: 5 }}>
+                      <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" />
+                      <XAxis dataKey="bulan" tick={{ fontSize: 11, fill: '#64748b' }} />
+                      
+                      {/* Sumbu Y Kiri untuk Domestik */}
+                      {(viewMode === 'both' || viewMode === 'domestik') && (
+                        <YAxis
+                          yAxisId="left"
+                          orientation="left"
+                          stroke="#0284c7"
+                          tick={{ fontSize: 11, fill: '#0284c7' }}
+                          tickFormatter={(val) => (val >= 1000 ? `${(val / 1000).toLocaleString('id-ID')}k` : val)}
+                        />
+                      )}
+
+                      {/* Sumbu Y Kanan Khusus Mancanegara agar Bar Kuning Jelas & Proporsional */}
+                      {(viewMode === 'both' || viewMode === 'mancanegara') && (
+                        <YAxis
+                          yAxisId="right"
+                          orientation={viewMode === 'mancanegara' ? 'left' : 'right'}
+                          stroke="#d97706"
+                          tick={{ fontSize: 11, fill: '#d97706' }}
+                          tickFormatter={(val) => val.toLocaleString('id-ID')}
+                        />
+                      )}
+
+                      <Tooltip
+                        contentStyle={{ borderRadius: 10, border: '1px solid #e2e8f0', boxShadow: '0 4px 14px rgba(0,0,0,0.08)' }}
+                        formatter={(value, name) => [
+                          `${Number(value).toLocaleString('id-ID')} Orang`,
+                          name
+                        ]}
+                      />
+                      <Legend
+                        verticalAlign="bottom"
+                        wrapperStyle={{ paddingTop: 12 }}
+                      />
+
+                      {(viewMode === 'both' || viewMode === 'domestik') && (
+                        <Bar
+                          yAxisId="left"
+                          dataKey="domestik"
+                          name={viewMode === 'both' ? 'Domestik (Skala Kiri)' : 'Wisatawan Domestik'}
+                          fill="#0ea5e9"
+                          radius={[4, 4, 0, 0]}
+                        />
+                      )}
+
+                      {(viewMode === 'both' || viewMode === 'mancanegara') && (
+                        <Bar
+                          yAxisId="right"
+                          dataKey="mancanegara"
+                          name={viewMode === 'both' ? 'Mancanegara (Skala Kanan)' : 'Wisatawan Mancanegara'}
+                          fill="#f59e0b"
+                          radius={[4, 4, 0, 0]}
+                        />
+                      )}
                     </BarChart>
                   </ResponsiveContainer>
                 </div>
               </div>
 
               {/* Pie Chart */}
-              <div className="card p-6">
-                <h3 className="font-bold text-navy-900 mb-4">Proporsi Kunjungan</h3>
-                <div className="h-80">
-                  <ResponsiveContainer>
+              <div className="card p-6 flex flex-col justify-between">
+                <div>
+                  <h3 className="font-bold text-navy-900 text-lg mb-1">Proporsi Kunjungan</h3>
+                  <p className="text-xs text-gray-500 mb-4">Perbandingan total tahun {tahun}</p>
+                </div>
+                
+                <div className="h-64 relative">
+                  <ResponsiveContainer width="100%" height="100%">
                     <PieChart>
-                      <Pie data={pieData} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={100} label>
-                        {pieData.map((_, idx) => (
-                          <Cell key={idx} fill={COLORS[idx]} />
-                        ))}
+                      <Pie
+                        data={pieData}
+                        dataKey="value"
+                        nameKey="name"
+                        cx="50%"
+                        cy="50%"
+                        innerRadius={55}
+                        outerRadius={90}
+                        minAngle={20}
+                        paddingAngle={4}
+                        label={({ name, percent }) => `${name} ${(percent * 100).toFixed(1)}%`}
+                      >
+                        <Cell fill="#0ea5e9" stroke="#fff" strokeWidth={2} />
+                        <Cell fill="#f59e0b" stroke="#fff" strokeWidth={2} />
                       </Pie>
-                      <Tooltip />
-                      <Legend />
+                      <Tooltip
+                        formatter={(val) => `${Number(val).toLocaleString('id-ID')} Orang`}
+                      />
                     </PieChart>
                   </ResponsiveContainer>
+                </div>
+
+                {/* Legend & Detail Badges */}
+                <div className="grid grid-cols-2 gap-2 mt-4 pt-3 border-t border-slate-100">
+                  <div className="bg-sky-50 rounded-xl p-2.5 text-center border border-sky-100">
+                    <div className="flex items-center justify-center gap-1.5 text-xs font-semibold text-sky-700 mb-0.5">
+                      <span className="w-2.5 h-2.5 rounded-full bg-sky-500 inline-block" />
+                      Domestik
+                    </div>
+                    <p className="text-sm font-bold text-navy-900">{totalDomestik.toLocaleString('id-ID')}</p>
+                    <p className="text-[10px] text-sky-600 font-medium">
+                      {total > 0 ? ((totalDomestik / total) * 100).toFixed(2) : 0}%
+                    </p>
+                  </div>
+                  <div className="bg-amber-50 rounded-xl p-2.5 text-center border border-amber-100">
+                    <div className="flex items-center justify-center gap-1.5 text-xs font-semibold text-amber-700 mb-0.5">
+                      <span className="w-2.5 h-2.5 rounded-full bg-amber-500 inline-block" />
+                      Mancanegara
+                    </div>
+                    <p className="text-sm font-bold text-navy-900">{totalMancanegara.toLocaleString('id-ID')}</p>
+                    <p className="text-[10px] text-amber-600 font-medium">
+                      {total > 0 ? ((totalMancanegara / total) * 100).toFixed(2) : 0}%
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
