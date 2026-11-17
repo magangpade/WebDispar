@@ -50,7 +50,8 @@ const LatestNewsSection = ({ berita, loading }) => {
     const img = b.gambar || b.foto;
     if (!img) return fallbackNews[idx % 3].image;
     if (img.startsWith('http://') || img.startsWith('https://')) return img;
-    return `${import.meta.env.VITE_API_URL?.replace('/api', '') || 'http://localhost:5000'}/uploads/${img}`;
+    if (img.startsWith('/')) return img;
+    return `/uploads/${img}`;
   };
 
   const newsItems = berita.length > 0

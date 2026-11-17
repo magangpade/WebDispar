@@ -34,8 +34,9 @@ const SidebarWidget = () => {
                 className="flex gap-3 group hover:bg-gray-50 p-2 rounded-lg transition-colors"
               >
                 <img
-                  src={b.gambar ? `/uploads/${b.gambar}` : '/placeholder-news.jpg'}
+                  src={b.gambar ? (b.gambar.startsWith('http') || b.gambar.startsWith('/') ? b.gambar : `/uploads/${b.gambar}`) : '/slider/Slider.jpg'}
                   alt={b.judul}
+                  onError={(e) => { e.currentTarget.src = '/slider/Slider.jpg'; }}
                   className="w-16 h-16 object-cover rounded-lg flex-shrink-0"
                 />
                 <div className="flex-1 min-w-0">

@@ -94,7 +94,7 @@ const EkonomiKreatif = () => {
                   </div>
                   {item.file && (
                     <a
-                      href={item.file.startsWith('http') ? item.file : `/uploads/${item.file}`}
+                      href={item.file.startsWith('http') || item.file.startsWith('/') ? item.file : `/uploads/${item.file}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex-shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-lg bg-primary-600 hover:bg-primary-700 text-white transition-colors"

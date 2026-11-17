@@ -29,6 +29,7 @@ const DaftarInformasiPublik = () => {
     const target = item.link || item.file;
     if (!target) return '#';
     if (target.startsWith('http://') || target.startsWith('https://')) return target;
+    if (target.startsWith('/')) return target;
     return `/uploads/${target}`;
   };
 

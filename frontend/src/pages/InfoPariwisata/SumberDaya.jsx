@@ -35,7 +35,7 @@ const SumberDaya = () => {
               deskripsi: item.deskripsi || '',
               icon: idx === 0 ? Users : Award,
               color: idx === 0 ? 'from-blue-500 to-blue-700' : 'from-gold-500 to-orange-700',
-              file: item.file ? (item.file.startsWith('http') ? item.file : `/uploads/${item.file}`) : null,
+              file: item.file ? (item.file.startsWith('http') || item.file.startsWith('/') ? item.file : `/uploads/${item.file}`) : null,
             }))
           );
         }

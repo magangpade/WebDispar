@@ -74,7 +74,7 @@ const DesaWisata = () => {
                 >
                   <div className="relative overflow-hidden h-52">
                     <img
-                      src={item.gambar ? (item.gambar.startsWith('http') ? item.gambar : `/uploads/${item.gambar}`) : '/slider/Slider.jpg'}
+                      src={item.gambar ? (item.gambar.startsWith('http') || item.gambar.startsWith('/') ? item.gambar : `/uploads/${item.gambar}`) : '/slider/Slider.jpg'}
                       alt={item.nama}
                       onError={(e) => {
                         e.currentTarget.src = '/slider/Slider.jpg';

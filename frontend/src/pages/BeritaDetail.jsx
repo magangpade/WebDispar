@@ -45,7 +45,7 @@ const BeritaDetail = () => {
         <div className="container-custom max-w-4xl">
           {berita.gambar && (
             <img
-              src={berita.gambar.startsWith('http') ? berita.gambar : `/uploads/${berita.gambar}`}
+              src={berita.gambar.startsWith('http') || berita.gambar.startsWith('/') ? berita.gambar : `/uploads/${berita.gambar}`}
               alt={berita.judul}
               onError={(e) => {
                 e.currentTarget.style.display = 'none';

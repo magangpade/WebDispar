@@ -13,6 +13,7 @@ const BeritaCard = ({ berita, index = 0 }) => {
   const getImageSrc = (img) => {
     if (!img) return '/slider/Slider.jpg';
     if (img.startsWith('http://') || img.startsWith('https://')) return img;
+    if (img.startsWith('/')) return img;
     return `/uploads/${img}`;
   };
 
