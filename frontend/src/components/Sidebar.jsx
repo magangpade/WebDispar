@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import {
   Home, Newspaper, Building, FileText, Compass, Calendar,
   ChevronDown, ChevronRight, Search, ShieldCheck, Clock,
-  ExternalLink, Sparkles, MessageSquare
+  ExternalLink, Sparkles, MessageSquare, X
 } from 'lucide-react';
 
 const KABUPATEN_LIST = [
@@ -226,36 +226,47 @@ export const Sidebar = ({ isMobileOpen, setIsMobileOpen, language, setLanguage }
   return (
     <aside
       className={`
-        fixed lg:sticky top-0 left-0 z-50 lg:z-30
-        w-72 shrink-0 h-screen
+        fixed top-0 left-0 z-50
+        w-80 max-w-[85vw] h-screen
         flex flex-col justify-between
-        bg-gradient-to-b from-[#5C2180] via-[#383087] to-[#143D8F]
-        text-white border-r border-[#1D3D63]
+        bg-gradient-to-b from-[#0B192C] via-[#162740] to-[#0B192C]
+        text-white border-r border-white/10
         shadow-2xl transition-transform duration-300 ease-in-out
-        ${isMobileOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
+        lg:hidden
+        ${isMobileOpen ? 'translate-x-0' : '-translate-x-full pointer-events-none'}
       `}
     >
       {/* Top Section Scrollable */}
       <div className="flex-1 overflow-y-auto overflow-x-hidden p-5 flex flex-col gap-4">
-        {/* Logo Branding */}
-        <Link to="/" onClick={handleLinkClick} className="flex items-center gap-3 pb-4 border-b border-white/10 group">
-          <img
-            src="/dinas pariwisata-COLOR WHITE.png"
-            alt="Logo Dinas Pariwisata Sulteng"
-            className="w-11 h-auto object-contain drop-shadow"
-          />
-          <div className="flex flex-col">
-            <span className="text-[10px] font-bold text-[#FBBF24] tracking-wider uppercase leading-tight font-sans">
-              PEMERINTAH PROVINSI SULTENG
-            </span>
-            <span className="text-sm font-extrabold text-white tracking-wide leading-tight group-hover:text-amber-300 transition-colors">
-              DINAS PARIWISATA
-            </span>
-            <span className="text-[10px] text-blue-200/90 font-medium leading-tight">
-              Negeri Seribu Megalit
-            </span>
-          </div>
-        </Link>
+        {/* Logo Branding & Mobile Close Button */}
+        <div className="flex items-center justify-between pb-4 border-b border-white/10">
+          <Link to="/" onClick={handleLinkClick} className="flex items-center gap-3 group">
+            <img
+              src="/dinas pariwisata-COLOR WHITE.png"
+              alt="Logo Dinas Pariwisata Sulteng"
+              className="w-10 h-auto object-contain drop-shadow"
+            />
+            <div className="flex flex-col">
+              <span className="text-[10px] font-bold text-[#FBBF24] tracking-wider uppercase leading-tight font-sans">
+                PEMERINTAH PROVINSI SULTENG
+              </span>
+              <span className="text-sm font-extrabold text-white tracking-wide leading-tight group-hover:text-amber-300 transition-colors">
+                DINAS PARIWISATA
+              </span>
+              <span className="text-[10px] text-blue-200/90 font-medium leading-tight">
+                Negeri Seribu Megalit
+              </span>
+            </div>
+          </Link>
+          <button
+            type="button"
+            onClick={() => setIsMobileOpen(false)}
+            aria-label="Tutup Menu"
+            className="p-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-slate-300 hover:text-white transition-colors"
+          >
+            <X className="w-5 h-5" />
+          </button>
+        </div>
 
         {/* Live Info & Language */}
         <div className="flex items-center justify-between px-2.5 py-2 rounded-lg bg-black/20 border border-white/5 text-[11px]">
