@@ -1,0 +1,4812 @@
+[
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/IMG_20250918_223453_635.jpg",
+    "subPath": "images/IMG_20250918_223453_635.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1296,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/IMG_20250918_223455_529.jpg",
+    "subPath": "images/IMG_20250918_223455_529.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1296,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/sekretariat/sidak2.jpg",
+    "subPath": "images/pressrelease/sekretariat/sidak2.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1304,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Kadis-pesona/WhatsApp_Image_2023-08-11_at_215110.jpeg",
+    "subPath": "images/pressrelease/Kadis-pesona/WhatsApp_Image_2023-08-11_at_215110.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1338,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/WhatsApp_Image_2023-06-18_at_213609.jpeg",
+    "subPath": "images/pressrelease/WhatsApp_Image_2023-06-18_at_213609.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1342,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Pemasaran/MG_1450-1024x683.jpg",
+    "subPath": "images/pressrelease/Pemasaran/MG_1450-1024x683.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1343,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Pemasaran/WhatsApp_Image_2023-06-10_at_215449_1.jpeg",
+    "subPath": "images/pressrelease/Pemasaran/WhatsApp_Image_2023-06-10_at_215449_1.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1345,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Pemasaran/WhatsApp_Image_2023-06-10_at_215450_1.jpeg",
+    "subPath": "images/pressrelease/Pemasaran/WhatsApp_Image_2023-06-10_at_215450_1.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1346,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Pemasaran/Raodhah_02.jpg",
+    "subPath": "images/pressrelease/Pemasaran/Raodhah_02.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1350,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DONGGALCOE/tenun_donggala.jpg",
+    "subPath": "images/DONGGALCOE/tenun_donggala.jpg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1355,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DONGGALCOE/tenun_donggala_3.jpg",
+    "subPath": "images/DONGGALCOE/tenun_donggala_3.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1355,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DONGGALCOE/tenun_donggala_4.jpg",
+    "subPath": "images/DONGGALCOE/tenun_donggala_4.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1355,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/KADIS-MENTERI/WhatsApp_Image_2023-02-28_at_203501.jpeg",
+    "subPath": "images/pressrelease/KADIS-MENTERI/WhatsApp_Image_2023-02-28_at_203501.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1360,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/KADIS-MENTERI/WhatsApp_Image_2023-02-28_at_203502.jpeg",
+    "subPath": "images/pressrelease/KADIS-MENTERI/WhatsApp_Image_2023-02-28_at_203502.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1360,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Diskominfo/WhatsApp_Image_2022-12-14_at_10837_PM.jpeg",
+    "subPath": "images/pressrelease/Diskominfo/WhatsApp_Image_2022-12-14_at_10837_PM.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1375,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Industri/WhatsApp_Image_2022-12-12_at_122037.jpeg",
+    "subPath": "images/pressrelease/Industri/WhatsApp_Image_2022-12-12_at_122037.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1376,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Industri/WhatsApp_Image_2022-12-08_at_094828.jpeg",
+    "subPath": "images/pressrelease/Industri/WhatsApp_Image_2022-12-08_at_094828.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1377,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Pemasaran/WhatsApp_Image_2022-11-26_at_30113_PM_2.jpeg",
+    "subPath": "images/pressrelease/Pemasaran/WhatsApp_Image_2022-11-26_at_30113_PM_2.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1380,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Pemasaran/WhatsApp_Image_2022-11-26_at_30114_PM.jpeg",
+    "subPath": "images/pressrelease/Pemasaran/WhatsApp_Image_2022-11-26_at_30114_PM.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1380,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Destinasi/WhatsApp_Image_2022-11-17_at_42118_PM.jpeg",
+    "subPath": "images/pressrelease/Destinasi/WhatsApp_Image_2022-11-17_at_42118_PM.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1384,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/KopiFest/WhatsApp_Image_2022-11-17_at_35228_PM.jpeg",
+    "subPath": "images/pressrelease/KopiFest/WhatsApp_Image_2022-11-17_at_35228_PM.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1385,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Kaltim01/sulteng-kaltim-kadispar.jpg",
+    "subPath": "images/pressrelease/Kaltim01/sulteng-kaltim-kadispar.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1386,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/batik-bomba.jpg",
+    "subPath": "images/pressrelease/batik-bomba.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1387,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/fdp-a2.png",
+    "subPath": "images/fdp-a2.png",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1388,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/fdp-a3.png",
+    "subPath": "images/fdp-a3.png",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1388,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/rakornis2022/_MG_5413.jpg",
+    "subPath": "images/pressrelease/rakornis2022/_MG_5413.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1430,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/rakornis2022/WhatsApp_Image_2022-03-25_at_105049_PM.jpeg",
+    "subPath": "images/pressrelease/rakornis2022/WhatsApp_Image_2022-03-25_at_105049_PM.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1430,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/rakornis2022/_MG_5441.jpg",
+    "subPath": "images/pressrelease/rakornis2022/_MG_5441.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1430,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/AKI2022/WhatsApp_Image_2022-03-01_at_115326_AM.jpeg",
+    "subPath": "images/AKI2022/WhatsApp_Image_2022-03-01_at_115326_AM.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1434,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/TRAVEL_GUIDE_001.jpg",
+    "subPath": "images/TRAVEL_GUIDE_001.jpg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1435,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/sekretariat/WhatsApp_Image_2022-02-21_at_33521_PM.jpeg",
+    "subPath": "images/pressrelease/sekretariat/WhatsApp_Image_2022-02-21_at_33521_PM.jpeg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1437,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/sekretariat/WhatsApp_Image_2022-02-02_at_83636_AM.jpeg",
+    "subPath": "images/pressrelease/sekretariat/WhatsApp_Image_2022-02-02_at_83636_AM.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1446,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/CalendarEvents/Kalender_Event_2026_2_compressed_001.jpg",
+    "subPath": "images/CalendarEvents/Kalender_Event_2026_2_compressed_001.jpg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1447,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/CalendarEvents/Kalender_Event_2026_2_compressed_compressed.pdf",
+    "subPath": "images/CalendarEvents/Kalender_Event_2026_2_compressed_compressed.pdf",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1447,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Kadis-pesona/WhatsApp_Image_2022-01-31_at_75738_AM.jpeg",
+    "subPath": "images/pressrelease/Kadis-pesona/WhatsApp_Image_2022-01-31_at_75738_AM.jpeg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1448,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Kadis-pesona/213r4t5yukjhg.jpg",
+    "subPath": "images/pressrelease/Kadis-pesona/213r4t5yukjhg.jpg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1449,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/KADIS-DPR/pak_nyoman_x_ibu_sakinah.jpg",
+    "subPath": "images/pressrelease/KADIS-DPR/pak_nyoman_x_ibu_sakinah.jpg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1450,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/KADIS-MENTERI/WhatsApp_Image_2022-01-25_at_72415_PM.jpeg",
+    "subPath": "images/pressrelease/KADIS-MENTERI/WhatsApp_Image_2022-01-25_at_72415_PM.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1451,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/KADIS-MENTERI/WhatsApp_Image_2022-01-25_at_72414_PM.jpeg",
+    "subPath": "images/pressrelease/KADIS-MENTERI/WhatsApp_Image_2022-01-25_at_72414_PM.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1451,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/KADIS-MENTERI/WhatsApp_Image_2022-01-25_at_72408_PM.jpeg",
+    "subPath": "images/pressrelease/KADIS-MENTERI/WhatsApp_Image_2022-01-25_at_72408_PM.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1451,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/sekretariat/WhatsApp_Image_2022-01-10_at_81455_AM_1.jpeg",
+    "subPath": "images/pressrelease/sekretariat/WhatsApp_Image_2022-01-10_at_81455_AM_1.jpeg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1452,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/WhatsApp_Image_2022-01-05_at_33652_PM.jpeg",
+    "subPath": "images/pressrelease/WhatsApp_Image_2022-01-05_at_33652_PM.jpeg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1453,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Kaltim01/WhatsApp_Image_2021-12-23_at_84452_PM.jpeg",
+    "subPath": "images/pressrelease/Kaltim01/WhatsApp_Image_2021-12-23_at_84452_PM.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1454,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/TransSulteng/IMG-20211220-WA0146.jpg",
+    "subPath": "images/pressrelease/TransSulteng/IMG-20211220-WA0146.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1455,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/TransSulteng/IMG-20211220-WA0137.jpg",
+    "subPath": "images/pressrelease/TransSulteng/IMG-20211220-WA0137.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1456,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/3qw45erdtfyj_2.jpg",
+    "subPath": "images/pressrelease/3qw45erdtfyj_2.jpg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1457,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/data-pariwisata.html",
+    "subPath": "data-pariwisata.html",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1458,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Diskominfo/WhatsApp_Image_2021-10-15_at_24814_PM.jpeg",
+    "subPath": "images/pressrelease/Diskominfo/WhatsApp_Image_2021-10-15_at_24814_PM.jpeg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1460,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Diskominfo/WhatsApp_Image_2021-10-15_at_24816_PM_1.jpeg",
+    "subPath": "images/pressrelease/Diskominfo/WhatsApp_Image_2021-10-15_at_24816_PM_1.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1460,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/WhatsApp_Image_2021-10-15_at_121520_PM_1.jpeg",
+    "subPath": "images/pressrelease/WhatsApp_Image_2021-10-15_at_121520_PM_1.jpeg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1461,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/qe78.jpeg",
+    "subPath": "images/pressrelease/qe78.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1461,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/1234.jpeg",
+    "subPath": "images/pressrelease/1234.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1461,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/SAVE_20210401_130503-730x410.jpeg",
+    "subPath": "images/pressrelease/SAVE_20210401_130503-730x410.jpeg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1462,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/WhatsApp_Image_2021-09-30_at_93645_AM.jpeg",
+    "subPath": "images/pressrelease/WhatsApp_Image_2021-09-30_at_93645_AM.jpeg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1463,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/WhatsApp_Image_2021-09-24_at_75716_PM2.jpeg",
+    "subPath": "images/WhatsApp_Image_2021-09-24_at_75716_PM2.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1464,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/WhatsApp_Image_2021-09-24_at_75716_PM3.jpeg",
+    "subPath": "images/WhatsApp_Image_2021-09-24_at_75716_PM3.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1464,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/WhatsApp_Image_2021-09-24_at_75716_PM1.jpeg",
+    "subPath": "images/WhatsApp_Image_2021-09-24_at_75716_PM1.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1464,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/industri-2376.jpg",
+    "subPath": "images/industri-2376.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1465,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/WhatsApp_Image_2021-08-10_at_100336_PM1.jpeg",
+    "subPath": "images/WhatsApp_Image_2021-08-10_at_100336_PM1.jpeg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1466,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/WhatsApp_Image_2021-08-10_at_100336_PM.jpeg",
+    "subPath": "images/WhatsApp_Image_2021-08-10_at_100336_PM.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1466,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/Desa_Tete_B_001.jpg",
+    "subPath": "images/Desa_Tete_B_001.jpg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1468,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/Desa_Tete_B_002.jpg",
+    "subPath": "images/Desa_Tete_B_002.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1468,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/Desa_Tete_B_003.jpg",
+    "subPath": "images/Desa_Tete_B_003.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1468,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/Desa_Tete_B_004.jpg",
+    "subPath": "images/Desa_Tete_B_004.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1468,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/Desa_Tete_B_005.jpg",
+    "subPath": "images/Desa_Tete_B_005.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1468,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/Desa_Tete_B_007.jpg",
+    "subPath": "images/Desa_Tete_B_007.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1468,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/Desa_Tete_B_008.jpg",
+    "subPath": "images/Desa_Tete_B_008.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1468,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/Desa_Tete_B_009.jpg",
+    "subPath": "images/Desa_Tete_B_009.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1468,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/Desa_Tete_B_010.jpg",
+    "subPath": "images/Desa_Tete_B_010.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1468,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/Desa_Tete_B_011.jpg",
+    "subPath": "images/Desa_Tete_B_011.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1468,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/Kepegawaian/Pemangku_Jabatan_PD_Prov_Sulawesi_Tengah_-_copy_2.pdf",
+    "subPath": "images/Kepegawaian/Pemangku_Jabatan_PD_Prov_Sulawesi_Tengah_-_copy_2.pdf",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1469,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/Cascading_DISPAR_2021_002.jpg",
+    "subPath": "images/Cascading_DISPAR_2021_002.jpg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1473,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/Direktori/Leaflet_Palu1c.jpg",
+    "subPath": "images/Direktori/Leaflet_Palu1c.jpg",
+    "refCount": 4,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1474,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/Wisatawan/ANALISIS_KUNJUNGAN_WISATAWAN_TAHUN_2022.pdf",
+    "subPath": "images/Wisatawan/ANALISIS_KUNJUNGAN_WISATAWAN_TAHUN_2022.pdf",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1478,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/Wisatawan/ANALISIS_DATA_KUNJUNGAN_WISATAWAN_TAHUN_2023_1.pdf",
+    "subPath": "images/Wisatawan/ANALISIS_DATA_KUNJUNGAN_WISATAWAN_TAHUN_2023_1.pdf",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1478,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/Wisatawan/ANALISIS_KUNJUNGAN_WISATAWAN_2024.pdf",
+    "subPath": "images/Wisatawan/ANALISIS_KUNJUNGAN_WISATAWAN_2024.pdf",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1478,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2026/Struktur_Organisasi_dan_Tugas_Fungsi_Dinas_Pariwisata.pdf",
+    "subPath": "images/2026/Struktur_Organisasi_dan_Tugas_Fungsi_Dinas_Pariwisata.pdf",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1479,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DISPERINDAGCOE/WhatsApp_Image_2021-02-26_at_32118_PM.jpeg",
+    "subPath": "images/DISPERINDAGCOE/WhatsApp_Image_2021-02-26_at_32118_PM.jpeg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1481,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DISPERINDAGCOE/WhatsApp_Image_2021-02-26_at_32540_PM.jpeg",
+    "subPath": "images/DISPERINDAGCOE/WhatsApp_Image_2021-02-26_at_32540_PM.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1481,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DISPERINDAGCOE/WhatsApp_Image_2021-02-26_at_32632_PM.jpeg",
+    "subPath": "images/DISPERINDAGCOE/WhatsApp_Image_2021-02-26_at_32632_PM.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1481,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DONGGALCOE/WhatsApp-Image-2020-03-14-at-101614-1024x683.jpg",
+    "subPath": "images/DONGGALCOE/WhatsApp-Image-2020-03-14-at-101614-1024x683.jpg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1482,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/BUOLCOE/8_Festival_Pesona_Buol_1.jpeg",
+    "subPath": "images/BUOLCOE/8_Festival_Pesona_Buol_1.jpeg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1483,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/BUOLCOE/8_Festival_Pesona_Buol_2.jpeg",
+    "subPath": "images/BUOLCOE/8_Festival_Pesona_Buol_2.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1483,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/BUOLCOE/8_Festival_Pesona_Buol_3.jpeg",
+    "subPath": "images/BUOLCOE/8_Festival_Pesona_Buol_3.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1483,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/BUOLCOE/8_Festival_Pesona_Buol_4.jpeg",
+    "subPath": "images/BUOLCOE/8_Festival_Pesona_Buol_4.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1483,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/BUOLCOE/8_Festival_Pesona_Buol_6.jpeg",
+    "subPath": "images/BUOLCOE/8_Festival_Pesona_Buol_6.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1483,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/TOJOCOE/6_Festival_Pesona_Lipuku_1.jpg",
+    "subPath": "images/TOJOCOE/6_Festival_Pesona_Lipuku_1.jpg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1484,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/TOJOCOE/6_Festival_Pesona_Lipuku_2.jpg",
+    "subPath": "images/TOJOCOE/6_Festival_Pesona_Lipuku_2.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1484,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/TOJOCOE/6_Festival_Pesona_Lipuku_3.jpg",
+    "subPath": "images/TOJOCOE/6_Festival_Pesona_Lipuku_3.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1484,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/TOJOCOE/6_Festival_Pesona_Lipuku_5.jpg",
+    "subPath": "images/TOJOCOE/6_Festival_Pesona_Lipuku_5.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1484,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/POSOCOE/IMG-20210120-WA0007.jpg",
+    "subPath": "images/POSOCOE/IMG-20210120-WA0007.jpg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1485,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/POSOCOE/IMG-20210120-WA0008.jpg",
+    "subPath": "images/POSOCOE/IMG-20210120-WA0008.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1485,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/POSOCOE/IMG-20210120-WA0009.jpg",
+    "subPath": "images/POSOCOE/IMG-20210120-WA0009.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1485,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/POSOCOE/IMG-20210120-WA0010.jpg",
+    "subPath": "images/POSOCOE/IMG-20210120-WA0010.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1485,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/POSOCOE/IMG-20210120-WA0011.jpg",
+    "subPath": "images/POSOCOE/IMG-20210120-WA0011.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1485,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/BANGGAILAUT/kabarselebes_id.jpg",
+    "subPath": "images/BANGGAILAUT/kabarselebes_id.jpg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1486,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/BANGGAICOE/01.jpg",
+    "subPath": "images/BANGGAICOE/01.jpg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1487,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/BANGGAICOE/iNews_id.jpg",
+    "subPath": "images/BANGGAICOE/iNews_id.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1487,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/BANGGAICOE/inilahkoran_com.jpg",
+    "subPath": "images/BANGGAICOE/inilahkoran_com.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1487,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/SIGICOE/WhatsApp_Image_2021-01-25_at_094110.jpeg",
+    "subPath": "images/SIGICOE/WhatsApp_Image_2021-01-25_at_094110.jpeg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1488,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/SIGICOE/WhatsApp_Image_2021-01-25_at_094115.jpeg",
+    "subPath": "images/SIGICOE/WhatsApp_Image_2021-01-25_at_094115.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1488,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/SIGICOE/WhatsApp_Image_2021-01-25_at_094115_1.jpeg",
+    "subPath": "images/SIGICOE/WhatsApp_Image_2021-01-25_at_094115_1.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1488,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/SIGICOE/WhatsApp_Image_2021-01-25_at_094116.jpeg",
+    "subPath": "images/SIGICOE/WhatsApp_Image_2021-01-25_at_094116.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1488,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/palucoe/01.jpg",
+    "subPath": "images/palucoe/01.jpg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1489,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/palucoe/03.jpg",
+    "subPath": "images/palucoe/03.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1489,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/palucoe/02.jpg",
+    "subPath": "images/palucoe/02.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1489,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/palucoe/04.jpg",
+    "subPath": "images/palucoe/04.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1489,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/palucoe/05.jpg",
+    "subPath": "images/palucoe/05.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1489,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/palucoe/06.jpg",
+    "subPath": "images/palucoe/06.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1489,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/palucoe/07.jpg",
+    "subPath": "images/palucoe/07.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1489,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/flyer_02_-_rundown_rakornis.jpg",
+    "subPath": "images/flyer_02_-_rundown_rakornis.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1491,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2026/WhatsApp_Image_2026-11-11_at_141152.jpeg",
+    "subPath": "images/2026/WhatsApp_Image_2026-11-11_at_141152.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1258,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2026/MONEV_PPID_Diskominfo.jpeg",
+    "subPath": "images/2026/MONEV_PPID_Diskominfo.jpeg",
+    "refCount": 3,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1259,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2026/WhatsApp_Image_2026-08-28_at_191133.jpeg",
+    "subPath": "images/2026/WhatsApp_Image_2026-08-28_at_191133.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1260,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2026/WhatsApp_Image_2026-08-18_at_225417.jpeg",
+    "subPath": "images/2026/WhatsApp_Image_2026-08-18_at_225417.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1261,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2026/desk_ppid.jpg",
+    "subPath": "images/2026/desk_ppid.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1262,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2026/IMG-20260427-WA0149-2048x1366.jpg",
+    "subPath": "images/2026/IMG-20260427-WA0149-2048x1366.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1263,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2026/bmkg.jpeg",
+    "subPath": "images/2026/bmkg.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1264,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2026/RENUNGAN_TMP.jpeg",
+    "subPath": "images/2026/RENUNGAN_TMP.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1265,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2026/IMG-20260328-WA0058-2048x1364.jpg",
+    "subPath": "images/2026/IMG-20260328-WA0058-2048x1364.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1266,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2026/LOMBA_HUT_81_RI.jpeg",
+    "subPath": "images/2026/LOMBA_HUT_81_RI.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1267,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2026/UPACARA_HUT_81_RI.jpeg",
+    "subPath": "images/2026/UPACARA_HUT_81_RI.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1268,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2026/WhatsApp_Image_2026-08-06_at_230500.jpeg",
+    "subPath": "images/2026/WhatsApp_Image_2026-08-06_at_230500.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1269,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2026/WhatsApp_Image_2026-07-30_at_184258.jpeg",
+    "subPath": "images/2026/WhatsApp_Image_2026-07-30_at_184258.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1270,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2026/WhatsApp_Image_2026-08-04_at_133457.jpeg",
+    "subPath": "images/2026/WhatsApp_Image_2026-08-04_at_133457.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1271,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2026/WhatsApp_Image_2026-07-27_at_092915.jpeg",
+    "subPath": "images/2026/WhatsApp_Image_2026-07-27_at_092915.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1272,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2026/WhatsApp_Image_2026-07-27_at_092848.jpeg",
+    "subPath": "images/2026/WhatsApp_Image_2026-07-27_at_092848.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1273,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2026/bola_gembira.jpeg",
+    "subPath": "images/2026/bola_gembira.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1274,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2026/Gemini_Generated_Image_wtrawnwtrawnwtra.png",
+    "subPath": "images/2026/Gemini_Generated_Image_wtrawnwtrawnwtra.png",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1275,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2026/Rilis_3.jpeg",
+    "subPath": "images/2026/Rilis_3.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1276,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2026/buya_subi_final_check.jpeg",
+    "subPath": "images/2026/buya_subi_final_check.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1277,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2026/2L9A9818.jpg",
+    "subPath": "images/2026/2L9A9818.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1278,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2026/WhatsApp_Image_2026-04-13_at_103652.jpeg",
+    "subPath": "images/2026/WhatsApp_Image_2026-04-13_at_103652.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1279,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2026/WhatsApp_Image_2026-04-09_at_145107.jpeg",
+    "subPath": "images/2026/WhatsApp_Image_2026-04-09_at_145107.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1280,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2026/WhatsApp_Image_2026-04-08_at_101015.jpeg",
+    "subPath": "images/2026/WhatsApp_Image_2026-04-08_at_101015.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1281,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2026/WhatsApp_Image_2026-04-01_at_151316.jpeg",
+    "subPath": "images/2026/WhatsApp_Image_2026-04-01_at_151316.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1282,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2026/rilis_web.jpeg",
+    "subPath": "images/2026/rilis_web.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1283,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2026/IMG_9581JPG.jpeg",
+    "subPath": "images/2026/IMG_9581JPG.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1284,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2026/WhatsApp_Image_2026-02-24_at_135159.jpeg",
+    "subPath": "images/2026/WhatsApp_Image_2026-02-24_at_135159.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1285,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2026/PK_100.jpeg",
+    "subPath": "images/2026/PK_100.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1286,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2026/WhatsApp_Image_2026-02-13_at_152026.jpeg",
+    "subPath": "images/2026/WhatsApp_Image_2026-02-13_at_152026.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1287,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2026/WhatsApp_Image_2026-02-09_at_090632.jpeg",
+    "subPath": "images/2026/WhatsApp_Image_2026-02-09_at_090632.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1288,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2026/Air_Asia.jpg",
+    "subPath": "images/2026/Air_Asia.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1289,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2026/66e6dad70681b145437335.jpg",
+    "subPath": "images/2026/66e6dad70681b145437335.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1290,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2025/WhatsApp_Image_2026-01-26_at_092152.jpeg",
+    "subPath": "images/2025/WhatsApp_Image_2026-01-26_at_092152.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1291,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2026/WhatsApp_Image_2026-01-13_at_105532.jpeg",
+    "subPath": "images/2026/WhatsApp_Image_2026-01-13_at_105532.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1292,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2025/Rilis_baru.jpg",
+    "subPath": "images/2025/Rilis_baru.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1293,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2025/Anti_Korupsi1.jpg",
+    "subPath": "images/2025/Anti_Korupsi1.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1294,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2025/WhatsApp_Image_2025-09-20_at_123607.jpeg",
+    "subPath": "images/2025/WhatsApp_Image_2025-09-20_at_123607.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1295,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2025/IMG_20250918_223459_033.jpg",
+    "subPath": "images/2025/IMG_20250918_223459_033.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1296,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2025/1.jpeg",
+    "subPath": "images/2025/1.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1297,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2025/WhatsApp_Image_2025-09-09_at_171730.jpeg",
+    "subPath": "images/2025/WhatsApp_Image_2025-09-09_at_171730.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1298,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2025/WhatsApp_Image_2025-09-04_at_173729.jpeg",
+    "subPath": "images/2025/WhatsApp_Image_2025-09-04_at_173729.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1299,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/sekretariat/WhatsApp_Image_2025-09-01_at_125333.jpeg",
+    "subPath": "images/pressrelease/sekretariat/WhatsApp_Image_2025-09-01_at_125333.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1300,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2025/zitaanjani.jpg",
+    "subPath": "images/2025/zitaanjani.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1301,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/sekretariat/WhatsApp_Image_2025-08-15_at_155309.jpeg",
+    "subPath": "images/pressrelease/sekretariat/WhatsApp_Image_2025-08-15_at_155309.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1302,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/WhatsApp_Image_2025-01-13_at_110240.jpeg",
+    "subPath": "images/pressrelease/WhatsApp_Image_2025-01-13_at_110240.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1303,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/sekretariat/sidak1.jpg",
+    "subPath": "images/pressrelease/sekretariat/sidak1.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1304,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Pemasaran/WhatsApp_Image_2024-12-03_at_143651_1.jpeg",
+    "subPath": "images/pressrelease/Pemasaran/WhatsApp_Image_2024-12-03_at_143651_1.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1305,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Kelembagaan/WhatsApp_Image_2024-06-26_at_142914.jpeg",
+    "subPath": "images/pressrelease/Kelembagaan/WhatsApp_Image_2024-06-26_at_142914.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1306,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Kelembagaan/WhatsApp_Image_2024-06-26_at_142441.jpeg",
+    "subPath": "images/pressrelease/Kelembagaan/WhatsApp_Image_2024-06-26_at_142441.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1307,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Pemasaran/IMG_1.jpeg",
+    "subPath": "images/pressrelease/Pemasaran/IMG_1.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1308,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Pemasaran/upload.jpg",
+    "subPath": "images/pressrelease/Pemasaran/upload.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1309,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Pemasaran/penasaran.jpg",
+    "subPath": "images/pressrelease/Pemasaran/penasaran.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1310,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Pemasaran/IMG.jpeg",
+    "subPath": "images/pressrelease/Pemasaran/IMG.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1311,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Pemasaran/foto__zoom.png",
+    "subPath": "images/pressrelease/Pemasaran/foto__zoom.png",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1312,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Industri/kolaborasi.jpg",
+    "subPath": "images/pressrelease/Industri/kolaborasi.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1313,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Industri/festival.jpg",
+    "subPath": "images/pressrelease/Industri/festival.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1314,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Industri/persiapan.jpg",
+    "subPath": "images/pressrelease/Industri/persiapan.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1315,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Industri/workshop_pariwisata.jpg",
+    "subPath": "images/pressrelease/Industri/workshop_pariwisata.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1316,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Industri/Workshop_Pengembangan_Gula_Aren_di_Kabupaten_Toli2_docx.jpg",
+    "subPath": "images/pressrelease/Industri/Workshop_Pengembangan_Gula_Aren_di_Kabupaten_Toli2_docx.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1317,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Kelembagaan/WhatsApp_Image_2023-10-26_at_115548.jpeg",
+    "subPath": "images/pressrelease/Kelembagaan/WhatsApp_Image_2023-10-26_at_115548.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1318,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Destinasi/kegiaan_sosialisasi_CHSE.jpg",
+    "subPath": "images/pressrelease/Destinasi/kegiaan_sosialisasi_CHSE.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1319,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Pemasaran/2.jpg",
+    "subPath": "images/pressrelease/Pemasaran/2.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1320,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Pemasaran/KEN-2023.jpg",
+    "subPath": "images/pressrelease/Pemasaran/KEN-2023.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1321,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Pemasaran/z.jpg",
+    "subPath": "images/pressrelease/Pemasaran/z.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1322,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Pemasaran/1.jpg",
+    "subPath": "images/pressrelease/Pemasaran/1.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1323,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Diskominfo/BBWI.jpg",
+    "subPath": "images/pressrelease/Diskominfo/BBWI.jpg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1324,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Diskominfo/DKIPS.jpg",
+    "subPath": "images/pressrelease/Diskominfo/DKIPS.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1326,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Diskominfo/IMG_20230623_131107.jpg",
+    "subPath": "images/pressrelease/Diskominfo/IMG_20230623_131107.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1327,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Diskominfo/IMG-20230626-WA0143.jpg",
+    "subPath": "images/pressrelease/Diskominfo/IMG-20230626-WA0143.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1328,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Diskominfo/IMG_20230626_184510.jpg",
+    "subPath": "images/pressrelease/Diskominfo/IMG_20230626_184510.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1329,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Diskominfo/IMG_20230707_184454.jpg",
+    "subPath": "images/pressrelease/Diskominfo/IMG_20230707_184454.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1330,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Diskominfo/IMG-20230711-WA0040.jpg",
+    "subPath": "images/pressrelease/Diskominfo/IMG-20230711-WA0040.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1331,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Diskominfo/IMG_20230713_082328.jpg",
+    "subPath": "images/pressrelease/Diskominfo/IMG_20230713_082328.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1332,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Diskominfo/IMG_20230714_042923.jpg",
+    "subPath": "images/pressrelease/Diskominfo/IMG_20230714_042923.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1333,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Diskominfo/IMG-20230704-WA0123.jpg",
+    "subPath": "images/pressrelease/Diskominfo/IMG-20230704-WA0123.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1334,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Diskominfo/IMG_20230716_134647.jpg",
+    "subPath": "images/pressrelease/Diskominfo/IMG_20230716_134647.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1335,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Diskominfo/IMG_20230717_160448-300x169.jpg",
+    "subPath": "images/pressrelease/Diskominfo/IMG_20230717_160448-300x169.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1336,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Kelembagaan/WhatsApp_Image_2023-08-30_at_090940_1.jpeg",
+    "subPath": "images/pressrelease/Kelembagaan/WhatsApp_Image_2023-08-30_at_090940_1.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1337,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Kadis-pesona/WhatsApp_Image_2023-08-11_at_215110_1.jpeg",
+    "subPath": "images/pressrelease/Kadis-pesona/WhatsApp_Image_2023-08-11_at_215110_1.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1338,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Pemasaran/WhatsApp_Image_2023-08-02_at_150427.jpeg",
+    "subPath": "images/pressrelease/Pemasaran/WhatsApp_Image_2023-08-02_at_150427.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1339,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Pemasaran/bali.jpg",
+    "subPath": "images/pressrelease/Pemasaran/bali.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1340,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/WhatsApp_Image_2023-07-18_at_100924.jpeg",
+    "subPath": "images/pressrelease/WhatsApp_Image_2023-07-18_at_100924.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1341,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/WhatsApp_Image_2023-06-18_at_213608_1.jpeg",
+    "subPath": "images/pressrelease/WhatsApp_Image_2023-06-18_at_213608_1.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1342,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Pemasaran/WhatsApp_Image_2023-06-18_at_004951.jpeg",
+    "subPath": "images/pressrelease/Pemasaran/WhatsApp_Image_2023-06-18_at_004951.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1343,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Diskominfo/DSC_4965_-scaled.jpg",
+    "subPath": "images/pressrelease/Diskominfo/DSC_4965_-scaled.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1344,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Pemasaran/WhatsApp_Image_2023-06-10_at_215451.jpeg",
+    "subPath": "images/pressrelease/Pemasaran/WhatsApp_Image_2023-06-10_at_215451.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1345,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Pemasaran/WhatsApp_Image_2023-06-10_at_215449.jpeg",
+    "subPath": "images/pressrelease/Pemasaran/WhatsApp_Image_2023-06-10_at_215449.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1346,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Pemasaran/WhatsApp_Image_2023-06-03_at_200505.jpeg",
+    "subPath": "images/pressrelease/Pemasaran/WhatsApp_Image_2023-06-03_at_200505.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1347,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Poso-pusat-survei-geologi-1536x1152.jpg",
+    "subPath": "images/pressrelease/Poso-pusat-survei-geologi-1536x1152.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1348,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/WhatsApp_Image_2023-05-27_at_121107.jpeg",
+    "subPath": "images/pressrelease/WhatsApp_Image_2023-05-27_at_121107.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1349,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Pemasaran/Raodhah_01.jpg",
+    "subPath": "images/pressrelease/Pemasaran/Raodhah_01.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1350,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Pemasaran/mandura2023.jpg",
+    "subPath": "images/pressrelease/Pemasaran/mandura2023.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1351,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/IMG_20230413_114915.jpg",
+    "subPath": "images/pressrelease/IMG_20230413_114915.jpg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1352,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/WhatsApp_Image_2023-04-14_at_142548.jpeg",
+    "subPath": "images/pressrelease/WhatsApp_Image_2023-04-14_at_142548.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1353,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/wwwww_2023-03-31_at_152308.jpeg",
+    "subPath": "images/pressrelease/wwwww_2023-03-31_at_152308.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1356,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/PPID_Image_2023-04-03_at_122924.jpeg",
+    "subPath": "images/pressrelease/PPID_Image_2023-04-03_at_122924.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1357,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/WhatsApp_Image_2023-03-28_at_092826.jpeg",
+    "subPath": "images/pressrelease/WhatsApp_Image_2023-03-28_at_092826.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1358,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/KADIS-MENTERI/IMG-20230309-WA0001-664x498.jpg",
+    "subPath": "images/pressrelease/KADIS-MENTERI/IMG-20230309-WA0001-664x498.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1359,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/WhatsApp_Image_2023-02-28_at_153517.jpeg",
+    "subPath": "images/pressrelease/WhatsApp_Image_2023-02-28_at_153517.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1360,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/WhatsApp_Image_2023-02-28_at_093938.jpeg",
+    "subPath": "images/pressrelease/WhatsApp_Image_2023-02-28_at_093938.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1361,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/WhatsApp_Image_2023-02-22_at_085733.jpeg",
+    "subPath": "images/pressrelease/WhatsApp_Image_2023-02-22_at_085733.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1362,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/WhatsApp_Image_2023-02-21_at_111459.jpeg",
+    "subPath": "images/pressrelease/WhatsApp_Image_2023-02-21_at_111459.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1363,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/IMG-20230215-WA0016.jpg",
+    "subPath": "images/pressrelease/IMG-20230215-WA0016.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1364,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/WhatsApp_Image_2023-02-17_at_093847.jpeg",
+    "subPath": "images/pressrelease/WhatsApp_Image_2023-02-17_at_093847.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1365,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/WhatsApp_Image_2023-02-16_at_144437.jpeg",
+    "subPath": "images/pressrelease/WhatsApp_Image_2023-02-16_at_144437.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1366,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/1924985904_1.jpg",
+    "subPath": "images/pressrelease/1924985904_1.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1367,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/IMG_20230123_193114.jpg",
+    "subPath": "images/pressrelease/IMG_20230123_193114.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1368,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Gub_nilai_RB.jpg",
+    "subPath": "images/pressrelease/Gub_nilai_RB.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1369,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Lead_2_1.jpeg",
+    "subPath": "images/pressrelease/Lead_2_1.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1370,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/WhatsApp_Image_2023-01-31_at_085028_1.jpeg",
+    "subPath": "images/pressrelease/WhatsApp_Image_2023-01-31_at_085028_1.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1371,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/WhatsApp_Image_2023-01-30_at_163616.jpeg",
+    "subPath": "images/pressrelease/WhatsApp_Image_2023-01-30_at_163616.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1372,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/WhatsApp_Image_2023-01-13_at_095559.jpeg",
+    "subPath": "images/pressrelease/WhatsApp_Image_2023-01-13_at_095559.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1373,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/DESK.jpeg",
+    "subPath": "images/pressrelease/DESK.jpeg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1374,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Diskominfo/WhatsApp_Image_2022-12-14_at_10853_PM.jpeg",
+    "subPath": "images/pressrelease/Diskominfo/WhatsApp_Image_2022-12-14_at_10853_PM.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1375,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Industri/WhatsApp_Image_2022-12-12_at_122029.jpeg",
+    "subPath": "images/pressrelease/Industri/WhatsApp_Image_2022-12-12_at_122029.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1376,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Industri/WhatsApp_Image_2022-12-08_at_094828_1.jpeg",
+    "subPath": "images/pressrelease/Industri/WhatsApp_Image_2022-12-08_at_094828_1.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1377,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/KADIS-DPR/WhatsApp_Image_2022-12-08_at_070456.jpeg",
+    "subPath": "images/pressrelease/KADIS-DPR/WhatsApp_Image_2022-12-08_at_070456.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1378,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/WhatsApp_Image_2022-11-29_at_215147.jpeg",
+    "subPath": "images/pressrelease/WhatsApp_Image_2022-11-29_at_215147.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1379,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Pemasaran/WhatsApp_Image_2022-11-26_at_30113_PM.jpeg",
+    "subPath": "images/pressrelease/Pemasaran/WhatsApp_Image_2022-11-26_at_30113_PM.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1380,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/festival_tumbe.jpg",
+    "subPath": "images/pressrelease/festival_tumbe.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1381,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Diskominfo/WhatsApp_Image_2022-11-23_at_34531_PM.jpeg",
+    "subPath": "images/pressrelease/Diskominfo/WhatsApp_Image_2022-11-23_at_34531_PM.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1382,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Destinasi/CamScanner_11-22-2022_1459_3_001.jpg",
+    "subPath": "images/pressrelease/Destinasi/CamScanner_11-22-2022_1459_3_001.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1383,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Destinasi/WhatsApp_Image_2022-11-17_at_42152_PM.jpeg",
+    "subPath": "images/pressrelease/Destinasi/WhatsApp_Image_2022-11-17_at_42152_PM.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1384,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/KopiFest/WhatsApp_Image_2022-11-17_at_35233_PM.jpeg",
+    "subPath": "images/pressrelease/KopiFest/WhatsApp_Image_2022-11-17_at_35233_PM.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1385,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Kaltim01/sulteng-kaltim-gub.png",
+    "subPath": "images/pressrelease/Kaltim01/sulteng-kaltim-gub.png",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1386,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/elonmusk-bomba.jpg",
+    "subPath": "images/pressrelease/elonmusk-bomba.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1387,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/fdp-a1.png",
+    "subPath": "images/fdp-a1.png",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1388,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/WhatsApp_Image_2022-10-10_at_095818.jpeg",
+    "subPath": "images/pressrelease/WhatsApp_Image_2022-10-10_at_095818.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1389,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/gubernur__pimpinan_upacara.jpg",
+    "subPath": "images/pressrelease/gubernur__pimpinan_upacara.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1390,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/WhatsApp_Image_2022-10-03_at_175713.jpeg",
+    "subPath": "images/pressrelease/WhatsApp_Image_2022-10-03_at_175713.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1391,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/WhatsApp_Image_2022-09-23_at_155527.jpeg",
+    "subPath": "images/WhatsApp_Image_2022-09-23_at_155527.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1392,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/WhatsApp_Image_2022-08-22_at_101103.jpeg",
+    "subPath": "images/pressrelease/WhatsApp_Image_2022-08-22_at_101103.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1393,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/WhatsApp_Image_2022-08-22_at_103119.jpeg",
+    "subPath": "images/pressrelease/WhatsApp_Image_2022-08-22_at_103119.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1394,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/sandiuno_kaili.jpeg",
+    "subPath": "images/pressrelease/sandiuno_kaili.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1395,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/IMG-20220811-WA0079-750x465.jpg",
+    "subPath": "images/IMG-20220811-WA0079-750x465.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1396,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/WhatsApp_Image_2022-08-10_at_081957_1.jpeg",
+    "subPath": "images/pressrelease/WhatsApp_Image_2022-08-10_at_081957_1.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1397,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/WhatsApp_Image_2022-08-10_at_081957.jpeg",
+    "subPath": "images/pressrelease/WhatsApp_Image_2022-08-10_at_081957.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1398,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/JATIM.jpg",
+    "subPath": "images/pressrelease/JATIM.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1399,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/SIRGOBANGGOSIR.jpeg",
+    "subPath": "images/pressrelease/SIRGOBANGGOSIR.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1400,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/IMG_20220718_192246-750x465.jpg",
+    "subPath": "images/pressrelease/IMG_20220718_192246-750x465.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1401,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/asisten_III.jpg",
+    "subPath": "images/pressrelease/asisten_III.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1402,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/wakil_gubernur.jpg",
+    "subPath": "images/pressrelease/wakil_gubernur.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1403,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/rapat_bulan_7.jpeg",
+    "subPath": "images/pressrelease/rapat_bulan_7.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1404,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/rapat_bulan_6.jpeg",
+    "subPath": "images/pressrelease/rapat_bulan_6.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1405,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/staf_ahli.jpg",
+    "subPath": "images/pressrelease/staf_ahli.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1406,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/kurban.jpg",
+    "subPath": "images/pressrelease/kurban.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1407,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/20220706_142150.jpg",
+    "subPath": "images/pressrelease/20220706_142150.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1408,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/RAPAT_EVALUASI_TIM_PPID.jpeg",
+    "subPath": "images/pressrelease/RAPAT_EVALUASI_TIM_PPID.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1409,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/RAPAT_PENYUSUNAN_RENCANA_KERJA.jpeg",
+    "subPath": "images/pressrelease/RAPAT_PENYUSUNAN_RENCANA_KERJA.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1410,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/RAPAT_BULANAN_TIM_PPID.jpeg",
+    "subPath": "images/pressrelease/RAPAT_BULANAN_TIM_PPID.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1411,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/bali.jpeg",
+    "subPath": "images/pressrelease/bali.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1413,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/WhatsApp_Image_2022-07-01_at_084411.jpeg",
+    "subPath": "images/pressrelease/WhatsApp_Image_2022-07-01_at_084411.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1414,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Penyerahan_Alat_Musik.png",
+    "subPath": "images/pressrelease/Penyerahan_Alat_Musik.png",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1415,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/WhatsApp_Image_2022-07-01_at_113645.jpeg",
+    "subPath": "images/pressrelease/WhatsApp_Image_2022-07-01_at_113645.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1416,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/WhatsApp_Image_2022-06-28_at_083824.jpeg",
+    "subPath": "images/pressrelease/WhatsApp_Image_2022-06-28_at_083824.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1417,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/WhatsApp_Image_2022-06-13_at_102050.jpeg",
+    "subPath": "images/pressrelease/WhatsApp_Image_2022-06-13_at_102050.jpeg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1419,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/WhatsApp_Image_2022-06-13_at_102152.jpeg",
+    "subPath": "images/pressrelease/WhatsApp_Image_2022-06-13_at_102152.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1420,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/WhatsApp_Image_2022-05-25_at_103821.jpeg",
+    "subPath": "images/pressrelease/WhatsApp_Image_2022-05-25_at_103821.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1421,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/IMG_20220517_104723-730x410.jpg",
+    "subPath": "images/pressrelease/IMG_20220517_104723-730x410.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1422,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/WhatsApp_Image_2022-05-11_at_114918_AM.jpeg",
+    "subPath": "images/pressrelease/WhatsApp_Image_2022-05-11_at_114918_AM.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1423,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/IMG_20220429_103328-730x410.jpg",
+    "subPath": "images/pressrelease/IMG_20220429_103328-730x410.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1424,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Diskominfo/Remini20220412222514961-730x410.jpg",
+    "subPath": "images/pressrelease/Diskominfo/Remini20220412222514961-730x410.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1425,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Diskominfo/1649860600199-730x410.jpg",
+    "subPath": "images/pressrelease/Diskominfo/1649860600199-730x410.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1426,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Diskominfo/IMG_20220421_125843-730x410.jpg",
+    "subPath": "images/pressrelease/Diskominfo/IMG_20220421_125843-730x410.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1427,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/sekretariat/WhatsApp_Image_2022-04-08_at_85008_AM.jpeg",
+    "subPath": "images/pressrelease/sekretariat/WhatsApp_Image_2022-04-08_at_85008_AM.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1428,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/sekretariat/RAKORPPID/WhatsApp_Image_2022-04-06_at_94806_AM_2.jpeg",
+    "subPath": "images/pressrelease/sekretariat/RAKORPPID/WhatsApp_Image_2022-04-06_at_94806_AM_2.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1429,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/rakornis2022/_MG_5420.jpg",
+    "subPath": "images/pressrelease/rakornis2022/_MG_5420.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1430,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/rakornis2022/WhatsApp_Image_2022-03-25_at_105050_PM.jpeg",
+    "subPath": "images/pressrelease/rakornis2022/WhatsApp_Image_2022-03-25_at_105050_PM.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1431,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/sekretariat/WhatsApp_Image_2022-03-11_at_52958_PM.jpeg",
+    "subPath": "images/pressrelease/sekretariat/WhatsApp_Image_2022-03-11_at_52958_PM.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1432,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/sekretariat/KEN2022.jpg",
+    "subPath": "images/pressrelease/sekretariat/KEN2022.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1433,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/AKI2022/aki_kementerian.jpg",
+    "subPath": "images/AKI2022/aki_kementerian.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1434,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/sekretariat/WhatsApp_Image_2022-02-27_at_22023_PM.jpeg",
+    "subPath": "images/pressrelease/sekretariat/WhatsApp_Image_2022-02-27_at_22023_PM.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1436,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/sekretariat/WhatsApp_Image_2022-02-21_at_33415_PM.jpeg",
+    "subPath": "images/pressrelease/sekretariat/WhatsApp_Image_2022-02-21_at_33415_PM.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1438,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/sekretariat/uploaded.jpeg",
+    "subPath": "images/pressrelease/sekretariat/uploaded.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1439,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/apelpagi/14feb/WhatsApp_Image_2022-02-15_at_85203_PM.jpeg",
+    "subPath": "images/pressrelease/apelpagi/14feb/WhatsApp_Image_2022-02-15_at_85203_PM.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1440,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Sertijab/WhatsApp_Image_2022-02-14_at_100503_PM.jpeg",
+    "subPath": "images/pressrelease/Sertijab/WhatsApp_Image_2022-02-14_at_100503_PM.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1441,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/WhatsApp_Image_2022-02-10_at_105046_PM.jpeg",
+    "subPath": "images/pressrelease/WhatsApp_Image_2022-02-10_at_105046_PM.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1442,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/apelpagi/WhatsApp_Image_2022-02-10_at_90245_AM.jpeg",
+    "subPath": "images/pressrelease/apelpagi/WhatsApp_Image_2022-02-10_at_90245_AM.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1443,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/apelpagi/WhatsApp_Image_2022-02-10_at_90444_AM.jpeg",
+    "subPath": "images/pressrelease/apelpagi/WhatsApp_Image_2022-02-10_at_90444_AM.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1444,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/IMG_20220208_005422-730x410.jpg",
+    "subPath": "images/pressrelease/IMG_20220208_005422-730x410.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1445,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/sekretariat/DISKOMINFO.jpg",
+    "subPath": "images/pressrelease/sekretariat/DISKOMINFO.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1446,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/KADIS-MENTERI/COVER_3_7dafa7632f.jpeg",
+    "subPath": "images/pressrelease/KADIS-MENTERI/COVER_3_7dafa7632f.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1451,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Kaltim01/WhatsApp_Image_2021-12-23_at_84451_PM_1.jpeg",
+    "subPath": "images/pressrelease/Kaltim01/WhatsApp_Image_2021-12-23_at_84451_PM_1.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1454,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/TransSulteng/IMG-20211220-WA0141.jpg",
+    "subPath": "images/pressrelease/TransSulteng/IMG-20211220-WA0141.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1455,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/TransSulteng/IMG-20211220-WA0140.jpg",
+    "subPath": "images/pressrelease/TransSulteng/IMG-20211220-WA0140.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1456,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/WhatsApp_Image_2021-09-24_at_75716_PM2.jpeg",
+    "subPath": "images/pressrelease/WhatsApp_Image_2021-09-24_at_75716_PM2.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1464,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/WhatsApp_Image_2021-09-08_at_112445_AM.jpeg",
+    "subPath": "images/WhatsApp_Image_2021-09-08_at_112445_AM.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1465,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/IMG_9686_2.jpg",
+    "subPath": "images/IMG_9686_2.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1467,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/_MG_9791.jpg",
+    "subPath": "images/_MG_9791.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1470,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/IMG_9583.jpg",
+    "subPath": "images/IMG_9583.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1472,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2026/struktur_organisasi_2026_copy.jpg",
+    "subPath": "images/2026/struktur_organisasi_2026_copy.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1479,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/WhatsApp_Image_2021-03-30_at_100800.jpeg",
+    "subPath": "images/WhatsApp_Image_2021-03-30_at_100800.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1480,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/rakor.jpg",
+    "subPath": "images/rakor.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "berita",
+      "id": 1491,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Destinasi/WhatsApp_Image_2023-06-15_at_111538.jpeg",
+    "subPath": "images/pressrelease/Destinasi/WhatsApp_Image_2023-06-15_at_111538.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "desa_wisata",
+      "id": 39,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Destinasi/DEF.jpg",
+    "subPath": "images/pressrelease/Destinasi/DEF.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "desa_wisata",
+      "id": 40,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/PaketWisata/01_Desa_Malangga_002.jpg",
+    "subPath": "images/PaketWisata/01_Desa_Malangga_002.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "desa_wisata",
+      "id": 44,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DESA_WISATA_LUK_PANENTENG_page-0001.jpg",
+    "subPath": "images/DESA_WISATA_LUK_PANENTENG_page-0001.jpg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "desa_wisata",
+      "id": 45,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DESA_WISATA_LUK_PANENTENG_page-0002.jpg",
+    "subPath": "images/DESA_WISATA_LUK_PANENTENG_page-0002.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "desa_wisata",
+      "id": 45,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DESA_WISATA_LUK_PANENTENG_page-0003.jpg",
+    "subPath": "images/DESA_WISATA_LUK_PANENTENG_page-0003.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "desa_wisata",
+      "id": 45,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DESA_WISATA_LUK_PANENTENG_page-0004.jpg",
+    "subPath": "images/DESA_WISATA_LUK_PANENTENG_page-0004.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "desa_wisata",
+      "id": 45,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DESA_WISATA_LUK_PANENTENG_page-0005.jpg",
+    "subPath": "images/DESA_WISATA_LUK_PANENTENG_page-0005.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "desa_wisata",
+      "id": 45,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DESA_WISATA_LUK_PANENTENG_page-0006.jpg",
+    "subPath": "images/DESA_WISATA_LUK_PANENTENG_page-0006.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "desa_wisata",
+      "id": 45,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DESA_WISATA_LUK_PANENTENG_page-0007.jpg",
+    "subPath": "images/DESA_WISATA_LUK_PANENTENG_page-0007.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "desa_wisata",
+      "id": 45,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DESA_WISATA_LUK_PANENTENG_page-0008.jpg",
+    "subPath": "images/DESA_WISATA_LUK_PANENTENG_page-0008.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "desa_wisata",
+      "id": 45,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DESA_WISATA_LUK_PANENTENG_page-0009.jpg",
+    "subPath": "images/DESA_WISATA_LUK_PANENTENG_page-0009.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "desa_wisata",
+      "id": 45,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DESA_WISATA_LUK_PANENTENG_page-0010.jpg",
+    "subPath": "images/DESA_WISATA_LUK_PANENTENG_page-0010.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "desa_wisata",
+      "id": 45,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DESA_WISATA_LUK_PANENTENG_page-0011.jpg",
+    "subPath": "images/DESA_WISATA_LUK_PANENTENG_page-0011.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "desa_wisata",
+      "id": 45,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DESA_WISATA_LUK_PANENTENG_page-0012.jpg",
+    "subPath": "images/DESA_WISATA_LUK_PANENTENG_page-0012.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "desa_wisata",
+      "id": 45,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DESA_WISATA_LUK_PANENTENG_page-0013.jpg",
+    "subPath": "images/DESA_WISATA_LUK_PANENTENG_page-0013.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "desa_wisata",
+      "id": 45,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DESA_WISATA_LUK_PANENTENG_page-0014.jpg",
+    "subPath": "images/DESA_WISATA_LUK_PANENTENG_page-0014.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "desa_wisata",
+      "id": 45,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DESA_WISATA_LUK_PANENTENG_page-0015.jpg",
+    "subPath": "images/DESA_WISATA_LUK_PANENTENG_page-0015.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "desa_wisata",
+      "id": 45,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DESA_WISATA_LUK_PANENTENG_page-0016.jpg",
+    "subPath": "images/DESA_WISATA_LUK_PANENTENG_page-0016.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "desa_wisata",
+      "id": 45,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DESA_WISATA_LUK_PANENTENG_page-0017.jpg",
+    "subPath": "images/DESA_WISATA_LUK_PANENTENG_page-0017.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "desa_wisata",
+      "id": 45,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/Desa_Wisata_Mbuang_Mbuang_Submit_Website_001.jpg",
+    "subPath": "images/Desa_Wisata_Mbuang_Mbuang_Submit_Website_001.jpg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "desa_wisata",
+      "id": 46,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/Desa_Wisata_Mbuang_Mbuang_Submit_Website_002.jpg",
+    "subPath": "images/Desa_Wisata_Mbuang_Mbuang_Submit_Website_002.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "desa_wisata",
+      "id": 46,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/Desa_Wisata_Mbuang_Mbuang_Submit_Website_003.jpg",
+    "subPath": "images/Desa_Wisata_Mbuang_Mbuang_Submit_Website_003.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "desa_wisata",
+      "id": 46,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/Desa_Wisata_Mbuang_Mbuang_Submit_Website_004.jpg",
+    "subPath": "images/Desa_Wisata_Mbuang_Mbuang_Submit_Website_004.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "desa_wisata",
+      "id": 46,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/Desa_Wisata_Mbuang_Mbuang_Submit_Website_005.jpg",
+    "subPath": "images/Desa_Wisata_Mbuang_Mbuang_Submit_Website_005.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "desa_wisata",
+      "id": 46,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/Desa_Wisata_Mbuang_Mbuang_Submit_Website_006.jpg",
+    "subPath": "images/Desa_Wisata_Mbuang_Mbuang_Submit_Website_006.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "desa_wisata",
+      "id": 46,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/Desa_Wisata_Mbuang_Mbuang_Submit_Website_007.jpg",
+    "subPath": "images/Desa_Wisata_Mbuang_Mbuang_Submit_Website_007.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "desa_wisata",
+      "id": 46,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/Desa_Wisata_Mbuang_Mbuang_Submit_Website_008.jpg",
+    "subPath": "images/Desa_Wisata_Mbuang_Mbuang_Submit_Website_008.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "desa_wisata",
+      "id": 46,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/Desa_Wisata_Mbuang_Mbuang_Submit_Website_009.jpg",
+    "subPath": "images/Desa_Wisata_Mbuang_Mbuang_Submit_Website_009.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "desa_wisata",
+      "id": 46,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/Desa_Wisata_Mbuang_Mbuang_Submit_Website_010.jpg",
+    "subPath": "images/Desa_Wisata_Mbuang_Mbuang_Submit_Website_010.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "desa_wisata",
+      "id": 46,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/Desa_Wisata_Mbuang_Mbuang_Submit_Website_011.jpg",
+    "subPath": "images/Desa_Wisata_Mbuang_Mbuang_Submit_Website_011.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "desa_wisata",
+      "id": 46,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/Desa_Wisata_Mbuang_Mbuang_Submit_Website_012.jpg",
+    "subPath": "images/Desa_Wisata_Mbuang_Mbuang_Submit_Website_012.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "desa_wisata",
+      "id": 46,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/Desa_Wisata_Mbuang_Mbuang_Submit_Website_013.jpg",
+    "subPath": "images/Desa_Wisata_Mbuang_Mbuang_Submit_Website_013.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "desa_wisata",
+      "id": 46,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/Desa_Wisata_Mbuang_Mbuang_Submit_Website_014.jpg",
+    "subPath": "images/Desa_Wisata_Mbuang_Mbuang_Submit_Website_014.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "desa_wisata",
+      "id": 46,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/Desa_Wisata_Mbuang_Mbuang_Submit_Website_015.jpg",
+    "subPath": "images/Desa_Wisata_Mbuang_Mbuang_Submit_Website_015.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "desa_wisata",
+      "id": 46,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/Desa_Wisata_Mbuang_Mbuang_Submit_Website_016.jpg",
+    "subPath": "images/Desa_Wisata_Mbuang_Mbuang_Submit_Website_016.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "desa_wisata",
+      "id": 46,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/Desa_Wisata_Mbuang_Mbuang_Submit_Website_017.jpg",
+    "subPath": "images/Desa_Wisata_Mbuang_Mbuang_Submit_Website_017.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "desa_wisata",
+      "id": 46,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/Desa_Wisata_Mbuang_Mbuang_Submit_Website_018.jpg",
+    "subPath": "images/Desa_Wisata_Mbuang_Mbuang_Submit_Website_018.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "desa_wisata",
+      "id": 46,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/Desa_Wisata_Mbuang_Mbuang_Submit_Website_019.jpg",
+    "subPath": "images/Desa_Wisata_Mbuang_Mbuang_Submit_Website_019.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "desa_wisata",
+      "id": 46,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/Desa_Wisata_Mbuang_Mbuang_Submit_Website_020.jpg",
+    "subPath": "images/Desa_Wisata_Mbuang_Mbuang_Submit_Website_020.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "desa_wisata",
+      "id": 46,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2025/Sisparnas2.jpg",
+    "subPath": "images/2025/Sisparnas2.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "desa_wisata",
+      "id": 38,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Destinasi/WhatsApp_Image_2023-06-15_at_111539.jpeg",
+    "subPath": "images/pressrelease/Destinasi/WhatsApp_Image_2023-06-15_at_111539.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "desa_wisata",
+      "id": 39,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Destinasi/ABC.jpg",
+    "subPath": "images/pressrelease/Destinasi/ABC.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "desa_wisata",
+      "id": 40,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/37SmwCxDAO.jpg",
+    "subPath": "images/pressrelease/37SmwCxDAO.jpg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "desa_wisata",
+      "id": 41,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Desa-Wisata-Malangga-Kabupaten-ghg-Homestay-Award-2023.jpg",
+    "subPath": "images/pressrelease/Desa-Wisata-Malangga-Kabupaten-ghg-Homestay-Award-2023.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "desa_wisata",
+      "id": 43,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/Tugu_Perdamaian_Palu.jpg",
+    "subPath": "images/Tugu_Perdamaian_Palu.jpg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "dtw",
+      "id": 231,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/195276019_464911797937614_6404240364962309584_n.jpg",
+    "subPath": "images/195276019_464911797937614_6404240364962309584_n.jpg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "dtw",
+      "id": 233,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DTWmorowali/Cagar-Alam-Morowali-02.jpg",
+    "subPath": "images/DTWmorowali/Cagar-Alam-Morowali-02.jpg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "dtw",
+      "id": 254,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DTWmorowali/Cagar-Alam-Morowali.jpg",
+    "subPath": "images/DTWmorowali/Cagar-Alam-Morowali.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "dtw",
+      "id": 254,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DTWmorowali/39676296_256003768454198_4943997752766889984_n.jpg",
+    "subPath": "images/DTWmorowali/39676296_256003768454198_4943997752766889984_n.jpg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "dtw",
+      "id": 255,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DTWmorowali/66829101-404559406852610-6925984711692420916-n-ba1c3ece9ad7a090d4facdf261daae71-91374c966ad0c4c92e583d399adb3ebb.jpg",
+    "subPath": "images/DTWmorowali/66829101-404559406852610-6925984711692420916-n-ba1c3ece9ad7a090d4facdf261daae71-91374c966ad0c4c92e583d399adb3ebb.jpg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "dtw",
+      "id": 256,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DTWmorowali/Air_Terjun_Sampala.jpg",
+    "subPath": "images/DTWmorowali/Air_Terjun_Sampala.jpg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "dtw",
+      "id": 257,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DTWmorowali/Puncak_Mateantina.jpg",
+    "subPath": "images/DTWmorowali/Puncak_Mateantina.jpg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "dtw",
+      "id": 258,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DTWmorowali/Air-Terjun-di-Buleleng-Bungku-Pesisir.jpg",
+    "subPath": "images/DTWmorowali/Air-Terjun-di-Buleleng-Bungku-Pesisir.jpg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "dtw",
+      "id": 259,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DTWmorowali/Sumber_festival_Jalan_Jalan.jpg",
+    "subPath": "images/DTWmorowali/Sumber_festival_Jalan_Jalan.jpg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "dtw",
+      "id": 260,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DTWmorowali/Baho_Umumpa.jpg",
+    "subPath": "images/DTWmorowali/Baho_Umumpa.jpg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "dtw",
+      "id": 261,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DTWmorowali/sombori_01.jpg",
+    "subPath": "images/DTWmorowali/sombori_01.jpg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "dtw",
+      "id": 262,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DTWmorowali/sombori_02.jpg",
+    "subPath": "images/DTWmorowali/sombori_02.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "dtw",
+      "id": 262,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DTWdonggala/NOMINATOR_INSTAGRAM_ARNOLD_KEINDAHAN_ALAM_PAGI_HARI_MATNTIMALI_SIGI.jpg",
+    "subPath": "images/DTWdonggala/NOMINATOR_INSTAGRAM_ARNOLD_KEINDAHAN_ALAM_PAGI_HARI_MATNTIMALI_SIGI.jpg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "dtw",
+      "id": 265,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DTWdonggala/HARAPAN_2_IG_RUDIN.jpg",
+    "subPath": "images/DTWdonggala/HARAPAN_2_IG_RUDIN.jpg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "dtw",
+      "id": 266,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DTWdonggala/NOMINATOR_DESTINASI_MOHAMMAD_ISRA__DANAU_TAMBING.jpg",
+    "subPath": "images/DTWdonggala/NOMINATOR_DESTINASI_MOHAMMAD_ISRA__DANAU_TAMBING.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "dtw",
+      "id": 266,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DTWdonggala/HARAPAN_1_IG_NOVI_WONOMBONG.jpg",
+    "subPath": "images/DTWdonggala/HARAPAN_1_IG_NOVI_WONOMBONG.jpg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "dtw",
+      "id": 267,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DTWdonggala/NOMINATOR_DESTINASI_DAVID_SUTARTO_WISATA_PRASEJARAH_PATUNG_PALINDO.jpg",
+    "subPath": "images/DTWdonggala/NOMINATOR_DESTINASI_DAVID_SUTARTO_WISATA_PRASEJARAH_PATUNG_PALINDO.jpg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "dtw",
+      "id": 268,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DTWdonggala/pusentasi1.jpg",
+    "subPath": "images/DTWdonggala/pusentasi1.jpg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "dtw",
+      "id": 269,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DTWdonggala/pusentasi2.jpg",
+    "subPath": "images/DTWdonggala/pusentasi2.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "dtw",
+      "id": 269,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DTWdonggala/bambahano.jpg",
+    "subPath": "images/DTWdonggala/bambahano.jpg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "dtw",
+      "id": 270,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DTWdonggala/tanjungkarang.jpg",
+    "subPath": "images/DTWdonggala/tanjungkarang.jpg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "dtw",
+      "id": 271,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/3_Hutan_Kota_pinterestcom-pitonk_mado.jpg",
+    "subPath": "images/3_Hutan_Kota_pinterestcom-pitonk_mado.jpg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "dtw",
+      "id": 272,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2_Bukit_Salena.jpeg",
+    "subPath": "images/2_Bukit_Salena.jpeg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "dtw",
+      "id": 273,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/uwentumbu.jpeg",
+    "subPath": "images/uwentumbu.jpeg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "dtw",
+      "id": 274,
+      "column": "deskripsi"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/media/plg_jspeed/cache/images/4feb3a93fb9169b4b5a8f43924e50cf6325409a3.webp",
+    "subPath": "media/plg_jspeed/cache/images/4feb3a93fb9169b4b5a8f43924e50cf6325409a3.webp",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "dtw",
+      "id": 235,
+      "column": "gambar"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/LHKPN/Pengumuman_Harta_Kekayaan_LHKPN_239806.pdf",
+    "subPath": "images/LHKPN/Pengumuman_Harta_Kekayaan_LHKPN_239806.pdf",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 375,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/LHKPN/2025/Tanda_Terima_LHKPN_11-March-2026.pdf",
+    "subPath": "images/LHKPN/2025/Tanda_Terima_LHKPN_11-March-2026.pdf",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 376,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2026/new_ratio.jpeg",
+    "subPath": "images/2026/new_ratio.jpeg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 378,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DefinisiOperasional/SK_DO_IKU_PROGAM_DAN_KEGIATAN_DISPAR_2026_v2.pdf",
+    "subPath": "images/DefinisiOperasional/SK_DO_IKU_PROGAM_DAN_KEGIATAN_DISPAR_2026_v2.pdf",
+    "refCount": 3,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 379,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/RencanaAksi/Tabel_Rencana_Aksi_Tahun_2025_-_FIX.pdf",
+    "subPath": "images/RencanaAksi/Tabel_Rencana_Aksi_Tahun_2025_-_FIX.pdf",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 380,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/KUA-PPAS/KUAPPAS_-_2026.pdf",
+    "subPath": "images/KUA-PPAS/KUAPPAS_-_2026.pdf",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 381,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/RUP/rekap_RUP_Dispar_per_tanggal_9_Maret_2026.pdf",
+    "subPath": "images/RUP/rekap_RUP_Dispar_per_tanggal_9_Maret_2026.pdf",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 382,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2026/02Pemasaran/Rekap_Kunjungan_Wisatawan_Thn_2025_edit.pdf",
+    "subPath": "images/2026/02Pemasaran/Rekap_Kunjungan_Wisatawan_Thn_2025_edit.pdf",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 383,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2026/03Ekraf/DATA_EKRAF_Se_SULTENG_1.pdf",
+    "subPath": "images/2026/03Ekraf/DATA_EKRAF_Se_SULTENG_1.pdf",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 385,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2026/04SDM/REV-_LAPORAN_TENAGA_KERJA_PAREKRAF_TAHUN_2025_compressed.pdf",
+    "subPath": "images/2026/04SDM/REV-_LAPORAN_TENAGA_KERJA_PAREKRAF_TAHUN_2025_compressed.pdf",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 389,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/ARIP.pdf",
+    "subPath": "images/ARIP.pdf",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 390,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DaftarAset/rpt108bi_gabungan.pdf",
+    "subPath": "images/DaftarAset/rpt108bi_gabungan.pdf",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 391,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/Penghargaan/Pengharagaan_BBWI_2023.pdf",
+    "subPath": "images/Penghargaan/Pengharagaan_BBWI_2023.pdf",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 392,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/AgendaPimpinan/BUKU_TAMU_KEPALA_DINAS.pdf",
+    "subPath": "images/AgendaPimpinan/BUKU_TAMU_KEPALA_DINAS.pdf",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 393,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/CALK/CALK_DINAS_PARIWISATA_AUDITED_2023.pdf",
+    "subPath": "images/CALK/CALK_DINAS_PARIWISATA_AUDITED_2023.pdf",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 394,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2025/LPSE.jpg",
+    "subPath": "images/2025/LPSE.jpg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 396,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2025/WhatsApp_Image_2025-09-18_at_085433.jpeg",
+    "subPath": "images/2025/WhatsApp_Image_2025-09-18_at_085433.jpeg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 397,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/ProgramKegiatan/05_belanja_2021.pdf",
+    "subPath": "images/ProgramKegiatan/05_belanja_2021.pdf",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 398,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2024/KUAPPAS_2024.pdf",
+    "subPath": "images/2024/KUAPPAS_2024.pdf",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 399,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/AnggaranKas/Anggaran_Kas_2024_-_Sistem_Informasi_Pemerintahan_Daerah_-_Penatausahaan.pdf",
+    "subPath": "images/AnggaranKas/Anggaran_Kas_2024_-_Sistem_Informasi_Pemerintahan_Daerah_-_Penatausahaan.pdf",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 400,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/LPPD/LPPD_DISPAR_TAHUN_2024_-_Fix.pdf",
+    "subPath": "images/LPPD/LPPD_DISPAR_TAHUN_2024_-_Fix.pdf",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 401,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2025/WhatsApp_Image_2025-09-03_at_110404.jpeg",
+    "subPath": "images/2025/WhatsApp_Image_2025-09-03_at_110404.jpeg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 402,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/IKM/LAPORAN_FKP_DISPAR_PROVINSI_SULTENG_ADA_CAP_opt.pdf",
+    "subPath": "images/IKM/LAPORAN_FKP_DISPAR_PROVINSI_SULTENG_ADA_CAP_opt.pdf",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 403,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/Kepegawaian/EVJAB_DISPAR_2025.pdf",
+    "subPath": "images/Kepegawaian/EVJAB_DISPAR_2025.pdf",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 404,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/Kepegawaian/PETA_JABATAN_UPDATE_JANUARI_2025.pdf",
+    "subPath": "images/Kepegawaian/PETA_JABATAN_UPDATE_JANUARI_2025.pdf",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 405,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/Kepegawaian/STANDAR_PELAYANAN_2024.pdf",
+    "subPath": "images/Kepegawaian/STANDAR_PELAYANAN_2024.pdf",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 406,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/ReformasiBirokrasi/Pariwisata.pdf",
+    "subPath": "images/ReformasiBirokrasi/Pariwisata.pdf",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 412,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/Cascading/Pohon_Kinerja_2024_-_DISPAR.pdf",
+    "subPath": "images/Cascading/Pohon_Kinerja_2024_-_DISPAR.pdf",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 413,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/IMG_5175.jpg",
+    "subPath": "images/pressrelease/IMG_5175.jpg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 414,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/xxi_dispar.jpg",
+    "subPath": "images/pressrelease/xxi_dispar.jpg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 416,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/perluasan_pasar.jpg",
+    "subPath": "images/pressrelease/perluasan_pasar.jpg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 417,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/IKM/LAPORAN_IKM_2023.pdf",
+    "subPath": "images/IKM/LAPORAN_IKM_2023.pdf",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 419,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/RKPD/Sistem_Informasi_Pemerintahan_Daerah_-_Cetak_RKPD_2022.pdf",
+    "subPath": "images/RKPD/Sistem_Informasi_Pemerintahan_Daerah_-_Cetak_RKPD_2022.pdf",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 420,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/WhatsApp_Image_2022-05-31_at_60738_PM.jpeg",
+    "subPath": "images/pressrelease/WhatsApp_Image_2022-05-31_at_60738_PM.jpeg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 421,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/PerjanjianKinerja/DISPAR_Perjanjian_Kinerja_2021_compressed.pdf",
+    "subPath": "images/PerjanjianKinerja/DISPAR_Perjanjian_Kinerja_2021_compressed.pdf",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 423,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/sekretariat/WhatsApp_Image_2022-02-25_at_41816_PM.jpeg",
+    "subPath": "images/pressrelease/sekretariat/WhatsApp_Image_2022-02-25_at_41816_PM.jpeg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 424,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/Cascading/Diagram_Sasaran_Dinas_Pariwisata_1776139418795_-_2025.pdf",
+    "subPath": "images/Cascading/Diagram_Sasaran_Dinas_Pariwisata_1776139418795_-_2025.pdf",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 425,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DokPengadaan/REKAP_PENGADAAN_BARANG_JASA_TAHUN_2019.pdf",
+    "subPath": "images/DokPengadaan/REKAP_PENGADAAN_BARANG_JASA_TAHUN_2019.pdf",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 428,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/SP4N-LAPOR-768x500.jpg",
+    "subPath": "images/SP4N-LAPOR-768x500.jpg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 431,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/RKA/Sistem_Informasi_Pemerintahan_Daerah_-_Cetak_RKA_SKPD_2021.pdf",
+    "subPath": "images/RKA/Sistem_Informasi_Pemerintahan_Daerah_-_Cetak_RKA_SKPD_2021.pdf",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 435,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/undraw_No_data_re_kwbl.png",
+    "subPath": "images/undraw_No_data_re_kwbl.png",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 437,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/InfoSetiapSaat/Sk_Daftar_Informasi.pdf",
+    "subPath": "images/InfoSetiapSaat/Sk_Daftar_Informasi.pdf",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 438,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/RealisasiAnggaran/Realisasi_TA_2019_scan_ttd.pdf",
+    "subPath": "images/RealisasiAnggaran/Realisasi_TA_2019_scan_ttd.pdf",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 444,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/Kepegawaian/DUK_UPDATE_JANUARI_2025.pdf",
+    "subPath": "images/Kepegawaian/DUK_UPDATE_JANUARI_2025.pdf",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 446,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/RENJA/DISPAR_RENJA_2021.pdf",
+    "subPath": "images/RENJA/DISPAR_RENJA_2021.pdf",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 448,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/IKU/IKU_Dinas_Pariwisata_fixx.pdf",
+    "subPath": "images/IKU/IKU_Dinas_Pariwisata_fixx.pdf",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 449,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DPA/DPA_2019.pdf",
+    "subPath": "images/DPA/DPA_2019.pdf",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 450,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/LAKIP/DISPAR_LAKIP_2020_compressed.pdf",
+    "subPath": "images/LAKIP/DISPAR_LAKIP_2020_compressed.pdf",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 451,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/RENSTRA/DISPAR_RENSTRA_revisi_2016-2021_compressed.pdf",
+    "subPath": "images/RENSTRA/DISPAR_RENSTRA_revisi_2016-2021_compressed.pdf",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 452,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/PPID/LAPORAN_TAHUNAN_PPID_2023.pdf",
+    "subPath": "images/PPID/LAPORAN_TAHUNAN_PPID_2023.pdf",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "ppid_item",
+      "id": 454,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2026/WhatsApp_Image_2026-01-05_at_114617.jpeg",
+    "subPath": "images/2026/WhatsApp_Image_2026-01-05_at_114617.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "ppid_regulasi",
+      "id": 89,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/2026/WhatsApp_Image_2026-01-05_at_113326.jpeg",
+    "subPath": "images/2026/WhatsApp_Image_2026-01-05_at_113326.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "ppid_regulasi",
+      "id": 90,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/Diskominfo/IMG_20230707_165242.jpg",
+    "subPath": "images/pressrelease/Diskominfo/IMG_20230707_165242.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "ppid_regulasi",
+      "id": 91,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/WhatsApp_Image_2023-01-30_at_134255.jpeg",
+    "subPath": "images/pressrelease/WhatsApp_Image_2023-01-30_at_134255.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "ppid_regulasi",
+      "id": 92,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/WhatsApp_Image_2023-01-13_at_090326.jpeg",
+    "subPath": "images/pressrelease/WhatsApp_Image_2023-01-13_at_090326.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "ppid_regulasi",
+      "id": 93,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/WhatsApp_Image_2022-08-29_at_103241.jpeg",
+    "subPath": "images/pressrelease/WhatsApp_Image_2022-08-29_at_103241.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "ppid_regulasi",
+      "id": 94,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/RAPAT_PERDANA.jpeg",
+    "subPath": "images/pressrelease/RAPAT_PERDANA.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "ppid_regulasi",
+      "id": 96,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/sekretariat/WhatsApp_Image_2022-05-09_at_12500_PM.jpeg",
+    "subPath": "images/pressrelease/sekretariat/WhatsApp_Image_2022-05-09_at_12500_PM.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "ppid_regulasi",
+      "id": 97,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/pressrelease/sekretariat/WhatsApp_Image_2022-01-10_at_81456_AM.jpeg",
+    "subPath": "images/pressrelease/sekretariat/WhatsApp_Image_2022-01-10_at_81456_AM.jpeg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "ppid_regulasi",
+      "id": 98,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/PPID/SK_Informasi_Dikecualikan_2026.pdf",
+    "subPath": "images/PPID/SK_Informasi_Dikecualikan_2026.pdf",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "ppid_sk",
+      "id": 16,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/PPID/SK_PPID_Pelaksana_2026.pdf",
+    "subPath": "images/PPID/SK_PPID_Pelaksana_2026.pdf",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "ppid_sk",
+      "id": 17,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/PPID/SK_Petugas_Layanan_2026.pdf",
+    "subPath": "images/PPID/SK_Petugas_Layanan_2026.pdf",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "ppid_sk",
+      "id": 18,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/PPID/SK_Tim_Pengaduan_2026.pdf",
+    "subPath": "images/PPID/SK_Tim_Pengaduan_2026.pdf",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "ppid_sk",
+      "id": 19,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/DefinisiOperasional/SK_DO_IKU_PROGAM_DAN_KEGIATAN_DISPAR_2025.pdf",
+    "subPath": "images/DefinisiOperasional/SK_DO_IKU_PROGAM_DAN_KEGIATAN_DISPAR_2025.pdf",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "ppid_sk",
+      "id": 20,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/PPID/SK_PPID_2025.pdf",
+    "subPath": "images/PPID/SK_PPID_2025.pdf",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "ppid_sk",
+      "id": 21,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/PPID/SK_Tim_Pertimbangan_2025.pdf",
+    "subPath": "images/PPID/SK_Tim_Pertimbangan_2025.pdf",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "ppid_sk",
+      "id": 22,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/PPID/SK_DIP_2024.pdf",
+    "subPath": "images/PPID/SK_DIP_2024.pdf",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "ppid_sk",
+      "id": 23,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/PPID/SK_Dikecualikan_2024.pdf",
+    "subPath": "images/PPID/SK_Dikecualikan_2024.pdf",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "ppid_sk",
+      "id": 24,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/PPID/SK_Medsos_2024.pdf",
+    "subPath": "images/PPID/SK_Medsos_2024.pdf",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "ppid_sk",
+      "id": 25,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/PPID/SK_DIP_2023.pdf",
+    "subPath": "images/PPID/SK_DIP_2023.pdf",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "ppid_sk",
+      "id": 26,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/PPID/SK_PPID_2022.pdf",
+    "subPath": "images/PPID/SK_PPID_2022.pdf",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "ppid_sk",
+      "id": 27,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/PPID/SK_PPID_2021.pdf",
+    "subPath": "images/PPID/SK_PPID_2021.pdf",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "ppid_sk",
+      "id": 28,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/PPID/profil_resume_dinpar_2026_opt.pdf",
+    "subPath": "images/PPID/profil_resume_dinpar_2026_opt.pdf",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "profil",
+      "id": 56,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/ProfilPimpinan/01_-_kadis_diah.pdf",
+    "subPath": "images/ProfilPimpinan/01_-_kadis_diah.pdf",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "profil",
+      "id": 56,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/ProfilPimpinan/kadis_diah.jpg",
+    "subPath": "images/ProfilPimpinan/kadis_diah.jpg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "profil",
+      "id": 56,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/ProfilPimpinan/profil_nency_ainun.pdf",
+    "subPath": "images/ProfilPimpinan/profil_nency_ainun.pdf",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "profil",
+      "id": 56,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/ProfilPimpinan/nency-ainun.jpg",
+    "subPath": "images/ProfilPimpinan/nency-ainun.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "profil",
+      "id": 56,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/ProfilPimpinan/empty.png",
+    "subPath": "images/ProfilPimpinan/empty.png",
+    "refCount": 5,
+    "sampleRef": {
+      "table": "profil",
+      "id": 56,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/ProfilPimpinan/profil_hasna.pdf",
+    "subPath": "images/ProfilPimpinan/profil_hasna.pdf",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "profil",
+      "id": 56,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/ProfilPimpinan/hasna.jpg",
+    "subPath": "images/ProfilPimpinan/hasna.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "profil",
+      "id": 56,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/ProfilPimpinan/yunita.jpg",
+    "subPath": "images/ProfilPimpinan/yunita.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "profil",
+      "id": 56,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/ProfilPimpinan/profil_joyce.pdf",
+    "subPath": "images/ProfilPimpinan/profil_joyce.pdf",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "profil",
+      "id": 56,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/ProfilPimpinan/joyce.jpg",
+    "subPath": "images/ProfilPimpinan/joyce.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "profil",
+      "id": 56,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/ProfilPimpinan/profil_ilham.pdf",
+    "subPath": "images/ProfilPimpinan/profil_ilham.pdf",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "profil",
+      "id": 56,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/ProfilPimpinan/ilham.jpg",
+    "subPath": "images/ProfilPimpinan/ilham.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "profil",
+      "id": 56,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/ProfilPimpinan/satrisni.jpg",
+    "subPath": "images/ProfilPimpinan/satrisni.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "profil",
+      "id": 56,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/ProfilPimpinan/Max.jpg",
+    "subPath": "images/ProfilPimpinan/Max.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "profil",
+      "id": 56,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/ProfilPimpinan/profil_widyawati.pdf",
+    "subPath": "images/ProfilPimpinan/profil_widyawati.pdf",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "profil",
+      "id": 56,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/ProfilPimpinan/widyawati.jpg",
+    "subPath": "images/ProfilPimpinan/widyawati.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "profil",
+      "id": 56,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/ProfilPimpinan/gafriani.jpg",
+    "subPath": "images/ProfilPimpinan/gafriani.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "profil",
+      "id": 56,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/ProfilPimpinan/husein.jpg",
+    "subPath": "images/ProfilPimpinan/husein.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "profil",
+      "id": 56,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/MAJALAH_PESONA_Edisi_I_001.jpg",
+    "subPath": "images/MAJALAH_PESONA_Edisi_I_001.jpg",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "profil",
+      "id": 59,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/MAJALAH_PESONA_Edisi_II_2021_001.jpg",
+    "subPath": "images/MAJALAH_PESONA_Edisi_II_2021_001.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "profil",
+      "id": 59,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/seribumegalit/Booklet_Pesona_Kuliner_-_page_1_001.jpg",
+    "subPath": "images/seribumegalit/Booklet_Pesona_Kuliner_-_page_1_001.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "profil",
+      "id": 59,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/seribumegalit/Booklet_megalit_2023_fix_001.jpg",
+    "subPath": "images/seribumegalit/Booklet_megalit_2023_fix_001.jpg",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "profil",
+      "id": 59,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/dinas_pariwisata-COLOR_BLACK.png",
+    "subPath": "images/dinas_pariwisata-COLOR_BLACK.png",
+    "refCount": 2,
+    "sampleRef": {
+      "table": "profil",
+      "id": 60,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/SultengNambaso.png",
+    "subPath": "images/SultengNambaso.png",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "profil",
+      "id": 60,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/media_1587964394_logo_wonderful_indonesia.png",
+    "subPath": "images/media_1587964394_logo_wonderful_indonesia.png",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "profil",
+      "id": 60,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/Branding_Sulteng.png",
+    "subPath": "images/Branding_Sulteng.png",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "profil",
+      "id": 60,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/PPID/Logo_100__Sulawesi_Tengah_-_Outline.png",
+    "subPath": "images/PPID/Logo_100__Sulawesi_Tengah_-_Outline.png",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "profil",
+      "id": 60,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/PPID/png_20230406_230203_0000.png",
+    "subPath": "images/PPID/png_20230406_230203_0000.png",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "profil",
+      "id": 60,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/PPID/BBWI_logo_2.png",
+    "subPath": "images/PPID/BBWI_logo_2.png",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "profil",
+      "id": 60,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/PPID/DESAIN_BERDASARKAN_LOKUS.png",
+    "subPath": "images/PPID/DESAIN_BERDASARKAN_LOKUS.png",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "profil",
+      "id": 60,
+      "column": "konten"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/Laporan/Ketenagakerjaan_Dispar_2025.pdf",
+    "subPath": "images/Laporan/Ketenagakerjaan_Dispar_2025.pdf",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "sumber_daya",
+      "id": 13,
+      "column": "file"
+    }
+  },
+  {
+    "url": "https://pariwisata.sultengprov.go.id/images/Laporan/Sertifikasi_SDM_Pariwisata.pdf",
+    "subPath": "images/Laporan/Sertifikasi_SDM_Pariwisata.pdf",
+    "refCount": 1,
+    "sampleRef": {
+      "table": "sumber_daya",
+      "id": 14,
+      "column": "file"
+    }
+  }
+]

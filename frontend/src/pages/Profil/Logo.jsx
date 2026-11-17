@@ -7,49 +7,49 @@ const OFFICIAL_LOGOS = [
   {
     label: 'Logo Dinas Pariwisata Sulteng',
     desc: 'Logo resmi instansi Dinas Pariwisata Provinsi Sulawesi Tengah format resolusi tinggi',
-    preview: 'https://pariwisata.sultengprov.go.id/images/dinas_pariwisata-COLOR_BLACK.png',
+    preview: '/images/dinas_pariwisata-COLOR_BLACK.png',
     link: 'https://drive.google.com/drive/folders/1MFchSdQjgHxKhrMTkgCRYQojPNkq-urZ?usp=sharing',
     format: 'PNG HD'
   },
   {
     label: 'Branding Sulteng Nambaso',
     desc: 'Logo tagline pariwisata daerah Sulteng Nambaso (Sulawesi Tengah Hebat/Luar Biasa)',
-    preview: 'https://pariwisata.sultengprov.go.id/images/SultengNambaso.png',
+    preview: '/images/SultengNambaso.png',
     link: 'https://drive.google.com/file/d/1nrNj20HzegreqIou8Af2StNetltaWVMC/view?usp=drive_link',
     format: 'PNG Transparent'
   },
   {
     label: 'Wonderful Indonesia',
     desc: 'Logo resmi kampanye kepariwisataan nasional Kementerian Pariwisata dan Ekonomi Kreatif',
-    preview: 'https://pariwisata.sultengprov.go.id/images/media_1587964394_logo_wonderful_indonesia.png',
+    preview: '/images/media_1587964394_logo_wonderful_indonesia.png',
     link: 'https://drive.google.com/drive/folders/1Q-2fbXuovCZI6sWwF-bzZ2w0GpQJZSAA?usp=sharing',
     format: 'PNG Color & White'
   },
   {
     label: 'Branding Sulawesi Tengah',
     desc: 'City branding Sulawesi Tengah Complete Destination untuk promosi pariwisata internasional',
-    preview: 'https://pariwisata.sultengprov.go.id/images/Branding_Sulteng.png',
+    preview: '/images/Branding_Sulteng.png',
     link: 'https://drive.google.com/drive/folders/1ZyNtw7_tSY0LkDfh5xFQph6ElFvsXrS6?usp=sharing',
     format: 'PNG HD'
   },
   {
     label: 'Logo 100% Sulawesi Tengah',
     desc: 'Stempel kampanye orisinalitas produk, destinasi, dan kerajinan khas Sulawesi Tengah',
-    preview: 'https://pariwisata.sultengprov.go.id/images/PPID/Logo_100__Sulawesi_Tengah_-_Outline.png',
+    preview: '/images/PPID/Logo_100__Sulawesi_Tengah_-_Outline.png',
     link: 'https://drive.google.com/drive/folders/1O43KtomclfKs2AuojJXYJuDVZBOdyUqw',
     format: 'PNG Outline'
   },
   {
     label: 'Bangga Berwisata di Indonesia (BBWI)',
     desc: 'Gerakan nasional mendorong pergerakan wisatawan nusantara ke destinasi domestik',
-    preview: 'https://pariwisata.sultengprov.go.id/images/PPID/BBWI_logo_2.png',
+    preview: '/images/PPID/BBWI_logo_2.png',
     link: 'https://drive.google.com/drive/folders/1X18KP8vl9rVxGDExxvanSQCoMU6pt44H?usp=sharing',
     format: 'PNG HD'
   },
   {
     label: 'Desain Berdasarkan Lokus Destinasi',
     desc: 'Kumpulan logo dan template promosi berdasarkan lokus 13 kabupaten/kota se-Sulawesi Tengah',
-    preview: 'https://pariwisata.sultengprov.go.id/images/PPID/DESAIN_BERDASARKAN_LOKUS.png',
+    preview: '/images/PPID/DESAIN_BERDASARKAN_LOKUS.png',
     link: 'https://drive.google.com/file/d/17RxXc5b_i2qWsksOjwR-NgsLfTFD8fnz/view?usp=sharing',
     format: 'Package ZIP'
   }

@@ -52,7 +52,7 @@ const ProfilPimpinan = () => {
           {/* Struktur Organisasi */}
           <div className="mb-10 flex flex-wrap gap-3">
             <a
-              href="https://pariwisata.sultengprov.go.id/images/2026/Struktur_Organisasi_dan_Tugas_Fungsi_Dinas_Pariwisata.pdf"
+              href="/images/2026/Struktur_Organisasi_dan_Tugas_Fungsi_Dinas_Pariwisata.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-outline inline-flex items-center gap-2"
@@ -60,7 +60,7 @@ const ProfilPimpinan = () => {
               <Network size={18} /> Lihat Struktur Organisasi
             </a>
             <a
-              href="https://pariwisata.sultengprov.go.id/images/Kepegawaian/DUK_UPDATE_JANUARI_2025.pdf"
+              href="/images/Kepegawaian/DUK_UPDATE_JANUARI_2025.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary inline-flex items-center gap-2"

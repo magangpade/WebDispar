@@ -145,9 +145,9 @@ const StatistikKunjungan = () => {
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
-                { tahun: '2024', judul: 'Analisis Kunjungan Wisatawan Tahun 2024', url: 'https://pariwisata.sultengprov.go.id/images/Wisatawan/ANALISIS_KUNJUNGAN_WISATAWAN_2024.pdf' },
-                { tahun: '2023', judul: 'Analisis Kunjungan Wisatawan Tahun 2023', url: 'https://pariwisata.sultengprov.go.id/images/Wisatawan/ANALISIS_DATA_KUNJUNGAN_WISATAWAN_TAHUN_2023_1.pdf' },
-                { tahun: '2022', judul: 'Analisis Kunjungan Wisatawan Tahun 2022', url: 'https://pariwisata.sultengprov.go.id/images/Wisatawan/ANALISIS_KUNJUNGAN_WISATAWAN_TAHUN_2022.pdf' },
+                { tahun: '2024', judul: 'Analisis Kunjungan Wisatawan Tahun 2024', url: '/images/Wisatawan/ANALISIS_KUNJUNGAN_WISATAWAN_2024.pdf' },
+                { tahun: '2023', judul: 'Analisis Kunjungan Wisatawan Tahun 2023', url: '/images/Wisatawan/ANALISIS_DATA_KUNJUNGAN_WISATAWAN_TAHUN_2023_1.pdf' },
+                { tahun: '2022', judul: 'Analisis Kunjungan Wisatawan Tahun 2022', url: '/images/Wisatawan/ANALISIS_KUNJUNGAN_WISATAWAN_TAHUN_2022.pdf' },
                 { tahun: '2020', judul: 'Data Kunjungan Wisatawan Tahun 2020', url: 'https://drive.google.com/file/d/1bU2LPZB17uuohtmI8xw6v6WJRcRS7IWl/view?usp=sharing' },
                 { tahun: '2019', judul: 'Data Kunjungan Wisatawan Tahun 2019', url: 'https://drive.google.com/file/d/1f7neMSL151KaUCGxvMmeNTLyFsT177y_/view?usp=sharing' },
               ].map((doc, i) => (

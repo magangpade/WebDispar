@@ -7,25 +7,25 @@ import api from '../../services/api';
 const OFFICIAL_MAJALAH = [
   {
     judul: 'Majalah Pesona Sulawesi Tengah Edisi I - 2019',
-    cover: 'https://pariwisata.sultengprov.go.id/images/MAJALAH_PESONA_Edisi_I_001.jpg',
+    cover: '/images/MAJALAH_PESONA_Edisi_I_001.jpg',
     file_pdf: 'https://drive.google.com/file/d/1BH5D9htVorzZskUNze_oOToALnh60Q--/view?usp=sharing',
     baca_link: 'https://drive.google.com/file/d/1BH5D9htVorzZskUNze_oOToALnh60Q--/preview'
   },
   {
     judul: 'Majalah Pesona Sulawesi Tengah Edisi II - 2021',
-    cover: 'https://pariwisata.sultengprov.go.id/images/MAJALAH_PESONA_Edisi_II_2021_001.jpg',
+    cover: '/images/MAJALAH_PESONA_Edisi_II_2021_001.jpg',
     file_pdf: 'https://drive.google.com/file/d/1MrIDSlwSyPWU3gR-h3VM2HhJk4EBrj8L/view?usp=sharing',
     baca_link: 'https://drive.google.com/file/d/1MrIDSlwSyPWU3gR-h3VM2HhJk4EBrj8L/preview'
   },
   {
     judul: 'Booklet Pesona Kuliner Sulawesi Tengah',
-    cover: 'https://pariwisata.sultengprov.go.id/images/seribumegalit/Booklet_Pesona_Kuliner_-_page_1_001.jpg',
+    cover: '/images/seribumegalit/Booklet_Pesona_Kuliner_-_page_1_001.jpg',
     file_pdf: 'https://drive.google.com/file/d/1hgWI1J6RfyS0PljRM6pNQ1D4NO7QDZSN/view?usp=sharing',
     baca_link: 'https://anyflip.com/hwsca/xoqq/'
   },
   {
     judul: 'Booklet Negeri Seribu Megalit',
-    cover: 'https://pariwisata.sultengprov.go.id/images/seribumegalit/Booklet_megalit_2023_fix_001.jpg',
+    cover: '/images/seribumegalit/Booklet_megalit_2023_fix_001.jpg',
     file_pdf: 'https://drive.google.com/file/d/1Qxi2nxgq18p52nIS3cqcRbHqDAwbK7V1/view?pli=1',
     baca_link: 'https://drive.google.com/file/d/1Qxi2nxgq18p52nIS3cqcRbHqDAwbK7V1/preview'
   },
