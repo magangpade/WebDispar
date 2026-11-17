@@ -23,7 +23,7 @@ export const Topbar = () => {
   }, []);
 
   return (
-    <div className="w-full bg-[#081322] border-b border-white/10 text-slate-300 text-xs py-1.5 px-4 lg:px-8 flex justify-center items-center z-30">
+    <div className="w-full bg-gradient-to-r from-[#1F5BA6] to-[#5C2180] border-b border-[#1D3D63] text-white text-xs py-1.5 px-4 lg:px-8 flex justify-center items-center z-30">
       <div className="max-w-7xl w-full flex items-center justify-between gap-2">
         {/* Left: Status Badge & Slogan */}
         <div className="flex items-center gap-2">

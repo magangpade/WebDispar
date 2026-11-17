@@ -229,7 +229,7 @@ export const Sidebar = ({ isMobileOpen, setIsMobileOpen, language, setLanguage }
         fixed top-0 left-0 z-50
         w-80 max-w-[85vw] h-screen
         flex flex-col justify-between
-        bg-gradient-to-b from-[#0B192C] via-[#162740] to-[#0B192C]
+        bg-gradient-to-b from-[#5C2180] via-[#383087] to-[#143D8F]
         text-white border-r border-white/10
         shadow-2xl transition-transform duration-300 ease-in-out
         lg:hidden
