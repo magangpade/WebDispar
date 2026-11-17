@@ -116,29 +116,29 @@ const panelStyle = (extra = {}, small = false) => ({
   position: 'absolute',
   background: '#ffffff',
   border: '1px solid #e2e8f0',
-  borderRadius: 14,
-  boxShadow: '0 12px 40px rgba(0,0,0,0.18)',
+  borderRadius: 12,
+  boxShadow: '0 10px 40px rgba(0,0,0,0.12)',
   zIndex: 9999,
-  minWidth: small ? 190 : 230,
+  minWidth: small ? 180 : 220,
   padding: '6px',
   ...extra,
 });
 
 const itemBase = (active, small = false) => ({
   display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-  width: '100%', padding: small ? '7px 13px' : '9px 15px',
+  width: '100%', padding: small ? '7px 13px' : '10px 16px',
   fontSize: small ? 12 : 13, cursor: 'pointer',
   color: active ? '#7c3aed' : '#334155',
   background: active ? '#f5f3ff' : 'transparent',
   border: 'none', textAlign: 'left',
   borderRadius: 8,
-  fontWeight: active ? 700 : 600,
+  fontWeight: active ? 700 : 500,
   transition: 'all 0.15s ease',
 });
 
-const SubPanel = ({ items, onClose, small = false, subLeft = false }) => {
+const SubPanel = ({ items, onClose, small = false }) => {
   const [openIdx, setOpenIdx] = useState(null);
-  const pos = subLeft ? { top: 0, right: '100%', left: 'auto', marginRight: 4 } : { top: 0, left: '100%', marginLeft: 4 };
+  const pos = { top: 0, left: '100%', marginLeft: 4 };
   return (
     <div style={panelStyle(pos, small)}>
       {items.map((item, idx) => {
@@ -185,7 +185,7 @@ const SubPanel = ({ items, onClose, small = false, subLeft = false }) => {
               <span style={{ flex: 1 }}>{item.label}</span>
               <ChevronRight size={11} style={{ opacity: 0.5, flexShrink: 0 }} />
             </button>
-            {openIdx === idx && <SubPanel items={item.children} onClose={onClose} small subLeft={subLeft} />}
+            {openIdx === idx && <SubPanel items={item.children} onClose={onClose} small />}
           </div>
         );
         if (item.external) return (
@@ -195,7 +195,7 @@ const SubPanel = ({ items, onClose, small = false, subLeft = false }) => {
             target="_blank"
             rel="noopener noreferrer"
             onClick={onClose}
-            style={{ display: 'block', padding: small ? '7px 13px' : '9px 15px', fontSize: small ? 12 : 13, color: '#334155', textDecoration: 'none', borderRadius: 8, fontWeight: 600 }}
+            style={{ display: 'block', padding: small ? '7px 13px' : '10px 16px', fontSize: small ? 12 : 13, color: '#334155', textDecoration: 'none', borderRadius: 8, fontWeight: 500 }}
             onMouseEnter={(e) => { e.currentTarget.style.background = '#f5f3ff'; e.currentTarget.style.color = '#7c3aed'; }}
             onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#334155'; }}
           >
@@ -207,7 +207,7 @@ const SubPanel = ({ items, onClose, small = false, subLeft = false }) => {
             key={idx}
             to={item.path}
             onClick={onClose}
-            style={{ display: 'block', padding: small ? '7px 13px' : '9px 15px', fontSize: small ? 12 : 13, color: '#334155', textDecoration: 'none', borderRadius: 8, fontWeight: 600 }}
+            style={{ display: 'block', padding: small ? '7px 13px' : '10px 16px', fontSize: small ? 12 : 13, color: '#334155', textDecoration: 'none', borderRadius: 8, fontWeight: 500 }}
             onMouseEnter={(e) => { e.currentTarget.style.background = '#f5f3ff'; e.currentTarget.style.color = '#7c3aed'; }}
             onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#334155'; }}
           >
@@ -219,14 +219,12 @@ const SubPanel = ({ items, onClose, small = false, subLeft = false }) => {
   );
 };
 
-const DropdownPanel = ({ items, onClose, alignRight = false }) => {
+const DropdownPanel = ({ items, onClose }) => {
   const [openIdx, setOpenIdx] = useState(null);
-  const pos = alignRight
-    ? { top: '100%', right: 0, marginTop: 8 }
-    : { top: '100%', left: 0, marginTop: 8 };
+  const pos = { top: '100%', left: 0, marginTop: 6 };
 
   return (
-    <div style={panelStyle(pos, false)}>
+    <div style={panelStyle(pos, true)}>
       {items.map((item, idx) => {
         const hasSub = Array.isArray(item.children) && item.children.length > 0;
         if (hasSub) return (
@@ -234,14 +232,14 @@ const DropdownPanel = ({ items, onClose, alignRight = false }) => {
             <button
               type="button"
               onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
-              style={itemBase(openIdx === idx, false)}
+              style={itemBase(openIdx === idx, true)}
               onMouseEnter={(e) => { e.currentTarget.style.background = '#f5f3ff'; e.currentTarget.style.color = '#7c3aed'; }}
               onMouseLeave={(e) => { if (openIdx !== idx) { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#334155'; } }}
             >
               <span style={{ flex: 1 }}>{item.label}</span>
               <ChevronRight size={11} style={{ opacity: 0.5, flexShrink: 0 }} />
             </button>
-            {openIdx === idx && <SubPanel items={item.children} onClose={onClose} small subLeft={alignRight} />}
+            {openIdx === idx && <SubPanel items={item.children} onClose={onClose} small />}
           </div>
         );
         if (item.external) return (
@@ -251,7 +249,7 @@ const DropdownPanel = ({ items, onClose, alignRight = false }) => {
             target="_blank"
             rel="noopener noreferrer"
             onClick={onClose}
-            style={{ display: 'block', padding: '9px 15px', fontSize: 13, color: '#334155', textDecoration: 'none', borderRadius: 8, fontWeight: 600 }}
+            style={{ display: 'block', padding: '7px 13px', fontSize: 12, color: '#334155', textDecoration: 'none', borderRadius: 8, fontWeight: 500 }}
             onMouseEnter={(e) => { e.currentTarget.style.background = '#f5f3ff'; e.currentTarget.style.color = '#7c3aed'; }}
             onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#334155'; }}
           >
@@ -263,7 +261,7 @@ const DropdownPanel = ({ items, onClose, alignRight = false }) => {
             key={idx}
             to={item.path}
             onClick={onClose}
-            style={{ display: 'block', padding: '9px 15px', fontSize: 13, color: '#334155', textDecoration: 'none', borderRadius: 8, fontWeight: 600 }}
+            style={{ display: 'block', padding: '7px 13px', fontSize: 12, color: '#334155', textDecoration: 'none', borderRadius: 8, fontWeight: 500 }}
             onMouseEnter={(e) => { e.currentTarget.style.background = '#f5f3ff'; e.currentTarget.style.color = '#7c3aed'; }}
             onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#334155'; }}
           >
@@ -362,7 +360,6 @@ export const Navbar = ({ onToggleMobile, language = 'ID', setLanguage }) => {
                       <DropdownPanel
                         items={menu.children}
                         onClose={closeAll}
-                        alignRight={idx > 2}
                       />
                     )}
                   </div>
