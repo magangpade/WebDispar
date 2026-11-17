@@ -14,8 +14,8 @@ const IMAGES = {
   news2: 'https://images.unsplash.com/photo-1532375810709-75b1da00537c?auto=format&fit=crop&w=800&q=80',
   news3: 'https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=800&q=80',
   calendarBanner: 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80',
-  videoTogean: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80',
-  videoDesa: 'https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=800&q=80',
+  videoPariwisata: 'https://i.ytimg.com/vi/voGg26hCInU/hqdefault.jpg',
+  videoDesaWisata: 'https://i.ytimg.com/vi/42oGdqocrlw/hqdefault.jpg',
 };
 
 // ==========================================
@@ -311,8 +311,8 @@ const StatisticsAndVideosSection = ({ stats }) => {
           <article className="flex flex-col rounded-xl overflow-hidden border border-[#F1F5F9] bg-white group">
             <div className="relative h-44 bg-slate-900 overflow-hidden">
               <img
-                src={IMAGES.videoTogean}
-                alt="Video Pariwisata Pesona Bahari"
+                src={IMAGES.videoPariwisata}
+                alt="Thumbnail video pariwisata Sulawesi Tengah"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
               />
               <div className="absolute inset-0 bg-black/25" />
@@ -321,16 +321,12 @@ const StatisticsAndVideosSection = ({ stats }) => {
                 <Sparkles className="w-3 h-3 text-amber-400" />
                 PARIWISATA SULTENG
               </span>
-              {/* Time Badge */}
-              <span className="absolute bottom-2.5 right-2.5 px-2 py-0.5 rounded bg-black/75 text-white font-mono text-[10px]">
-                04:32
-              </span>
               {/* Play Button */}
               <a
-                href="https://youtube.com"
+                href="https://www.youtube.com/watch?v=voGg26hCInU"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Putar Video Pariwisata"
+                aria-label="Putar video pariwisata di YouTube"
                 className="absolute inset-0 flex items-center justify-center"
               >
                 <div className="w-12 h-10 rounded-xl bg-[#DC2626] hover:scale-110 transition-transform shadow-lg flex items-center justify-center text-white">
@@ -340,10 +336,10 @@ const StatisticsAndVideosSection = ({ stats }) => {
             </div>
             <div className="p-3.5 flex flex-col justify-between flex-1 gap-2">
               <h4 className="font-bold text-[#1E293B] text-sm leading-snug line-clamp-1">
-                Video Pariwisata: Pesona…
+                Video Pariwisata Sulawesi Tengah
               </h4>
               <p className="text-[#64748B] text-xs line-clamp-2">
-                Eksplorasi keindahan bawah laut Kepulauan Togean, Danau Poso, serta
+                Tonton dokumentasi pariwisata langsung di YouTube.
               </p>
               <div className="flex items-center justify-between pt-2 border-t border-slate-100 text-xs">
                 <span className="font-bold text-[#D97706] flex items-center gap-1">
@@ -351,7 +347,7 @@ const StatisticsAndVideosSection = ({ stats }) => {
                   Profil Daerah
                 </span>
                 <span className="px-1.5 py-0.5 rounded bg-[#EF4444] text-white font-bold text-[10px]">
-                  HD
+                  YouTube
                 </span>
               </div>
             </div>
@@ -361,8 +357,8 @@ const StatisticsAndVideosSection = ({ stats }) => {
           <article className="flex flex-col rounded-xl overflow-hidden border border-[#F1F5F9] bg-white group">
             <div className="relative h-44 bg-slate-900 overflow-hidden">
               <img
-                src={IMAGES.videoDesa}
-                alt="Video Desa Wisata Eksotisme"
+                src={IMAGES.videoDesaWisata}
+                alt="Thumbnail video desa wisata Sulawesi Tengah"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
               />
               <div className="absolute inset-0 bg-black/25" />
@@ -371,27 +367,25 @@ const StatisticsAndVideosSection = ({ stats }) => {
                 <Sparkles className="w-3 h-3 text-emerald-400" />
                 DESA WISATA
               </span>
-              {/* Time Badge */}
-              <span className="absolute bottom-2.5 right-2.5 px-2 py-0.5 rounded bg-black/75 text-white font-mono text-[10px]">
-                06:15
-              </span>
               {/* Play Button */}
-              <Link
-                to="/info-pariwisata/destinasi/desa-wisata"
-                aria-label="Lihat Desa Wisata"
+              <a
+                href="https://www.youtube.com/watch?v=42oGdqocrlw"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Putar video desa wisata di YouTube"
                 className="absolute inset-0 flex items-center justify-center"
               >
                 <div className="w-12 h-10 rounded-xl bg-[#DC2626] hover:scale-110 transition-transform shadow-lg flex items-center justify-center text-white">
                   <Play className="w-4 h-4 fill-white ml-0.5" />
                 </div>
-              </Link>
+              </a>
             </div>
             <div className="p-3.5 flex flex-col justify-between flex-1 gap-2">
               <h4 className="font-bold text-[#1E293B] text-sm leading-snug line-clamp-1">
-                Video Desa Wisata: Eksotisme
+                Video Desa Wisata Sulawesi Tengah
               </h4>
               <p className="text-[#64748B] text-xs line-clamp-2">
-                Menyingkap daya tarik desa wisata percontohan, kehangatan tradisi lokal,
+                Tonton dokumentasi desa wisata langsung di YouTube.
               </p>
               <div className="flex items-center justify-between pt-2 border-t border-slate-100 text-xs">
                 <span className="font-bold text-[#059669] flex items-center gap-1">
@@ -399,7 +393,7 @@ const StatisticsAndVideosSection = ({ stats }) => {
                   Jelajah Desa
                 </span>
                 <span className="px-1.5 py-0.5 rounded bg-[#EF4444] text-white font-bold text-[10px]">
-                  HD
+                  YouTube
                 </span>
               </div>
             </div>

@@ -127,22 +127,44 @@ const HubungiKami = () => {
             ))}
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 items-stretch gap-8">
             {/* Map */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="card overflow-hidden"
+              className="card flex w-full flex-col"
             >
-              <iframe
-                title="Lokasi Kantor Dinas Pariwisata"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.0!2d119.87!3d-0.89!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMMKwNTMnMjQuMCJTIDExOcKwNTInMTMuMiJF!5e0!3m2!1sen!2sid!4v1234567890"
-                className="w-full h-96 border-0"
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
+              <div className="relative h-72 sm:h-80 lg:h-auto lg:flex-1">
+                <iframe
+                  title="Pratinjau lokasi Kantor Dinas Pariwisata"
+                  src="https://www.google.com/maps?q=Dinas+Pariwisata+Provinsi+Sulawesi+Tengah%2C+Jalan+Dewi+Sartika+Nomor+45%2C+Palu&z=17&output=embed"
+                  className="absolute inset-0 h-full w-full border-0 pointer-events-none"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  tabIndex={-1}
+                />
+                <a
+                  href="https://maps.app.goo.gl/KET7RCLtQzEHyH7E7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Buka lokasi Kantor Dinas Pariwisata di Google Maps"
+                  className="absolute inset-0"
+                />
+              </div>
+              <div className="p-5">
+                <h2 className="font-bold text-navy-900">Lokasi Kantor Dinas Pariwisata</h2>
+                <p className="mt-1 text-sm text-gray-600">Jalan Dewi Sartika Nomor 45, Palu, Sulawesi Tengah</p>
+                <a
+                  href="https://maps.app.goo.gl/KET7RCLtQzEHyH7E7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary-600 hover:text-primary-800"
+                >
+                  <FaLocationDot aria-hidden="true" />
+                  Buka lokasi di Google Maps
+                </a>
+              </div>
             </motion.div>
 
             {/* Form */}

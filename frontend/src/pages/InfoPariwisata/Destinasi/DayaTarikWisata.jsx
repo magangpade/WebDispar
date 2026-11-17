@@ -10,6 +10,61 @@ const kabupatenList = [
   'Kabupaten Banggai', 'Kabupaten Banggai Kepulauan', 'Kabupaten Banggai Laut', 'Kabupaten Tolitoli', 'Kabupaten Buol'
 ];
 
+const getDescriptionPreview = (html) => {
+  if (!html) return '';
+
+  const document = new DOMParser().parseFromString(html, 'text/html');
+  document.querySelectorAll('script, style, img, iframe, video, audio, svg').forEach((element) => element.remove());
+  return document.body.textContent.replace(/\s+/g, ' ').trim();
+};
+
+const DestinationCard = ({ item, index }) => {
+  const [imageFailed, setImageFailed] = useState(false);
+  const image = typeof item.gambar === 'string' ? item.gambar.trim() : '';
+  const imageSrc = image
+    ? (image.startsWith('http') || image.startsWith('/') ? image : `/uploads/${image}`)
+    : '';
+  const description = getDescriptionPreview(item.deskripsi);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.1 }}
+      className="card group flex h-[400px] flex-col"
+    >
+      <div className="relative h-48 shrink-0 overflow-hidden bg-slate-100">
+        {imageSrc && !imageFailed ? (
+          <img
+            src={imageSrc}
+            alt={item.judul || 'Daya tarik wisata'}
+            onError={() => setImageFailed(true)}
+            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+          />
+        ) : (
+          <div className="flex h-full flex-col items-center justify-center gap-2 text-slate-400">
+            <MapPin size={32} aria-hidden="true" />
+            <span className="text-sm">Foto belum tersedia</span>
+          </div>
+        )}
+        <div className="absolute top-4 left-4 rounded-full bg-amber-400 px-3 py-1 text-xs font-bold text-slate-900 shadow">
+          {item.kabupaten}
+        </div>
+      </div>
+      <div className="flex min-h-0 flex-1 flex-col p-5">
+        <h3 className="mb-2 line-clamp-2 text-lg font-bold text-navy-900">{item.judul}</h3>
+        <p className="mb-4 line-clamp-3 text-sm text-gray-600">
+          {description || 'Deskripsi belum tersedia.'}
+        </p>
+        <span className="mt-auto inline-flex items-center gap-1 text-xs text-gray-400">
+          <Eye size={14} /> {item.dilihat ?? 0} dilihat
+        </span>
+      </div>
+    </motion.div>
+  );
+};
+
 const DayaTarikWisata = () => {
   const [data, setData] = useState([]);
   const [selected, setSelected] = useState('Kota Palu');
@@ -59,38 +114,7 @@ const DayaTarikWisata = () => {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {data.map((item, idx) => (
-                <motion.div
-                  key={item.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="card group"
-                >
-                  <div className="relative overflow-hidden h-52">
-                    <img
-                      src={item.gambar ? (item.gambar.startsWith('http') || item.gambar.startsWith('/') ? item.gambar : `/uploads/${item.gambar}`) : '/slider/Slider.jpg'}
-                      alt={item.judul}
-                      onError={(e) => {
-                        e.currentTarget.src = '/slider/Slider.jpg';
-                      }}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                    />
-                    <div className="absolute top-4 left-4 bg-amber-400 text-slate-900 text-xs font-bold px-3 py-1 rounded-full shadow">
-                      {item.kabupaten}
-                    </div>
-                  </div>
-                  <div className="p-5">
-                    <h3 className="font-bold text-navy-900 text-lg mb-2 line-clamp-2">{item.judul}</h3>
-                    <div
-                      className="text-sm text-gray-600 line-clamp-3 mb-4 prose prose-sm max-w-none"
-                      dangerouslySetInnerHTML={{ __html: item.deskripsi }}
-                    />
-                    <span className="inline-flex items-center gap-1 text-xs text-gray-400">
-                      <Eye size={14} /> {item.dilihat} dilihat
-                    </span>
-                  </div>
-                </motion.div>
+                <DestinationCard key={item.id} item={item} index={idx} />
               ))}
             </div>
           )}
