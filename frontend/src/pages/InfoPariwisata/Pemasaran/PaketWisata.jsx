@@ -46,9 +46,9 @@ const PaketWisata = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className="card group"
+                  className="card group flex flex-col h-full"
                 >
-                  <div className="relative overflow-hidden h-52">
+                  <div className="relative overflow-hidden h-52 flex-shrink-0">
                     <img
                       src={item.gambar ? (item.gambar.startsWith('http') || item.gambar.startsWith('/') ? item.gambar : `/uploads/${item.gambar}`) : '/slider/Slider.jpg'}
                       alt={item.judul}
@@ -56,10 +56,10 @@ const PaketWisata = () => {
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
                   </div>
-                  <div className="p-5">
+                  <div className="p-5 flex flex-col flex-1">
                     <h3 className="font-bold text-navy-900 text-lg mb-2 line-clamp-2">{item.judul}</h3>
-                    <p className="text-sm text-gray-500 line-clamp-3 mb-4">{item.deskripsi}</p>
-                    <div className="flex gap-2">
+                    <p className="text-sm text-gray-500 line-clamp-3 mb-4 flex-1">{item.deskripsi}</p>
+                    <div className="flex gap-2 mt-auto">
                       {item.file_pdf && (
                         <>
                           <a
@@ -72,8 +72,7 @@ const PaketWisata = () => {
                           </a>
                           <a
                             href={item.file_pdf.startsWith('http') || item.file_pdf.startsWith('/') ? item.file_pdf : `/uploads/${item.file_pdf}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
+                            download
                             className="inline-flex items-center justify-center gap-1.5 border border-primary-600 text-primary-600 hover:bg-primary-50 text-xs font-semibold py-2 px-3 rounded-lg transition-colors"
                           >
                             <Download size={14} /> Unduh

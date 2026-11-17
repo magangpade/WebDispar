@@ -5,6 +5,7 @@ const {
   getDesaWisata, createDesaWisata,
   getPaketWisata, createPaketWisata,
   getKalenderEvent, createKalenderEvent,
+  getDataHunian, createDataHunian,
   getStatistikKunjungan,
   getEkonomiKreatif, createEkonomiKreatif,
   getSumberDaya, createSumberDaya
@@ -20,6 +21,8 @@ router.get('/paket-wisata', getPaketWisata);
 router.post('/paket-wisata', verifyToken, isAdmin, upload.fields([{ name: 'gambar', maxCount: 1 }, { name: 'file_pdf', maxCount: 1 }]), createPaketWisata);
 router.get('/kalender-event', getKalenderEvent);
 router.post('/kalender-event', verifyToken, isAdmin, upload.single('gambar'), createKalenderEvent);
+router.get('/data-hunian', getDataHunian);
+router.post('/data-hunian', verifyToken, isAdmin, upload.single('file'), createDataHunian);
 router.get('/statistik-kunjungan', getStatistikKunjungan);
 router.get('/ekonomi-kreatif', getEkonomiKreatif);
 router.post('/ekonomi-kreatif', verifyToken, isAdmin, upload.single('file'), createEkonomiKreatif);

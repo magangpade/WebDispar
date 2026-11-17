@@ -101,6 +101,27 @@ exports.createKalenderEvent = async (req, res) => {
   }
 };
 
+// Data Hunian Hotel
+exports.getDataHunian = async (req, res) => {
+  try {
+    const [rows] = await db.query('SELECT * FROM data_hunian ORDER BY id ASC');
+    res.json(rows);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
+exports.createDataHunian = async (req, res) => {
+  const { judul, deskripsi } = req.body;
+  const file = req.file ? req.file.filename : null;
+  try {
+    await db.query('INSERT INTO data_hunian (judul, deskripsi, file) VALUES (?, ?, ?)', [judul, deskripsi, file]);
+    res.status(201).json({ message: 'Data Hunian berhasil dibuat' });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
 // Statistik Kunjungan
 exports.getStatistikKunjungan = async (req, res) => {
   try {
