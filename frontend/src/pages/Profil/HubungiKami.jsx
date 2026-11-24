@@ -13,8 +13,12 @@ import {
   FaRegPaperPlane,
 } from 'react-icons/fa6';
 import { motion } from 'framer-motion';
+import { useLanguage } from '../../context/LanguageContext';
 
 const HubungiKami = () => {
+  const { language } = useLanguage();
+  const isEn = language === 'EN';
+
   const [form, setForm] = useState({ nama: '', email: '', subjek: '', pesan: '' });
   const [sent, setSent] = useState(false);
 
@@ -28,7 +32,7 @@ const HubungiKami = () => {
   const kontak = [
     {
       icon: FaLocationDot,
-      title: 'Alamat Kantor',
+      title: isEn ? 'Office Address' : 'Alamat Kantor',
       value:
         'Jalan Dewi Sartika Nomor 45 Palu, Kode Pos 94121\nPalu Selatan, Sulawesi Tengah, Indonesia',
       href: 'https://maps.app.goo.gl/KET7RCLtQzEHyH7E7',
@@ -36,7 +40,7 @@ const HubungiKami = () => {
     },
     {
       icon: FaPhone,
-      title: 'Telepon',
+      title: isEn ? 'Telephone' : 'Telepon',
       value: '(0451) 483942',
       href: 'tel:0451483942',
       color: 'from-green-500 to-green-700',
@@ -50,8 +54,10 @@ const HubungiKami = () => {
     },
     {
       icon: FaRegClock,
-      title: 'Jam Kerja',
-      value: 'Senin - Jumat: 08.00 - 16.00 WITA\nSabtu - Minggu: Tutup',
+      title: isEn ? 'Working Hours' : 'Jam Kerja',
+      value: isEn
+        ? 'Monday - Friday: 08.00 - 16.00 WITA\nSaturday - Sunday: Closed'
+        : 'Senin - Jumat: 08.00 - 16.00 WITA\nSabtu - Minggu: Tutup',
       color: 'from-purple-500 to-purple-700',
     },
   ];
@@ -60,25 +66,25 @@ const HubungiKami = () => {
     {
       icon: FaYoutube,
       label: 'Dinas Pariwisata Sulteng',
-      href: 'https://youtube.com',
+      href: 'https://www.youtube.com/@dinaspariwisatasulteng',
       color: 'hover:bg-red-600',
     },
     {
       icon: FaInstagram,
       label: 'dinaspariwisatasulteng',
-      href: 'https://instagram.com',
+      href: 'https://www.instagram.com/dinaspariwisatasulteng/',
       color: 'hover:bg-pink-600',
     },
     {
       icon: FaTiktok,
       label: 'dispar.sulteng',
-      href: 'https://tiktok.com',
+      href: 'https://www.tiktok.com/@dispar.sulteng',
       color: 'hover:bg-black',
     },
     {
       icon: FaFacebook,
       label: 'Dinas Pariwisata Sulawesi Tengah',
-      href: 'https://facebook.com',
+      href: 'https://www.facebook.com/dinaspariwisatasulteng/',
       color: 'hover:bg-blue-600',
     },
   ];
@@ -86,16 +92,20 @@ const HubungiKami = () => {
   return (
     <>
       <Helmet>
-        <title>Hubungi Kami - Dinas Pariwisata Sulteng</title>
+        <title>{isEn ? 'Contact Us - Central Sulawesi Tourism Office' : 'Hubungi Kami - Dinas Pariwisata Sulteng'}</title>
       </Helmet>
 
       <PageHeader
-        badge="Layanan Kontak & Lokasi"
-        title="Hubungi Kami"
-        subtitle="Kami siap melayani kebutuhan informasi, kemitraan, dan konsultasi kepariwisataan Anda"
+        badge={isEn ? 'Contact & Location Services' : 'Layanan Kontak & Lokasi'}
+        title={isEn ? 'Contact Us' : 'Hubungi Kami'}
+        subtitle={
+          isEn
+            ? 'We are ready to assist your tourism information, partnership, and consultation needs'
+            : 'Kami siap melayani kebutuhan informasi, kemitraan, dan konsultasi kepariwisataan Anda'
+        }
         breadcrumbs={[
-          { label: 'Profil', path: '/profil' },
-          { label: 'Hubungi Kami' }
+          { label: isEn ? 'Profile' : 'Profil', path: '/profil' },
+          { label: isEn ? 'Contact Us' : 'Hubungi Kami' }
         ]}
       />
 
@@ -160,7 +170,7 @@ const HubungiKami = () => {
                 />
               </div>
               <div className="p-5">
-                <h2 className="font-bold text-navy-900">Lokasi Kantor Dinas Pariwisata</h2>
+                <h2 className="font-bold text-navy-900">{isEn ? 'Tourism Office Location' : 'Lokasi Kantor Dinas Pariwisata'}</h2>
                 <p className="mt-1 text-sm text-gray-600">Jalan Dewi Sartika Nomor 45, Palu, Sulawesi Tengah</p>
                 <a
                   href="https://maps.app.goo.gl/KET7RCLtQzEHyH7E7"
@@ -169,7 +179,7 @@ const HubungiKami = () => {
                   className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary-600 hover:text-primary-800"
                 >
                   <FaLocationDot aria-hidden="true" />
-                  Buka lokasi di Google Maps
+                  {isEn ? 'Open location in Google Maps' : 'Buka lokasi di Google Maps'}
                 </a>
               </div>
             </motion.div>
@@ -181,21 +191,21 @@ const HubungiKami = () => {
               viewport={{ once: true }}
               className="card p-8"
             >
-              <h2 className="text-2xl font-bold text-navy-900 mb-2">Kirim Pesan</h2>
+              <h2 className="text-2xl font-bold text-navy-900 mb-2">{isEn ? 'Send a Message' : 'Kirim Pesan'}</h2>
               <p className="text-gray-500 text-sm mb-6">
-                Isi formulir di bawah ini, kami akan segera merespon
+                {isEn ? 'Fill out the form below, and we will get back to you shortly' : 'Isi formulir di bawah ini, kami akan segera merespon'}
               </p>
 
               {sent && (
                 <div className="mb-4 p-3 bg-green-50 border border-green-200 text-green-700 rounded-lg text-sm">
-                  ✓ Pesan Anda berhasil terkirim. Terima kasih!
+                  {isEn ? '✓ Your message has been sent successfully. Thank you!' : '✓ Pesan Anda berhasil terkirim. Terima kasih!'}
                 </div>
               )}
 
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Nama Lengkap
+                    {isEn ? 'Full Name' : 'Nama Lengkap'}
                   </label>
                   <input
                     type="text"
@@ -203,7 +213,7 @@ const HubungiKami = () => {
                     value={form.nama}
                     onChange={(e) => setForm({ ...form, nama: e.target.value })}
                     className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-100 outline-none transition-all"
-                    placeholder="Masukkan nama Anda"
+                    placeholder={isEn ? 'Enter your full name' : 'Masukkan nama Anda'}
                   />
                 </div>
                 <div>
@@ -218,29 +228,29 @@ const HubungiKami = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Subjek</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">{isEn ? 'Subject' : 'Subjek'}</label>
                   <input
                     type="text"
                     required
                     value={form.subjek}
                     onChange={(e) => setForm({ ...form, subjek: e.target.value })}
                     className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-100 outline-none transition-all"
-                    placeholder="Subjek pesan"
+                    placeholder={isEn ? 'Message subject' : 'Subjek pesan'}
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Pesan</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">{isEn ? 'Message' : 'Pesan'}</label>
                   <textarea
                     required
                     rows={4}
                     value={form.pesan}
                     onChange={(e) => setForm({ ...form, pesan: e.target.value })}
                     className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-100 outline-none transition-all resize-none"
-                    placeholder="Tulis pesan Anda di sini..."
+                    placeholder={isEn ? 'Write your message here...' : 'Tulis pesan Anda di sini...'}
                   />
                 </div>
                 <button type="submit" className="btn-primary w-full justify-center">
-                  <FaRegPaperPlane size={18} /> Kirim Pesan
+                  <FaRegPaperPlane size={18} /> {isEn ? 'Send Message' : 'Kirim Pesan'}
                 </button>
               </form>
             </motion.div>
@@ -248,9 +258,11 @@ const HubungiKami = () => {
 
           {/* Social Media */}
           <div className="mt-12 card p-8 text-center">
-            <h2 className="text-2xl font-bold text-navy-900 mb-2">Ikuti Kami</h2>
+            <h2 className="text-2xl font-bold text-navy-900 mb-2">{isEn ? 'Follow Us' : 'Ikuti Kami'}</h2>
             <p className="text-gray-500 text-sm mb-6">
-              Dapatkan informasi terbaru melalui media sosial resmi kami
+              {isEn
+                ? 'Stay connected and get the latest updates through our official social media channels'
+                : 'Dapatkan informasi terbaru melalui media sosial resmi kami'}
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               {social.map((s, idx) => (
@@ -259,6 +271,8 @@ const HubungiKami = () => {
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
+                  title={`Kunjungi ${s.label} resmi Dinas Pariwisata Sulawesi Tengah`}
+                  aria-label={s.label}
                   className={`inline-flex items-center gap-2 px-4 py-3 rounded-lg bg-navy-900 text-white font-medium transition-colors ${s.color}`}
                 >
                   <s.icon size={18} /> {s.label}

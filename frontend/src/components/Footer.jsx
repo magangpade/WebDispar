@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, Mail, Phone, ExternalLink } from 'lucide-react';
-import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from 'react-icons/fa6';
+import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube, FaTiktok } from 'react-icons/fa6';
 import { useLanguage } from '../context/LanguageContext';
 import { UI_STRINGS } from '../utils/translations';
 
@@ -112,7 +112,8 @@ const Footer = () => {
               {[
                 { Icon: FaFacebookF, href: 'https://www.facebook.com/dinaspariwisatasulteng/', label: 'Facebook' },
                 { Icon: FaInstagram, href: 'https://www.instagram.com/dinaspariwisatasulteng/', label: 'Instagram' },
-                { Icon: FaYoutube, href: 'https://www.youtube.com/c/dinaspariwisatasulteng', label: 'YouTube' },
+                { Icon: FaTiktok, href: 'https://www.tiktok.com/@dispar.sulteng', label: 'TikTok' },
+                { Icon: FaYoutube, href: 'https://www.youtube.com/@dinaspariwisatasulteng', label: 'YouTube' },
               ].map(({ Icon, href, label }, idx) => (
                 <a
                   key={idx}
