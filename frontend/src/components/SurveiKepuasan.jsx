@@ -136,8 +136,8 @@ export const SurveiKepuasan = ({ language = 'ID' }) => {
         )}
       </AnimatePresence>
 
-      {/* Floating Button Icon Wonderful Indonesia di Pojok Kanan Bawah (Di Atas Statistik Pengunjung) */}
-      <div className="fixed bottom-[82px] right-6 z-40 select-none">
+      {/* Floating Button Icon Wonderful Indonesia di Pojok Kanan Bawah (Sejajar Kiri-Kanan) */}
+      <div className="fixed bottom-6 right-6 z-40 select-none">
         <motion.button
           type="button"
           onClick={() => setIsOpen(true)}
