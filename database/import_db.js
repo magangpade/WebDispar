@@ -41,11 +41,37 @@ function runMysql(args, inputPath) {
   });
 }
 
+function runScript(scriptRelativePath) {
+  return new Promise((resolve, reject) => {
+    const fullPath = path.join(__dirname, scriptRelativePath);
+    console.log(`\n▶ Menjalankan ${path.basename(scriptRelativePath)}...`);
+    const child = spawn(process.execPath, [fullPath], {
+      stdio: 'inherit',
+      env: process.env,
+    });
+    child.on('error', reject);
+    child.on('close', (code) => {
+      if (code === 0) resolve();
+      else reject(new Error(`${scriptRelativePath} selesai dengan kode ${code}`));
+    });
+  });
+}
+
 async function main() {
   const sqlPath = path.join(__dirname, 'sulteng_tourism.sql');
   await runMysql(['-e', `CREATE DATABASE IF NOT EXISTS \`${database}\` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci`]);
   await runMysql([database], sqlPath);
-  console.log(`Database ${database} berhasil diimpor dari ${sqlPath}`);
+  console.log(`✅ Database ${database} berhasil diimpor dari ${sqlPath}`);
+
+  // Menjalankan migrasi dan seeding modul lanjutan secara otomatis
+  await runScript('../backend/scripts/migrate_admin_theme_slider.js');
+  await runScript('../backend/scripts/seed_no3_no4.js');
+  await runScript('../backend/scripts/seed_paket_dan_hunian.js');
+  await runScript('../backend/scripts/seed_regulasi_local.js');
+  await runScript('../backend/scripts/sync_all_authentic_files.js');
+  await runScript('../backend/scripts/sync_real_stats.js');
+
+  console.log('\n🎉 SELURUH DATABASE DAN DATA FITUR WEB BERHASIL DIMIGRASI LENGKAP!');
 }
 
 main().catch((err) => {
