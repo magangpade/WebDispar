@@ -7,7 +7,7 @@ import api from '../../../services/api';
 import PageHeader from '../../../components/PageHeader';
 import { useLanguage } from '../../../context/LanguageContext';
 import { KABUPATEN_MAP, slugify } from '../../../utils/translations';
-import { sanitizeHtml, cleanMojibake } from '../../../utils/sanitize';
+import { sanitizeAndFormatHtml } from '../../../utils/sanitize';
 
 const DesaWisata = () => {
   const { language } = useLanguage();
@@ -15,7 +15,7 @@ const DesaWisata = () => {
   const { kabupaten: paramKabupaten } = useParams();
 
   const [data, setData] = useState([]);
-  const [selected, setSelected] = useState('Kota Palu');
+  const [selected, setSelected] = useState('Semua');
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
   const ITEMS_PER_PAGE = 9;
@@ -142,7 +142,7 @@ const DesaWisata = () => {
                         </h3>
                         <div
                           className="text-sm text-gray-600 line-clamp-3 mb-4 prose prose-sm max-w-none text-justify"
-                          dangerouslySetInnerHTML={{ __html: sanitizeHtml(cleanMojibake(item.deskripsi)) }}
+                          dangerouslySetInnerHTML={{ __html: sanitizeAndFormatHtml(item.deskripsi) }}
                         />
                         <div className="mt-auto pt-3 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500">
                           <span className="inline-flex items-center gap-1 text-gray-400">

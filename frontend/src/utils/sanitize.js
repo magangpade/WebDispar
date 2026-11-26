@@ -171,8 +171,16 @@ export const sanitizeAndFormatHtml = (dirty) => {
     h.querySelectorAll('[class]').forEach((el) => el.removeAttribute('class'));
   });
 
-  // Step 6: Gambar → tambahkan style responsif dan rounded
+  // Step 6: Gambar → tambahkan style responsif dan rounded + fallback jika gagal dimuat
+  const IMG_FALLBACK_SRC = '/slider/Slider.jpg';
   doc.querySelectorAll('img').forEach((img) => {
+    // Hapus tag <img> tanpa src valid (artefak / kosong)
+    const src = (img.getAttribute('src') || '').trim();
+    if (!src) {
+      img.remove();
+      return;
+    }
+    img.setAttribute('src', src);
     img.setAttribute('loading', 'lazy');
     img.setAttribute('decoding', 'async');
     img.style.maxWidth = '100%';
@@ -184,6 +192,15 @@ export const sanitizeAndFormatHtml = (dirty) => {
     // Hapus atribut width/height absolut yang bisa merusak layout
     img.removeAttribute('width');
     img.removeAttribute('height');
+    img.setAttribute('alt', img.getAttribute('alt') || '');
+    // Fallback lokal bila gambar dari domain eksternal gagal dimuat (404 / DNS error)
+    // Domain yang diizinkan: CDN gambar pihak ketiga yang masih aktif.
+    const ALLOWED_REMOTE = /^(https:\/\/(images\.unsplash\.com|i\.ytimg\.com|youtube\.com|www\.youtube\.com|youtu\.be|media\.akamaihd\.net|googlevideo\.com)|https:\/\/i\.ytimg)/i;
+    const isDeadRemote = /^https?:\/\//i.test(src) && !ALLOWED_REMOTE.test(src);
+    const isDataUri = /^data:/i.test(src);
+    if (isDeadRemote || isDataUri) {
+      img.setAttribute('src', IMG_FALLBACK_SRC);
+    }
   });
 
   // Step 7: Link → pastikan aman dan terbuka di tab baru
