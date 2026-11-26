@@ -47,6 +47,24 @@ async function migrate() {
   `);
   console.log('✅ Table slider ready');
 
+  const [existingSliders] = await connection.query('SELECT COUNT(*) as c FROM `slider`');
+  if (existingSliders[0].c === 0) {
+    const defaultSliders = [
+      ['Dinas Pariwisata Provinsi Sulawesi Tengah', '/images/slider/slider-1-kantor-dispar.jpg', 1, 1],
+      ['Komitmen Keterbukaan Informasi Publik PPID', '/images/slider/slider2.jpg', 2, 1],
+      ['PPID Dinas Pariwisata Sulteng', '/images/slider/slider3.jpg', 3, 1],
+      ['Indikator Kinerja Utama (IKU) 2026', '/images/slider/slider4.jpg', 4, 1],
+      ['Command Center BERANI - SAMPOROA', '/images/slider/slider5.jpg', 5, 1],
+      ['Layanan Aspirasi & Pengaduan SP4N-LAPOR', '/images/slider/slider6.png', 6, 1],
+      ['Dispar Sulteng Anti Korupsi & BerAKHLAK', '/images/slider/slider7.jpg', 7, 1],
+      ['Portal Layanan Persuratan Digital CEKIDOT Dispar', '/images/slider/slider8.jpg', 8, 1],
+    ];
+    for (const [judul, gambar, urutan, aktif] of defaultSliders) {
+      await connection.query('INSERT INTO `slider` (`judul`, `gambar`, `urutan`, `aktif`) VALUES (?, ?, ?, ?)', [judul, gambar, urutan, aktif]);
+    }
+    console.log('✅ Default sliders seeded (8 slides)');
+  }
+
   await connection.end();
   console.log('🎉 Migration completed successfully!');
 }
