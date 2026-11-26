@@ -1,17 +1,18 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { MapPin, Eye, Compass, ChevronLeft, ChevronRight } from 'lucide-react';
+import { MapPin, Eye, Compass, ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import api from '../../../services/api';
 import PageHeader from '../../../components/PageHeader';
 import { useLanguage } from '../../../context/LanguageContext';
 import { KABUPATEN_MAP, slugify } from '../../../utils/translations';
+import { cleanMojibake } from '../../../utils/sanitize';
 
 const getDescriptionPreview = (html) => {
   if (!html) return '';
 
-  const document = new DOMParser().parseFromString(html, 'text/html');
+  const document = new DOMParser().parseFromString(cleanMojibake(html), 'text/html');
   document.querySelectorAll('script, style, img, iframe, video, audio, svg').forEach((element) => element.remove());
   return document.body.textContent.replace(/\s+/g, ' ').trim();
 };
@@ -32,37 +33,49 @@ const DestinationCard = ({ item, index, isEn }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1 }}
-      className="card group flex h-[400px] flex-col"
+      className="h-[430px]"
     >
-      <div className="relative h-48 shrink-0 overflow-hidden bg-slate-100">
-        {imageSrc && !imageFailed ? (
-          <img
-            src={imageSrc}
-            alt={item.judul || 'Daya tarik wisata'}
-            loading="lazy"
-            decoding="async"
-            onError={() => setImageFailed(true)}
-            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-          />
-        ) : (
-          <div className="flex h-full flex-col items-center justify-center gap-2 text-slate-400">
-            <MapPin size={32} aria-hidden="true" />
-            <span className="text-sm">{isEn ? 'Photo not available' : 'Foto belum tersedia'}</span>
+      <Link
+        to={`/info-pariwisata/destinasi/detail/${item.id}`}
+        className="card group flex h-full flex-col hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-slate-200/80 overflow-hidden cursor-pointer bg-white block text-inherit no-underline"
+      >
+        <div className="relative h-48 shrink-0 overflow-hidden bg-slate-100">
+          {imageSrc && !imageFailed ? (
+            <img
+              src={imageSrc}
+              alt={item.judul || 'Daya tarik wisata'}
+              loading="lazy"
+              decoding="async"
+              onError={() => setImageFailed(true)}
+              className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+          ) : (
+            <div className="flex h-full flex-col items-center justify-center gap-2 text-slate-400">
+              <MapPin size={32} aria-hidden="true" />
+              <span className="text-sm">{isEn ? 'Photo not available' : 'Foto belum tersedia'}</span>
+            </div>
+          )}
+          <div className="absolute top-4 left-4 rounded-full bg-amber-400 px-3 py-1 text-xs font-bold text-slate-900 shadow">
+            {kabDisplay}
           </div>
-        )}
-        <div className="absolute top-4 left-4 rounded-full bg-amber-400 px-3 py-1 text-xs font-bold text-slate-900 shadow">
-          {kabDisplay}
         </div>
-      </div>
-      <div className="flex min-h-0 flex-1 flex-col p-5">
-        <h3 className="mb-2 line-clamp-2 text-lg font-bold text-navy-900">{item.judul}</h3>
-        <p className="mb-4 line-clamp-3 text-sm text-gray-600">
-          {description || (isEn ? 'Description not available.' : 'Deskripsi belum tersedia.')}
-        </p>
-        <span className="mt-auto inline-flex items-center gap-1 text-xs text-gray-400">
-          <Eye size={14} /> {item.dilihat ?? 0} {isEn ? 'views' : 'dilihat'}
-        </span>
-      </div>
+        <div className="flex min-h-0 flex-1 flex-col p-5">
+          <h3 className="mb-2 line-clamp-2 text-lg font-bold text-navy-900 group-hover:text-primary-600 transition-colors">
+            {item.judul}
+          </h3>
+          <p className="mb-4 line-clamp-3 text-sm text-gray-600">
+            {description || (isEn ? 'Description not available.' : 'Deskripsi belum tersedia.')}
+          </p>
+          <div className="mt-auto pt-3 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500">
+            <span className="inline-flex items-center gap-1 text-gray-400">
+              <Eye size={14} /> {item.dilihat ?? 0} {isEn ? 'views' : 'dilihat'}
+            </span>
+            <span className="inline-flex items-center gap-1 font-semibold text-primary-600 group-hover:translate-x-1 transition-transform">
+              {isEn ? 'Details' : 'Lihat Detail'} <ArrowRight size={13} />
+            </span>
+          </div>
+        </div>
+      </Link>
     </motion.div>
   );
 };
@@ -123,6 +136,12 @@ const DayaTarikWisata = () => {
         <div className="container-custom">
           {/* Filter Kabupaten */}
           <div className="flex flex-wrap gap-2 mb-10">
+            <button
+              onClick={() => setSelected('Semua')}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${selected === 'Semua' ? 'bg-primary-600 text-white shadow-lg' : 'bg-white text-navy-700 border border-gray-200 hover:border-primary-400'}`}
+            >
+              {isEn ? 'All Regencies' : 'Semua Wilayah'}
+            </button>
             {KABUPATEN_MAP.map((kab) => (
               <button
                 key={kab.id}

@@ -39,7 +39,9 @@ const InformasiSecaraBerkala = lazy(() => import('./pages/PPID/InformasiSecaraBe
 
 // Info Pariwisata
 const DayaTarikWisata = lazy(() => import('./pages/InfoPariwisata/Destinasi/DayaTarikWisata'));
+const DestinasiDetail = lazy(() => import('./pages/InfoPariwisata/Destinasi/DestinasiDetail'));
 const DesaWisata = lazy(() => import('./pages/InfoPariwisata/Destinasi/DesaWisata'));
+const DesaWisataDetail = lazy(() => import('./pages/InfoPariwisata/Destinasi/DesaWisataDetail'));
 const PaketWisata = lazy(() => import('./pages/InfoPariwisata/Pemasaran/PaketWisata'));
 const KalenderEvent = lazy(() => import('./pages/InfoPariwisata/Pemasaran/KalenderEvent'));
 const DataHunian = lazy(() => import('./pages/InfoPariwisata/Pemasaran/DataHunian'));
@@ -200,8 +202,10 @@ function App() {
         {/* Info Pariwisata */}
         <Route path="/info-pariwisata/destinasi/daya-tarik-wisata" element={<DayaTarikWisata language={language} />} />
         <Route path="/info-pariwisata/destinasi/daya-tarik-wisata/:kabupaten" element={<DayaTarikWisata language={language} />} />
+        <Route path="/info-pariwisata/destinasi/detail/:id" element={<DestinasiDetail language={language} />} />
         <Route path="/info-pariwisata/destinasi/desa-wisata" element={<DesaWisata language={language} />} />
         <Route path="/info-pariwisata/destinasi/desa-wisata/:kabupaten" element={<DesaWisata language={language} />} />
+        <Route path="/info-pariwisata/destinasi/desa-wisata/detail/:id" element={<DesaWisataDetail language={language} />} />
         <Route path="/info-pariwisata/pemasaran/paket-wisata" element={<PaketWisata language={language} />} />
         <Route path="/info-pariwisata/pemasaran/kalender-event" element={<KalenderEvent language={language} />} />
         <Route path="/info-pariwisata/pemasaran/data-hunian" element={<DataHunian language={language} />} />

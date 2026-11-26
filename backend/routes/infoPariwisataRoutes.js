@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const {
-  getDTW, createDTW, updateDTW, deleteDTW,
-  getDesaWisata, createDesaWisata, updateDesaWisata, deleteDesaWisata,
+  getDTW, getDTWById, createDTW, updateDTW, deleteDTW,
+  getDesaWisata, getDesaWisataById, createDesaWisata, updateDesaWisata, deleteDesaWisata,
   getPaketWisata, createPaketWisata,
   getKalenderEvent, createKalenderEvent,
   getDataHunian, createDataHunian,
@@ -14,11 +14,13 @@ const { verifyToken, isAdmin } = require('../middlewares/authMiddleware');
 const upload = require('../middlewares/uploadMiddleware');
 
 router.get('/dtw', getDTW);
+router.get('/dtw/:id', getDTWById);
 router.post('/dtw', verifyToken, isAdmin, upload.single('gambar'), createDTW);
 router.put('/dtw/:id', verifyToken, isAdmin, upload.single('gambar'), updateDTW);
 router.delete('/dtw/:id', verifyToken, isAdmin, deleteDTW);
 
 router.get('/desa-wisata', getDesaWisata);
+router.get('/desa-wisata/:id', getDesaWisataById);
 router.post('/desa-wisata', verifyToken, isAdmin, upload.single('gambar'), createDesaWisata);
 router.put('/desa-wisata/:id', verifyToken, isAdmin, upload.single('gambar'), updateDesaWisata);
 router.delete('/desa-wisata/:id', verifyToken, isAdmin, deleteDesaWisata);

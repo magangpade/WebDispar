@@ -6,13 +6,27 @@ exports.getDTW = async (req, res) => {
     const { kabupaten } = req.query;
     let query = 'SELECT * FROM dtw';
     let params = [];
-    if (kabupaten) {
-      query += ' WHERE kabupaten = ?';
+    if (kabupaten && kabupaten !== 'Semua' && kabupaten !== 'All') {
+      query += ' WHERE LOWER(kabupaten) = LOWER(?)';
       params.push(kabupaten);
     }
     query += ' ORDER BY created_at DESC';
     const [rows] = await db.query(query, params);
     res.json(rows);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
+exports.getDTWById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    await db.query('UPDATE dtw SET dilihat = COALESCE(dilihat, 0) + 1 WHERE id = ?', [id]);
+    const [rows] = await db.query('SELECT * FROM dtw WHERE id = ?', [id]);
+    if (rows.length === 0) {
+      return res.status(404).json({ message: 'Destinasi wisata tidak ditemukan' });
+    }
+    res.json(rows[0]);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
@@ -55,13 +69,27 @@ exports.getDesaWisata = async (req, res) => {
     const { kabupaten } = req.query;
     let query = 'SELECT * FROM desa_wisata';
     let params = [];
-    if (kabupaten) {
-      query += ' WHERE kabupaten = ?';
+    if (kabupaten && kabupaten !== 'Semua' && kabupaten !== 'All') {
+      query += ' WHERE LOWER(kabupaten) = LOWER(?)';
       params.push(kabupaten);
     }
     query += ' ORDER BY created_at DESC';
     const [rows] = await db.query(query, params);
     res.json(rows);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
+exports.getDesaWisataById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    await db.query('UPDATE desa_wisata SET dilihat = COALESCE(dilihat, 0) + 1 WHERE id = ?', [id]);
+    const [rows] = await db.query('SELECT * FROM desa_wisata WHERE id = ?', [id]);
+    if (rows.length === 0) {
+      return res.status(404).json({ message: 'Desa wisata tidak ditemukan' });
+    }
+    res.json(rows[0]);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }

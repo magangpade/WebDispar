@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { Eye, Home, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Eye, Home, ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import api from '../../../services/api';
 import PageHeader from '../../../components/PageHeader';
 import { useLanguage } from '../../../context/LanguageContext';
 import { KABUPATEN_MAP, slugify } from '../../../utils/translations';
-import { sanitizeHtml } from '../../../utils/sanitize';
+import { sanitizeHtml, cleanMojibake } from '../../../utils/sanitize';
 
 const DesaWisata = () => {
   const { language } = useLanguage();
@@ -67,6 +67,14 @@ const DesaWisata = () => {
         <div className="container-custom">
           {/* Filter */}
           <div className="flex flex-wrap gap-2 mb-10">
+            <button
+              onClick={() => setSelected('Semua')}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                selected === 'Semua' ? 'bg-primary-600 text-white shadow-lg' : 'bg-white text-navy-700 border border-gray-200 hover:border-primary-400'
+              }`}
+            >
+              {isEn ? 'All Regencies' : 'Semua Wilayah'}
+            </button>
             {KABUPATEN_MAP.map((kab) => (
               <button
                 key={kab.id}
@@ -107,33 +115,45 @@ const DesaWisata = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: idx * 0.1 }}
-                    className="card group"
+                    className="h-full"
                   >
-                    <div className="relative overflow-hidden h-52">
-                      <img
-                        src={item.gambar ? (item.gambar.startsWith('http') || item.gambar.startsWith('/') ? item.gambar : `/uploads/${item.gambar}`) : '/slider/Slider.jpg'}
-                        alt={item.nama}
-                        loading="lazy"
-                        decoding="async"
-                        onError={(e) => {
-                          e.currentTarget.src = '/slider/Slider.jpg';
-                        }}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                      />
-                      <div className="absolute top-4 left-4 bg-amber-400 text-slate-900 text-xs font-bold px-3 py-1 rounded-full shadow">
-                        {kabDisplay}
+                    <Link
+                      to={`/info-pariwisata/destinasi/desa-wisata/detail/${item.id}`}
+                      className="card group flex h-full flex-col hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-slate-200/80 overflow-hidden cursor-pointer bg-white block text-inherit no-underline"
+                    >
+                      <div className="relative overflow-hidden h-52 shrink-0 bg-slate-100">
+                        <img
+                          src={item.gambar ? (item.gambar.startsWith('http') || item.gambar.startsWith('/') ? item.gambar : `/uploads/${item.gambar}`) : '/slider/Slider.jpg'}
+                          alt={item.nama}
+                          loading="lazy"
+                          decoding="async"
+                          onError={(e) => {
+                            e.currentTarget.src = '/slider/Slider.jpg';
+                          }}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        />
+                        <div className="absolute top-4 left-4 bg-amber-400 text-slate-900 text-xs font-bold px-3 py-1 rounded-full shadow">
+                          {kabDisplay}
+                        </div>
                       </div>
-                    </div>
-                    <div className="p-5">
-                      <h3 className="font-bold text-navy-900 text-lg mb-2 line-clamp-2">{item.nama}</h3>
-                      <div
-                        className="text-sm text-gray-600 line-clamp-3 mb-4 prose prose-sm max-w-none"
-                        dangerouslySetInnerHTML={{ __html: sanitizeHtml(item.deskripsi) }}
-                      />
-                      <span className="inline-flex items-center gap-1 text-xs text-gray-400">
-                        <Eye size={14} /> {item.dilihat || 0} {isEn ? 'views' : 'dilihat'}
-                      </span>
-                    </div>
+                      <div className="flex min-h-0 flex-1 flex-col p-5">
+                        <h3 className="font-bold text-navy-900 text-lg mb-2 line-clamp-2 group-hover:text-primary-600 transition-colors">
+                          {item.nama}
+                        </h3>
+                        <div
+                          className="text-sm text-gray-600 line-clamp-3 mb-4 prose prose-sm max-w-none text-justify"
+                          dangerouslySetInnerHTML={{ __html: sanitizeHtml(cleanMojibake(item.deskripsi)) }}
+                        />
+                        <div className="mt-auto pt-3 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500">
+                          <span className="inline-flex items-center gap-1 text-gray-400">
+                            <Eye size={14} /> {item.dilihat || 0} {isEn ? 'views' : 'dilihat'}
+                          </span>
+                          <span className="inline-flex items-center gap-1 font-semibold text-primary-600 group-hover:translate-x-1 transition-transform">
+                            {isEn ? 'Details' : 'Lihat Detail'} <ArrowRight size={13} />
+                          </span>
+                        </div>
+                      </div>
+                    </Link>
                   </motion.div>
                 );
               })}
