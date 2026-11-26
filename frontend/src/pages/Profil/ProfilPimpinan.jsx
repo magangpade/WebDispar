@@ -652,23 +652,6 @@ const ProfilPimpinan = ({ language: propLanguage }) => {
             </div>
           </div>
 
-          {/* Interactive Hint Banner */}
-          <div className="mb-8 p-4 rounded-2xl bg-gradient-to-r from-blue-50 via-indigo-50 to-purple-50 border border-blue-200/70 flex items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-primary-600 text-white flex items-center justify-center shrink-0 shadow-xs">
-                <Sparkles size={18} />
-              </div>
-              <p className="text-xs sm:text-sm text-slate-700">
-                <span className="font-bold text-navy-900">
-                  {isEn ? 'Interactive Profile Available: ' : 'Profil Interaktif Tersedia: '}
-                </span>
-                {isEn
-                  ? 'Click on officials with studio/white background (such as Head of Department and Division Heads) to view rank details, education timeline, and career history.'
-                  : 'Klik pada kartu pejabat pimpinan berlatar putih (seperti Kepala Dinas & Kepala Bidang) untuk melihat rincian pangkat, riwayat pendidikan, dan pengalaman kerja.'}
-              </p>
-            </div>
-          </div>
-
           {/* Grid Pejabat */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {pejabat.map((p, idx) => {
