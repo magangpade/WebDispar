@@ -1,9 +1,13 @@
 const db = require('../config/db');
+const cache = require('../utils/cache');
 
 // Daftar Informasi Publik
 exports.getKategori = async (req, res) => {
   try {
+    const cached = cache.get('ppid:kategori');
+    if (cached) return res.json(cached);
     const [rows] = await db.query('SELECT * FROM ppid_kategori ORDER BY urutan ASC');
+    cache.set('ppid:kategori', rows, 300000);
     res.json(rows);
   } catch (err) {
     res.status(500).json({ message: err.message });
@@ -24,6 +28,7 @@ exports.createItem = async (req, res) => {
   const file = req.file ? req.file.filename : null;
   try {
     await db.query('INSERT INTO ppid_item (kategori_id, judul, file, link, tahun) VALUES (?, ?, ?, ?, ?)', [kategori_id, judul, file, link, tahun]);
+    cache.delByPrefix('ppid:');
     res.status(201).json({ message: 'Item berhasil dibuat' });
   } catch (err) {
     res.status(500).json({ message: err.message });
@@ -33,6 +38,7 @@ exports.createItem = async (req, res) => {
 exports.deleteItem = async (req, res) => {
   try {
     await db.query('DELETE FROM ppid_item WHERE id = ?', [req.params.id]);
+    cache.delByPrefix('ppid:');
     res.json({ message: 'Item berhasil dihapus' });
   } catch (err) {
     res.status(500).json({ message: err.message });
@@ -42,7 +48,10 @@ exports.deleteItem = async (req, res) => {
 // Regulasi
 exports.getRegulasi = async (req, res) => {
   try {
+    const cached = cache.get('ppid:regulasi');
+    if (cached) return res.json(cached);
     const [rows] = await db.query('SELECT * FROM ppid_regulasi ORDER BY id ASC');
+    cache.set('ppid:regulasi', rows, 300000);
     res.json(rows);
   } catch (err) {
     res.status(500).json({ message: err.message });
@@ -54,6 +63,7 @@ exports.createRegulasi = async (req, res) => {
   const file = req.file ? req.file.filename : null;
   try {
     await db.query('INSERT INTO ppid_regulasi (judul, file, kategori) VALUES (?, ?, ?)', [judul, file, kategori || 'umum']);
+    cache.delByPrefix('ppid:');
     res.status(201).json({ message: 'Regulasi berhasil dibuat' });
   } catch (err) {
     res.status(500).json({ message: err.message });
@@ -63,6 +73,7 @@ exports.createRegulasi = async (req, res) => {
 exports.deleteRegulasi = async (req, res) => {
   try {
     await db.query('DELETE FROM ppid_regulasi WHERE id = ?', [req.params.id]);
+    cache.delByPrefix('ppid:');
     res.json({ message: 'Regulasi berhasil dihapus' });
   } catch (err) {
     res.status(500).json({ message: err.message });
@@ -72,7 +83,10 @@ exports.deleteRegulasi = async (req, res) => {
 // SK
 exports.getSK = async (req, res) => {
   try {
+    const cached = cache.get('ppid:sk');
+    if (cached) return res.json(cached);
     const [rows] = await db.query('SELECT * FROM ppid_sk ORDER BY tahun DESC');
+    cache.set('ppid:sk', rows, 300000);
     res.json(rows);
   } catch (err) {
     res.status(500).json({ message: err.message });
@@ -84,6 +98,7 @@ exports.createSK = async (req, res) => {
   const file = req.file ? req.file.filename : null;
   try {
     await db.query('INSERT INTO ppid_sk (judul, tahun, file) VALUES (?, ?, ?)', [judul, tahun, file]);
+    cache.delByPrefix('ppid:');
     res.status(201).json({ message: 'SK berhasil dibuat' });
   } catch (err) {
     res.status(500).json({ message: err.message });
@@ -93,6 +108,7 @@ exports.createSK = async (req, res) => {
 exports.deleteSK = async (req, res) => {
   try {
     await db.query('DELETE FROM ppid_sk WHERE id = ?', [req.params.id]);
+    cache.delByPrefix('ppid:');
     res.json({ message: 'SK berhasil dihapus' });
   } catch (err) {
     res.status(500).json({ message: err.message });
@@ -102,7 +118,10 @@ exports.deleteSK = async (req, res) => {
 // Laporan Tahunan
 exports.getLaporanTahunan = async (req, res) => {
   try {
+    const cached = cache.get('ppid:laporan-tahunan');
+    if (cached) return res.json(cached);
     const [rows] = await db.query("SELECT * FROM ppid_item WHERE kategori_id = (SELECT id FROM ppid_kategori WHERE slug='laporan-tahunan') ORDER BY tahun DESC");
+    cache.set('ppid:laporan-tahunan', rows, 300000);
     res.json(rows);
   } catch (err) {
     res.status(500).json({ message: err.message });

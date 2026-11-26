@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /portal-internal-dispar/
+Disallow: /admin/
+Disallow: /api/
+
+Sitemap: /sitemap.xml

@@ -385,7 +385,9 @@ export const Navbar = ({ onToggleMobile, language: propLanguage, setLanguage: pr
               ))}
             </div>
             <button
+              type="button"
               onClick={onToggleMobile}
+              aria-label={isEn ? 'Open navigation menu' : 'Buka menu navigasi'}
               className="lg:hidden p-2 text-white hover:bg-white/10 rounded-xl transition-colors"
             >
               <Menu size={24} />

@@ -61,11 +61,27 @@ const globalApiLimiter = rateLimit({
 });
 app.use('/api', globalApiLimiter);
 
+// Monitoring waktu respons & deteksi request lambat/error di production
+app.use((req, res, next) => {
+  const start = Date.now();
+  res.on('finish', () => {
+    const duration = Date.now() - start;
+    if (res.statusCode >= 500 || duration > 1000) {
+      console.warn(`[MONITOR] ${req.method} ${req.originalUrl} -> ${res.statusCode} (${duration}ms)`);
+    }
+  });
+  next();
+});
+
 // Health check endpoint (sesuai README.md)
 app.get('/api/health', async (req, res) => {
   try {
     await db.query('SELECT 1');
-    res.json({ status: 'ok', database: 'ok' });
+    res.json({
+      status: 'ok',
+      database: 'ok',
+      uptimeSeconds: Math.floor(process.uptime()),
+    });
   } catch (err) {
     res.status(503).json({ status: 'error', database: 'disconnected' });
   }

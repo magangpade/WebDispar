@@ -180,6 +180,8 @@ const LatestNewsSection = ({ berita, loading, strings, isEn }) => {
                 <img
                   src={news.image}
                   alt={news.title}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <span className={`absolute top-3 left-3 px-2.5 py-1 text-white font-bold text-[10px] tracking-wider rounded-md backdrop-blur-xs ${news.tagColor}`}>
