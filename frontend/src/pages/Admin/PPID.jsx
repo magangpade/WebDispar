@@ -1,550 +1,554 @@
-import { useState, useEffect, useRef } from 'react';
-import { FileText, Plus, Trash2, Search, AlertCircle, CheckCircle2, Download, Upload, ExternalLink, X } from 'lucide-react';
-import { AdminLayout } from './Dashboard';
+import { useEffect, useMemo, useState } from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
+import { ExternalLink, Pencil, Plus, Search, Trash2 } from 'lucide-react';
 import api from '../../services/api';
-
-const BASE_URL = import.meta.env.VITE_API_URL?.replace('/api', '') || 'http://localhost:5000';
+import { getImageSrc } from '../../utils/imageHelper';
+import {
+  AdminConfirmModal,
+  AdminDrawer,
+  AdminDropzone,
+  AdminLayout,
+  AdminPageShell,
+  useAdminToast,
+} from './components/AdminUI';
+import { SCALE, SPRING } from './adminMotion';
 
 const AdminPPID = () => {
-  const [activeTab, setActiveTab] = useState('items'); // 'items' | 'regulasi' | 'sk'
+  const { showToast } = useAdminToast();
+  const reduce = useReducedMotion();
+
+  const [activeTab, setActiveTab] = useState('items');
   const [kategoriList, setKategoriList] = useState([]);
   const [itemsList, setItemsList] = useState([]);
   const [regulasiList, setRegulasiList] = useState([]);
-  const [skList, setSKList] = useState([]);
-  
+  const [skList, setSkList] = useState([]);
+
   const [loading, setLoading] = useState(true);
-  const [submitting, setSubmitting] = useState(false);
   const [search, setSearch] = useState('');
   const [selectedKat, setSelectedKat] = useState('');
-  const [error, setError] = useState('');
-  const [success, setSuccess] = useState('');
 
-  // Modal State
-  const [showModal, setShowModal] = useState(false);
-  const [itemForm, setItemForm] = useState({
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [editItem, setEditItem] = useState(null);
+  const [drawerType, setDrawerType] = useState('items');
+  const [form, setForm] = useState({
     kategori_id: '',
     judul: '',
     link: '',
-    tahun: new Date().getFullYear().toString()
+    tahun: String(new Date().getFullYear()),
+    kategori: 'umum',
   });
-  const [regulasiForm, setRegulasiForm] = useState({
-    judul: '',
-    kategori: 'umum'
-  });
-  const [skForm, setSkForm] = useState({
-    judul: '',
-    tahun: new Date().getFullYear().toString()
-  });
-
   const [file, setFile] = useState(null);
-  const fileRef = useRef();
 
-  // Load Kategori
-  const fetchKategori = async () => {
-    try {
-      const res = await api.get('/ppid/kategori');
-      setKategoriList(res.data || []);
-      if (res.data?.length > 0 && !selectedKat) {
-        setSelectedKat(String(res.data[0].id));
-      }
-    } catch {
-      // Fallback
-    }
-  };
+  const [deleteTarget, setDeleteTarget] = useState(null);
+  const [deleting, setDeleting] = useState(false);
 
-  // Load Data sesuai Tab
-  const loadData = async () => {
+  const loadAll = async () => {
     setLoading(true);
     try {
-      if (activeTab === 'items') {
-        if (selectedKat) {
-          const res = await api.get(`/ppid/items/${selectedKat}`);
-          setItemsList(res.data || []);
-        }
-      } else if (activeTab === 'regulasi') {
-        const res = await api.get('/ppid/regulasi');
-        setRegulasiList(res.data || []);
-      } else if (activeTab === 'sk') {
-        const res = await api.get('/ppid/sk');
-        setSKList(res.data || []);
-      }
+      const [katRes, itemRes, regRes, skRes] = await Promise.all([
+        api.get('/ppid/kategori').catch(() => ({ data: [] })),
+        api.get('/ppid/items').catch(() => ({ data: [] })),
+        api.get('/ppid/regulasi').catch(() => ({ data: [] })),
+        api.get('/ppid/sk').catch(() => ({ data: [] })),
+      ]);
+      const kats = Array.isArray(katRes.data) ? katRes.data : [];
+      setKategoriList(kats);
+      setItemsList(Array.isArray(itemRes.data) ? itemRes.data : []);
+      setRegulasiList(Array.isArray(regRes.data) ? regRes.data : []);
+      setSkList(Array.isArray(skRes.data) ? skRes.data : []);
     } catch {
-      setError('Gagal memuat data PPID');
+      showToast('Gagal memuat data PPID', 'error');
     } finally {
       setLoading(false);
     }
   };
 
   useEffect(() => {
-    fetchKategori();
+    loadAll();
   }, []);
 
-  useEffect(() => {
-    loadData();
-  }, [activeTab, selectedKat]);
-
-  const openModal = () => {
+  const openAdd = () => {
+    setEditItem(null);
+    setDrawerType(activeTab);
     setFile(null);
-    if (fileRef.current) fileRef.current.value = '';
-    if (activeTab === 'items') {
-      setItemForm({
-        kategori_id: selectedKat || (kategoriList[0]?.id ? String(kategoriList[0].id) : ''),
-        judul: '',
-        link: '',
-        tahun: new Date().getFullYear().toString()
-      });
-    } else if (activeTab === 'regulasi') {
-      setRegulasiForm({ judul: '', kategori: 'umum' });
-    } else if (activeTab === 'sk') {
-      setSkForm({ judul: '', tahun: new Date().getFullYear().toString() });
-    }
-    setShowModal(true);
+    setForm({
+      kategori_id: selectedKat || (kategoriList[0]?.id ? String(kategoriList[0].id) : ''),
+      judul: '',
+      link: '',
+      tahun: String(new Date().getFullYear()),
+      kategori: 'umum',
+    });
+    setDrawerOpen(true);
+  };
+
+  const openEdit = (row) => {
+    setEditItem(row);
+    setDrawerType(activeTab);
+    setFile(null);
+    setForm({
+      kategori_id: String(row.kategori_id || selectedKat || (kategoriList[0]?.id ?? '')),
+      judul: row.judul || '',
+      link: row.link || '',
+      tahun: row.tahun ? String(row.tahun) : String(new Date().getFullYear()),
+      kategori: row.kategori || 'umum',
+    });
+    setDrawerOpen(true);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!form.judul.trim()) {
+      showToast('Judul dokumen wajib diisi', 'error');
+      return;
+    }
     setSubmitting(true);
-    setError('');
-
     try {
       const fd = new FormData();
       if (file) fd.append('file', file);
+      else if (editItem?.file) fd.append('file_lama', editItem.file);
 
-      if (activeTab === 'items') {
-        if (!itemForm.judul.trim()) { setError('Judul dokumen wajib diisi'); setSubmitting(false); return; }
-        fd.append('kategori_id', itemForm.kategori_id);
-        fd.append('judul', itemForm.judul);
-        fd.append('link', itemForm.link);
-        fd.append('tahun', itemForm.tahun);
-        await api.post('/ppid/items', fd, { headers: { 'Content-Type': 'multipart/form-data' } });
-        setSuccess('Dokumen PPID berhasil ditambahkan');
-      } else if (activeTab === 'regulasi') {
-        if (!regulasiForm.judul.trim()) { setError('Judul regulasi wajib diisi'); setSubmitting(false); return; }
-        fd.append('judul', regulasiForm.judul);
-        fd.append('kategori', regulasiForm.kategori);
-        await api.post('/ppid/regulasi', fd, { headers: { 'Content-Type': 'multipart/form-data' } });
-        setSuccess('Regulasi berhasil ditambahkan');
-      } else if (activeTab === 'sk') {
-        if (!skForm.judul.trim()) { setError('Judul SK wajib diisi'); setSubmitting(false); return; }
-        fd.append('judul', skForm.judul);
-        fd.append('tahun', skForm.tahun);
-        await api.post('/ppid/sk', fd, { headers: { 'Content-Type': 'multipart/form-data' } });
-        setSuccess('SK PPID berhasil ditambahkan');
+      if (drawerType === 'items') {
+        fd.append('kategori_id', form.kategori_id);
+        fd.append('judul', form.judul);
+        fd.append('link', form.link);
+        fd.append('tahun', form.tahun);
+        if (editItem) {
+          await api.put(`/ppid/items/${editItem.id}`, fd, {
+            headers: { 'Content-Type': 'multipart/form-data' },
+          });
+          showToast('Dokumen PPID berhasil diperbarui');
+        } else {
+          await api.post('/ppid/items', fd, {
+            headers: { 'Content-Type': 'multipart/form-data' },
+          });
+          showToast('Dokumen PPID berhasil ditambahkan');
+        }
+      } else if (drawerType === 'regulasi') {
+        fd.append('judul', form.judul);
+        fd.append('kategori', form.kategori);
+        if (editItem) {
+          await api.put(`/ppid/regulasi/${editItem.id}`, fd, {
+            headers: { 'Content-Type': 'multipart/form-data' },
+          });
+          showToast('Regulasi berhasil diperbarui');
+        } else {
+          await api.post('/ppid/regulasi', fd, {
+            headers: { 'Content-Type': 'multipart/form-data' },
+          });
+          showToast('Regulasi berhasil ditambahkan');
+        }
+      } else {
+        fd.append('judul', form.judul);
+        fd.append('tahun', form.tahun);
+        if (editItem) {
+          await api.put(`/ppid/sk/${editItem.id}`, fd, {
+            headers: { 'Content-Type': 'multipart/form-data' },
+          });
+          showToast('SK PPID berhasil diperbarui');
+        } else {
+          await api.post('/ppid/sk', fd, {
+            headers: { 'Content-Type': 'multipart/form-data' },
+          });
+          showToast('SK PPID berhasil ditambahkan');
+        }
       }
 
-      setShowModal(false);
-      loadData();
-      setTimeout(() => setSuccess(''), 3000);
+      setDrawerOpen(false);
+      loadAll();
     } catch {
-      setError('Gagal mengunggah dokumen');
+      showToast('Gagal menyimpan dokumen PPID', 'error');
     } finally {
       setSubmitting(false);
     }
   };
 
-  const handleDelete = async (id, title) => {
-    if (!window.confirm(`Yakin ingin menghapus: "${title}"?`)) return;
+  const handleDelete = async () => {
+    if (!deleteTarget) return;
+    setDeleting(true);
     try {
-      if (activeTab === 'items') {
-        await api.delete(`/ppid/items/${id}`);
-      } else if (activeTab === 'regulasi') {
-        await api.delete(`/ppid/regulasi/${id}`);
-      } else if (activeTab === 'sk') {
-        await api.delete(`/ppid/sk/${id}`);
-      }
-      setSuccess('Dokumen berhasil dihapus');
-      loadData();
-      setTimeout(() => setSuccess(''), 3000);
+      const endpoint =
+        activeTab === 'items'
+          ? `/ppid/items/${deleteTarget.id}`
+          : activeTab === 'regulasi'
+            ? `/ppid/regulasi/${deleteTarget.id}`
+            : `/ppid/sk/${deleteTarget.id}`;
+      await api.delete(endpoint);
+      showToast('Dokumen berhasil dihapus');
+      setDeleteTarget(null);
+      loadAll();
     } catch {
-      setError('Gagal menghapus dokumen');
+      showToast('Gagal menghapus dokumen', 'error');
+    } finally {
+      setDeleting(false);
     }
   };
 
+  const filteredRows = useMemo(() => {
+    const q = search.trim().toLowerCase();
+    if (activeTab === 'items') {
+      return itemsList.filter((r) => {
+        const matchKat = !selectedKat || String(r.kategori_id) === String(selectedKat);
+        const matchQ =
+          !q ||
+          (r.judul || '').toLowerCase().includes(q) ||
+          (r.kategori_nama || '').toLowerCase().includes(q);
+        return matchKat && matchQ;
+      });
+    }
+    if (activeTab === 'regulasi') {
+      return regulasiList.filter(
+        (r) =>
+          !q ||
+          (r.judul || '').toLowerCase().includes(q) ||
+          (r.kategori || '').toLowerCase().includes(q)
+      );
+    }
+    return skList.filter(
+      (r) =>
+        !q ||
+        (r.judul || '').toLowerCase().includes(q) ||
+        String(r.tahun || '').includes(q)
+    );
+  }, [activeTab, itemsList, regulasiList, skList, search, selectedKat]);
+
+  const totalTabCount =
+    activeTab === 'items'
+      ? itemsList.length
+      : activeTab === 'regulasi'
+        ? regulasiList.length
+        : skList.length;
+
+  const resolveFileHref = (row) => {
+    if (row.link) return row.link;
+    if (row.file) return getImageSrc(row.file, '');
+    return '';
+  };
+
   return (
-    <AdminLayout>
-      <div className="space-y-6">
-        {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-          <div>
-            <h1 className="text-2xl font-black text-slate-900 tracking-tight">Kelola Dokumen PPID</h1>
-            <p className="text-slate-500 text-sm">Transparansi dokumen publik, regulasi kepariwisataan, dan Surat Keputusan (SK)</p>
+    <AdminLayout drawerOpen={drawerOpen}>
+      <AdminPageShell>
+        <div className="admin-panel glass">
+          <div className="admin-panel-head">
+            <div>
+              <h1 className="admin-panel-title">PPID</h1>
+              <p className="admin-panel-sub">
+                Kelola dokumen Pejabat Pengelola Informasi dan Dokumentasi — {itemsList.length} item,{' '}
+                {regulasiList.length} regulasi, {skList.length} SK.
+              </p>
+            </div>
+            <motion.button
+              type="button"
+              onClick={openAdd}
+              className="admin-btn admin-btn-amber"
+              whileTap={reduce ? undefined : { scale: SCALE.press }}
+              transition={SPRING.press}
+            >
+              <Plus className="ic-sm" strokeWidth={2.4} />
+              <span>Tambah Dokumen</span>
+            </motion.button>
           </div>
-          <button
-            onClick={openModal}
-            className="flex items-center gap-2 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-950 font-bold px-4 py-2.5 rounded-xl transition-all shadow-sm active:scale-95 text-sm cursor-pointer"
-          >
-            <Plus className="w-4 h-4" /> Unggah Dokumen
-          </button>
-        </div>
 
-        {/* Notifikasi */}
-        {error && (
-          <div className="flex items-center gap-2 p-4 bg-red-50 border border-red-200 rounded-xl text-red-700 text-sm">
-            <AlertCircle className="w-5 h-5 shrink-0" />
-            <span>{error}</span>
-            <button onClick={() => setError('')} className="ml-auto font-bold">✕</button>
+          <div className="admin-tabs glass" role="tablist" aria-label="Kategori PPID">
+            <button
+              type="button"
+              role="tab"
+              aria-selected={activeTab === 'items'}
+              onClick={() => setActiveTab('items')}
+              className={`admin-tab ${activeTab === 'items' ? 'active' : ''}`}
+            >
+              Item ({itemsList.length})
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected={activeTab === 'regulasi'}
+              onClick={() => setActiveTab('regulasi')}
+              className={`admin-tab ${activeTab === 'regulasi' ? 'active' : ''}`}
+            >
+              Regulasi ({regulasiList.length})
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected={activeTab === 'sk'}
+              onClick={() => setActiveTab('sk')}
+              className={`admin-tab ${activeTab === 'sk' ? 'active' : ''}`}
+            >
+              SK ({skList.length})
+            </button>
           </div>
-        )}
-        {success && (
-          <div className="flex items-center gap-2 p-4 bg-emerald-50 border border-emerald-200 rounded-xl text-emerald-700 text-sm font-semibold">
-            <CheckCircle2 className="w-5 h-5 shrink-0" />
-            <span>{success}</span>
-          </div>
-        )}
 
-        {/* Tab Navigasi */}
-        <div className="flex border-b border-slate-200 gap-2">
-          <button
-            onClick={() => setActiveTab('items')}
-            className={`px-5 py-3 text-sm font-bold border-b-2 transition-all flex items-center gap-2 ${
-              activeTab === 'items'
-                ? 'border-amber-500 text-amber-600'
-                : 'border-transparent text-slate-500 hover:text-slate-900'
-            }`}
-          >
-            <FileText className="w-4 h-4" /> Daftar Informasi Publik
-          </button>
-          <button
-            onClick={() => setActiveTab('regulasi')}
-            className={`px-5 py-3 text-sm font-bold border-b-2 transition-all flex items-center gap-2 ${
-              activeTab === 'regulasi'
-                ? 'border-amber-500 text-amber-600'
-                : 'border-transparent text-slate-500 hover:text-slate-900'
-            }`}
-          >
-            <FileText className="w-4 h-4" /> Regulasi Resmi
-          </button>
-          <button
-            onClick={() => setActiveTab('sk')}
-            className={`px-5 py-3 text-sm font-bold border-b-2 transition-all flex items-center gap-2 ${
-              activeTab === 'sk'
-                ? 'border-amber-500 text-amber-600'
-                : 'border-transparent text-slate-500 hover:text-slate-900'
-            }`}
-          >
-            <FileText className="w-4 h-4" /> Surat Keputusan (SK)
-          </button>
-        </div>
-
-        {/* Filter Bar */}
-        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
-            <div className="relative w-full sm:w-72">
-              <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+          <div className="admin-toolbar" style={{ marginTop: 4 }}>
+            <div className="admin-search-box" style={{ maxWidth: 340 }}>
+              <Search className="ic" />
               <input
                 type="text"
                 placeholder="Cari judul dokumen..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 rounded-xl border border-slate-200 text-sm outline-none focus:ring-2 focus:ring-amber-400 bg-slate-50"
               />
             </div>
 
             {activeTab === 'items' && (
               <select
+                className="admin-select-inline"
+                aria-label="Filter kategori informasi publik"
                 value={selectedKat}
                 onChange={(e) => setSelectedKat(e.target.value)}
-                className="w-full sm:w-64 px-3 py-2 rounded-xl border border-slate-200 text-sm outline-none focus:ring-2 focus:ring-amber-400 bg-slate-50 text-slate-700"
               >
-                {kategoriList.map((kat) => (
-                  <option key={kat.id} value={kat.id}>{kat.nama}</option>
+                <option value="">Semua Kategori PPID</option>
+                {kategoriList.map((k) => (
+                  <option key={k.id} value={k.id}>
+                    {k.nama}
+                  </option>
                 ))}
               </select>
             )}
           </div>
-        </div>
 
-        {/* Content Table */}
-        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
-          {loading ? (
-            <div className="p-12 text-center text-slate-400 font-medium">Memuat data dokumen...</div>
-          ) : (
-            <div className="overflow-x-auto">
-              <table className="w-full text-left text-sm">
-                <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200">
-                  <tr>
-                    <th className="px-6 py-3.5 w-12">No</th>
-                    <th className="px-6 py-3.5">Judul Dokumen</th>
-                    {activeTab === 'items' && <th className="px-6 py-3.5 w-28">Tahun</th>}
-                    {activeTab === 'regulasi' && <th className="px-6 py-3.5 w-32">Kategori</th>}
-                    {activeTab === 'sk' && <th className="px-6 py-3.5 w-28">Tahun</th>}
-                    <th className="px-6 py-3.5 w-36">Berkas / Link</th>
-                    <th className="px-6 py-3.5 w-24 text-right">Aksi</th>
-                  </tr>
+          <div className="admin-table-wrap">
+            {loading ? (
+              <div style={{ padding: 20, display: 'flex', flexDirection: 'column', gap: 10 }}>
+                {[...Array(5)].map((_, i) => (
+                  <div key={i} className="admin-skeleton" style={{ height: 48 }} />
+                ))}
+              </div>
+            ) : filteredRows.length === 0 ? (
+              <div className="admin-empty-note">Tidak ada dokumen PPID yang cocok.</div>
+            ) : (
+              <table className="admin-table">
+                <thead>
+                  {activeTab === 'items' && (
+                    <tr>
+                      <th>No</th>
+                      <th>Nama Dokumen</th>
+                      <th>Kategori</th>
+                      <th>Tahun</th>
+                      <th>Aksi</th>
+                    </tr>
+                  )}
+                  {activeTab === 'regulasi' && (
+                    <tr>
+                      <th>No</th>
+                      <th>Nama Regulasi</th>
+                      <th>Jenis</th>
+                      <th>Berkas</th>
+                      <th>Aksi</th>
+                    </tr>
+                  )}
+                  {activeTab === 'sk' && (
+                    <tr>
+                      <th>No</th>
+                      <th>Nama SK</th>
+                      <th>Tahun</th>
+                      <th>Berkas</th>
+                      <th>Aksi</th>
+                    </tr>
+                  )}
                 </thead>
-                <tbody className="divide-y divide-slate-100">
-                  {/* TAB ITEMS */}
-                  {activeTab === 'items' && itemsList
-                    .filter(i => i.judul?.toLowerCase().includes(search.toLowerCase()))
-                    .map((item, idx) => (
-                      <tr key={item.id} className="hover:bg-slate-50/80 transition-colors">
-                        <td className="px-6 py-4 text-slate-400 font-mono text-xs">{idx + 1}</td>
-                        <td className="px-6 py-4 font-bold text-slate-900">{item.judul}</td>
-                        <td className="px-6 py-4 text-slate-600 text-xs font-semibold">{item.tahun || '-'}</td>
-                        <td className="px-6 py-4">
-                          {item.file ? (
-                            <a
-                              href={`${BASE_URL}/uploads/${item.file}`}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="inline-flex items-center gap-1.5 text-xs text-blue-600 hover:underline font-semibold"
-                            >
-                              <Download className="w-3.5 h-3.5" /> Unduh PDF
-                            </a>
-                          ) : item.link ? (
-                            <a
-                              href={item.link}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="inline-flex items-center gap-1.5 text-xs text-amber-600 hover:underline font-semibold"
-                            >
-                              <ExternalLink className="w-3.5 h-3.5" /> Buka Tautan
-                            </a>
-                          ) : (
-                            <span className="text-xs text-slate-400">Tidak ada file</span>
+                <tbody>
+                  {filteredRows.map((row, idx) => {
+                    const href = resolveFileHref(row);
+                    return (
+                      <tr key={row.id}>
+                        <td>{idx + 1}</td>
+                        <td className="admin-doc-name">{row.judul}</td>
+                        <td>
+                          {activeTab === 'items' && (
+                            <span className="admin-badge blue">
+                              {row.kategori_nama || `Kategori #${row.kategori_id}`}
+                            </span>
+                          )}
+                          {activeTab === 'regulasi' && (
+                            <span className="admin-badge purple">{row.kategori || 'umum'}</span>
+                          )}
+                          {activeTab === 'sk' && (
+                            <span className="admin-badge amber">{row.tahun || '—'}</span>
                           )}
                         </td>
-                        <td className="px-6 py-4 text-right">
-                          <button
-                            onClick={() => handleDelete(item.id, item.judul)}
-                            className="p-1.5 text-red-600 hover:bg-red-50 rounded-lg transition-colors"
-                          >
-                            <Trash2 className="w-4 h-4" />
-                          </button>
-                        </td>
-                      </tr>
-                    ))}
-
-                  {/* TAB REGULASI */}
-                  {activeTab === 'regulasi' && regulasiList
-                    .filter(r => r.judul?.toLowerCase().includes(search.toLowerCase()))
-                    .map((item, idx) => (
-                      <tr key={item.id} className="hover:bg-slate-50/80 transition-colors">
-                        <td className="px-6 py-4 text-slate-400 font-mono text-xs">{idx + 1}</td>
-                        <td className="px-6 py-4 font-bold text-slate-900">{item.judul}</td>
-                        <td className="px-6 py-4">
-                          <span className="px-2 py-0.5 rounded text-[11px] font-bold bg-slate-100 text-slate-700">
-                            {item.kategori || 'umum'}
-                          </span>
-                        </td>
-                        <td className="px-6 py-4">
-                          {item.file ? (
+                        <td>
+                          {activeTab === 'items' ? (
+                            row.tahun || '—'
+                          ) : href ? (
                             <a
-                              href={item.file.startsWith('/') ? item.file : `${BASE_URL}/uploads/${item.file}`}
+                              href={href}
                               target="_blank"
                               rel="noreferrer"
-                              className="inline-flex items-center gap-1.5 text-xs text-blue-600 hover:underline font-semibold"
+                              style={{
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: 4,
+                                color: 'var(--blue)',
+                                fontWeight: 600,
+                                textDecoration: 'none',
+                              }}
                             >
-                              <Download className="w-3.5 h-3.5" /> Unduh PDF
+                              <span>Buka</span>
+                              <ExternalLink className="ic-sm" />
                             </a>
                           ) : (
-                            <span className="text-xs text-slate-400">-</span>
+                            '—'
                           )}
                         </td>
-                        <td className="px-6 py-4 text-right">
-                          <button
-                            onClick={() => handleDelete(item.id, item.judul)}
-                            className="p-1.5 text-red-600 hover:bg-red-50 rounded-lg transition-colors"
-                          >
-                            <Trash2 className="w-4 h-4" />
-                          </button>
-                        </td>
-                      </tr>
-                    ))}
-
-                  {/* TAB SK */}
-                  {activeTab === 'sk' && skList
-                    .filter(s => s.judul?.toLowerCase().includes(search.toLowerCase()))
-                    .map((item, idx) => (
-                      <tr key={item.id} className="hover:bg-slate-50/80 transition-colors">
-                        <td className="px-6 py-4 text-slate-400 font-mono text-xs">{idx + 1}</td>
-                        <td className="px-6 py-4 font-bold text-slate-900">{item.judul}</td>
-                        <td className="px-6 py-4 text-slate-600 text-xs font-semibold">{item.tahun || '-'}</td>
-                        <td className="px-6 py-4">
-                          {item.file ? (
-                            <a
-                              href={`${BASE_URL}/uploads/${item.file}`}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="inline-flex items-center gap-1.5 text-xs text-blue-600 hover:underline font-semibold"
+                        <td>
+                          <div className="admin-row-actions">
+                            {activeTab === 'items' && href && (
+                              <a
+                                href={href}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="admin-btn admin-btn-sm admin-btn-ghost"
+                                title="Buka dokumen"
+                              >
+                                <ExternalLink className="ic-sm" />
+                              </a>
+                            )}
+                            <motion.button
+                              type="button"
+                              onClick={() => openEdit(row)}
+                              className="admin-btn admin-btn-sm admin-btn-edit"
+                              whileTap={reduce ? undefined : { scale: SCALE.press }}
+                              transition={SPRING.press}
                             >
-                              <Download className="w-3.5 h-3.5" /> Unduh SK
-                            </a>
-                          ) : (
-                            <span className="text-xs text-slate-400">-</span>
-                          )}
-                        </td>
-                        <td className="px-6 py-4 text-right">
-                          <button
-                            onClick={() => handleDelete(item.id, item.judul)}
-                            className="p-1.5 text-red-600 hover:bg-red-50 rounded-lg transition-colors"
-                          >
-                            <Trash2 className="w-4 h-4" />
-                          </button>
+                              <Pencil className="ic-sm" />
+                              <span>Edit</span>
+                            </motion.button>
+                            <motion.button
+                              type="button"
+                              onClick={() => setDeleteTarget(row)}
+                              className="admin-btn admin-btn-sm admin-btn-del"
+                              whileTap={reduce ? undefined : { scale: SCALE.press }}
+                              transition={SPRING.press}
+                            >
+                              <Trash2 className="ic-sm" />
+                              <span>Hapus</span>
+                            </motion.button>
+                          </div>
                         </td>
                       </tr>
-                    ))}
+                    );
+                  })}
                 </tbody>
               </table>
-            </div>
-          )}
+            )}
+          </div>
+
+          <p className="admin-count-note" style={{ marginTop: 12 }}>
+            Menampilkan {filteredRows.length} dari {totalTabCount}{' '}
+            {activeTab === 'items' ? 'item informasi publik' : activeTab === 'regulasi' ? 'regulasi' : 'SK'}
+          </p>
         </div>
+      </AdminPageShell>
 
-        {/* Modal Form Tambah */}
-        {showModal && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/50 backdrop-blur-sm overflow-y-auto">
-            <div className="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-slate-200 my-8">
-              <div className="flex items-center justify-between pb-4 border-b border-slate-100 mb-5">
-                <h2 className="text-lg font-black text-slate-900">
-                  {activeTab === 'items' && 'Unggah Informasi Publik Baru'}
-                  {activeTab === 'regulasi' && 'Tambah Dokumen Regulasi'}
-                  {activeTab === 'sk' && 'Unggah Surat Keputusan (SK)'}
-                </h2>
-                <button
-                  onClick={() => setShowModal(false)}
-                  className="p-1 text-slate-400 hover:text-slate-700 rounded-lg"
-                >
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
-
-              <form onSubmit={handleSubmit} className="space-y-4">
-                {activeTab === 'items' && (
-                  <>
-                    <div>
-                      <label className="text-xs font-bold text-slate-700 block mb-1.5">Kategori Informasi</label>
-                      <select
-                        value={itemForm.kategori_id}
-                        onChange={(e) => setItemForm({ ...itemForm, kategori_id: e.target.value })}
-                        className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm outline-none focus:ring-2 focus:ring-amber-400 bg-slate-50"
-                      >
-                        {kategoriList.map((kat) => (
-                          <option key={kat.id} value={kat.id}>{kat.nama}</option>
-                        ))}
-                      </select>
-                    </div>
-                    <div>
-                      <label className="text-xs font-bold text-slate-700 block mb-1.5">Judul Dokumen</label>
-                      <input
-                        type="text"
-                        required
-                        placeholder="Contoh: Rencana Strategis (Renstra) 2024-2026"
-                        value={itemForm.judul}
-                        onChange={(e) => setItemForm({ ...itemForm, judul: e.target.value })}
-                        className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm outline-none focus:ring-2 focus:ring-amber-400 bg-slate-50"
-                      />
-                    </div>
-                    <div className="grid grid-cols-2 gap-4">
-                      <div>
-                        <label className="text-xs font-bold text-slate-700 block mb-1.5">Tahun</label>
-                        <input
-                          type="text"
-                          value={itemForm.tahun}
-                          onChange={(e) => setItemForm({ ...itemForm, tahun: e.target.value })}
-                          className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm outline-none focus:ring-2 focus:ring-amber-400 bg-slate-50"
-                        />
-                      </div>
-                      <div>
-                        <label className="text-xs font-bold text-slate-700 block mb-1.5">Tautan Eksternal (Opsional)</label>
-                        <input
-                          type="url"
-                          placeholder="https://..."
-                          value={itemForm.link}
-                          onChange={(e) => setItemForm({ ...itemForm, link: e.target.value })}
-                          className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm outline-none focus:ring-2 focus:ring-amber-400 bg-slate-50"
-                        />
-                      </div>
-                    </div>
-                  </>
-                )}
-
-                {activeTab === 'regulasi' && (
-                  <>
-                    <div>
-                      <label className="text-xs font-bold text-slate-700 block mb-1.5">Judul Regulasi</label>
-                      <input
-                        type="text"
-                        required
-                        placeholder="Contoh: Perda No. 2 Tahun 2024 tentang Ripparda"
-                        value={regulasiForm.judul}
-                        onChange={(e) => setRegulasiForm({ ...regulasiForm, judul: e.target.value })}
-                        className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm outline-none focus:ring-2 focus:ring-amber-400 bg-slate-50"
-                      />
-                    </div>
-                    <div>
-                      <label className="text-xs font-bold text-slate-700 block mb-1.5">Kategori Regulasi</label>
-                      <select
-                        value={regulasiForm.kategori}
-                        onChange={(e) => setRegulasiForm({ ...regulasiForm, kategori: e.target.value })}
-                        className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm outline-none focus:ring-2 focus:ring-amber-400 bg-slate-50"
-                      >
-                        <option value="umum">Umum / Kepariwisataan</option>
-                        <option value="perda">Peraturan Daerah (Perda)</option>
-                        <option value="pergub">Peraturan Gubernur (Pergub)</option>
-                        <option value="ppid">Keterbukaan Informasi (PPID)</option>
-                      </select>
-                    </div>
-                  </>
-                )}
-
-                {activeTab === 'sk' && (
-                  <>
-                    <div>
-                      <label className="text-xs font-bold text-slate-700 block mb-1.5">Judul SK</label>
-                      <input
-                        type="text"
-                        required
-                        placeholder="Contoh: SK Pengelola PPID Pelaksana Tahun 2025"
-                        value={skForm.judul}
-                        onChange={(e) => setSkForm({ ...skForm, judul: e.target.value })}
-                        className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm outline-none focus:ring-2 focus:ring-amber-400 bg-slate-50"
-                      />
-                    </div>
-                    <div>
-                      <label className="text-xs font-bold text-slate-700 block mb-1.5">Tahun</label>
-                      <input
-                        type="text"
-                        value={skForm.tahun}
-                        onChange={(e) => setSkForm({ ...skForm, tahun: e.target.value })}
-                        className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm outline-none focus:ring-2 focus:ring-amber-400 bg-slate-50"
-                      />
-                    </div>
-                  </>
-                )}
-
-                <div>
-                  <label className="text-xs font-bold text-slate-700 block mb-1.5">Upload Berkas PDF</label>
-                  <input
-                    type="file"
-                    ref={fileRef}
-                    accept=".pdf,.doc,.docx"
-                    onChange={(e) => setFile(e.target.files[0] || null)}
-                    className="block w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-amber-100 file:text-amber-800 hover:file:bg-amber-200 cursor-pointer"
-                  />
-                  <p className="text-[11px] text-slate-400 mt-1">Format PDF atau dokumen resmi dinas.</p>
-                </div>
-
-                <div className="flex items-center justify-end gap-3 pt-4 border-t border-slate-100">
-                  <button
-                    type="button"
-                    onClick={() => setShowModal(false)}
-                    className="px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-600 hover:bg-slate-100 transition-colors"
-                  >
-                    Batal
-                  </button>
-                  <button
-                    type="submit"
-                    disabled={submitting}
-                    className="bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 disabled:opacity-50 text-slate-950 font-bold px-5 py-2.5 rounded-xl transition-all shadow-sm text-sm cursor-pointer"
-                  >
-                    {submitting ? 'Mengunggah...' : 'Simpan Dokumen'}
-                  </button>
-                </div>
-              </form>
-            </div>
+      <AdminDrawer
+        open={drawerOpen}
+        onClose={() => setDrawerOpen(false)}
+        title={editItem ? 'Edit Dokumen PPID' : 'Tambah Dokumen PPID'}
+        submitting={submitting}
+        onSubmit={handleSubmit}
+      >
+        {!editItem && (
+          <div className="admin-d-field">
+            <label htmlFor="ppidJenis">Jenis Dokumen</label>
+            <select
+              id="ppidJenis"
+              value={drawerType}
+              onChange={(e) => setDrawerType(e.target.value)}
+            >
+              <option value="items">Item Informasi Publik</option>
+              <option value="regulasi">Regulasi</option>
+              <option value="sk">Surat Keputusan (SK)</option>
+            </select>
           </div>
         )}
-      </div>
+
+        <div className="admin-d-field">
+          <label htmlFor="ppidJudul">Nama / Judul Dokumen</label>
+          <input
+            id="ppidJudul"
+            type="text"
+            placeholder="Masukkan nama dokumen"
+            value={form.judul}
+            onChange={(e) => setForm((f) => ({ ...f, judul: e.target.value }))}
+            required
+          />
+        </div>
+
+        {drawerType === 'items' && (
+          <>
+            <div className="admin-d-field">
+              <label htmlFor="ppidKategori">Kategori Informasi</label>
+              <select
+                id="ppidKategori"
+                value={form.kategori_id}
+                onChange={(e) => setForm((f) => ({ ...f, kategori_id: e.target.value }))}
+              >
+                {kategoriList.map((k) => (
+                  <option key={k.id} value={k.id}>
+                    {k.nama}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="admin-d-field">
+              <label htmlFor="ppidLink">Tautan Eksternal (Opsional)</label>
+              <input
+                id="ppidLink"
+                type="text"
+                placeholder="https://..."
+                value={form.link}
+                onChange={(e) => setForm((f) => ({ ...f, link: e.target.value }))}
+              />
+            </div>
+          </>
+        )}
+
+        {drawerType === 'regulasi' && (
+          <div className="admin-d-field">
+            <label htmlFor="ppidRegKat">Jenis Regulasi</label>
+            <input
+              id="ppidRegKat"
+              type="text"
+              placeholder="cth: Perda, Pergub, umum"
+              value={form.kategori}
+              onChange={(e) => setForm((f) => ({ ...f, kategori: e.target.value }))}
+            />
+          </div>
+        )}
+
+        {(drawerType === 'items' || drawerType === 'sk') && (
+          <div className="admin-d-field">
+            <label htmlFor="ppidTahun">Tahun</label>
+            <input
+              id="ppidTahun"
+              type="text"
+              placeholder="cth: 2025"
+              value={form.tahun}
+              onChange={(e) => setForm((f) => ({ ...f, tahun: e.target.value }))}
+            />
+          </div>
+        )}
+
+        <div className="admin-d-field">
+          <label>Berkas Dokumen (PDF / Gambar)</label>
+          <AdminDropzone
+            accept=".pdf,.doc,.docx,image/*"
+            fileName={file?.name || editItem?.file}
+            hint="Klik untuk memilih berkas PDF/dokumen, atau seret ke sini"
+            onFileSelect={(f) => setFile(f)}
+          />
+        </div>
+      </AdminDrawer>
+
+      <AdminConfirmModal
+        open={Boolean(deleteTarget)}
+        title="Hapus Dokumen PPID"
+        message={`Yakin ingin menghapus "${deleteTarget?.judul}"?`}
+        loading={deleting}
+        onCancel={() => setDeleteTarget(null)}
+        onConfirm={handleDelete}
+      />
     </AdminLayout>
   );
 };

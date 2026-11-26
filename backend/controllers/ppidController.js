@@ -10,6 +10,20 @@ exports.getKategori = async (req, res) => {
   }
 };
 
+exports.getAllItems = async (req, res) => {
+  try {
+    const [rows] = await db.query(
+      `SELECT i.*, k.nama AS kategori_nama
+       FROM ppid_item i
+       LEFT JOIN ppid_kategori k ON i.kategori_id = k.id
+       ORDER BY i.tahun DESC, i.id DESC`
+    );
+    res.json(rows);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
 exports.getItemsByKategori = async (req, res) => {
   try {
     const [rows] = await db.query('SELECT * FROM ppid_item WHERE kategori_id = ?', [req.params.kategoriId]);
@@ -25,6 +39,23 @@ exports.createItem = async (req, res) => {
   try {
     await db.query('INSERT INTO ppid_item (kategori_id, judul, file, link, tahun) VALUES (?, ?, ?, ?, ?)', [kategori_id, judul, file, link, tahun]);
     res.status(201).json({ message: 'Item berhasil dibuat' });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
+exports.updateItem = async (req, res) => {
+  const { kategori_id, judul, link, tahun, file_lama } = req.body;
+  try {
+    const [rows] = await db.query('SELECT * FROM ppid_item WHERE id = ?', [req.params.id]);
+    if (rows.length === 0) return res.status(404).json({ message: 'Item tidak ditemukan' });
+    const current = rows[0];
+    const file = req.file ? req.file.filename : (file_lama ?? current.file);
+    await db.query(
+      'UPDATE ppid_item SET kategori_id = ?, judul = ?, file = ?, link = ?, tahun = ? WHERE id = ?',
+      [kategori_id ?? current.kategori_id, judul ?? current.judul, file, link ?? current.link, tahun ?? current.tahun, req.params.id]
+    );
+    res.json({ message: 'Item berhasil diperbarui' });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
@@ -60,6 +91,23 @@ exports.createRegulasi = async (req, res) => {
   }
 };
 
+exports.updateRegulasi = async (req, res) => {
+  const { judul, kategori, file_lama } = req.body;
+  try {
+    const [rows] = await db.query('SELECT * FROM ppid_regulasi WHERE id = ?', [req.params.id]);
+    if (rows.length === 0) return res.status(404).json({ message: 'Regulasi tidak ditemukan' });
+    const current = rows[0];
+    const file = req.file ? req.file.filename : (file_lama ?? current.file);
+    await db.query(
+      'UPDATE ppid_regulasi SET judul = ?, file = ?, kategori = ? WHERE id = ?',
+      [judul ?? current.judul, file, kategori ?? current.kategori, req.params.id]
+    );
+    res.json({ message: 'Regulasi berhasil diperbarui' });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
 exports.deleteRegulasi = async (req, res) => {
   try {
     await db.query('DELETE FROM ppid_regulasi WHERE id = ?', [req.params.id]);
@@ -85,6 +133,23 @@ exports.createSK = async (req, res) => {
   try {
     await db.query('INSERT INTO ppid_sk (judul, tahun, file) VALUES (?, ?, ?)', [judul, tahun, file]);
     res.status(201).json({ message: 'SK berhasil dibuat' });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
+exports.updateSK = async (req, res) => {
+  const { judul, tahun, file_lama } = req.body;
+  try {
+    const [rows] = await db.query('SELECT * FROM ppid_sk WHERE id = ?', [req.params.id]);
+    if (rows.length === 0) return res.status(404).json({ message: 'SK tidak ditemukan' });
+    const current = rows[0];
+    const file = req.file ? req.file.filename : (file_lama ?? current.file);
+    await db.query(
+      'UPDATE ppid_sk SET judul = ?, tahun = ?, file = ? WHERE id = ?',
+      [judul ?? current.judul, tahun ?? current.tahun, file, req.params.id]
+    );
+    res.json({ message: 'SK berhasil diperbarui' });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }

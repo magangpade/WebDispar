@@ -310,7 +310,7 @@ const Hero = () => {
         }));
         if (active.length) {
           setCurrent(0);
-          setSlides(active);
+          setSlides([SLIDES[0], ...active]);
         }
       })
       .catch(() => {});

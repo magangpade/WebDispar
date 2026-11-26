@@ -1,253 +1,140 @@
-import { useState, useEffect } from 'react';
-import { Palette, Check, RotateCcw, Save, AlertCircle, CheckCircle2, Sparkles, Calendar } from 'lucide-react';
-import { AdminLayout } from './Dashboard';
+import { useEffect, useState } from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
+import {
+  Building2,
+  Compass,
+  FileText,
+  Images,
+  LayoutDashboard,
+  LogOut,
+  MapPin,
+  Newspaper,
+  Palette,
+  RotateCcw,
+  Save,
+  User,
+} from 'lucide-react';
 import api from '../../services/api';
 import { useTheme } from '../../context/ThemeContext';
 import { SeasonalIcon } from '../../components/SeasonalIcon';
+import { AdminLayout, AdminPageShell, useAdminToast } from './components/AdminUI';
+import { SCALE, SPRING } from './adminMotion';
 
 const PRESET_TEMAS = [
-  // 0. KHUSUS HARI BESAR & PERAYAAN (DILENGKAPI IKON TEMATIK)
-  {
-    nama: 'Bulan Suci Ramadhan & Idul Fitri',
-    kategori: 'Hari Besar',
-    primary: '#064e3b',
-    secondary: '#047857',
-    accent: '#14532d',
-    highlight: '#fbbf24',
-    badge_icon: 'ketupat',
-    seasonal_badge: 'Ramadhan & Idul Fitri'
-  },
-  {
-    nama: 'HUT Kemerdekaan RI (Merah Putih)',
-    kategori: 'Hari Besar',
-    primary: '#b91c1c',
-    secondary: '#dc2626',
-    accent: '#991b1b',
-    highlight: '#ffffff',
-    badge_icon: 'kemerdekaan',
-    seasonal_badge: 'Dirgahayu Republik Indonesia'
-  },
-  {
-    nama: 'Hari Raya Natal & Tahun Baru',
-    kategori: 'Hari Besar',
-    primary: '#14532d',
-    secondary: '#991b1b',
-    accent: '#1e3a8a',
-    highlight: '#facc15',
-    badge_icon: 'natal',
-    seasonal_badge: 'Merry Christmas & Happy New Year'
-  },
-  {
-    nama: 'Tahun Baru Imlek (Hoki & Kemakmuran)',
-    kategori: 'Hari Besar',
-    primary: '#991b1b',
-    secondary: '#b91c1c',
-    accent: '#7f1d1d',
-    highlight: '#fde047',
-    badge_icon: 'imlek',
-    seasonal_badge: 'Gong Xi Fa Cai'
-  },
-  {
-    nama: 'Festival Budaya Bumi Megalit',
-    kategori: 'Hari Besar',
-    primary: '#334155',
-    secondary: '#1e293b',
-    accent: '#0f172a',
-    highlight: '#38bdf8',
-    badge_icon: 'megalit',
-    seasonal_badge: 'Bumi Seribu Megalit Sulteng'
-  },
-
-  // 1. Biru & Ungu (Karakter Resmi & Elegan)
   {
     nama: 'Sulteng Biru Ungu (Default)',
-    kategori: 'Resmi',
+    desc: 'Gradasi biru–ungu khas Dinas Pariwisata.',
     primary: '#1F5BA6',
     secondary: '#383087',
     accent: '#5C2180',
-    highlight: '#f59e0b',
+    highlight: '#F59E0B',
     badge_icon: 'none',
-    seasonal_badge: ''
+    seasonal_badge: '',
   },
   {
-    nama: 'Royal Deep Ocean (Biru Samudra)',
-    kategori: 'Bahari',
-    primary: '#0369a1',
-    secondary: '#1e40af',
-    accent: '#312e81',
-    highlight: '#38bdf8',
-    badge_icon: 'none',
-    seasonal_badge: ''
+    nama: 'Ramadhan & Idul Fitri',
+    desc: 'Hijau zamrud dan emas yang hangat.',
+    primary: '#059669',
+    secondary: '#047857',
+    accent: '#064E3B',
+    highlight: '#FBBF24',
+    badge_icon: 'ketupat',
+    seasonal_badge: 'Ramadhan & Idul Fitri',
   },
   {
-    nama: 'Midnight Indigo (Biru Malam)',
-    kategori: 'Elegan',
-    primary: '#1e1b4b',
-    secondary: '#2e1065',
-    accent: '#3b0764',
-    highlight: '#facc15',
-    badge_icon: 'none',
-    seasonal_badge: ''
+    nama: 'HUT Kemerdekaan RI',
+    desc: 'Merah putih semangat kemerdekaan.',
+    primary: '#B91C1C',
+    secondary: '#DC2626',
+    accent: '#991B1B',
+    highlight: '#F59E0B',
+    badge_icon: 'kemerdekaan',
+    seasonal_badge: 'Dirgahayu Republik Indonesia',
   },
   {
-    nama: 'Sky Sapphire (Biru Langit Terang)',
-    kategori: 'Modern',
-    primary: '#0284c7',
-    secondary: '#2563eb',
-    accent: '#4f46e5',
-    highlight: '#fbbf24',
-    badge_icon: 'none',
-    seasonal_badge: ''
+    nama: 'Natal & Tahun Baru',
+    desc: 'Merah, hijau, dan emas perayaan.',
+    primary: '#14532D',
+    secondary: '#991B1B',
+    accent: '#1E3A8A',
+    highlight: '#FACC15',
+    badge_icon: 'natal',
+    seasonal_badge: 'Merry Christmas & Happy New Year',
   },
-
-  // 2. Hijau & Alam (Ekowisata & Hutan)
   {
-    nama: 'Emerald Bahari (Hijau Laut Togean)',
-    kategori: 'Alam',
+    nama: 'Tahun Baru Imlek',
+    desc: 'Merah dan emas penuh keberuntungan.',
+    primary: '#991B1B',
+    secondary: '#B91C1C',
+    accent: '#7F1D1D',
+    highlight: '#FDE047',
+    badge_icon: 'imlek',
+    seasonal_badge: 'Gong Xi Fa Cai',
+  },
+  {
+    nama: 'Festival Budaya Bumi Megalit',
+    desc: 'Ungu dan biru megalit Sulawesi Tengah.',
+    primary: '#7C3AED',
+    secondary: '#383087',
+    accent: '#1F5BA6',
+    highlight: '#F59E0B',
+    badge_icon: 'megalit',
+    seasonal_badge: 'Bumi Seribu Megalit Sulteng',
+  },
+  {
+    nama: 'Royal Deep Ocean',
+    desc: 'Biru samudra dalam dan tenang.',
+    primary: '#0369A1',
+    secondary: '#1E40AF',
+    accent: '#312E81',
+    highlight: '#38BDF8',
+    badge_icon: 'none',
+    seasonal_badge: '',
+  },
+  {
+    nama: 'Emerald Bahari Togean',
+    desc: 'Tosca laut dan biru Kepulauan Togean.',
     primary: '#047857',
-    secondary: '#0f766e',
-    accent: '#1e3a8a',
-    highlight: '#fbbf24',
+    secondary: '#0F766E',
+    accent: '#1E3A8A',
+    highlight: '#FBBF24',
     badge_icon: 'none',
-    seasonal_badge: ''
+    seasonal_badge: '',
   },
-  {
-    nama: 'Lembah Lore Lindu (Hijau Hutan Tropis)',
-    kategori: 'Alam',
-    primary: '#14532d',
-    secondary: '#166534',
-    accent: '#064e3b',
-    highlight: '#eab308',
-    badge_icon: 'none',
-    seasonal_badge: ''
-  },
-  {
-    nama: 'Laguna Tosca (Tosca Segar)',
-    kategori: 'Bahari',
-    primary: '#0e7490',
-    secondary: '#0891b2',
-    accent: '#155e75',
-    highlight: '#f59e0b',
-    badge_icon: 'none',
-    seasonal_badge: ''
-  },
-  {
-    nama: 'Mint Oasis (Hijau Mint Fresh)',
-    kategori: 'Modern',
-    primary: '#0d9488',
-    secondary: '#059669',
-    accent: '#047857',
-    highlight: '#fb923c',
-    badge_icon: 'none',
-    seasonal_badge: ''
-  },
-
-  // 3. Merah, Oranye & Matahari Terbenam (Kultural & Hangat)
-  {
-    nama: 'Sunset Megalit (Merah Maroon)',
-    kategori: 'Kultural',
-    primary: '#991b1b',
-    secondary: '#831843',
-    accent: '#4c1d95',
-    highlight: '#f59e0b',
-    badge_icon: 'none',
-    seasonal_badge: ''
-  },
-  {
-    nama: 'Crimson Velvet (Merah Delima)',
-    kategori: 'Kultural',
-    primary: '#be123c',
-    secondary: '#9f1239',
-    accent: '#4c0519',
-    highlight: '#fde047',
-    badge_icon: 'none',
-    seasonal_badge: ''
-  },
-  {
-    nama: 'Senja Teluk Palu (Amber & Oranye)',
-    kategori: 'Hangat',
-    primary: '#c2410c',
-    secondary: '#b45309',
-    accent: '#78350f',
-    highlight: '#38bdf8',
-    badge_icon: 'none',
-    seasonal_badge: ''
-  },
-  {
-    nama: 'Koral Pulau Sombori (Terakota Koral)',
-    kategori: 'Hangat',
-    primary: '#ea580c',
-    secondary: '#c026d3',
-    accent: '#701a75',
-    highlight: '#fef08a',
-    badge_icon: 'none',
-    seasonal_badge: ''
-  },
-
-  // 4. Emas, Gelap & Monokrom Premium
-  {
-    nama: 'Golden Heritage (Emas Kemewahan)',
-    kategori: 'Premium',
-    primary: '#854d0e',
-    secondary: '#713f12',
-    accent: '#422006',
-    highlight: '#facc15',
-    badge_icon: 'none',
-    seasonal_badge: ''
-  },
-  {
-    nama: 'Dark Obsidian (Hitam Modern Charcoal)',
-    kategori: 'Premium',
-    primary: '#0f172a',
-    secondary: '#1e293b',
-    accent: '#334155',
-    highlight: '#38bdf8',
-    badge_icon: 'none',
-    seasonal_badge: ''
-  },
-  {
-    nama: 'Cyber Purple (Ungu Neon Futuristik)',
-    kategori: 'Modern',
-    primary: '#6b21a8',
-    secondary: '#7e22ce',
-    accent: '#9333ea',
-    highlight: '#22d3ee',
-    badge_icon: 'none',
-    seasonal_badge: ''
-  }
 ];
 
-const AdminTema = () => {
+const AdminTemaContent = () => {
   const { theme, updateThemeState } = useTheme();
+  const { showToast } = useAdminToast();
+  const reduce = useReducedMotion();
+
   const [form, setForm] = useState({
-    nama_tema: theme.nama_tema || 'Sulteng Biru Ungu',
+    nama_tema: theme.nama_tema || 'Sulteng Biru Ungu (Default)',
     primary_color: theme.primary_color || '#1F5BA6',
     secondary_color: theme.secondary_color || '#383087',
     accent_color: theme.accent_color || '#5C2180',
-    highlight_color: theme.highlight_color || '#f59e0b',
+    highlight_color: theme.highlight_color || '#F59E0B',
     badge_icon: theme.badge_icon || 'none',
-    seasonal_badge: theme.seasonal_badge || ''
+    seasonal_badge: theme.seasonal_badge || '',
   });
-
   const [saving, setSaving] = useState(false);
-  const [error, setError] = useState('');
-  const [success, setSuccess] = useState('');
+  const [previewTarget, setPreviewTarget] = useState('user');
 
   useEffect(() => {
     if (theme) {
       setForm({
-        nama_tema: theme.nama_tema || 'Sulteng Biru Ungu',
+        nama_tema: theme.nama_tema || 'Sulteng Biru Ungu (Default)',
         primary_color: theme.primary_color || '#1F5BA6',
         secondary_color: theme.secondary_color || '#383087',
         accent_color: theme.accent_color || '#5C2180',
-        highlight_color: theme.highlight_color || '#f59e0b',
+        highlight_color: theme.highlight_color || '#F59E0B',
         badge_icon: theme.badge_icon || 'none',
-        seasonal_badge: theme.seasonal_badge || ''
+        seasonal_badge: theme.seasonal_badge || '',
       });
     }
   }, [theme]);
 
-  const handleApplyPreset = (preset) => {
+  const applyPreset = (preset) => {
     const updated = {
       nama_tema: preset.nama,
       primary_color: preset.primary,
@@ -255,10 +142,11 @@ const AdminTema = () => {
       accent_color: preset.accent,
       highlight_color: preset.highlight,
       badge_icon: preset.badge_icon || 'none',
-      seasonal_badge: preset.seasonal_badge || ''
+      seasonal_badge: preset.seasonal_badge || '',
     };
     setForm(updated);
     updateThemeState(updated);
+    showToast(`Pratinjau tema "${preset.nama}" diterapkan — klik Simpan Tema untuk menyimpan`);
   };
 
   const handleColorChange = (key, val) => {
@@ -267,356 +155,594 @@ const AdminTema = () => {
     updateThemeState(updated);
   };
 
-  const handleSave = async (e) => {
-    e.preventDefault();
+  const handleSave = async () => {
     setSaving(true);
-    setError('');
-    setSuccess('');
     try {
       const res = await api.put('/tema', form);
       updateThemeState(res.data.data);
-      setSuccess('Tema website berhasil disimpan ke database!');
-      setTimeout(() => setSuccess(''), 4000);
-    } catch (err) {
-      setError(err.response?.data?.message || 'Gagal menyimpan tema');
+      showToast('Tema website berhasil disimpan ke database');
+    } catch {
+      showToast('Gagal menyimpan tema', 'error');
     } finally {
       setSaving(false);
     }
   };
 
   const handleReset = async () => {
-    if (!window.confirm('Kembalikan tema ke setelan bawaan (Default)?')) return;
     setSaving(true);
-    setError('');
-    setSuccess('');
     try {
       const res = await api.post('/tema/reset');
       setForm(res.data.data);
       updateThemeState(res.data.data);
-      setSuccess('Tema berhasil dikembalikan ke setelan awal!');
-      setTimeout(() => setSuccess(''), 4000);
-    } catch (err) {
-      setError('Gagal mereset tema');
+      showToast('Tema dikembalikan ke Default Dispar');
+    } catch {
+      showToast('Gagal mereset tema', 'error');
     } finally {
       setSaving(false);
     }
   };
 
-  const gradientPreview = `linear-gradient(to right, ${form.primary_color}, ${form.secondary_color}, ${form.accent_color})`;
+  const previewVars = {
+    '--blue': form.primary_color,
+    '--purple': form.accent_color,
+    '--amber': form.highlight_color,
+    '--grad': `linear-gradient(135deg, ${form.primary_color}, ${form.secondary_color} 55%, ${form.accent_color})`,
+  };
 
   return (
-    <AdminLayout>
-      <div className="space-y-8">
-        {/* Header */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+    <AdminPageShell>
+      <div className="admin-panel glass">
+        <div className="admin-panel-head">
           <div>
-            <h1 className="text-2xl font-black text-slate-900 tracking-tight flex items-center gap-2">
-              <Palette className="w-6 h-6 text-amber-500" /> Pengaturan Tema Website
-            </h1>
-            <p className="text-slate-500 text-sm">
-              Kustomisasi warna gradien utama, navbar, tombol aksen, dan identitas visual portal
+            <h1 className="admin-panel-title">Warna Tema</h1>
+            <p className="admin-panel-sub">
+              Atur tampilan panel admin &amp; portal — pilih preset musiman atau racik warna sendiri.
             </p>
           </div>
-          <div className="flex items-center gap-2">
-            <button
+          <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+            <motion.button
+              type="button"
+              disabled={saving}
               onClick={handleReset}
-              disabled={saving}
-              className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 text-xs font-bold transition-all shadow-sm cursor-pointer"
+              className="admin-btn admin-btn-ghost"
+              whileTap={reduce ? undefined : { scale: SCALE.press }}
+              transition={SPRING.press}
             >
-              <RotateCcw className="w-4 h-4" /> Reset Bawaan
+              <RotateCcw className="ic-sm" />
+              <span>Reset Tema</span>
+            </motion.button>
+            <motion.button
+              type="button"
+              disabled={saving}
+              onClick={handleSave}
+              className="admin-btn admin-btn-amber"
+              whileTap={reduce ? undefined : { scale: SCALE.press }}
+              transition={SPRING.press}
+            >
+              <Save className="ic-sm" />
+              <span>{saving ? 'Menyimpan...' : 'Simpan Tema'}</span>
+            </motion.button>
+          </div>
+        </div>
+
+        <h2 className="admin-section-title" style={{ marginTop: 18 }}>
+          Preset Tema
+        </h2>
+        <div className="admin-tema-grid">
+          {PRESET_TEMAS.map((preset) => {
+            const active =
+              form.primary_color.toLowerCase() === preset.primary.toLowerCase() &&
+              form.accent_color.toLowerCase() === preset.accent.toLowerCase();
+            return (
+              <motion.button
+                key={preset.nama}
+                type="button"
+                onClick={() => applyPreset(preset)}
+                className={`admin-tema-card ${active ? 'active' : ''}`}
+                whileTap={reduce ? undefined : { scale: SCALE.choice }}
+                transition={SPRING.press}
+              >
+                <div
+                  className="admin-tema-preview"
+                  style={{
+                    background: `linear-gradient(135deg, ${preset.primary}, ${preset.secondary} 55%, ${preset.accent})`,
+                  }}
+                >
+                  {preset.badge_icon && preset.badge_icon !== 'none' ? (
+                    <span
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: 4,
+                        padding: '2px 7px',
+                        borderRadius: 999,
+                        background: 'rgba(255,255,255,0.22)',
+                        color: '#fff',
+                        fontSize: 10,
+                        fontWeight: 700,
+                      }}
+                    >
+                      <SeasonalIcon type={preset.badge_icon} className="w-3 h-3" />
+                      <span>{preset.seasonal_badge}</span>
+                    </span>
+                  ) : (
+                    <span />
+                  )}
+                  <span
+                    style={{
+                      width: 14,
+                      height: 14,
+                      borderRadius: '50%',
+                      background: preset.highlight,
+                      border: '1.5px solid rgba(255,255,255,0.7)',
+                    }}
+                  />
+                </div>
+                <div className="admin-tema-name">{preset.nama}</div>
+                <div className="admin-tema-desc">{preset.desc}</div>
+              </motion.button>
+            );
+          })}
+        </div>
+
+        <h2 className="admin-section-title" style={{ marginTop: 22 }}>
+          Warna Kustom
+        </h2>
+        <div className="admin-tema-custom">
+          <label className="admin-tema-field">
+            Warna Utama
+            <span className="admin-tema-swatch">
+              <input
+                type="color"
+                value={form.primary_color}
+                onChange={(e) => handleColorChange('primary_color', e.target.value)}
+              />
+              <span>{form.primary_color.toUpperCase()}</span>
+            </span>
+          </label>
+          <label className="admin-tema-field">
+            Warna Tengah
+            <span className="admin-tema-swatch">
+              <input
+                type="color"
+                value={form.secondary_color}
+                onChange={(e) => handleColorChange('secondary_color', e.target.value)}
+              />
+              <span>{form.secondary_color.toUpperCase()}</span>
+            </span>
+          </label>
+          <label className="admin-tema-field">
+            Warna Kedua
+            <span className="admin-tema-swatch">
+              <input
+                type="color"
+                value={form.accent_color}
+                onChange={(e) => handleColorChange('accent_color', e.target.value)}
+              />
+              <span>{form.accent_color.toUpperCase()}</span>
+            </span>
+          </label>
+          <label className="admin-tema-field">
+            Warna Aksen
+            <span className="admin-tema-swatch">
+              <input
+                type="color"
+                value={form.highlight_color}
+                onChange={(e) => handleColorChange('highlight_color', e.target.value)}
+              />
+              <span>{form.highlight_color.toUpperCase()}</span>
+            </span>
+          </label>
+        </div>
+
+        <div className="admin-tema-custom" style={{ marginTop: 14 }}>
+          <label className="admin-tema-field" style={{ minWidth: 240 }}>
+            Ikon Tematik Hari Besar
+            <select
+              className="admin-select-inline"
+              value={form.badge_icon}
+              onChange={(e) => {
+                const val = e.target.value;
+                const map = {
+                  ketupat: 'Ramadhan & Idul Fitri',
+                  kemerdekaan: 'Dirgahayu RI',
+                  natal: 'Natal & Tahun Baru',
+                  imlek: 'Gong Xi Fa Cai',
+                  megalit: 'Bumi Seribu Megalit',
+                  none: '',
+                };
+                const updated = {
+                  ...form,
+                  badge_icon: val,
+                  seasonal_badge: val !== 'none' ? form.seasonal_badge || map[val] : '',
+                };
+                setForm(updated);
+                updateThemeState(updated);
+              }}
+            >
+              <option value="none">Tanpa Ikon Khusus (Standar)</option>
+              <option value="ketupat">Belah Ketupat (Ramadhan & Idul Fitri)</option>
+              <option value="kemerdekaan">Bendera Merah Putih (HUT RI)</option>
+              <option value="natal">Pohon Cemara (Natal & Tahun Baru)</option>
+              <option value="imlek">Lampion (Tahun Baru Imlek)</option>
+              <option value="megalit">Patung Megalit (Sulawesi Tengah)</option>
+            </select>
+          </label>
+          <label className="admin-tema-field" style={{ minWidth: 240, flex: 1, maxWidth: 340 }}>
+            Label Hari Besar
+            <input
+              type="text"
+              className="admin-select-inline"
+              disabled={form.badge_icon === 'none'}
+              placeholder="Contoh: Marhaban Ya Ramadhan"
+              value={form.seasonal_badge}
+              onChange={(e) => {
+                const updated = { ...form, seasonal_badge: e.target.value };
+                setForm(updated);
+                updateThemeState(updated);
+              }}
+            />
+          </label>
+        </div>
+
+        <p className="admin-count-note" style={{ marginTop: 14 }}>
+          Warna aksen langsung mengubah ikon statistik, grafik, badge, fokus input, serta portal publik setelah disimpan.
+        </p>
+
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, flexWrap: 'wrap', marginTop: 22 }}>
+          <div>
+            <h2 className="admin-section-title" style={{ margin: 0 }}>
+              {previewTarget === 'user' ? 'Preview Halaman User (Publik)' : 'Preview Panel Admin'}
+            </h2>
+            <p className="admin-section-sub" style={{ margin: '4px 0 0' }}>
+              Pratinjau langsung tampilan website — warnanya berubah mengikuti preset atau warna kustom di atas.
+              <span className="pv-swatch" style={previewVars} title="Gradasi tema aktif" />
+            </p>
+          </div>
+          <div className="admin-tabs glass" style={{ margin: 0 }} role="tablist" aria-label="Mode pratinjau tema">
+            <button
+              type="button"
+              role="tab"
+              aria-selected={previewTarget === 'user'}
+              onClick={() => setPreviewTarget('user')}
+              className={`admin-tab ${previewTarget === 'user' ? 'active' : ''}`}
+            >
+              Halaman User (Publik)
             </button>
             <button
-              onClick={handleSave}
-              disabled={saving}
-              className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-950 text-xs font-extrabold transition-all shadow-sm active:scale-95 cursor-pointer"
+              type="button"
+              role="tab"
+              aria-selected={previewTarget === 'admin'}
+              onClick={() => setPreviewTarget('admin')}
+              className={`admin-tab ${previewTarget === 'admin' ? 'active' : ''}`}
             >
-              <Save className="w-4 h-4" /> {saving ? 'Menyimpan...' : 'Simpan Tema'}
+              Panel Admin
             </button>
           </div>
         </div>
 
-        {/* Notifikasi */}
-        {error && (
-          <div className="flex items-center gap-2 p-4 bg-red-50 border border-red-200 rounded-xl text-red-700 text-sm">
-            <AlertCircle className="w-5 h-5 shrink-0" />
-            <span>{error}</span>
-          </div>
-        )}
-        {success && (
-          <div className="flex items-center gap-2 p-4 bg-emerald-50 border border-emerald-200 rounded-xl text-emerald-800 text-sm">
-            <CheckCircle2 className="w-5 h-5 shrink-0" />
-            <span>{success}</span>
-          </div>
-        )}
-
-        {/* Live Preview Box */}
-        <div className="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
-          <div className="flex items-center justify-between">
-            <h2 className="font-black text-slate-900 text-base flex items-center gap-2">
-              <Sparkles className="w-4 h-4 text-amber-500" /> Pratinjau Langsung (Live Preview)
-            </h2>
-            <span className="text-xs font-bold text-slate-500 px-3 py-1 bg-slate-100 rounded-full">
-              {form.nama_tema}
-            </span>
-          </div>
-
-          {/* Dummy Navbar Banner Preview */}
-          <div
-            className="rounded-2xl p-6 text-white shadow-md transition-all duration-300 relative overflow-hidden"
-            style={{ background: gradientPreview }}
-          >
-            <div className="flex items-center justify-between relative z-10">
-              <div className="flex items-center gap-3">
-                <div className="h-10 px-2 rounded-xl bg-white/10 backdrop-blur border border-white/20 flex items-center justify-center">
-                  <img src="/dinas pariwisata-COLOR WHITE.png" alt="Logo" className="h-8 w-auto object-contain" />
-                </div>
-                <div>
-                  <div className="flex items-center gap-2">
-                    <p className="font-black text-base leading-tight">Dinas Pariwisata</p>
-                    {form.badge_icon && form.badge_icon !== 'none' && (
-                      <div className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-white/25 border border-white/30 text-[10px] font-bold text-amber-300">
-                        <SeasonalIcon type={form.badge_icon} className="w-3.5 h-3.5" />
-                        <span>{form.seasonal_badge}</span>
-                      </div>
-                    )}
-                  </div>
-                  <p className="text-[10px] font-bold uppercase tracking-wider" style={{ color: form.highlight_color }}>
-                    PROVINSI SULAWESI TENGAH
-                  </p>
-                </div>
-              </div>
-
-              <div className="hidden sm:flex items-center gap-1.5 p-1 rounded-full bg-white/15 border border-white/20 text-xs font-bold">
-                <span className="px-3 py-1 rounded-full text-slate-950 font-black shadow-sm" style={{ backgroundColor: form.highlight_color }}>
-                  Beranda
-                </span>
-                <span className="px-3 py-1 text-white/90">Profil</span>
-                <span className="px-3 py-1 text-white/90">Destinasi</span>
-              </div>
-            </div>
-
-            <div className="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 relative z-10">
-              <div>
-                <h3 className="text-xl font-black">Eksplorasi Keindahan Sulawesi Tengah</h3>
-                <p className="text-xs text-white/80 mt-0.5">Warna tema ini langsung diterapkan di portal publik dan admin.</p>
-              </div>
-              <button
-                className="px-4 py-2 rounded-xl font-bold text-xs text-slate-950 shadow-sm transition-transform active:scale-95"
-                style={{ backgroundColor: form.highlight_color }}
+        <div className="pv-wrap" style={previewVars} aria-hidden="true">
+          {previewTarget === 'user' ? (
+            <div className="pv-pub-shell">
+              {/* Topbar Publik */}
+              <div
+                className="pv-pub-topbar"
+                style={{
+                  background: `linear-gradient(to right, ${form.primary_color}, ${form.secondary_color}, ${form.accent_color})`,
+                }}
               >
-                Jelajahi Sekarang
-              </button>
-            </div>
-          </div>
-        </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                  {form.badge_icon && form.badge_icon !== 'none' ? (
+                    <span className="pv-pub-badge">
+                      <SeasonalIcon type={form.badge_icon} className="w-3 h-3" />
+                      <span>{form.seasonal_badge || 'Edisi Khusus'}</span>
+                    </span>
+                  ) : (
+                    <span className="pv-pub-badge" style={{ background: 'rgba(16,185,129,0.2)', borderColor: 'rgba(16,185,129,0.4)', color: '#6ee7b7' }}>
+                      ● Portal Resmi
+                    </span>
+                  )}
+                  <span style={{ opacity: 0.85 }}>Pemerintah Provinsi Sulawesi Tengah</span>
+                </div>
+                <span style={{ opacity: 0.85 }}>dispar@sultengprov.go.id</span>
+              </div>
 
-        {/* Preset Palet Warna */}
-        <div className="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm">
-          <h2 className="font-black text-slate-900 text-base mb-1">Pilihan Palet Tema Siap Pakai</h2>
-          <p className="text-xs text-slate-500 mb-6">Pilih kombinasi warna harmoni yang telah dirancang untuk identitas daerah</p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {PRESET_TEMAS.map((preset, idx) => {
-              const isSelected = form.primary_color === preset.primary && form.accent_color === preset.accent;
-              return (
-                <div
-                  key={idx}
-                  onClick={() => handleApplyPreset(preset)}
-                  className={`p-4 rounded-2xl border transition-all cursor-pointer group hover:shadow-md ${
-                    isSelected ? 'border-amber-400 bg-amber-50/20 ring-2 ring-amber-400/30' : 'border-slate-200 hover:border-slate-300'
-                  }`}
-                >
-                  <div
-                    className="h-14 rounded-xl mb-3 shadow-inner flex items-center justify-between px-3 relative overflow-hidden"
-                    style={{ background: `linear-gradient(to right, ${preset.primary}, ${preset.secondary}, ${preset.accent})` }}
-                  >
-                    {preset.badge_icon && preset.badge_icon !== 'none' ? (
-                      <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-white/25 backdrop-blur-sm border border-white/30 text-[10px] font-bold text-white shadow-sm">
-                        <SeasonalIcon type={preset.badge_icon} className="w-3.5 h-3.5" />
-                        <span className="text-[10px]">{preset.seasonal_badge}</span>
-                      </div>
-                    ) : <span />}
-                    <span
-                      className="w-4 h-4 rounded-full border border-white/60 shadow-sm shrink-0"
-                      style={{ backgroundColor: preset.highlight }}
-                    />
+              {/* Navbar Publik */}
+              <div
+                className="pv-pub-navbar"
+                style={{
+                  background: `linear-gradient(to right, ${form.primary_color}, ${form.secondary_color}, ${form.accent_color})`,
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                  <img
+                    src="/dinas-pariwisata-logo-clean.png?v=clean"
+                    alt="Logo"
+                    style={{ height: 28, width: 'auto', objectFit: 'contain' }}
+                  />
+                  <div>
+                    <div style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 800, fontSize: 11, lineHeight: 1.15 }}>
+                      Dinas Pariwisata
+                    </div>
+                    <div style={{ fontSize: 7.5, fontWeight: 700, letterSpacing: 1, color: form.highlight_color }}>
+                      PROVINSI SULAWESI TENGAH
+                    </div>
                   </div>
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <div className="flex items-center gap-1.5 mb-0.5">
-                        <span className="text-[9px] font-extrabold uppercase px-1.5 py-0.5 rounded bg-slate-100 text-slate-600">
-                          {preset.kategori || 'Tema'}
+                </div>
+                <div className="pv-pub-navpills">
+                  <span style={{ background: form.highlight_color, color: '#0b192c', fontWeight: 800 }}>Home</span>
+                  <span>Profil</span>
+                  <span>Informasi Publik</span>
+                  <span>Info Pariwisata</span>
+                  <span>Rencana Terbit</span>
+                  <span>Lapor</span>
+                </div>
+              </div>
+
+              {/* Hero Banner Publik */}
+              <div
+                className="pv-pub-hero"
+                style={{ backgroundImage: 'url(/images/slider/hero-banner-destinasi-1.jpg)' }}
+              >
+                <div style={{ position: 'relative', zIndex: 1, maxWidth: 440 }}>
+                  <span
+                    style={{
+                      display: 'inline-block',
+                      padding: '2px 8px',
+                      borderRadius: 999,
+                      background: 'rgba(255,255,255,0.16)',
+                      border: '1px solid rgba(255,255,255,0.28)',
+                      fontSize: 8,
+                      fontWeight: 700,
+                      color: form.highlight_color,
+                      marginBottom: 6,
+                    }}
+                  >
+                    WONDERFUL INDONESIA • SULAWESI TENGAH
+                  </span>
+                  <div style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 900, fontSize: 16, lineHeight: 1.2 }}>
+                    Eksplorasi Keindahan Sulawesi Tengah
+                  </div>
+                  <div style={{ fontSize: 9.5, opacity: 0.9, marginTop: 4 }}>
+                    Pesona Megalit, Bukit Selena, Danau Paisupok, Lore Lindu, dan Kepulauan Togean.
+                  </div>
+                  <span
+                    style={{
+                      display: 'inline-block',
+                      marginTop: 10,
+                      padding: '6px 13px',
+                      borderRadius: 9,
+                      background: form.highlight_color,
+                      color: '#0b192c',
+                      fontFamily: 'Poppins, sans-serif',
+                      fontWeight: 800,
+                      fontSize: 9.5,
+                    }}
+                  >
+                    Jelajahi Destinasi
+                  </span>
+                </div>
+              </div>
+
+              {/* Seksi Konten Publik */}
+              <div className="pv-pub-body">
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                  <div>
+                    <div style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 800, fontSize: 11.5, color: 'var(--ink)' }}>
+                      Destinasi &amp; Berita Terkini
+                    </div>
+                    <div style={{ fontSize: 8.5, color: 'var(--ink-soft)' }}>
+                      Aksen tombol, kategori, dan tautan mengikuti warna tema aktif
+                    </div>
+                  </div>
+                  <span
+                    style={{
+                      padding: '3px 9px',
+                      borderRadius: 999,
+                      background: form.primary_color,
+                      color: '#fff',
+                      fontSize: 8.5,
+                      fontWeight: 700,
+                    }}
+                  >
+                    Lihat Semua
+                  </span>
+                </div>
+                <div className="pv-pub-cards">
+                  {[
+                    { title: 'Danau Lindu', tag: 'Alam', img: '/images/admin/danau-lindu.jpg' },
+                    { title: 'Air Terjun Saluopa', tag: 'Poso', img: '/images/admin/air-terjun-saluopa.jpg' },
+                    { title: 'Kepulauan Togian', tag: 'Bahari', img: '/images/admin/kepulauan-togian.jpg' },
+                  ].map((c) => (
+                    <div key={c.title} className="pv-pub-card">
+                      <div className="pv-pub-card-img" style={{ backgroundImage: `url(${c.img})` }}>
+                        <span
+                          style={{
+                            position: 'absolute',
+                            top: 5,
+                            left: 5,
+                            padding: '1px 6px',
+                            borderRadius: 999,
+                            background: form.primary_color,
+                            color: '#fff',
+                            fontSize: 7.5,
+                            fontWeight: 700,
+                          }}
+                        >
+                          {c.tag}
                         </span>
-                        <p className="font-bold text-slate-900 text-xs truncate max-w-[150px]">{preset.nama}</p>
                       </div>
-                      <div className="flex items-center gap-1.5 mt-1 text-[10px] text-slate-500 font-mono">
-                        <span>{preset.primary}</span> • <span>{preset.accent}</span>
+                      <div style={{ padding: '7px 8px' }}>
+                        <div style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700, fontSize: 9.5, color: 'var(--ink)' }}>
+                          {c.title}
+                        </div>
+                        <div style={{ fontSize: 8, fontWeight: 700, color: form.accent_color, marginTop: 2 }}>
+                          Selengkapnya →
+                        </div>
                       </div>
                     </div>
-                    {isSelected && (
-                      <div className="w-5 h-5 rounded-full bg-amber-400 text-slate-950 flex items-center justify-center shrink-0">
-                        <Check className="w-3.5 h-3.5 stroke-[3]" />
-                      </div>
-                    )}
+                  ))}
+                </div>
+              </div>
+
+              {/* Footer Publik */}
+              <div
+                className="pv-pub-footer"
+                style={{
+                  background: `linear-gradient(to bottom, ${form.accent_color}, ${form.secondary_color}, ${form.primary_color})`,
+                }}
+              >
+                <div>
+                  <div style={{ fontWeight: 800, color: form.highlight_color, marginBottom: 4 }}>Quick Links</div>
+                  <div>Home • Profil • PPID • Info Pariwisata</div>
+                </div>
+                <div>
+                  <div style={{ fontWeight: 800, color: form.highlight_color, marginBottom: 4 }}>Kontak Resmi</div>
+                  <div>Jl. Moh. Yamin No. 12, Palu</div>
+                </div>
+                <div>
+                  <div style={{ fontWeight: 800, color: form.highlight_color, marginBottom: 4 }}>Dinas Pariwisata</div>
+                  <div>Provinsi Sulawesi Tengah</div>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <>
+              <div className="pv-topbar">
+                <div className="pv-chip">
+                  <div className="pv-chip-logo">
+                    <MapPin style={{ width: 11, height: 11 }} />
+                  </div>
+                  <div>
+                    <div className="pv-chip-title">Admin Panel</div>
+                    <div className="pv-chip-sub">DINAS PARIWISATA SULTENG</div>
                   </div>
                 </div>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Kustomisasi Manual Picker */}
-        <div className="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm">
-          <h2 className="font-black text-slate-900 text-base mb-1">Kustomisasi Kode Warna Hex Manual</h2>
-          <p className="text-xs text-slate-500 mb-6">Sesuaikan setiap perhentian warna secara spesifik sesuai kebutuhan</p>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* 1. Primary */}
-            <div className="space-y-2">
-              <label className="text-xs font-bold text-slate-700 uppercase tracking-wider block">
-                Warna Primer (Kiri)
-              </label>
-              <div className="flex items-center gap-3">
-                <input
-                  type="color"
-                  value={form.primary_color}
-                  onChange={(e) => handleColorChange('primary_color', e.target.value)}
-                  className="w-12 h-12 rounded-xl cursor-pointer border border-slate-200 p-1"
-                />
-                <input
-                  type="text"
-                  value={form.primary_color}
-                  onChange={(e) => handleColorChange('primary_color', e.target.value)}
-                  className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-xs font-mono font-bold uppercase focus:ring-2 focus:ring-[#1F5BA6] outline-none"
-                />
+                <div className="pv-pill">
+                  <span className="pv-mini-item"><LayoutDashboard style={{ width: 9, height: 9 }} />Dashboard</span>
+                  <span className="pv-mini-item"><Images style={{ width: 9, height: 9 }} />Slider Hero</span>
+                  <span className="pv-mini-item"><Newspaper style={{ width: 9, height: 9 }} />Berita</span>
+                  <span className="pv-mini-item"><Compass style={{ width: 9, height: 9 }} />DTW</span>
+                  <span className="pv-mini-item"><MapPin style={{ width: 9, height: 9 }} />Desa</span>
+                  <span className="pv-mini-item"><FileText style={{ width: 9, height: 9 }} />PPID</span>
+                  <span className="pv-mini-item"><Building2 style={{ width: 9, height: 9 }} />Profil</span>
+                  <span className="pv-mini-item active"><Palette style={{ width: 9, height: 9 }} />Warna Tema</span>
+                  <span className="pv-mini-item logout"><LogOut style={{ width: 9, height: 9 }} />Logout</span>
+                </div>
+                <div className="pv-chip">
+                  <div className="pv-avatar">
+                    <User style={{ width: 11, height: 11 }} />
+                  </div>
+                  <span className="pv-user-name">admin</span>
+                </div>
               </div>
-            </div>
 
-            {/* 2. Secondary */}
-            <div className="space-y-2">
-              <label className="text-xs font-bold text-slate-700 uppercase tracking-wider block">
-                Warna Sekunder (Tengah)
-              </label>
-              <div className="flex items-center gap-3">
-                <input
-                  type="color"
-                  value={form.secondary_color}
-                  onChange={(e) => handleColorChange('secondary_color', e.target.value)}
-                  className="w-12 h-12 rounded-xl cursor-pointer border border-slate-200 p-1"
-                />
-                <input
-                  type="text"
-                  value={form.secondary_color}
-                  onChange={(e) => handleColorChange('secondary_color', e.target.value)}
-                  className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-xs font-mono font-bold uppercase focus:ring-2 focus:ring-[#1F5BA6] outline-none"
-                />
+              <div className="pv-panel">
+                <h4 className="pv-panel-title">Dashboard</h4>
+                <p className="pv-panel-sub">Ringkasan isi website Dinas Pariwisata Provinsi Sulawesi Tengah</p>
+                <div className="pv-divider" />
+                <div className="pv-stats">
+                  <div className="pv-stat">
+                    <span className="pv-stat-ic blue"><Newspaper style={{ width: 12, height: 12 }} /></span>
+                    <span className="pv-stat-num">234</span>
+                    <span className="pv-stat-label">Total Berita</span>
+                    <span className="pv-stat-sub">berita diterbitkan</span>
+                  </div>
+                  <div className="pv-stat">
+                    <span className="pv-stat-ic amber"><Images style={{ width: 12, height: 12 }} /></span>
+                    <span className="pv-stat-num">8</span>
+                    <span className="pv-stat-label">Slider Aktif</span>
+                    <span className="pv-stat-sub">dari 8 slider</span>
+                  </div>
+                  <div className="pv-stat">
+                    <span className="pv-stat-ic emerald"><MapPin style={{ width: 12, height: 12 }} /></span>
+                    <span className="pv-stat-num">44</span>
+                    <span className="pv-stat-label">Daya Tarik Wisata</span>
+                    <span className="pv-stat-sub">destinasi tercatat</span>
+                  </div>
+                  <div className="pv-stat">
+                    <span className="pv-stat-ic purple"><Compass style={{ width: 12, height: 12 }} /></span>
+                    <span className="pv-stat-num">10</span>
+                    <span className="pv-stat-label">Desa Wisata</span>
+                    <span className="pv-stat-sub">desa binaan</span>
+                  </div>
+                </div>
+
+                <h5 className="pv-sec-title">Destinasi Unggulan</h5>
+                <p className="pv-sec-sub">Cuplikan destinasi dan kantor Dinas Pariwisata Provinsi Sulawesi Tengah</p>
+                <div className="pv-show">
+                  <div className="pv-photos">
+                    <div className="pv-photo" style={{ backgroundImage: 'url(/images/admin/danau-lindu.jpg)' }}>
+                      <span>
+                        <span className="pv-photo-name">Danau Lindu</span>
+                        <span className="pv-photo-loc">Taman Nasional Lore Lindu</span>
+                      </span>
+                    </div>
+                    <div className="pv-photo" style={{ backgroundImage: 'url(/images/admin/air-terjun-saluopa.jpg)' }}>
+                      <span>
+                        <span className="pv-photo-name">Air Terjun Saluopa</span>
+                        <span className="pv-photo-loc">Tentena, Kab. Poso</span>
+                      </span>
+                    </div>
+                    <div className="pv-photo" style={{ backgroundImage: 'url(/images/admin/kepulauan-togian.jpg)' }}>
+                      <span>
+                        <span className="pv-photo-name">Kepulauan Togian</span>
+                        <span className="pv-photo-loc">Kab. Tojo Una-Una</span>
+                      </span>
+                    </div>
+                  </div>
+                  <div className="pv-office">
+                    <span>
+                      <span className="pv-photo-name">Kantor Dispar</span>
+                      <span className="pv-photo-loc">Dinas Pariwisata Provinsi Sulawesi Tengah</span>
+                    </span>
+                  </div>
+                </div>
+
+                <div className="pv-chart-head" style={{ marginTop: 14 }}>
+                  <div>
+                    <h5 className="pv-sec-title" style={{ margin: 0 }}>Kunjungan Wisatawan</h5>
+                    <p className="pv-sec-sub" style={{ margin: '2px 0 0' }}>Per tahun — domestik dan mancanegara</p>
+                  </div>
+                  <div className="pv-chart-total">
+                    <span className="big">11.697.098</span>
+                    <span className="pv-badge-up">+26,58%</span>
+                    <div style={{ fontSize: 8, color: 'var(--ink-soft)', marginTop: 2 }}>Total kunjungan tahun 2025</div>
+                  </div>
+                </div>
+                <div className="pv-legend">
+                  <span><span className="pv-dot dom" />Domestik</span>
+                  <span><span className="pv-dot man" />Mancanegara</span>
+                </div>
+                <div className="pv-chart">
+                  {[
+                    { yr: '2022', dom: 14, man: 3 },
+                    { yr: '2023', dom: 45, man: 4 },
+                    { yr: '2024', dom: 79, man: 6 },
+                    { yr: '2025', dom: 96, man: 8 },
+                  ].map((b) => (
+                    <div key={b.yr} className="pv-year">
+                      <div className="pv-bars">
+                        <div className="pv-bar-col"><div className="pv-bar dom" style={{ height: `${b.dom}%` }} /></div>
+                        <div className="pv-bar-col"><div className="pv-bar man" style={{ height: `${b.man}%`, minHeight: 3 }} /></div>
+                      </div>
+                      <div className="pv-year-label">{b.yr}</div>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-
-            {/* 3. Accent */}
-            <div className="space-y-2">
-              <label className="text-xs font-bold text-slate-700 uppercase tracking-wider block">
-                Warna Tersier (Kanan)
-              </label>
-              <div className="flex items-center gap-3">
-                <input
-                  type="color"
-                  value={form.accent_color}
-                  onChange={(e) => handleColorChange('accent_color', e.target.value)}
-                  className="w-12 h-12 rounded-xl cursor-pointer border border-slate-200 p-1"
-                />
-                <input
-                  type="text"
-                  value={form.accent_color}
-                  onChange={(e) => handleColorChange('accent_color', e.target.value)}
-                  className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-xs font-mono font-bold uppercase focus:ring-2 focus:ring-[#1F5BA6] outline-none"
-                />
-              </div>
-            </div>
-
-            {/* 4. Highlight */}
-            <div className="space-y-2">
-              <label className="text-xs font-bold text-slate-700 uppercase tracking-wider block">
-                Warna Aksen / Tombol
-              </label>
-              <div className="flex items-center gap-3">
-                <input
-                  type="color"
-                  value={form.highlight_color}
-                  onChange={(e) => handleColorChange('highlight_color', e.target.value)}
-                  className="w-12 h-12 rounded-xl cursor-pointer border border-slate-200 p-1"
-                />
-                <input
-                  type="text"
-                  value={form.highlight_color}
-                  onChange={(e) => handleColorChange('highlight_color', e.target.value)}
-                  className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-xs font-mono font-bold uppercase focus:ring-2 focus:ring-[#1F5BA6] outline-none"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Ikon & Badge Hari Besar Manual */}
-          <div className="mt-8 pt-6 border-t border-slate-100 grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div className="space-y-2">
-              <label className="text-xs font-bold text-slate-700 uppercase tracking-wider block">
-                Ikon Tematik Khusus
-              </label>
-              <select
-                value={form.badge_icon}
-                onChange={(e) => {
-                  const val = e.target.value;
-                  const defaultLabelMap = {
-                    ketupat: 'Ramadhan & Idul Fitri',
-                    kemerdekaan: 'Dirgahayu RI',
-                    natal: 'Natal & Tahun Baru',
-                    imlek: 'Gong Xi Fa Cai',
-                    megalit: 'Bumi Seribu Megalit',
-                    none: ''
-                  };
-                  setForm({
-                    ...form,
-                    badge_icon: val,
-                    seasonal_badge: val !== 'none' ? (form.seasonal_badge || defaultLabelMap[val]) : ''
-                  });
-                  updateThemeState({
-                    ...form,
-                    badge_icon: val,
-                    seasonal_badge: val !== 'none' ? (form.seasonal_badge || defaultLabelMap[val]) : ''
-                  });
-                }}
-                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs font-bold bg-slate-50 focus:ring-2 focus:ring-[#1F5BA6] outline-none"
-              >
-                <option value="none">Tanpa Ikon Khusus (Standar)</option>
-                <option value="ketupat">🕌 Belah Ketupat (Ramadhan & Idul Fitri)</option>
-                <option value="kemerdekaan">🇮🇩 Bendera Merah Putih (HUT Kemerdekaan RI)</option>
-                <option value="natal">🎄 Pohon Cemara (Hari Raya Natal & Tahun Baru)</option>
-                <option value="imlek">🏮 Lampion Hoki (Tahun Baru Imlek)</option>
-                <option value="megalit">🗿 Patung Megalit (Khas Sulawesi Tengah)</option>
-              </select>
-            </div>
-
-            <div className="space-y-2">
-              <label className="text-xs font-bold text-slate-700 uppercase tracking-wider block">
-                Label Ucapan Hari Besar
-              </label>
-              <input
-                type="text"
-                placeholder="Contoh: Marhaban Ya Ramadhan"
-                value={form.seasonal_badge}
-                disabled={form.badge_icon === 'none'}
-                onChange={(e) => {
-                  setForm({ ...form, seasonal_badge: e.target.value });
-                  updateThemeState({ ...form, seasonal_badge: e.target.value });
-                }}
-                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs font-bold bg-slate-50 disabled:opacity-40 focus:ring-2 focus:ring-[#1F5BA6] outline-none"
-              />
-            </div>
-          </div>
+            </>
+          )}
         </div>
       </div>
-    </AdminLayout>
+    </AdminPageShell>
   );
 };
+
+const AdminTema = () => (
+  <AdminLayout>
+    <AdminTemaContent />
+  </AdminLayout>
+);
 
 export default AdminTema;

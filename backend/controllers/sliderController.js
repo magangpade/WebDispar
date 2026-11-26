@@ -46,6 +46,26 @@ exports.toggle = async (req, res) => {
   }
 };
 
+exports.update = async (req, res) => {
+  const { judul, urutan, aktif, gambar_lama } = req.body;
+  try {
+    const [rows] = await db.query('SELECT * FROM slider WHERE id = ?', [req.params.id]);
+    if (rows.length === 0) {
+      return res.status(404).json({ message: 'Slider tidak ditemukan' });
+    }
+    const current = rows[0];
+    const gambar = req.file ? req.file.filename : (gambar_lama || current.gambar);
+    const nextAktif = aktif !== undefined ? (aktif === '1' || aktif === 1 || aktif === true || aktif === 'Aktif' ? 1 : 0) : current.aktif;
+    await db.query(
+      'UPDATE slider SET judul = ?, urutan = ?, aktif = ?, gambar = ? WHERE id = ?',
+      [judul ?? current.judul, parseInt(urutan, 10) || current.urutan, nextAktif, gambar, req.params.id]
+    );
+    res.json({ message: 'Slider berhasil diperbarui' });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
 exports.delete = async (req, res) => {
   try {
     await db.query('DELETE FROM slider WHERE id = ?', [req.params.id]);

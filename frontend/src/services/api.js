@@ -16,7 +16,9 @@ api.interceptors.request.use((config) => {
 api.interceptors.response.use(
   (res) => res,
   (err) => {
-    if (err.response?.status === 401) {
+    const isAuthRequest = err.config?.url?.includes('/auth/login');
+    const onLoginPage = window.location.pathname === '/portal-internal-dispar/login';
+    if (err.response?.status === 401 && !isAuthRequest && !onLoginPage) {
       localStorage.removeItem('token');
       localStorage.removeItem('user');
       window.location.href = '/portal-internal-dispar/login';

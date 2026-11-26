@@ -1,496 +1,426 @@
-import { useEffect, useState, useRef } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { 
-  Newspaper, MapPin, FileText, LogOut, LayoutDashboard, Images, Globe, 
-  Compass, ShieldCheck, Palette, Building2, ChevronDown, ChevronRight,
-  History, Target, Users, BookOpen, Image as ImageIcon, Calendar,
-  TrendingUp, BarChart3, HelpCircle
+import { useEffect, useMemo, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { motion, useReducedMotion } from 'framer-motion';
+import {
+  Building2,
+  Calendar,
+  ChevronRight,
+  Compass,
+  FileText,
+  Home,
+  Images,
+  MapPin,
+  Newspaper,
+  Sparkles,
+  TrendingUp,
 } from 'lucide-react';
 import api from '../../services/api';
+import { getImageSrc } from '../../utils/imageHelper';
+import { AdminLayout, AdminPageShell } from './components/AdminUI';
+import { SPRING, getStaggerContainer, getStaggerItem } from './adminMotion';
 
-export const ADMIN_NAV_TREE = [
-  { 
-    label: 'Dashboard', 
-    path: '/portal-internal-dispar/dashboard', 
-    icon: LayoutDashboard 
+export { AdminLayout };
+
+const formatShort = (n) => {
+  const num = Number(n) || 0;
+  if (num >= 1_000_000) {
+    return `${(num / 1_000_000).toFixed(2).replace('.', ',')} jt`;
+  }
+  if (num >= 1_000) {
+    return `${Math.round(num / 1_000)} rb`;
+  }
+  return String(num);
+};
+
+const formatDateId = (dateStr) => {
+  if (!dateStr) return '—';
+  const d = new Date(dateStr);
+  if (Number.isNaN(d.getTime())) return dateStr;
+  return d.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
+};
+
+const SHOWCASE_SPOTS = [
+  {
+    name: 'Danau Lindu',
+    loc: 'Taman Nasional Lore Lindu',
+    img: '/images/admin/danau-lindu.jpg',
+    to: '/portal-internal-dispar/dtw',
   },
-  { 
-    label: 'Profil', 
-    icon: Building2,
-    children: [
-      { label: 'Sejarah Dinas', path: '/portal-internal-dispar/profil?sub=sejarah', icon: History },
-      { label: 'Visi dan Misi', path: '/portal-internal-dispar/profil?sub=visi_misi', icon: Target },
-      { label: 'Profil Pimpinan & Pejabat', path: '/portal-internal-dispar/profil?sub=profil_pimpinan', icon: Users },
-      { label: 'Tugas Pokok & Fungsi (Tupoksi)', path: '/portal-internal-dispar/profil?sub=tupoksi', icon: FileText },
-      { label: 'Majalah & Publikasi', path: '/portal-internal-dispar/profil?sub=majalah', icon: BookOpen },
-      { label: 'Logo Resmi & Branding', path: '/portal-internal-dispar/profil?sub=logo', icon: ImageIcon },
-    ]
+  {
+    name: 'Air Terjun Saluopa',
+    loc: 'Tentena, Kab. Poso',
+    img: '/images/admin/air-terjun-saluopa.jpg',
+    to: '/portal-internal-dispar/dtw',
   },
-  { 
-    label: 'Informasi Publik (PPID)', 
-    icon: FileText,
-    children: [
-      { label: 'Daftar Dokumen PPID', path: '/portal-internal-dispar/ppid?tab=items', icon: FileText },
-      { label: 'Regulasi Layanan Publik', path: '/portal-internal-dispar/ppid?tab=regulasi', icon: ShieldCheck },
-      { label: 'Surat Keputusan (SK)', path: '/portal-internal-dispar/ppid?tab=sk', icon: FileText },
-    ]
-  },
-  { 
-    label: 'Info Pariwisata', 
-    icon: Compass,
-    children: [
-      {
-        label: 'Destinasi Wisata',
-        icon: MapPin,
-        children: [
-          { label: 'Daya Tarik Wisata (DTW)', path: '/portal-internal-dispar/dtw', icon: MapPin },
-          { label: 'Desa Wisata', path: '/portal-internal-dispar/desa-wisata', icon: Compass },
-        ]
-      },
-      {
-        label: 'Promosi & Pemasaran',
-        icon: TrendingUp,
-        children: [
-          { label: 'Slider Hero Utama', path: '/portal-internal-dispar/slider', icon: Images },
-          { label: 'Berita & Artikel', path: '/portal-internal-dispar/berita', icon: Newspaper },
-        ]
-      }
-    ]
-  },
-  { 
-    label: 'Warna Tema', 
-    path: '/portal-internal-dispar/tema', 
-    icon: Palette 
+  {
+    name: 'Kepulauan Togian',
+    loc: 'Kab. Tojo Una-Una',
+    img: '/images/admin/kepulauan-togian.jpg',
+    to: '/portal-internal-dispar/dtw',
   },
 ];
 
-// Helper recursive flatten untuk item-item leaves (untuk mobile atau pencarian)
-export const getFlattenedMenu = (items) => {
-  let res = [];
-  items.forEach(it => {
-    if (it.path) {
-      res.push(it);
-    }
-    if (it.children) {
-      res = res.concat(getFlattenedMenu(it.children));
-    }
-  });
-  return res;
-};
-
-export const AdminLayout = ({ children }) => {
-  const location = useLocation();
-  const [openDropdown, setOpenDropdown] = useState(null);
-  const [nestedOpen, setNestedOpen] = useState(null);
-  const navRef = useRef(null);
-
-  useEffect(() => {
-    const token = localStorage.getItem('token');
-    if (!token) {
-      window.location.href = '/portal-internal-dispar/login';
-    }
-  }, []);
-
-  // Tutup dropdown jika rute berubah atau klik di luar area navbar
-  useEffect(() => {
-    setOpenDropdown(null);
-    setNestedOpen(null);
-  }, [location.pathname, location.search]);
-
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (navRef.current && !navRef.current.contains(e.target)) {
-        setOpenDropdown(null);
-        setNestedOpen(null);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
-  const handleLogout = () => {
-    localStorage.removeItem('token');
-    localStorage.removeItem('user');
-    window.location.href = '/portal-internal-dispar/login';
-  };
-
-  const isItemActive = (item) => {
-    if (item.path) {
-      return (location.pathname + location.search) === item.path || location.pathname === item.path;
-    }
-    if (item.children) {
-      return item.children.some(c => isItemActive(c));
-    }
-    return false;
-  };
-
-  return (
-    <div className="min-h-screen bg-slate-50 flex flex-col font-sans">
-      {/* 1. Top Sub-Bar (Topbar Mini) */}
-      <div className="w-full bg-[#162744] text-white/80 text-[11px] py-1.5 px-4 sm:px-8 border-b border-white/10 flex items-center justify-between z-30">
-        <div className="flex items-center gap-2">
-          <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-[10px] font-bold text-emerald-400">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            Portal Terautentikasi
-          </div>
-          <span className="hidden sm:inline text-white/60">•</span>
-          <span className="hidden sm:inline text-white/70">
-            Pemerintah Provinsi Sulawesi Tengah • <span className="text-amber-400 font-semibold">Bumi Seribu Megalit</span>
-          </span>
-        </div>
-
-        <div className="flex items-center gap-4">
-          <Link
-            to="/"
-            target="_blank"
-            className="flex items-center gap-1.5 font-bold text-amber-300 hover:text-amber-200 transition-colors"
-          >
-            <Globe className="w-3.5 h-3.5" /> Buka Web Publik
-          </Link>
-          <div className="w-px h-3 bg-white/20" />
-          <div className="flex items-center gap-2 text-white/90">
-            <div className="w-5 h-5 rounded-full bg-gradient-to-tr from-[#1F5BA6] to-[#5C2180] flex items-center justify-center text-[10px] font-bold text-white">
-              A
-            </div>
-            <span className="font-semibold text-xs hidden md:inline">Administrator</span>
-          </div>
-        </div>
-      </div>
-
-      {/* 2. Main Top Navbar (Multi-Level Dropdown) */}
-      <header
-        className="sticky top-0 z-40 w-full text-white shadow-md border-b border-white/10 transition-colors duration-300"
-        style={{ background: 'var(--theme-gradient, linear-gradient(to right, #1F5BA6, #383087, #5C2180))' }}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 h-20 flex items-center justify-between gap-4">
-          {/* Brand & Logo */}
-          <Link to="/portal-internal-dispar/dashboard" className="flex items-center gap-3 shrink-0">
-            <div className="h-11 px-2 rounded-xl bg-white/10 backdrop-blur border border-white/20 flex items-center justify-center shadow-sm">
-              <img
-                src="/dinas pariwisata-COLOR WHITE.png"
-                alt="Logo Dinas Pariwisata"
-                className="h-9 w-auto object-contain drop-shadow"
-                onError={(e) => { e.currentTarget.src = '/images/dinas_pariwisata-COLOR_BLACK.png'; }}
-              />
-            </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="font-black text-lg md:text-xl tracking-tight leading-tight text-white">
-                  Admin Panel
-                </span>
-                <span className="px-2 py-0.5 rounded-md bg-amber-400/20 text-amber-300 border border-amber-400/30 text-[10px] font-extrabold uppercase">
-                  CMS
-                </span>
-              </div>
-              <p className="text-amber-400 text-[10px] md:text-xs font-bold tracking-wider uppercase leading-tight">
-                DINAS PARIWISATA SULTENG
-              </p>
-            </div>
-          </Link>
-
-          {/* Desktop Nav in Glassy Pill with Multi-Level Dropdowns */}
-          <nav 
-            ref={navRef}
-            className="hidden lg:inline-flex items-center gap-1 p-1.5 rounded-full border border-white/20 bg-white/15 backdrop-blur-md shadow-inner relative"
-          >
-            {ADMIN_NAV_TREE.map((item, idx) => {
-              const hasSub = Array.isArray(item.children) && item.children.length > 0;
-              const active = isItemActive(item);
-              const isOpen = openDropdown === idx;
-              const Icon = item.icon;
-
-              if (!hasSub) {
-                return (
-                  <Link
-                    key={item.path}
-                    to={item.path}
-                    className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all inline-flex items-center gap-2 ${
-                      active
-                        ? 'bg-amber-400 text-slate-950 shadow-sm'
-                        : 'text-white hover:bg-white/20'
-                    }`}
-                  >
-                    <Icon className="w-3.5 h-3.5" />
-                    <span>{item.label}</span>
-                  </Link>
-                );
-              }
-
-              return (
-                <div key={idx} className="relative">
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setOpenDropdown(isOpen ? null : idx);
-                      setNestedOpen(null);
-                    }}
-                    className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all inline-flex items-center gap-1.5 cursor-pointer ${
-                      active || isOpen
-                        ? 'bg-white/30 text-white shadow-sm ring-1 ring-white/40'
-                        : 'text-white hover:bg-white/20'
-                    }`}
-                  >
-                    <Icon className="w-3.5 h-3.5" />
-                    <span>{item.label}</span>
-                    <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
-                  </button>
-
-                  {/* Level 1 Dropdown Panel */}
-                  {isOpen && (
-                    <div 
-                      className="absolute left-0 mt-2.5 w-64 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-slate-200/80 py-2 z-50 animate-in fade-in zoom-in-95 duration-150"
-                      style={{ filter: 'drop-shadow(0 15px 25px rgba(0,0,0,0.15))' }}
-                    >
-                      <div className="px-3 py-1.5 mb-1 border-b border-slate-100 flex items-center justify-between">
-                        <span className="text-[10px] font-black uppercase tracking-wider text-slate-400">
-                          {item.label}
-                        </span>
-                        <span className="text-[9px] bg-blue-50 text-blue-600 font-bold px-1.5 py-0.5 rounded">
-                          Modul
-                        </span>
-                      </div>
-
-                      {item.children.map((sub, sidx) => {
-                        const hasNested = Array.isArray(sub.children) && sub.children.length > 0;
-                        const isSubActive = isItemActive(sub);
-                        const SubIcon = sub.icon || ChevronRight;
-                        const isSubOpen = nestedOpen === sidx;
-
-                        if (hasNested) {
-                          return (
-                            <div 
-                              key={sidx} 
-                              className="relative"
-                              onMouseEnter={() => setNestedOpen(sidx)}
-                            >
-                              <button
-                                type="button"
-                                onClick={() => setNestedOpen(isSubOpen ? null : sidx)}
-                                className={`w-full flex items-center justify-between px-3.5 py-2 text-xs font-semibold rounded-xl transition-all mx-1.5 cursor-pointer ${
-                                  isSubActive || isSubOpen
-                                    ? 'bg-blue-50 text-blue-700 font-bold'
-                                    : 'text-slate-700 hover:bg-slate-100/80'
-                                }`}
-                                style={{ width: 'calc(100% - 12px)' }}
-                              >
-                                <div className="flex items-center gap-2">
-                                  <SubIcon className="w-4 h-4 text-blue-600" />
-                                  <span>{sub.label}</span>
-                                </div>
-                                <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
-                              </button>
-
-                              {/* Level 2 Nested Dropdown (Flyout) */}
-                              {isSubOpen && (
-                                <div 
-                                  className="absolute left-full top-0 ml-1.5 w-56 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-slate-200/80 py-2 z-50 animate-in fade-in zoom-in-95 duration-150"
-                                  style={{ filter: 'drop-shadow(0 15px 25px rgba(0,0,0,0.15))' }}
-                                >
-                                  <div className="px-3 py-1.5 mb-1 border-b border-slate-100">
-                                    <span className="text-[10px] font-black uppercase tracking-wider text-slate-400">
-                                      {sub.label}
-                                    </span>
-                                  </div>
-                                  {sub.children.map((child, cidx) => {
-                                    const isChildActive = (location.pathname + location.search) === child.path;
-                                    const ChildIcon = child.icon || ChevronRight;
-                                    return (
-                                      <Link
-                                        key={cidx}
-                                        to={child.path}
-                                        onClick={() => {
-                                          setOpenDropdown(null);
-                                          setNestedOpen(null);
-                                        }}
-                                        className={`flex items-center gap-2 px-3.5 py-2 text-xs font-medium rounded-xl transition-all mx-1.5 ${
-                                          isChildActive
-                                            ? 'bg-blue-600 text-white font-bold shadow-sm'
-                                            : 'text-slate-700 hover:bg-blue-50 hover:text-blue-700'
-                                        }`}
-                                        style={{ width: 'calc(100% - 12px)' }}
-                                      >
-                                        <ChildIcon className={`w-3.5 h-3.5 ${isChildActive ? 'text-white' : 'text-blue-500'}`} />
-                                        <span>{child.label}</span>
-                                      </Link>
-                                    );
-                                  })}
-                                </div>
-                              )}
-                            </div>
-                          );
-                        }
-
-                        return (
-                          <Link
-                            key={sidx}
-                            to={sub.path}
-                            onClick={() => {
-                              setOpenDropdown(null);
-                              setNestedOpen(null);
-                            }}
-                            className={`flex items-center gap-2.5 px-3.5 py-2 text-xs font-semibold rounded-xl transition-all mx-1.5 ${
-                              isSubActive
-                                ? 'bg-blue-600 text-white font-bold shadow-sm'
-                                : 'text-slate-700 hover:bg-blue-50 hover:text-blue-700'
-                            }`}
-                            style={{ width: 'calc(100% - 12px)' }}
-                          >
-                            <SubIcon className={`w-4 h-4 ${isSubActive ? 'text-white' : 'text-blue-600'}`} />
-                            <span className="truncate">{sub.label}</span>
-                          </Link>
-                        );
-                      })}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </nav>
-
-          {/* Logout Button */}
-          <div className="flex items-center gap-2 shrink-0">
-            <button
-              onClick={handleLogout}
-              className="flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold text-red-200 bg-red-500/20 hover:bg-red-500/30 border border-red-500/30 transition-all active:scale-95 cursor-pointer"
-            >
-              <LogOut className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">Logout</span>
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Navigation Horizontal Scroll (Multi-item pills) */}
-        <div className="lg:hidden border-t border-white/10 px-4 py-2 flex items-center gap-1.5 overflow-x-auto scrollbar-none">
-          {getFlattenedMenu(ADMIN_NAV_TREE).map((item, idx) => {
-            const active = (location.pathname + location.search) === item.path || location.pathname === item.path;
-            const Icon = item.icon || ChevronRight;
-            return (
-              <Link
-                key={idx}
-                to={item.path}
-                className={`px-3 py-1.5 rounded-full text-xs font-bold whitespace-nowrap inline-flex items-center gap-1.5 ${
-                  active
-                    ? 'bg-amber-400 text-slate-950 shadow-sm'
-                    : 'text-white/80 hover:bg-white/15'
-                }`}
-              >
-                <Icon className="w-3 h-3" />
-                <span>{item.label}</span>
-              </Link>
-            );
-          })}
-        </div>
-      </header>
-
-      {/* Main Content Area */}
-      <main className="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-8">
-        {children}
-      </main>
-    </div>
-  );
-};
+const QUICK_LINKS = [
+  {
+    label: 'Kelola Slider',
+    to: '/portal-internal-dispar/slider',
+    icon: Images,
+    bg: 'color-mix(in srgb, var(--amber) 16%, transparent)',
+    color: 'var(--amber-dark)',
+  },
+  {
+    label: 'Kelola Berita',
+    to: '/portal-internal-dispar/berita',
+    icon: Newspaper,
+    bg: 'color-mix(in srgb, var(--blue) 13%, transparent)',
+    color: 'var(--blue)',
+  },
+  {
+    label: 'Kelola Daya Tarik Wisata',
+    to: '/portal-internal-dispar/dtw',
+    icon: MapPin,
+    bg: 'rgba(5, 150, 105, 0.13)',
+    color: 'var(--emerald)',
+  },
+  {
+    label: 'Kelola Desa Wisata',
+    to: '/portal-internal-dispar/desa-wisata',
+    icon: Home,
+    bg: 'color-mix(in srgb, var(--purple) 13%, transparent)',
+    color: 'var(--purple)',
+  },
+  {
+    label: 'Kelola PPID',
+    to: '/portal-internal-dispar/ppid',
+    icon: FileText,
+    bg: 'rgba(225, 29, 72, 0.10)',
+    color: '#e11d48',
+  },
+  {
+    label: 'Kelola Profil Dinas',
+    to: '/portal-internal-dispar/profil',
+    icon: Building2,
+    bg: 'color-mix(in srgb, var(--blue) 12%, transparent)',
+    color: 'var(--blue)',
+  },
+  {
+    label: 'Studio Poster & QR',
+    to: '/portal-internal-dispar/poster',
+    icon: Sparkles,
+    bg: 'color-mix(in srgb, var(--amber) 16%, transparent)',
+    color: 'var(--amber-dark)',
+  },
+];
 
 const Dashboard = () => {
-  const [stats, setStats] = useState({ berita: 0, dtw: 0, desa: 0, slider: 0, profil: 0, ppid: 0 });
+  const reduce = useReducedMotion();
+  const [loading, setLoading] = useState(true);
+  const [counts, setCounts] = useState({
+    berita: 0,
+    sliderTotal: 0,
+    sliderAktif: 0,
+    dtw: 0,
+    desa: 0,
+  });
+  const [latestBerita, setLatestBerita] = useState([]);
+  const [yearlyStats, setYearlyStats] = useState([]);
 
   useEffect(() => {
-    Promise.all([
-      api.get('/berita?limit=1').catch(() => ({ data: { total: 0 } })),
-      api.get('/info-pariwisata/dtw').catch(() => ({ data: [] })),
-      api.get('/info-pariwisata/desa-wisata').catch(() => ({ data: [] })),
-      api.get('/slider/all').catch(() => ({ data: [] })),
-      api.get('/profil/all').catch(() => ({ data: [] })),
-      api.get('/ppid/kategori').catch(() => ({ data: [] })),
-    ]).then(([b, d, dw, sl, pf, pk]) => {
-      setStats({
-        berita: b.data?.total || 0,
-        dtw: d.data?.length || 0,
-        desa: dw.data?.length || 0,
-        slider: sl.data?.length || 0,
-        profil: pf.data?.length || 0,
-        ppid: pk.data?.length || 0,
-      });
-    });
+    let active = true;
+    async function loadDashboard() {
+      setLoading(true);
+      try {
+        const [bRes, slRes, dtwRes, desaRes, thRes] = await Promise.all([
+          api.get('/berita?limit=5').catch(() => ({ data: { data: [], total: 0 } })),
+          api.get('/slider/all').catch(() => ({ data: [] })),
+          api.get('/info-pariwisata/dtw').catch(() => ({ data: [] })),
+          api.get('/info-pariwisata/desa-wisata').catch(() => ({ data: [] })),
+          api.get('/info-pariwisata/statistik-kunjungan/tahun').catch(() => ({ data: [] })),
+        ]);
+
+        const years = Array.isArray(thRes.data) && thRes.data.length > 0
+          ? thRes.data.map((r) => String(r.tahun || r)).sort()
+          : ['2022', '2023', '2024', '2025'];
+
+        const yearSummaries = await Promise.all(
+          years.map((y) =>
+            api.get(`/statistik/wisatawan?tahun=${y}`).then((r) => r.data).catch(() => null)
+          )
+        );
+
+        if (!active) return;
+
+        const sliders = Array.isArray(slRes.data) ? slRes.data : [];
+        setCounts({
+          berita: bRes.data?.total || 0,
+          sliderTotal: sliders.length,
+          sliderAktif: sliders.filter((s) => s.aktif === 1).length,
+          dtw: Array.isArray(dtwRes.data) ? dtwRes.data.length : 0,
+          desa: Array.isArray(desaRes.data) ? desaRes.data.length : 0,
+        });
+        setLatestBerita(Array.isArray(bRes.data?.data) ? bRes.data.data.slice(0, 5) : []);
+        setYearlyStats(yearSummaries.filter(Boolean));
+      } finally {
+        if (active) setLoading(false);
+      }
+    }
+    loadDashboard();
+    return () => {
+      active = false;
+    };
   }, []);
 
-  const cards = [
-    { label: 'Total Berita', value: stats.berita, icon: Newspaper, color: 'bg-gradient-to-br from-[#1F5BA6] to-[#0369a1]', path: '/portal-internal-dispar/berita' },
-    { label: 'Slider Hero Aktif', value: stats.slider, icon: Images, color: 'bg-gradient-to-br from-[#eab308] to-[#ca8a04]', path: '/portal-internal-dispar/slider' },
-    { label: 'Daya Tarik Wisata', value: stats.dtw, icon: MapPin, color: 'bg-gradient-to-br from-[#059669] to-[#047857]', path: '/portal-internal-dispar/dtw' },
-    { label: 'Desa Wisata', value: stats.desa, icon: Compass, color: 'bg-gradient-to-br from-[#5C2180] to-[#7c3aed]', path: '/portal-internal-dispar/desa-wisata' },
+  const maxVisit = useMemo(() => {
+    const vals = yearlyStats.flatMap((y) => [Number(y.domestic) || 0, Number(y.international) || 0]);
+    return Math.max(1, ...vals);
+  }, [yearlyStats]);
+
+  const latestStat = yearlyStats[yearlyStats.length - 1];
+
+  const statCells = [
+    {
+      label: 'Total Berita',
+      value: counts.berita,
+      sub: 'berita diterbitkan',
+      icon: Newspaper,
+      tone: 'blue',
+      to: '/portal-internal-dispar/berita',
+    },
+    {
+      label: 'Slider Aktif',
+      value: counts.sliderAktif,
+      sub: `dari ${counts.sliderTotal} slider`,
+      icon: Images,
+      tone: 'amber',
+      to: '/portal-internal-dispar/slider',
+    },
+    {
+      label: 'Daya Tarik Wisata',
+      value: counts.dtw,
+      sub: 'destinasi tercatat',
+      icon: MapPin,
+      tone: 'emerald',
+      to: '/portal-internal-dispar/dtw',
+    },
+    {
+      label: 'Desa Wisata',
+      value: counts.desa,
+      sub: 'desa binaan',
+      icon: Compass,
+      tone: 'purple',
+      to: '/portal-internal-dispar/desa-wisata',
+    },
   ];
+
+  const staggerParent = getStaggerContainer(reduce);
+  const staggerItem = getStaggerItem(reduce);
 
   return (
     <AdminLayout>
-      <div className="space-y-8">
-        {/* Banner Selamat Datang Bergaya Hero Halaman Utama */}
-        <div
-          className="relative overflow-hidden rounded-3xl p-8 text-white shadow-lg border border-white/10 transition-colors duration-300"
-          style={{ background: 'var(--theme-gradient, linear-gradient(to right, #1F5BA6, #383087, #5C2180))' }}
-        >
-          <div className="relative z-10 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 backdrop-blur text-xs font-bold text-amber-300 border border-white/20 mb-3">
-              <ShieldCheck className="w-3.5 h-3.5" /> Pusat Kontrol Manajemen Data Terpadu
+      <AdminPageShell>
+        <div className="admin-panel glass dashboard-panel">
+          <div className="admin-panel-head">
+            <div>
+              <h1 className="admin-panel-title">Dashboard</h1>
+              <p className="admin-panel-sub">
+                Ringkasan isi website Dinas Pariwisata Provinsi Sulawesi Tengah
+              </p>
             </div>
-            <h1 className="text-3xl font-black tracking-tight mb-2">Selamat Datang di Panel Admin Dispar</h1>
-            <p className="text-white/80 text-sm leading-relaxed">
-              Kelola informasi profil dinas, transparansi PPID, destinasi wisata Sulawesi Tengah, promosi berita, dan kustomisasi visual web secara langsung melalui navigasi bertingkat di atas.
-            </p>
           </div>
-          <div className="absolute -right-8 -bottom-10 opacity-15 pointer-events-none">
-            <img src="/dinas pariwisata-COLOR WHITE.png" alt="Emblem" className="w-80 h-auto object-contain" />
-          </div>
-        </div>
+          <div className="admin-dash-divider" />
 
-        {/* Grid Kartu Statistik */}
-        <div>
-          <h2 className="text-lg font-black text-slate-900 mb-4 flex items-center gap-2">
-            Ringkasan Konten Portal
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {cards.map((card, idx) => (
-              <Link
-                key={idx}
-                to={card.path}
-                className="bg-white rounded-2xl border border-slate-200/90 shadow-sm p-6 hover:shadow-md hover:-translate-y-0.5 transition-all group"
-              >
-                <div className={`w-12 h-12 ${card.color} rounded-2xl flex items-center justify-center text-white mb-4 shadow-sm group-hover:scale-105 transition-transform`}>
-                  <card.icon className="w-6 h-6" />
-                </div>
-                <p className="text-3xl font-black text-slate-900">{card.value}</p>
-                <p className="text-xs text-slate-500 font-bold mt-1 uppercase tracking-wider">{card.label}</p>
-              </Link>
-            ))}
-          </div>
-        </div>
+          {/* 4 Sel Statistik */}
+          <motion.div
+            className="admin-stats"
+            variants={staggerParent}
+            initial="hidden"
+            animate="show"
+          >
+            {statCells.map((cell) => {
+              const Icon = cell.icon;
+              return (
+                <motion.div key={cell.label} variants={staggerItem}>
+                  <Link to={cell.to} className="admin-stat">
+                    <span className={`admin-stat-ic ${cell.tone}`}>
+                      <Icon className="ic" />
+                    </span>
+                    <span className="admin-stat-num">
+                      {loading ? '—' : cell.value.toLocaleString('id-ID')}
+                    </span>
+                    <span className="admin-stat-label">{cell.label}</span>
+                    <span className="admin-stat-sub">{cell.sub}</span>
+                    <ChevronRight className="ic-sm chev" strokeWidth={2.4} />
+                  </Link>
+                </motion.div>
+              );
+            })}
+          </motion.div>
 
-        {/* Akses Cepat Modul Berdasarkan Hirarki */}
-        <div className="bg-white rounded-2xl border border-slate-200/90 shadow-sm p-6">
-          <h2 className="font-black text-slate-900 text-base mb-4">Navigasi Cepat Seluruh Modul Admin</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {ADMIN_NAV_TREE.filter(m => m.children).map((group, gidx) => (
-              <div key={gidx} className="p-4 rounded-xl border border-slate-200/80 bg-slate-50/50">
-                <div className="flex items-center gap-2 text-sm font-black text-slate-800 mb-3 pb-2 border-b border-slate-200">
-                  <group.icon className="w-4 h-4 text-blue-600" />
-                  <span>{group.label}</span>
+          {/* Destinasi Unggulan */}
+          <h2 className="admin-section-title">Destinasi Unggulan</h2>
+          <p className="admin-section-sub">
+            Cuplikan destinasi dan kantor Dinas Pariwisata Provinsi Sulawesi Tengah
+          </p>
+          <div className="admin-showcase">
+            <div className="admin-showcase-photos">
+              {SHOWCASE_SPOTS.map((spot) => (
+                <Link key={spot.name} to={spot.to} className="admin-showcase-photo">
+                  <img src={spot.img} alt={spot.name} />
+                  <span>
+                    <span className="admin-photo-name">{spot.name}</span>
+                    <span className="admin-photo-loc">{spot.loc}</span>
+                  </span>
+                </Link>
+              ))}
+            </div>
+            <Link to="/portal-internal-dispar/profil" className="admin-showcase-office">
+              <img src="/images/admin/kantor-dispar.jpg" alt="Kantor Dinas Pariwisata Sulawesi Tengah" />
+              <span>
+                <span className="admin-photo-name">Kantor Dispar</span>
+                <span className="admin-photo-loc">Dinas Pariwisata Provinsi Sulawesi Tengah</span>
+              </span>
+            </Link>
+          </div>
+
+          {/* Grafik Kunjungan Wisatawan */}
+          <div className="admin-chart-head" style={{ marginTop: 30 }}>
+            <div>
+              <h2 className="admin-section-title" style={{ margin: 0 }}>
+                Kunjungan Wisatawan
+              </h2>
+              <p className="admin-section-sub" style={{ margin: '4px 0 0' }}>
+                Per tahun — domestik dan mancanegara
+              </p>
+            </div>
+            <div className="admin-chart-total">
+              <span className="big">
+                {latestStat ? Number(latestStat.total).toLocaleString('id-ID') : '—'}
+              </span>
+              {latestStat && Number(latestStat.growth) !== 0 && (
+                <span className="admin-badge-up">
+                  <TrendingUp className="ic-sm" />
+                  {Number(latestStat.growth) > 0 ? '+' : ''}
+                  {String(latestStat.growth).replace('.', ',')}%
+                </span>
+              )}
+              <div style={{ fontSize: 12, color: 'var(--ink-soft)', marginTop: 3 }}>
+                Total kunjungan tahun {latestStat?.tahun || 'terbaru'}
+              </div>
+            </div>
+          </div>
+
+          <div className="admin-legend" style={{ marginTop: 12 }}>
+            <span>
+              <span className="admin-dot" style={{ background: 'var(--blue)' }} />
+              Domestik
+            </span>
+            <span>
+              <span className="admin-dot" style={{ background: 'var(--amber)' }} />
+              Mancanegara
+            </span>
+          </div>
+
+          <div className="admin-chart" aria-label="Grafik Kunjungan Wisatawan">
+            {yearlyStats.map((row, idx) => {
+              const domPct = Math.max(4, Math.round((Number(row.domestic) / maxVisit) * 100));
+              const manPct = Math.max(3, Math.round((Number(row.international) / maxVisit) * 100));
+              return (
+                <div key={row.tahun} className="admin-year-group">
+                  <div className="admin-bars">
+                    <div className="admin-bar-col">
+                      <span className="admin-bar-val">{formatShort(row.domestic)}</span>
+                      <div className="admin-bar-track" style={{ height: `${domPct}%` }}>
+                        <motion.div
+                          className="admin-bar dom"
+                          initial={reduce ? { y: 0 } : { y: '100%' }}
+                          animate={{ y: '0%' }}
+                          transition={{ ...SPRING.number, delay: reduce ? 0 : 0.08 + idx * 0.08 }}
+                        />
+                      </div>
+                    </div>
+                    <div className="admin-bar-col">
+                      <span className="admin-bar-val">{formatShort(row.international)}</span>
+                      <div className="admin-bar-track" style={{ height: `${manPct}%`, minHeight: 7 }}>
+                        <motion.div
+                          className="admin-bar man"
+                          initial={reduce ? { y: 0 } : { y: '100%' }}
+                          animate={{ y: '0%' }}
+                          transition={{ ...SPRING.number, delay: reduce ? 0 : 0.14 + idx * 0.08 }}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="admin-year-label">{row.tahun}</div>
                 </div>
-                <div className="space-y-1.5">
-                  {getFlattenedMenu(group.children).map((sub, sidx) => (
-                    <Link
-                      key={sidx}
-                      to={sub.path}
-                      className="flex items-center justify-between px-3 py-2 rounded-lg text-xs font-semibold text-slate-600 hover:text-blue-700 hover:bg-blue-50/80 transition-colors"
-                    >
-                      <span>{sub.label}</span>
-                      <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
+              );
+            })}
+          </div>
+          <p className="admin-chart-note">
+            Berdasarkan data rekapitulasi resmi statistik kunjungan wisatawan Dinas Pariwisata Provinsi Sulawesi Tengah.
+          </p>
+
+          {/* Dua Kolom: Berita Terbaru & Akses Cepat */}
+          <div className="admin-two-col">
+            <div>
+              <h2 className="admin-section-title">Berita Terbaru</h2>
+              {loading ? (
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                  {[...Array(4)].map((_, i) => (
+                    <div key={i} className="admin-skeleton" style={{ height: 68 }} />
+                  ))}
+                </div>
+              ) : latestBerita.length === 0 ? (
+                <div className="admin-empty-note">Belum ada berita diterbitkan.</div>
+              ) : (
+                <div>
+                  {latestBerita.map((b) => (
+                    <Link key={b.id} to="/portal-internal-dispar/berita" className="admin-news-item">
+                      <span className="admin-thumb">
+                        {b.gambar ? (
+                          <img
+                            src={getImageSrc(b.gambar, '/images/admin/danau-lindu.jpg')}
+                            alt={b.judul}
+                            onError={(e) => {
+                              e.currentTarget.style.display = 'none';
+                            }}
+                          />
+                        ) : (
+                          <Newspaper className="ic" />
+                        )}
+                      </span>
+                      <span style={{ minWidth: 0 }}>
+                        <span className="admin-news-title">{b.judul}</span>
+                        <span className="admin-news-date">
+                          <Calendar className="ic-sm" />
+                          {formatDateId(b.tanggal)}
+                        </span>
+                      </span>
                     </Link>
                   ))}
                 </div>
+              )}
+            </div>
+
+            <div>
+              <h2 className="admin-section-title">Akses Cepat</h2>
+              <div>
+                {QUICK_LINKS.map((q) => {
+                  const Icon = q.icon;
+                  return (
+                    <Link key={q.to} to={q.to} className="admin-quick-item">
+                      <span className="admin-quick-ic" style={{ background: q.bg, color: q.color }}>
+                        <Icon className="ic" />
+                      </span>
+                      <span>{q.label}</span>
+                      <ChevronRight className="ic-sm chev" strokeWidth={2.4} />
+                    </Link>
+                  );
+                })}
               </div>
-            ))}
+            </div>
           </div>
         </div>
-      </div>
+      </AdminPageShell>
     </AdminLayout>
   );
 };
