@@ -110,6 +110,10 @@ function App() {
         <Route path="/wp-admin" element={<Navigate to="/" replace />} />
         <Route path="/wp-admin/*" element={<Navigate to="/" replace />} />
 
+        {/* Alias Rute Kontak / Pengaduan agar tidak 404 jika diakses langsung */}
+        <Route path="/kontak" element={<Navigate to="/profil/hubungi-kami" replace />} />
+        <Route path="/pengaduan" element={<Navigate to="/ppid/layanan-publik/prosedur-pengaduan" replace />} />
+
         <Route path="/" element={<Home language={language} />} />
         <Route path="/berita" element={<Berita language={language} />} />
         <Route path="/berita/:slug" element={<BeritaDetail language={language} />} />

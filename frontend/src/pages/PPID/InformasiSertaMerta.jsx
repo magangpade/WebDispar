@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { AlertTriangle, ShieldCheck, PhoneCall, Info } from 'lucide-react';
 import PageHeader from '../../components/PageHeader';
@@ -88,13 +89,22 @@ const InformasiSertaMerta = () => {
                 <ShieldCheck size={18} className="text-emerald-600 shrink-0" />
                 <span>Jika terjadi situasi darurat, PPID Dinas Pariwisata akan segera mempublikasikan arahan resmi di halaman ini.</span>
               </div>
-              <a
-                href="/kontak"
-                className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 text-navy-900 text-xs font-semibold transition-colors shrink-0"
-              >
-                <PhoneCall size={14} />
-                <span>Hubungi Layanan Pengaduan</span>
-              </a>
+              <div className="flex flex-wrap items-center gap-2">
+                <Link
+                  to="/ppid/layanan-publik/prosedur-pengaduan"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-blue-50 hover:bg-blue-100 text-[#1F5BA6] text-xs font-bold transition-all border border-blue-200/60 shrink-0"
+                >
+                  <PhoneCall size={14} />
+                  <span>Prosedur Pengaduan</span>
+                </Link>
+                <Link
+                  to="/profil/hubungi-kami"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold transition-all shrink-0"
+                >
+                  <PhoneCall size={14} />
+                  <span>Hubungi Kami</span>
+                </Link>
+              </div>
             </div>
           </div>
 
