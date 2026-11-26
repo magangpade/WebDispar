@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import {
   Users, Download, Network, Award, FileText, CheckCircle2,
-  RefreshCw, GraduationCap, Briefcase, X, Calendar, MapPin,
-  Building2, Sparkles, ChevronRight, Eye, ShieldCheck
+  RefreshCw, GraduationCap, Briefcase, X, Calendar, Building2,
+  Sparkles, ChevronRight, Eye, ShieldCheck
 } from 'lucide-react';
 import PageHeader from '../../components/PageHeader';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -37,8 +37,6 @@ export const DETAIL_PROFIL_PEJABAT = {
     jabatanEn: 'Head of Tourism Department of Central Sulawesi Province',
     pangkat: 'Pembina Utama Madya (IV/d)',
     pangkatEn: 'Senior Principal (IV/d)',
-    ttl: 'Palu, 25 Agustus 1968',
-    ttlEn: 'Palu, August 25, 1968',
     pendidikanTerakhir: 'S-2 Magister Pendidikan (Universitas Negeri Malang)',
     pendidikanTerakhirEn: 'Master of Education (State University of Malang)',
     masaKerja: '33 Tahun',
@@ -78,8 +76,6 @@ export const DETAIL_PROFIL_PEJABAT = {
     jabatanEn: 'Secretary of Tourism Department of Central Sulawesi Province',
     pangkat: 'Pembina Tingkat I (IV/b)',
     pangkatEn: 'First Class Principal (IV/b)',
-    ttl: 'Palu, 01 Mei 1981',
-    ttlEn: 'Palu, May 01, 1981',
     pendidikanTerakhir: 'S-2 Administrasi Publik (Universitas Tadulako)',
     pendidikanTerakhirEn: 'Master of Public Administration (Tadulako University)',
     masaKerja: '20 Tahun',
@@ -116,8 +112,6 @@ export const DETAIL_PROFIL_PEJABAT = {
     jabatanEn: 'Head of Tourism Destination Development Division',
     pangkat: 'Pembina Tingkat I (IV/b)',
     pangkatEn: 'First Class Principal (IV/b)',
-    ttl: 'Palu, 21 November 1971',
-    ttlEn: 'Palu, November 21, 1971',
     pendidikanTerakhir: 'S-2 Magister Ilmu Administrasi Publik (Universitas Tadulako)',
     pendidikanTerakhirEn: 'Master of Public Administration (Tadulako University)',
     masaKerja: '24 Tahun',
@@ -152,8 +146,6 @@ export const DETAIL_PROFIL_PEJABAT = {
     jabatanEn: 'Head of Tourism Marketing Development Division',
     pangkat: 'Penata Tingkat I (III/d)',
     pangkatEn: 'First Class Superintendent (III/d)',
-    ttl: 'Palu, 22 November 1978',
-    ttlEn: 'Palu, November 22, 1978',
     pendidikanTerakhir: 'S-2 Magister Manajemen (Universitas Tadulako)',
     pendidikanTerakhirEn: 'Master of Management (Tadulako University)',
     masaKerja: '16 Tahun',
@@ -190,8 +182,6 @@ export const DETAIL_PROFIL_PEJABAT = {
     jabatanEn: 'Head of Creative Economy Development, Utilization & IPR Protection Division',
     pangkat: 'Penata / Pembina',
     pangkatEn: 'Superintendent / Principal',
-    ttl: 'Palu, 21 Januari 1987',
-    ttlEn: 'Palu, January 21, 1987',
     pendidikanTerakhir: 'S-1 Ilmu Hukum (Universitas Tadulako)',
     pendidikanTerakhirEn: 'Bachelor of Laws (Tadulako University)',
     masaKerja: '18 Tahun',
@@ -229,8 +219,6 @@ export const DETAIL_PROFIL_PEJABAT = {
     jabatanEn: 'Head of Tourism & Creative Economy Resources Division',
     pangkat: 'Pembina (IV/a)',
     pangkatEn: 'Principal (IV/a)',
-    ttl: 'Palu, 22 Agustus 1971',
-    ttlEn: 'Palu, August 22, 1971',
     pendidikanTerakhir: 'S-2 Teknik Arsitektur (Universitas Gadjah Mada)',
     pendidikanTerakhirEn: 'Master of Architecture Engineering (Gadjah Mada University)',
     masaKerja: '19 Tahun',
@@ -420,10 +408,10 @@ const PejabatDetailModal = ({ pejabat, detail, onClose, language }) => {
                   </div>
 
                   <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-100 flex items-start gap-3">
-                    <MapPin size={18} className="text-blue-500 shrink-0 mt-0.5" />
+                    <Building2 size={18} className="text-blue-500 shrink-0 mt-0.5" />
                     <div>
-                      <p className="text-[11px] font-semibold text-slate-400">{isEn ? 'Place & Date of Birth' : 'Tempat & Tgl Lahir'}</p>
-                      <p className="text-sm font-bold text-navy-900">{isEn ? detail.ttlEn : detail.ttl}</p>
+                      <p className="text-[11px] font-semibold text-slate-400">{isEn ? 'Agency / Office' : 'Unit Kerja'}</p>
+                      <p className="text-sm font-bold text-navy-900">{isEn ? detail.unitKerjaEn : detail.unitKerja}</p>
                     </div>
                   </div>
 
