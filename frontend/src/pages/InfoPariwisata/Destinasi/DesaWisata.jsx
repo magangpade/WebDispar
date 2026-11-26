@@ -7,6 +7,7 @@ import api from '../../../services/api';
 import PageHeader from '../../../components/PageHeader';
 import { useLanguage } from '../../../context/LanguageContext';
 import { KABUPATEN_MAP, slugify } from '../../../utils/translations';
+import { sanitizeHtml } from '../../../utils/sanitize';
 
 const DesaWisata = () => {
   const { language } = useLanguage();
@@ -127,7 +128,7 @@ const DesaWisata = () => {
                       <h3 className="font-bold text-navy-900 text-lg mb-2 line-clamp-2">{item.nama}</h3>
                       <div
                         className="text-sm text-gray-600 line-clamp-3 mb-4 prose prose-sm max-w-none"
-                        dangerouslySetInnerHTML={{ __html: item.deskripsi }}
+                        dangerouslySetInnerHTML={{ __html: sanitizeHtml(item.deskripsi) }}
                       />
                       <span className="inline-flex items-center gap-1 text-xs text-gray-400">
                         <Eye size={14} /> {item.dilihat || 0} {isEn ? 'views' : 'dilihat'}

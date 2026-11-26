@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Calendar, User, Eye, ArrowLeft, Share2 } from 'lucide-react';
 import api from '../services/api';
+import { sanitizeHtml } from '../utils/sanitize';
 
 const BeritaDetail = () => {
   const { slug } = useParams();
@@ -66,13 +67,13 @@ const BeritaDetail = () => {
           )}
           <div
             className="prose prose-lg max-w-none text-gray-700 leading-relaxed"
-            dangerouslySetInnerHTML={{ __html: berita.konten }}
+            dangerouslySetInnerHTML={{ __html: sanitizeHtml(berita.konten) }}
           />
           <div className="mt-8 pt-8 border-t border-gray-200 flex items-center gap-4">
             <span className="text-sm font-semibold text-gray-600 flex items-center gap-2"><Share2 size={16} /> Bagikan:</span>
-            <a href={`https://facebook.com/sharer/sharer.php?u=${window.location.href}`} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline text-sm">Facebook</a>
-            <a href={`https://twitter.com/intent/tweet?url=${window.location.href}`} target="_blank" rel="noopener noreferrer" className="text-sky-500 hover:underline text-sm">Twitter</a>
-            <a href={`https://wa.me/?text=${window.location.href}`} target="_blank" rel="noopener noreferrer" className="text-green-600 hover:underline text-sm">WhatsApp</a>
+            <a href={`https://facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline text-sm">Facebook</a>
+            <a href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}`} target="_blank" rel="noopener noreferrer" className="text-sky-500 hover:underline text-sm">Twitter</a>
+            <a href={`https://wa.me/?text=${encodeURIComponent(window.location.href)}`} target="_blank" rel="noopener noreferrer" className="text-green-600 hover:underline text-sm">WhatsApp</a>
           </div>
         </div>
       </article>

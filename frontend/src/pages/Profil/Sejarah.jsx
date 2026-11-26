@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import PageHeader from '../../components/PageHeader';
 import { Landmark } from 'lucide-react';
 import api from '../../services/api';
+import { sanitizeHtml } from '../../utils/sanitize';
 
 const Sejarah = () => {
   const [data, setData] = useState(null);
@@ -29,7 +30,7 @@ const Sejarah = () => {
           {data ? (
             <div
               className="prose prose-lg max-w-none text-gray-700 leading-relaxed"
-              dangerouslySetInnerHTML={{ __html: data.konten }}
+              dangerouslySetInnerHTML={{ __html: sanitizeHtml(data.konten) }}
             />
           ) : (
             <div className="skeleton h-96 w-full rounded-2xl" />

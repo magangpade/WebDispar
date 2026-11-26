@@ -10,7 +10,7 @@ const verifyToken = (req, res, next) => {
     req.user = verified;
     next();
   } catch (err) {
-    res.status(400).json({ message: 'Token tidak valid' });
+    res.status(401).json({ message: 'Token tidak valid atau sudah kedaluwarsa' });
   }
 };
 

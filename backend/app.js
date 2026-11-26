@@ -19,6 +19,23 @@ app.use((req, res, next) => {
   res.setHeader('X-Frame-Options', 'SAMEORIGIN');
   res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
   res.setHeader('X-XSS-Protection', '1; mode=block');
+  res.setHeader('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
+  if (process.env.NODE_ENV === 'production') {
+    res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
+  }
+  next();
+});
+
+// Sembunyikan detail error internal/SQL pada status 500 di production
+app.use((req, res, next) => {
+  const originalJson = res.json.bind(res);
+  res.json = (body) => {
+    if (res.statusCode >= 500 && process.env.NODE_ENV === 'production') {
+      console.error(`[500] ${req.method} ${req.originalUrl}:`, body?.message || body);
+      return originalJson({ message: 'Terjadi kesalahan pada server' });
+    }
+    return originalJson(body);
+  };
   next();
 });
 
