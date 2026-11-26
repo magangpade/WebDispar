@@ -614,7 +614,7 @@ const ProfilPimpinan = ({ language: propLanguage }) => {
 
       <section className="py-12 lg:py-16">
         <div className="container-custom">
-          {/* Header Actions & Live Database Status */}
+          {/* Header Actions */}
           <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
             <div className="flex flex-wrap gap-3">
               <a
@@ -633,22 +633,6 @@ const ProfilPimpinan = ({ language: propLanguage }) => {
               >
                 <Download size={18} /> {isEn ? 'Download DUK (Update 2025)' : 'Unduh DUK (Update 2025)'}
               </a>
-            </div>
-
-            <div className="flex items-center gap-2 text-xs text-gray-500 bg-gray-50 border border-gray-200 px-3 py-1.5 rounded-full">
-              {loading ? (
-                <span className="inline-flex items-center gap-1.5 text-blue-600">
-                  <RefreshCw size={14} className="animate-spin" /> {isEn ? 'Loading database...' : 'Memuat data database...'}
-                </span>
-              ) : isLiveFromDb ? (
-                <span className="inline-flex items-center gap-1.5 text-emerald-700 font-medium">
-                  <CheckCircle2 size={14} className="text-emerald-600" /> {isEn ? 'Directly Connected to Database' : 'Terhubung Langsung ke Database'} ({pejabat.length} {isEn ? 'Officials' : 'Pejabat'})
-                </span>
-              ) : (
-                <span className="inline-flex items-center gap-1.5 text-gray-600">
-                  {isEn ? 'Standard Mode' : 'Mode Standar'} ({pejabat.length} {isEn ? 'Officials' : 'Pejabat'})
-                </span>
-              )}
             </div>
           </div>
 
