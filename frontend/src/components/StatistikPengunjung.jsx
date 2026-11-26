@@ -238,7 +238,7 @@ const StatistikPengunjung = ({ language = 'ID' }) => {
         )}
       </AnimatePresence>
 
-      {/* Floating Button Icon di Pojok Kiri Bawah (Persis Posisi Gambar) */}
+      {/* Floating Button Icon di Pojok Kiri Bawah (Sejajar Kiri-Kanan) */}
       <div className="fixed bottom-6 left-6 z-40 select-none">
         <motion.button
           onClick={() => {
