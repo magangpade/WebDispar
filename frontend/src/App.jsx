@@ -1,74 +1,117 @@
-import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { Routes, Route, useLocation, Navigate, Link } from 'react-router-dom';
+import { useEffect, lazy, Suspense } from 'react';
 import MainLayout from './components/MainLayout';
+import Loader from './components/Loader';
 import Home from './pages/Home';
-import Berita from './pages/Berita';
-import BeritaDetail from './pages/BeritaDetail';
+
+// Public pages (Lazy-loaded per rute agar bundle awal ringan)
+const Berita = lazy(() => import('./pages/Berita'));
+const BeritaDetail = lazy(() => import('./pages/BeritaDetail'));
 
 // Profil
-import Sejarah from './pages/Profil/Sejarah';
-import VisiMisi from './pages/Profil/VisiMisi';
-import ProfilPimpinan from './pages/Profil/ProfilPimpinan';
-import Tupoksi from './pages/Profil/Tupoksi';
-import Majalah from './pages/Profil/Majalah';
-import Logo from './pages/Profil/Logo';
-import HubungiKami from './pages/Profil/HubungiKami';
+const Sejarah = lazy(() => import('./pages/Profil/Sejarah'));
+const VisiMisi = lazy(() => import('./pages/Profil/VisiMisi'));
+const ProfilPimpinan = lazy(() => import('./pages/Profil/ProfilPimpinan'));
+const Tupoksi = lazy(() => import('./pages/Profil/Tupoksi'));
+const Majalah = lazy(() => import('./pages/Profil/Majalah'));
+const Logo = lazy(() => import('./pages/Profil/Logo'));
+const HubungiKami = lazy(() => import('./pages/Profil/HubungiKami'));
 
 // PPID
-import DaftarInformasiPublik from './pages/PPID/DaftarInformasiPublik';
-import InformasiSetiapSaat from './pages/PPID/InformasiSetiapSaat';
-import InformasiSertaMerta from './pages/PPID/InformasiSertaMerta';
-import InformasiDikecualikan from './pages/PPID/InformasiDikecualikan';
-import ProfilPPID from './pages/PPID/ProfilPPID';
-import StrukturOrganisasiPPID from './pages/PPID/StrukturOrganisasiPPID';
-import VisiMisiPPID from './pages/PPID/VisiMisiPPID';
-import MaklumatPelayanan from './pages/PPID/MaklumatPelayanan';
-import TugasPPID from './pages/PPID/TugasPPID';
-import LaporanTahunan from './pages/PPID/LaporanTahunan';
-import SuratKeputusan from './pages/PPID/SuratKeputusan';
-import StandarPelayanan from './pages/PPID/StandarPelayanan';
-import FormPermohonan from './pages/PPID/LayananPublik/FormPermohonan';
-import FormKeberatan from './pages/PPID/LayananPublik/FormKeberatan';
-import ProsedurPengaduan from './pages/PPID/LayananPublik/ProsedurPengaduan';
-import SurveyKepuasan from './pages/PPID/LayananPublik/SurveyKepuasan';
-import Regulasi from './pages/PPID/LayananPublik/Regulasi';
-import InformasiSecaraBerkala from './pages/PPID/InformasiSecaraBerkala';
+const DaftarInformasiPublik = lazy(() => import('./pages/PPID/DaftarInformasiPublik'));
+const InformasiSetiapSaat = lazy(() => import('./pages/PPID/InformasiSetiapSaat'));
+const InformasiSertaMerta = lazy(() => import('./pages/PPID/InformasiSertaMerta'));
+const InformasiDikecualikan = lazy(() => import('./pages/PPID/InformasiDikecualikan'));
+const ProfilPPID = lazy(() => import('./pages/PPID/ProfilPPID'));
+const StrukturOrganisasiPPID = lazy(() => import('./pages/PPID/StrukturOrganisasiPPID'));
+const VisiMisiPPID = lazy(() => import('./pages/PPID/VisiMisiPPID'));
+const MaklumatPelayanan = lazy(() => import('./pages/PPID/MaklumatPelayanan'));
+const TugasPPID = lazy(() => import('./pages/PPID/TugasPPID'));
+const LaporanTahunan = lazy(() => import('./pages/PPID/LaporanTahunan'));
+const SuratKeputusan = lazy(() => import('./pages/PPID/SuratKeputusan'));
+const StandarPelayanan = lazy(() => import('./pages/PPID/StandarPelayanan'));
+const FormPermohonan = lazy(() => import('./pages/PPID/LayananPublik/FormPermohonan'));
+const FormKeberatan = lazy(() => import('./pages/PPID/LayananPublik/FormKeberatan'));
+const ProsedurPengaduan = lazy(() => import('./pages/PPID/LayananPublik/ProsedurPengaduan'));
+const SurveyKepuasan = lazy(() => import('./pages/PPID/LayananPublik/SurveyKepuasan'));
+const Regulasi = lazy(() => import('./pages/PPID/LayananPublik/Regulasi'));
+const InformasiSecaraBerkala = lazy(() => import('./pages/PPID/InformasiSecaraBerkala'));
 
 // Info Pariwisata
-import DayaTarikWisata from './pages/InfoPariwisata/Destinasi/DayaTarikWisata';
-import DesaWisata from './pages/InfoPariwisata/Destinasi/DesaWisata';
-import PaketWisata from './pages/InfoPariwisata/Pemasaran/PaketWisata';
-import KalenderEvent from './pages/InfoPariwisata/Pemasaran/KalenderEvent';
-import DataHunian from './pages/InfoPariwisata/Pemasaran/DataHunian';
-import StatistikKunjungan from './pages/InfoPariwisata/Pemasaran/StatistikKunjungan';
-import EkonomiKreatif from './pages/InfoPariwisata/EkonomiKreatif';
-import SumberDaya from './pages/InfoPariwisata/SumberDaya';
+const DayaTarikWisata = lazy(() => import('./pages/InfoPariwisata/Destinasi/DayaTarikWisata'));
+const DesaWisata = lazy(() => import('./pages/InfoPariwisata/Destinasi/DesaWisata'));
+const PaketWisata = lazy(() => import('./pages/InfoPariwisata/Pemasaran/PaketWisata'));
+const KalenderEvent = lazy(() => import('./pages/InfoPariwisata/Pemasaran/KalenderEvent'));
+const DataHunian = lazy(() => import('./pages/InfoPariwisata/Pemasaran/DataHunian'));
+const StatistikKunjungan = lazy(() => import('./pages/InfoPariwisata/Pemasaran/StatistikKunjungan'));
+const EkonomiKreatif = lazy(() => import('./pages/InfoPariwisata/EkonomiKreatif'));
+const SumberDaya = lazy(() => import('./pages/InfoPariwisata/SumberDaya'));
 
 // Lain
-import RencanaTerbit from './pages/RencanaTerbit';
-import Lapor from './pages/Lapor';
+const RencanaTerbit = lazy(() => import('./pages/RencanaTerbit'));
+const Lapor = lazy(() => import('./pages/Lapor'));
 
-// Admin
-import AdminLogin from './pages/Admin/Login';
-import AdminDashboard from './pages/Admin/Dashboard';
-import AdminSlider from './pages/Admin/Slider';
-import AdminBerita from './pages/Admin/Berita';
-import AdminDTW from './pages/Admin/DTW';
-import AdminDesaWisata from './pages/Admin/DesaWisata';
-import AdminPPID from './pages/Admin/PPID';
-import AdminProfil from './pages/Admin/Profil';
-import AdminTema from './pages/Admin/Tema';
+// Admin (Lazy-loaded agar tidak membebani ukuran bundle halaman publik)
+const AdminLogin = lazy(() => import('./pages/Admin/Login'));
+const AdminDashboard = lazy(() => import('./pages/Admin/Dashboard'));
+const AdminSlider = lazy(() => import('./pages/Admin/Slider'));
+const AdminBerita = lazy(() => import('./pages/Admin/Berita'));
+const AdminDTW = lazy(() => import('./pages/Admin/DTW'));
+const AdminDesaWisata = lazy(() => import('./pages/Admin/DesaWisata'));
+const AdminPPID = lazy(() => import('./pages/Admin/PPID'));
+const AdminProfil = lazy(() => import('./pages/Admin/Profil'));
+const AdminTema = lazy(() => import('./pages/Admin/Tema'));
 
 import api from './services/api';
 import { useLanguage } from './context/LanguageContext';
 
+// Cek apakah token JWT valid & belum kedaluwarsa
+const isTokenValid = (token) => {
+  if (!token) return false;
+  try {
+    const payload = JSON.parse(atob(token.split('.')[1]));
+    if (payload.exp && payload.exp * 1000 < Date.now()) {
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
+      return false;
+    }
+    return true;
+  } catch {
+    return false;
+  }
+};
+
 // Route Guard untuk Admin Internal
 const ProtectedRoute = ({ children }) => {
   const token = localStorage.getItem('token');
-  if (!token) {
+  if (!isTokenValid(token)) {
     return <Navigate to="/portal-internal-dispar/login" replace />;
   }
   return children;
+};
+
+// Halaman 404 untuk rute publik yang tidak ditemukan
+const NotFoundPage = ({ language }) => {
+  const isEn = language === 'EN';
+  return (
+    <div className="min-h-[60vh] flex flex-col items-center justify-center px-4 py-20 text-center">
+      <p className="text-6xl font-black text-amber-500 mb-3">404</p>
+      <h1 className="text-2xl font-bold text-slate-900 mb-2">
+        {isEn ? 'Page Not Found' : 'Halaman Tidak Ditemukan'}
+      </h1>
+      <p className="text-sm text-slate-500 max-w-md mb-6">
+        {isEn
+          ? 'The page you are looking for does not exist or has been moved.'
+          : 'Halaman yang Anda cari tidak tersedia atau telah dipindahkan.'}
+      </p>
+      <Link
+        to="/"
+        className="px-6 py-2.5 rounded-xl bg-[#1F5BA6] hover:bg-[#164480] text-white text-sm font-bold transition-colors shadow-sm"
+      >
+        {isEn ? 'Back to Home' : 'Kembali ke Beranda'}
+      </Link>
+    </div>
+  );
 };
 
 function App() {
@@ -83,24 +126,27 @@ function App() {
 
   if (isAdmin) {
     return (
-      <Routes>
-        <Route path="/portal-internal-dispar" element={<Navigate to="/portal-internal-dispar/login" replace />} />
-        <Route path="/portal-internal-dispar/login" element={<AdminLogin />} />
-        <Route path="/portal-internal-dispar/dashboard" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />
-        <Route path="/portal-internal-dispar/slider" element={<ProtectedRoute><AdminSlider /></ProtectedRoute>} />
-        <Route path="/portal-internal-dispar/berita" element={<ProtectedRoute><AdminBerita /></ProtectedRoute>} />
-        <Route path="/portal-internal-dispar/dtw" element={<ProtectedRoute><AdminDTW /></ProtectedRoute>} />
-        <Route path="/portal-internal-dispar/desa-wisata" element={<ProtectedRoute><AdminDesaWisata /></ProtectedRoute>} />
-        <Route path="/portal-internal-dispar/profil" element={<ProtectedRoute><AdminProfil /></ProtectedRoute>} />
-        <Route path="/portal-internal-dispar/ppid" element={<ProtectedRoute><AdminPPID /></ProtectedRoute>} />
-        <Route path="/portal-internal-dispar/tema" element={<ProtectedRoute><AdminTema /></ProtectedRoute>} />
-        <Route path="*" element={<Navigate to="/portal-internal-dispar/login" replace />} />
-      </Routes>
+      <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-slate-50 text-slate-500 text-sm">Memuat Portal Admin...</div>}>
+        <Routes>
+          <Route path="/portal-internal-dispar" element={<Navigate to="/portal-internal-dispar/login" replace />} />
+          <Route path="/portal-internal-dispar/login" element={<AdminLogin />} />
+          <Route path="/portal-internal-dispar/dashboard" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />
+          <Route path="/portal-internal-dispar/slider" element={<ProtectedRoute><AdminSlider /></ProtectedRoute>} />
+          <Route path="/portal-internal-dispar/berita" element={<ProtectedRoute><AdminBerita /></ProtectedRoute>} />
+          <Route path="/portal-internal-dispar/dtw" element={<ProtectedRoute><AdminDTW /></ProtectedRoute>} />
+          <Route path="/portal-internal-dispar/desa-wisata" element={<ProtectedRoute><AdminDesaWisata /></ProtectedRoute>} />
+          <Route path="/portal-internal-dispar/profil" element={<ProtectedRoute><AdminProfil /></ProtectedRoute>} />
+          <Route path="/portal-internal-dispar/ppid" element={<ProtectedRoute><AdminPPID /></ProtectedRoute>} />
+          <Route path="/portal-internal-dispar/tema" element={<ProtectedRoute><AdminTema /></ProtectedRoute>} />
+          <Route path="*" element={<Navigate to="/portal-internal-dispar/login" replace />} />
+        </Routes>
+      </Suspense>
     );
   }
 
   return (
     <MainLayout language={language} setLanguage={setLanguage}>
+      <Suspense fallback={<Loader text={language === 'EN' ? 'Loading page...' : 'Memuat halaman...'} />}>
       <Routes>
         {/* Anti-Scraping / Obfuscation: Blokir dan redirect rute admin umum ke beranda */}
         <Route path="/admin" element={<Navigate to="/" replace />} />
@@ -119,6 +165,7 @@ function App() {
         <Route path="/berita/:slug" element={<BeritaDetail language={language} />} />
 
         {/* Profil */}
+        <Route path="/profil" element={<Navigate to="/profil/sejarah" replace />} />
         <Route path="/profil/sejarah" element={<Sejarah language={language} />} />
         <Route path="/profil/visi-misi" element={<VisiMisi language={language} />} />
         <Route path="/profil/profil-pimpinan" element={<ProfilPimpinan language={language} />} />
@@ -128,6 +175,7 @@ function App() {
         <Route path="/profil/hubungi-kami" element={<HubungiKami language={language} />} />
 
         {/* PPID */}
+        <Route path="/ppid" element={<Navigate to="/ppid/profil" replace />} />
         <Route path="/ppid/profil" element={<ProfilPPID language={language} />} />
         <Route path="/ppid/daftar-informasi-publik" element={<DaftarInformasiPublik language={language} />} />
         <Route path="/ppid/informasi-setiap-saat" element={<InformasiSetiapSaat language={language} />} />
@@ -164,7 +212,9 @@ function App() {
         {/* Lain */}
         <Route path="/rencana-terbit" element={<RencanaTerbit language={language} />} />
         <Route path="/lapor" element={<Lapor language={language} />} />
+        <Route path="*" element={<NotFoundPage language={language} />} />
       </Routes>
+      </Suspense>
     </MainLayout>
   );
 }

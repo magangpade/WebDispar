@@ -32,7 +32,7 @@ const StatistikPengunjung = ({ language = 'ID' }) => {
   const fetchStats = async () => {
     setIsLoading(true);
     try {
-      const res = await api.get('/statistik/pengunjung');
+      const res = await api.get('/statistik/pengunjung?peek=true');
       if (res.data) {
         setStats({
           today: Number(res.data.today || 0),

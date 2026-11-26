@@ -1,21 +1,24 @@
 const db = require('../config/db');
+const cache = require('../utils/cache');
 
 exports.getTema = async (req, res) => {
   try {
+    const cached = cache.get('tema:current');
+    if (cached) return res.json(cached);
+
     const [rows] = await db.query('SELECT * FROM pengaturan_tema WHERE id = 1');
-    if (rows.length === 0) {
-      return res.json({
-        id: 1,
-        primary_color: '#1F5BA6',
-        secondary_color: '#383087',
-        accent_color: '#5C2180',
-        highlight_color: '#f59e0b',
-        nama_tema: 'Sulteng Biru Ungu',
-        badge_icon: 'none',
-        seasonal_badge: ''
-      });
-    }
-    res.json(rows[0]);
+    const result = rows.length === 0 ? {
+      id: 1,
+      primary_color: '#1F5BA6',
+      secondary_color: '#383087',
+      accent_color: '#5C2180',
+      highlight_color: '#f59e0b',
+      nama_tema: 'Sulteng Biru Ungu',
+      badge_icon: 'none',
+      seasonal_badge: ''
+    } : rows[0];
+    cache.set('tema:current', result, 300000);
+    res.json(result);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
@@ -47,6 +50,7 @@ exports.updateTema = async (req, res) => {
     );
 
     const [updated] = await db.query('SELECT * FROM pengaturan_tema WHERE id = 1');
+    cache.delByPrefix('tema:');
     res.json({ message: 'Tema website berhasil diperbarui', data: updated[0] });
   } catch (err) {
     res.status(500).json({ message: err.message });
@@ -84,6 +88,7 @@ exports.resetTema = async (req, res) => {
         defaultTema.seasonal_badge
       ]
     );
+    cache.delByPrefix('tema:');
     res.json({ message: 'Tema berhasil dikembalikan ke default', data: defaultTema });
   } catch (err) {
     res.status(500).json({ message: err.message });

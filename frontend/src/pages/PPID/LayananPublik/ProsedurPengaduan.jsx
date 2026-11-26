@@ -1,15 +1,14 @@
 import { Helmet } from 'react-helmet-async';
-import {
-  FaPhone,
-  FaEnvelope,
-  FaInstagram,
-  FaFacebook,
-  FaSquareTwitter,
-  FaWhatsapp,
-} from 'react-icons/fa6';
-import { CheckCircle, ShieldAlert } from 'lucide-react';
+import { CheckCircle, ShieldAlert, Phone, Mail, MessageCircle, Share2, Globe, MessageSquare } from 'lucide-react';
 import { motion } from 'framer-motion';
 import PageHeader from '../../../components/PageHeader';
+
+const FaWhatsapp = ({ size = 20 }) => <MessageCircle size={size} />;
+const FaInstagram = ({ size = 20 }) => <Share2 size={size} />;
+const FaFacebook = ({ size = 20 }) => <Globe size={size} />;
+const FaSquareTwitter = ({ size = 20 }) => <MessageSquare size={size} />;
+const FaPhone = ({ size = 20 }) => <Phone size={size} />;
+const FaEnvelope = ({ size = 20 }) => <Mail size={size} />;
 
 const ProsedurPengaduan = () => {
   const steps = [

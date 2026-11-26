@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { MapPin, Eye, Compass } from 'lucide-react';
+import { MapPin, Eye, Compass, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import api from '../../../services/api';
 import PageHeader from '../../../components/PageHeader';
@@ -39,6 +39,8 @@ const DestinationCard = ({ item, index, isEn }) => {
           <img
             src={imageSrc}
             alt={item.judul || 'Daya tarik wisata'}
+            loading="lazy"
+            decoding="async"
             onError={() => setImageFailed(true)}
             className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
           />
@@ -73,6 +75,8 @@ const DayaTarikWisata = () => {
   const [data, setData] = useState([]);
   const [selected, setSelected] = useState('Kota Palu');
   const [loading, setLoading] = useState(false);
+  const [page, setPage] = useState(1);
+  const ITEMS_PER_PAGE = 9;
 
   // Sync selected with route parameter if available
   useEffect(() => {
@@ -88,11 +92,15 @@ const DayaTarikWisata = () => {
 
   useEffect(() => {
     setLoading(true);
+    setPage(1);
     api.get(`/info-pariwisata/dtw?kabupaten=${encodeURIComponent(selected)}`)
       .then((res) => setData(res.data))
       .catch(() => {})
       .finally(() => setLoading(false));
   }, [selected]);
+
+  const totalPages = Math.max(1, Math.ceil(data.length / ITEMS_PER_PAGE));
+  const pagedData = data.slice((page - 1) * ITEMS_PER_PAGE, page * ITEMS_PER_PAGE);
 
   const selectedObj = KABUPATEN_MAP.find((k) => k.id === selected);
   const selectedDisplay = isEn && selectedObj ? selectedObj.en : selected;
@@ -140,11 +148,36 @@ const DayaTarikWisata = () => {
               </p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {data.map((item, idx) => (
-                <DestinationCard key={item.id} item={item} index={idx} isEn={isEn} />
-              ))}
-            </div>
+            <>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {pagedData.map((item, idx) => (
+                  <DestinationCard key={item.id} item={item} index={idx} isEn={isEn} />
+                ))}
+              </div>
+              {totalPages > 1 && (
+                <div className="flex items-center justify-center gap-2 mt-10">
+                  <button
+                    type="button"
+                    onClick={() => setPage((p) => Math.max(1, p - 1))}
+                    disabled={page === 1}
+                    className="w-9 h-9 rounded-lg border border-gray-200 flex items-center justify-center hover:bg-amber-50 disabled:opacity-40 transition-colors cursor-pointer"
+                  >
+                    <ChevronLeft size={16} />
+                  </button>
+                  <span className="text-xs font-semibold text-gray-600 px-3">
+                    {page} / {totalPages}
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
+                    disabled={page === totalPages}
+                    className="w-9 h-9 rounded-lg border border-gray-200 flex items-center justify-center hover:bg-amber-50 disabled:opacity-40 transition-colors cursor-pointer"
+                  >
+                    <ChevronRight size={16} />
+                  </button>
+                </div>
+              )}
+            </>
           )}
         </div>
       </section>

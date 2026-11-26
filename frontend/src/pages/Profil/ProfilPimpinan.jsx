@@ -268,6 +268,12 @@ const DEFAULT_PEJABAT = [
   { nama: 'Husen, S.Kom', nip: '197908112010011007', jabatan: 'Adyatama Kepariwisataan Ekonomi Kreatif Ahli Muda', foto: 'husein.jpg', urutan: 16 },
 ];
 
+const getPhotoUrl = (foto) => {
+  if (!foto) return null;
+  if (foto.startsWith('http') || foto.startsWith('/')) return foto;
+  return `/uploads/${foto}`;
+};
+
 // Modal Detail Profil Pimpinan
 const PejabatDetailModal = ({ pejabat, detail, onClose, language }) => {
   const isEn = language === 'EN';
@@ -318,9 +324,14 @@ const PejabatDetailModal = ({ pejabat, detail, onClose, language }) => {
               {/* Photo with golden frame */}
               <div className="relative w-24 h-24 sm:w-28 sm:h-28 shrink-0">
                 <img
-                  src={pejabat.foto ? `/images/ProfilPimpinan/${pejabat.foto}` : '/images/ProfilPimpinan/empty.png'}
+                  src={getPhotoUrl(pejabat.foto) || '/images/ProfilPimpinan/empty.png'}
                   alt={detail.nama}
                   onError={(e) => {
+                    if (!e.currentTarget.dataset.fallbackTried && pejabat.foto) {
+                      e.currentTarget.dataset.fallbackTried = 'true';
+                      e.currentTarget.src = `/images/ProfilPimpinan/${pejabat.foto}`;
+                      return;
+                    }
                     e.currentTarget.src = '/slider/Slider.jpg';
                   }}
                   className="w-full h-full object-cover rounded-2xl border-4 border-amber-400 shadow-xl"
@@ -582,12 +593,6 @@ const ProfilPimpinan = ({ language: propLanguage }) => {
 
   const getInitials = (nama) =>
     nama.split(' ').filter(w => /^[A-Z]/.test(w)).slice(0, 2).map(w => w[0]).join('');
-
-  const getPhotoUrl = (foto) => {
-    if (!foto) return null;
-    if (foto.startsWith('http') || foto.startsWith('/')) return foto;
-    return `/uploads/${foto}`;
-  };
 
   // Cek apakah pejabat memiliki data profil lengkap (pejabat berlatar putih)
   const getDetail = (nip) => {

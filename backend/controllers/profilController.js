@@ -88,3 +88,48 @@ exports.deletePejabat = async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 };
+
+exports.createPesanKontak = async (req, res) => {
+  const { nama, email, subjek, pesan } = req.body;
+  if (!nama || !email || !subjek || !pesan) {
+    return res.status(400).json({ message: 'Semua kolom wajib diisi' });
+  }
+  try {
+    await db.query(`
+      CREATE TABLE IF NOT EXISTS pesan_kontak (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        nama VARCHAR(150) NOT NULL,
+        email VARCHAR(150) NOT NULL,
+        subjek VARCHAR(255) NOT NULL,
+        pesan TEXT NOT NULL,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+    `);
+    await db.query(
+      'INSERT INTO pesan_kontak (nama, email, subjek, pesan) VALUES (?, ?, ?, ?)',
+      [nama.trim(), email.trim(), subjek.trim(), pesan.trim()]
+    );
+    res.status(201).json({ message: 'Pesan berhasil dikirim' });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
+exports.getPesanKontak = async (req, res) => {
+  try {
+    await db.query(`
+      CREATE TABLE IF NOT EXISTS pesan_kontak (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        nama VARCHAR(150) NOT NULL,
+        email VARCHAR(150) NOT NULL,
+        subjek VARCHAR(255) NOT NULL,
+        pesan TEXT NOT NULL,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+    `);
+    const [rows] = await db.query('SELECT * FROM pesan_kontak ORDER BY created_at DESC');
+    res.json(rows);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};

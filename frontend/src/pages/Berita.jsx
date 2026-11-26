@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Search, ChevronLeft, ChevronRight, Newspaper } from 'lucide-react';
 import BeritaCard from '../components/BeritaCard';
@@ -9,22 +10,44 @@ import { useLanguage } from '../context/LanguageContext';
 const Berita = () => {
   const { language } = useLanguage();
   const isEn = language === 'EN';
+  const [searchParams] = useSearchParams();
+  const initialQ = searchParams.get('q') || '';
   const [berita, setBerita] = useState([]);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState(initialQ);
+  const [debouncedSearch, setDebouncedSearch] = useState(initialQ);
+
+  useEffect(() => {
+    const q = searchParams.get('q') || '';
+    setSearch(q);
+    setDebouncedSearch(q);
+    setPage(1);
+  }, [searchParams]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDebouncedSearch((prev) => {
+        if (prev !== search) setPage(1);
+        return search;
+      });
+    }, 300);
+    return () => clearTimeout(timer);
+  }, [search]);
 
   useEffect(() => {
     setLoading(true);
-    api.get(`/berita?page=${page}&limit=9`)
+    const params = new URLSearchParams({ page: String(page), limit: '9' });
+    if (debouncedSearch.trim()) params.set('q', debouncedSearch.trim());
+    api.get(`/berita?${params.toString()}`)
       .then((res) => {
-        setBerita(res.data.data);
-        setTotalPages(res.data.totalPages);
+        setBerita(res.data.data || []);
+        setTotalPages(Math.max(1, res.data.totalPages || 1));
       })
       .catch(() => {})
       .finally(() => setLoading(false));
-  }, [page]);
+  }, [page, debouncedSearch]);
 
   return (
     <>
@@ -59,9 +82,16 @@ const Berita = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[...Array(9)].map((_, i) => <div key={i} className="skeleton h-80 rounded-xl" />)}
             </div>
+          ) : berita.length === 0 ? (
+            <div className="text-center py-16 text-gray-500 card">
+              <Newspaper size={44} className="mx-auto mb-3 opacity-30" />
+              <p className="text-sm font-medium">
+                {isEn ? 'No news matched your search.' : 'Tidak ada berita yang sesuai dengan pencarian.'}
+              </p>
+            </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {berita.filter(b => b.judul.toLowerCase().includes(search.toLowerCase())).map((b, idx) => (
+              {berita.map((b, idx) => (
                 <BeritaCard key={b.id} berita={b} index={idx} />
               ))}
             </div>

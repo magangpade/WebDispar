@@ -3,7 +3,7 @@ import { FileText, Plus, Trash2, Search, AlertCircle, CheckCircle2, Download, Up
 import { AdminLayout } from './Dashboard';
 import api from '../../services/api';
 
-const BASE_URL = import.meta.env.VITE_API_URL?.replace('/api', '') || 'http://localhost:5000';
+const BASE_URL = import.meta.env.VITE_API_URL?.replace(/\/api\/?$/, '') || '';
 
 const AdminPPID = () => {
   const [activeTab, setActiveTab] = useState('items'); // 'items' | 'regulasi' | 'sk'

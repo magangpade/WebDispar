@@ -16,12 +16,12 @@ const StandarPelayanan = () => {
   ];
 
   const mekanisme = [
-    { label: 'Standar Pelayanan Pendaftaran HAKI', path: '/ppid/standar-pelayanan/haki' },
-    { label: 'Mekanisme Pelayanan Informasi Publik', path: '/ppid/standar-pelayanan/mekanisme-pelayanan' },
-    { label: 'Mekanisme Pengajuan Keberatan Informasi', path: '/ppid/standar-pelayanan/mekanisme-keberatan' },
-    { label: 'Mekanisme Permohonan Penyelesaian Sengketa Informasi', path: '/ppid/standar-pelayanan/mekanisme-sengketa' },
-    { label: 'Alur Mekanisme Penanganan Sengketa Informasi Publik', path: '/ppid/standar-pelayanan/alur-sengketa' },
-    { label: 'Alur Adjudikasi Penyelesaian Sengketa Informasi', path: '/ppid/standar-pelayanan/alur-adjudikasi' },
+    { label: 'Standar Pelayanan Pendaftaran HAKI', path: '/ppid/layanan-publik/regulasi' },
+    { label: 'Mekanisme Pelayanan Informasi Publik', path: '/ppid/layanan-publik/form-permohonan' },
+    { label: 'Mekanisme Pengajuan Keberatan Informasi', path: '/ppid/layanan-publik/form-keberatan' },
+    { label: 'Mekanisme Permohonan Penyelesaian Sengketa Informasi', path: '/ppid/layanan-publik/prosedur-pengaduan' },
+    { label: 'Alur Mekanisme Penanganan Sengketa Informasi Publik', path: '/ppid/layanan-publik/prosedur-pengaduan' },
+    { label: 'Alur Adjudikasi Penyelesaian Sengketa Informasi', path: '/ppid/layanan-publik/regulasi' },
   ];
 
   return (

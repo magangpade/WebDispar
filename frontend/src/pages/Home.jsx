@@ -75,6 +75,7 @@ const getTagColor = (tag = '') => {
 };
 
 const LatestNewsSection = ({ berita, loading, strings, isEn }) => {
+  const [newsPage, setNewsPage] = useState(0);
   const fallbackNews = [
     {
       image: IMAGES.news1,
@@ -107,8 +108,11 @@ const LatestNewsSection = ({ berita, loading, strings, isEn }) => {
     return `/uploads/${img}`;
   };
 
+  const totalPages = berita.length > 0 ? Math.max(1, Math.ceil(berita.length / 3)) : 1;
+  const safePage = Math.min(newsPage, totalPages - 1);
+
   const newsItems = berita.length > 0
-    ? berita.slice(0, 3).map((b, idx) => {
+    ? berita.slice(safePage * 3, safePage * 3 + 3).map((b, idx) => {
         const tag = getNewsTag(b);
         return {
           image: getNewsImage(b, idx),
@@ -137,18 +141,24 @@ const LatestNewsSection = ({ berita, loading, strings, isEn }) => {
 
         {/* Pagination Arrows */}
         <div className="flex items-center gap-2">
-          <Link
-            to="/berita"
-            className="w-9 h-9 rounded-lg bg-white border border-[#CBD5E1] shadow-xs flex items-center justify-center text-slate-600 hover:bg-slate-50 transition-colors"
+          <button
+            type="button"
+            onClick={() => setNewsPage((p) => (p - 1 + totalPages) % totalPages)}
+            disabled={totalPages <= 1}
+            aria-label={isEn ? 'Previous news' : 'Berita sebelumnya'}
+            className="w-9 h-9 rounded-lg bg-white border border-[#CBD5E1] shadow-xs flex items-center justify-center text-slate-600 hover:bg-slate-50 disabled:opacity-40 transition-colors cursor-pointer disabled:cursor-default"
           >
             <ChevronLeft className="w-4 h-4" />
-          </Link>
-          <Link
-            to="/berita"
-            className="w-9 h-9 rounded-lg bg-white border border-[#CBD5E1] shadow-xs flex items-center justify-center text-slate-600 hover:bg-slate-50 transition-colors"
+          </button>
+          <button
+            type="button"
+            onClick={() => setNewsPage((p) => (p + 1) % totalPages)}
+            disabled={totalPages <= 1}
+            aria-label={isEn ? 'Next news' : 'Berita berikutnya'}
+            className="w-9 h-9 rounded-lg bg-white border border-[#CBD5E1] shadow-xs flex items-center justify-center text-slate-600 hover:bg-slate-50 disabled:opacity-40 transition-colors cursor-pointer disabled:cursor-default"
           >
             <ChevronRight className="w-4 h-4" />
-          </Link>
+          </button>
         </div>
       </div>
 

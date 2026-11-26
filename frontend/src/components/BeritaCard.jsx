@@ -34,6 +34,8 @@ const BeritaCard = ({ berita, index = 0 }) => {
           <img
             src={getImageSrc(berita.gambar)}
             alt={berita.judul}
+            loading="lazy"
+            decoding="async"
             onError={(e) => {
               e.currentTarget.src = '/slider/Slider.jpg';
             }}

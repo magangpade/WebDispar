@@ -2,12 +2,25 @@ const db = require('../config/db');
 
 exports.getAll = async (req, res) => {
   try {
-    const page = parseInt(req.query.page) || 1;
-    const limit = parseInt(req.query.limit) || 10;
+    const page = Math.max(1, parseInt(req.query.page, 10) || 1);
+    const limit = Math.min(50, Math.max(1, parseInt(req.query.limit, 10) || 10));
     const offset = (page - 1) * limit;
-    const [rows] = await db.query('SELECT * FROM berita ORDER BY tanggal DESC LIMIT ? OFFSET ?', [limit, offset]);
-    const [[{ total }]] = await db.query('SELECT COUNT(*) as total FROM berita');
-    res.json({ data: rows, total, page, totalPages: Math.ceil(total / limit) });
+    const q = (req.query.q || '').trim();
+
+    let whereClause = '';
+    const params = [];
+    if (q) {
+      whereClause = ' WHERE judul LIKE ? OR konten LIKE ?';
+      const like = `%${q}%`;
+      params.push(like, like);
+    }
+
+    const [rows] = await db.query(
+      `SELECT * FROM berita${whereClause} ORDER BY tanggal DESC LIMIT ? OFFSET ?`,
+      [...params, limit, offset]
+    );
+    const [[{ total }]] = await db.query(`SELECT COUNT(*) as total FROM berita${whereClause}`, params);
+    res.json({ data: rows, total, page, totalPages: Math.max(1, Math.ceil(total / limit)) });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }

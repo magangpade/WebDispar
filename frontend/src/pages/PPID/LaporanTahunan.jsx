@@ -13,6 +13,12 @@ const DEFAULT_LAPORAN = [
   { judul: 'Laporan Akuntabilitas Kinerja Instansi Pemerintah (LAKIP) Dinas Pariwisata Prov. Sulteng - Tahun 2020', tahun: '2020', file: '/laporan/laporan-ppid-2020.pdf' },
 ];
 
+const resolveFileUrl = (raw) => {
+  if (!raw) return '#';
+  if (raw.startsWith('http://') || raw.startsWith('https://') || raw.startsWith('/')) return raw;
+  return `/uploads/${raw}`;
+};
+
 const LaporanTahunan = () => {
   const [laporan, setLaporan] = useState(DEFAULT_LAPORAN);
 
@@ -40,7 +46,9 @@ const LaporanTahunan = () => {
       <section className="py-12 lg:py-16">
         <div className="container-custom max-w-4xl">
           <div className="space-y-4">
-            {laporan.map((item, idx) => (
+            {laporan.map((item, idx) => {
+              const fileUrl = resolveFileUrl(item.file || item.link);
+              return (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
@@ -58,16 +66,17 @@ const LaporanTahunan = () => {
                   <p className="text-xs text-gray-500">Dokumen Resmi PPID</p>
                 </div>
                 <a
-                  href={item.file || item.link || '#'}
+                  href={fileUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  download={!(item.file || item.link || '').startsWith('http')}
+                  download={!fileUrl.startsWith('http') && fileUrl !== '#'}
                   className="flex-shrink-0 inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white text-sm font-semibold px-4 py-2.5 rounded-lg transition-colors"
                 >
                   <Download size={16} /> Unduh
                 </a>
               </motion.div>
-            ))}
+              );
+            })}
 
             {laporan.length === 0 && (
               <div className="text-center py-16 text-gray-400 card">

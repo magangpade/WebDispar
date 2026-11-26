@@ -10,7 +10,7 @@ const SLIDES = [
     alt: 'Dinas Pariwisata Provinsi Sulawesi Tengah - Destinasi Wisata Unggulan',
     title: 'Destinasi Wisata Unggulan Sulawesi Tengah',
     subtitle: 'Pesona Megalit, Bukit Selena, Danau Paisupok, Lore Lindu, dan Kepulauan Togean',
-    link: '#',
+    link: '/info-pariwisata/destinasi/daya-tarik-wisata',
   },
   {
     image: '/images/slider/slider-1-kantor-dispar.jpg',
@@ -18,7 +18,7 @@ const SLIDES = [
     alt: 'Kantor Dinas Pariwisata Provinsi Sulawesi Tengah',
     title: 'Dinas Pariwisata Provinsi Sulawesi Tengah',
     subtitle: 'Mewujudkan Pariwisata Sulteng yang Maju, Berdaya Saing, dan Berkelanjutan',
-    link: '#',
+    link: '/profil/sejarah',
   },
   {
     image: '/images/slider/slider2.jpg',
@@ -42,7 +42,7 @@ const SLIDES = [
     alt: 'Indikator Kinerja Utama Dispar 2026',
     title: 'Indikator Kinerja Utama (IKU) 2026',
     subtitle: 'Target dan Capaian Pembangunan Kepariwisataan',
-    link: '#',
+    link: '/ppid/informasi-secara-berkala?kategori=dokumen-sakip&sub=iku',
   },
   {
     image: '/images/slider/slider5.jpg',
@@ -50,7 +50,7 @@ const SLIDES = [
     alt: 'Command Center Berani Samporoa',
     title: 'Command Center BERANI - SAMPOROA',
     subtitle: 'Hotline Layanan Cepat Tanggap Pariwisata Sulteng',
-    link: 'https://wa.me/08116662222',
+    link: 'https://wa.me/628116662222',
     isExternal: true,
   },
   {
@@ -68,7 +68,7 @@ const SLIDES = [
     alt: 'Kampanye Pariwisata Anti Korupsi',
     title: 'Pariwisata Berintegritas & Anti Korupsi',
     subtitle: 'Menjaga Tata Kelola Pemerintahan yang Bersih dan Berwibawa',
-    link: '#',
+    link: '/ppid/profil/maklumat-pelayanan',
   },
   {
     image: '/images/slider/slider8.jpg',
@@ -310,7 +310,7 @@ const Hero = () => {
         }));
         if (active.length) {
           setCurrent(0);
-          setSlides(active);
+          setSlides([SLIDES[0], ...active]);
         }
       })
       .catch(() => {});
