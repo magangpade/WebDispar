@@ -42,7 +42,7 @@ const Berita = () => {
 
       <section className="py-12 lg:py-16">
         <div className="container-custom">
-          <div className="max-w-md mx-auto mb-10">
+          <div data-tour="berita-search" className="max-w-md mx-auto mb-10">
             <div className="relative">
               <Search size={20} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
               <input
@@ -68,7 +68,7 @@ const Berita = () => {
           )}
 
           {/* Pagination */}
-          <div className="flex items-center justify-center gap-2 mt-12">
+          <div data-tour="berita-pagination" className="flex items-center justify-center gap-2 mt-12">
             <button
               onClick={() => setPage(p => Math.max(1, p - 1))}
               disabled={page === 1}

@@ -48,9 +48,9 @@ const PageHeader = ({
           </p>
         )}
 
-        {/* Breadcrumb */}
+          {/* Breadcrumb */}
         {breadcrumbs && breadcrumbs.length > 0 && (
-          <nav aria-label="Breadcrumb" className="flex items-center flex-wrap gap-2 text-xs text-white/70 mt-6 font-medium">
+          <nav data-tour="page-breadcrumb" aria-label="Breadcrumb" className="flex items-center flex-wrap gap-2 text-xs text-white/70 mt-6 font-medium">
             <Link to="/" className="hover:text-amber-300 transition-colors">
               Home
             </Link>

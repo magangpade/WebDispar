@@ -114,7 +114,7 @@ const DayaTarikWisata = () => {
       <section className="py-12 lg:py-16">
         <div className="container-custom">
           {/* Filter Kabupaten */}
-          <div className="flex flex-wrap gap-2 mb-10">
+          <div data-tour="dtw-filter" className="flex flex-wrap gap-2 mb-10">
             {KABUPATEN_MAP.map((kab) => (
               <button
                 key={kab.id}

@@ -48,7 +48,7 @@ const DaftarInformasiPublik = () => {
       />
       <section className="py-12 lg:py-16">
         <div className="container-custom max-w-4xl">
-          <div className="space-y-3">
+          <div data-tour="ppid-categories" className="space-y-3">
             {kategori.map((kat) => (
               <div key={kat.id} className="card overflow-hidden">
                 <button

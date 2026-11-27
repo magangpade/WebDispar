@@ -249,6 +249,7 @@ const StatistikPengunjung = ({ language = 'ID' }) => {
           }}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.92 }}
+          data-tour="stats-widget"
           aria-label={isEN ? 'Visitor Statistics' : 'Statistik Pengunjung'}
           className="w-12 h-12 rounded-full bg-slate-900/85 backdrop-blur-md border border-white/25 text-white shadow-2xl shadow-black/50 flex items-center justify-center hover:border-amber-400 transition-all cursor-pointer group relative overflow-hidden"
         >

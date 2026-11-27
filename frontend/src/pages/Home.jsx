@@ -122,7 +122,7 @@ const LatestNewsSection = ({ berita, loading, strings, isEn }) => {
     : fallbackNews;
 
   return (
-    <section className="flex flex-col gap-5 w-full">
+    <section data-tour="home-news" className="flex flex-col gap-5 w-full">
       {/* Header Bar */}
       <div className="flex items-center justify-between border-b border-slate-200/80 pb-3">
         <div className="flex flex-col gap-0.5">
@@ -206,7 +206,7 @@ const LatestNewsSection = ({ berita, loading, strings, isEn }) => {
 // ==========================================
 const AgendaAndIKMSection = ({ strings, isEn }) => {
   return (
-    <section className="flex flex-col gap-5 w-full">
+    <section data-tour="home-agenda" className="flex flex-col gap-5 w-full">
       <div className="flex flex-col gap-0.5">
         <span className="text-[#D97706] font-bold text-xs tracking-wider uppercase">
           {strings?.servicesTag || 'PELAYANAN & KEGIATAN'}
@@ -296,7 +296,7 @@ const StatisticsAndVideosSection = ({ stats, strings, isEn }) => {
   const total = domestic + international;
 
   return (
-    <section className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch w-full">
+    <section data-tour="home-stats-video" className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch w-full">
       {/* Kolom Kiri: Statistik Wisatawan Card */}
       <div className="lg:col-span-5 bg-white rounded-2xl border border-[#E2E8F0] shadow-xs p-6 flex flex-col justify-between gap-5 group hover:border-primary-400 transition-all duration-300">
         <div className="flex flex-col gap-1">

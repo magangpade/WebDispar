@@ -6,6 +6,7 @@ import Footer from './Footer';
 import StatistikPengunjung from './StatistikPengunjung';
 import BackToTop from './BackToTop';
 import SurveiKepuasan from './SurveiKepuasan';
+import PortalGuidanceTour from './PortalGuidanceTour';
 
 export const MainLayout = ({ children, language, setLanguage }) => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
@@ -51,6 +52,9 @@ export const MainLayout = ({ children, language, setLanguage }) => {
 
       {/* Floating Widget Survei Kepuasan Masyarakat / Wonderful Indonesia (Pojok Kiri Bawah - Stacked) */}
       <SurveiKepuasan language={language} />
+
+      {/* Floating Widget Panduan Interaktif Web */}
+      <PortalGuidanceTour language={language} />
 
       {/* Floating Button Back to Top (Pojok Kanan Bawah) */}
       <BackToTop language={language} />

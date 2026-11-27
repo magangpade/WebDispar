@@ -164,7 +164,7 @@ const Lapor = () => {
                   </div>
                 </div>
 
-                <div className="flex flex-wrap items-center gap-3">
+                <div data-tour="lapor-cta" className="flex flex-wrap items-center gap-3">
                   <a
                     href="https://www.lapor.go.id"
                     target="_blank"
@@ -198,7 +198,7 @@ const Lapor = () => {
           </div>
 
           {/* 5 Alur Pengaduan */}
-          <div className="mb-14">
+          <div data-tour="lapor-steps" className="mb-14">
             <div className="text-center max-w-2xl mx-auto mb-10">
               <span className="text-xs font-bold tracking-widest text-amber-600 uppercase">
                 {isEn ? 'REPORTING WORKFLOW' : 'ALUR PENGADUAN'}

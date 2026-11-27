@@ -269,7 +269,7 @@ export const Navbar = ({ onToggleMobile, language: propLanguage, setLanguage: pr
       >
         <div className="flex max-w-7xl h-20 items-center justify-between px-3 sm:px-4 md:px-6 w-full">
           {/* Logo */}
-          <Link to="/" onClick={handleLogoClick} className="inline-flex items-center gap-2 sm:gap-2.5 shrink-0 cursor-pointer">
+          <Link to="/" onClick={handleLogoClick} data-tour="nav-logo" className="inline-flex items-center gap-2 sm:gap-2.5 shrink-0 cursor-pointer">
             <div className="relative">
               <LogoSymbol />
               {theme.badge_icon && theme.badge_icon !== 'none' && (
@@ -292,7 +292,7 @@ export const Navbar = ({ onToggleMobile, language: propLanguage, setLanguage: pr
           </Link>
 
           {/* Desktop Nav in Glassy Pill (Warna Ungu & Kaca Sesuai WebDispar Original) */}
-          <nav className="hidden lg:inline-flex items-center gap-1 p-1 rounded-full border border-white/20 bg-white/15 backdrop-blur-sm shadow-inner transition-all duration-300">
+          <nav data-tour="nav-menus" className="hidden lg:inline-flex items-center gap-1 p-1 rounded-full border border-white/20 bg-white/15 backdrop-blur-sm shadow-inner transition-all duration-300">
             {menus.map((menu, idx) => {
               const active = isActive(menu);
               if (menu.children) {
@@ -362,11 +362,12 @@ export const Navbar = ({ onToggleMobile, language: propLanguage, setLanguage: pr
               type="button"
               onClick={() => setIsSearchOpen(true)}
               aria-label="Search"
+              data-tour="search-btn"
               className="w-9 h-9 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/20 text-white transition-colors"
             >
               <Search className="w-4 h-4 text-white" />
             </button>
-            <div className="hidden md:inline-flex items-center gap-1 rounded-full px-1 py-0.5 border border-white/20 bg-white/15 backdrop-blur-sm transition-all duration-300">
+            <div data-tour="lang-toggle" className="hidden md:inline-flex items-center gap-1 rounded-full px-1 py-0.5 border border-white/20 bg-white/15 backdrop-blur-sm transition-all duration-300">
               {['ID', 'EN'].map((lang, i) => (
                 <span key={lang} className="inline-flex items-center gap-1">
                   <button
@@ -386,6 +387,8 @@ export const Navbar = ({ onToggleMobile, language: propLanguage, setLanguage: pr
             </div>
             <button
               onClick={onToggleMobile}
+              data-tour="mobile-menu"
+              aria-label="Menu"
               className="lg:hidden p-2 text-white hover:bg-white/10 rounded-xl transition-colors"
             >
               <Menu size={24} />
