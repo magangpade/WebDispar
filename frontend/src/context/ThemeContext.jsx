@@ -42,6 +42,12 @@ export const ThemeProvider = ({ children }) => {
     root.style.setProperty('--color-accent', a);
     root.style.setProperty('--color-highlight', h);
 
+    // Sync Admin Ruang CSS variables
+    root.style.setProperty('--blue', p);
+    root.style.setProperty('--purple', a);
+    root.style.setProperty('--amber', h);
+    root.style.setProperty('--grad', `linear-gradient(120deg, ${p} 0%, ${s} 55%, ${a} 100%)`);
+
     // Gradient Variasi
     root.style.setProperty('--theme-gradient', `linear-gradient(to right, ${p}, ${s}, ${a})`);
     root.style.setProperty('--theme-gradient-vertical', `linear-gradient(to bottom, ${a}, ${s}, ${p})`);

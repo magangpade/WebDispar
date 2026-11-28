@@ -1,20 +1,29 @@
-import { useState, useEffect } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
-import { Lock, User, ShieldCheck, ArrowLeft, AlertCircle } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { MotionConfig, motion, useReducedMotion } from 'framer-motion';
+import { AlertCircle, ArrowLeft, Eye, EyeOff, MapPin } from 'lucide-react';
 import api from '../../services/api';
+import './admin.css';
+import { EASE, SCALE, SPRING } from './adminMotion';
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [showPass, setShowPass] = useState(false);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const reduce = useReducedMotion();
 
   useEffect(() => {
+    document.body.classList.add('admin-active');
     const token = localStorage.getItem('token');
     if (token) {
       navigate('/portal-internal-dispar/dashboard', { replace: true });
     }
+    return () => {
+      document.body.classList.remove('admin-active');
+    };
   }, [navigate]);
 
   const handleSubmit = async (e) => {
@@ -34,89 +43,115 @@ const Login = () => {
   };
 
   return (
-    <div
-      className="min-h-screen flex items-center justify-center p-4 font-sans relative overflow-hidden transition-colors duration-300"
-      style={{ background: 'var(--theme-gradient-diagonal, linear-gradient(135deg, #1F5BA6, #383087, #5C2180))' }}
-    >
-      {/* Background Decorative Rings */}
-      <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-white/5 blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-32 -right-32 w-96 h-96 rounded-full bg-amber-400/10 blur-3xl pointer-events-none" />
+    <MotionConfig reducedMotion="user">
+      <div className="admin-scope admin-login-view">
+        <div className="admin-login-band" aria-hidden="true" />
 
-      <div className="bg-white/95 backdrop-blur-md rounded-3xl shadow-2xl p-8 sm:p-10 w-full max-w-md border border-white/40 relative z-10">
-        {/* Header Logo & Title */}
-        <div className="text-center mb-8">
-          <div className="h-16 px-4 rounded-2xl bg-gradient-to-tr from-[#1F5BA6] to-[#5C2180] mx-auto mb-4 inline-flex items-center justify-center shadow-lg shadow-indigo-900/20 border border-white/20">
-            <img
-              src="/dinas pariwisata-COLOR WHITE.png"
-              alt="Logo Dinas Pariwisata"
-              className="h-10 w-auto object-contain"
-              onError={(e) => { e.currentTarget.src = '/images/dinas_pariwisata-COLOR_BLACK.png'; }}
-            />
+        <motion.span
+          className="admin-login-tag t1"
+          initial={reduce ? { opacity: 0 } : { opacity: 0, y: -14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, delay: 0.1, ease: EASE.out }}
+        >
+          Patung Megalit, Poso
+        </motion.span>
+        <motion.span
+          className="admin-login-tag t2"
+          initial={reduce ? { opacity: 0 } : { opacity: 0, y: -14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, delay: 0.2, ease: EASE.out }}
+        >
+          Bukit Selena, Palu
+        </motion.span>
+        <motion.span
+          className="admin-login-tag t3"
+          initial={reduce ? { opacity: 0 } : { opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, delay: 0.28, ease: EASE.out }}
+        >
+          Danau Paisupok, Banggai
+        </motion.span>
+
+        <motion.form
+          className="admin-login-card"
+          onSubmit={handleSubmit}
+          autoComplete="off"
+          initial={reduce ? { opacity: 0 } : { opacity: 0, y: 26, scale: 0.97 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.65, ease: EASE.out }}
+        >
+          <div className="admin-login-logo">
+            <MapPin style={{ width: 24, height: 24 }} />
           </div>
-          <h1 className="text-2xl font-black text-slate-900 tracking-tight">Admin Panel Portal</h1>
-          <p className="text-slate-500 text-xs mt-1 font-semibold tracking-wide uppercase">
-            DINAS PARIWISATA SULAWESI TENGAH
-          </p>
-        </div>
+          <h1>Admin Panel</h1>
+          <p className="admin-login-sub">Dinas Pariwisata Provinsi Sulawesi Tengah</p>
 
-        {error && (
-          <div className="flex items-center gap-2 bg-red-50 border border-red-200 text-red-700 p-3.5 rounded-xl mb-5 text-xs font-semibold">
-            <AlertCircle className="w-4 h-4 shrink-0" />
-            <span>{error}</span>
-          </div>
-        )}
+          {error && (
+            <div className="admin-login-error" role="alert">
+              <AlertCircle className="ic-sm" />
+              <span>{error}</span>
+            </div>
+          )}
 
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wider">Username</label>
-            <div className="relative">
-              <User size={18} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
+          <div className="admin-login-field">
+            <label htmlFor="loginUser">Username</label>
+            <div className="admin-field-wrap">
               <input
+                id="loginUser"
                 type="text"
+                placeholder="Masukkan username"
                 value={username}
-                placeholder="Masukkan username admin"
                 onChange={(e) => setUsername(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 focus:border-[#1F5BA6] focus:ring-2 focus:ring-[#1F5BA6]/20 outline-none text-sm bg-slate-50 font-medium transition-all"
                 required
               />
             </div>
           </div>
 
-          <div>
-            <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wider">Password</label>
-            <div className="relative">
-              <Lock size={18} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
+          <div className="admin-login-field">
+            <label htmlFor="loginPass">Password</label>
+            <div className="admin-field-wrap">
               <input
-                type="password"
+                id="loginPass"
+                type={showPass ? 'text' : 'password'}
+                placeholder="Masukkan password"
                 value={password}
-                placeholder="••••••••"
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 focus:border-[#1F5BA6] focus:ring-2 focus:ring-[#1F5BA6]/20 outline-none text-sm bg-slate-50 font-medium transition-all"
                 required
               />
+              <button
+                type="button"
+                className="admin-eye-btn"
+                aria-label={showPass ? 'Sembunyikan password' : 'Tampilkan password'}
+                onClick={() => setShowPass((v) => !v)}
+              >
+                {showPass ? <EyeOff className="ic" /> : <Eye className="ic" />}
+              </button>
             </div>
           </div>
 
-          <button
+          <motion.button
             type="submit"
             disabled={loading}
-            className="w-full mt-2 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-950 font-extrabold py-3.5 px-6 rounded-xl transition-all duration-300 shadow-md shadow-amber-500/20 transform active:scale-98 disabled:opacity-50 text-sm flex items-center justify-center gap-2 cursor-pointer"
+            className="admin-btn-login"
+            whileTap={reduce ? undefined : { scale: SCALE.press }}
+            transition={SPRING.press}
           >
-            <ShieldCheck className="w-4 h-4" />
-            <span>{loading ? 'Memverifikasi...' : 'Masuk ke Dashboard'}</span>
-          </button>
-        </form>
+            {loading ? 'Memverifikasi...' : 'Login'}
+          </motion.button>
 
-        <div className="mt-6 pt-5 border-t border-slate-100 text-center">
-          <Link
-            to="/"
-            className="inline-flex items-center gap-1.5 text-xs font-bold text-[#1F5BA6] hover:text-[#5C2180] transition-colors"
-          >
-            <ArrowLeft className="w-3.5 h-3.5" /> Kembali ke Beranda Publik
-          </Link>
-        </div>
+          <p className="admin-login-hint">
+            Portal Internal CMS — Masuk dengan akun administrator resmi.
+          </p>
+
+          <div style={{ textAlign: 'center' }}>
+            <Link to="/" className="admin-login-back">
+              <ArrowLeft style={{ width: 14, height: 14 }} />
+              <span>Kembali ke Beranda Publik</span>
+            </Link>
+          </div>
+        </motion.form>
       </div>
-    </div>
+    </MotionConfig>
   );
 };
 

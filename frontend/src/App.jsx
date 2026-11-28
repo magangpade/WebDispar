@@ -61,6 +61,7 @@ const AdminDesaWisata = lazy(() => import('./pages/Admin/DesaWisata'));
 const AdminPPID = lazy(() => import('./pages/Admin/PPID'));
 const AdminProfil = lazy(() => import('./pages/Admin/Profil'));
 const AdminTema = lazy(() => import('./pages/Admin/Tema'));
+const AdminPosterStudio = lazy(() => import('./pages/Admin/PosterStudio'));
 
 import api from './services/api';
 import { useLanguage } from './context/LanguageContext';
@@ -137,6 +138,7 @@ function App() {
           <Route path="/portal-internal-dispar/desa-wisata" element={<ProtectedRoute><AdminDesaWisata /></ProtectedRoute>} />
           <Route path="/portal-internal-dispar/profil" element={<ProtectedRoute><AdminProfil /></ProtectedRoute>} />
           <Route path="/portal-internal-dispar/ppid" element={<ProtectedRoute><AdminPPID /></ProtectedRoute>} />
+          <Route path="/portal-internal-dispar/poster" element={<ProtectedRoute><AdminPosterStudio /></ProtectedRoute>} />
           <Route path="/portal-internal-dispar/tema" element={<ProtectedRoute><AdminTema /></ProtectedRoute>} />
           <Route path="*" element={<Navigate to="/portal-internal-dispar/login" replace />} />
         </Routes>
